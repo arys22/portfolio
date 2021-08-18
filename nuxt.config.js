@@ -1,34 +1,30 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from "vuetify/es5/util/colors";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - portfolio',
-    title: 'portfolio',
+    titleTemplate: "%s - portfolio",
+    title: "portfolio",
     htmlAttrs: {
-      lang: 'ja'
+      lang: "ja"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -36,13 +32,13 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    "@nuxtjs/vuetify"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    "@nuxtjs/axios"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -50,10 +46,10 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    treeShake: true,//追加
+    customVariables: ["~/assets/variables.scss"],
+    treeShake: true, //追加
     theme: {
-      dark: false,//変更
+      dark: false, //変更
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -65,10 +61,21 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
+    // アイコン設定
+    // defaultAssets: {
+    //   font: true,
+    //   icons: "mdi"
+    // },
+    // icons: {
+    //   iconfont: "mdi"
+    // }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    parallel: true, //<-追加
+    cache: true, //<-追加
+    hardSource: true //<-追加
   }
-}
+};
