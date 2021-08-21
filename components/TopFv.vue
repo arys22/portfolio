@@ -1,5 +1,7 @@
 <template>
-  <v-col cols="12" id="fv" class=" fv green" :style="style" ref="fv"> </v-col>
+  <div id="fv" class=" fv green" :style="style" ref="fv">
+    
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,7 @@ export default {
       style: {
         "--wh": "100vh"
       },
-      fvHeight: null
+      fvHeight: null,
     };
   },
   mounted() {
@@ -23,6 +25,8 @@ export default {
       window.addEventListener("resize", this.getFvHeight);
     });
   },
+
+
   methods: {
     // 100vh WindowSize - headerの高さ
     getWindowSize() {
