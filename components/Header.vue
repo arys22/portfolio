@@ -22,7 +22,7 @@
           class="header__btn"
           v-for="(item, index) in $ITEMS.menuItems" :key="index">
           {{item.name}}
-          </v-btn>
+        </v-btn>
       </v-toolbar-items>
 
       <!-- sp -->
@@ -31,31 +31,42 @@
       </v-app-bar-nav-icon>
     </v-app-bar>
       <!-- メニュー -->
-      <v-navigation-drawer app temporary v-model="drawer" color="#333" bottom dark class="d-block d-sm-none" >
+      <v-navigation-drawer app temporary v-model="drawer" color="#333" bottom dark class="d-block d-sm-none" height="auto">
         <v-list nav >
+          <v-subheader class="ml-3">menu</v-subheader>
           <!-- plugins/constrants.jsのmenuItems -->
-            <v-list-item nuxt exact :to="item.path" active-class="link-active" v-for="(item, index) in $ITEMS.menuItems" :key="index" class="sp__list text-uppercase mx-1 text-center">
-            <v-spacer></v-spacer>
-              <v-list-item-icon class="mr-7 ml-n5">
-                <v-icon left>{{item.icon}}</v-icon>
+            <v-list-item nuxt exact dense :to="item.path" active-class="sp__link-active" v-for="(item, index) in $ITEMS.menuItems" :key="index" class="sp__list text-uppercase mx-1 ">
+              <v-list-item-icon class="ml-3 mr-2">
+                <v-icon left color="#999">{{item.icon}}</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
                 <v-list-item-title>{{ item.name }}</v-list-item-title>
               </v-list-item-content>
-            <v-spacer></v-spacer>
             </v-list-item>
 
         </v-list>
+        <template v-slot:append>
+        <div class="px-4 pb-4">
+            <v-btn block @click.stop="drawer=!drawer">
+              close
+            </v-btn>
+          </div>
+        </template>
       </v-navigation-drawer>
   </div>
 </template>
 
 <script>
 export default {
+  props:{
+  scrollY:{
+    type:Number,
+    default:0,
+  }
+  },
   data() {
     return {
       fvHeight: null,
-      scrollY: 0,
       drawer: false,
     };
   },
@@ -64,11 +75,6 @@ export default {
     this.setListener();
   },
   mounted() {
-    // スクロール時 スクロール位置を取得
-    window.addEventListener("scroll", this.onScroll);
-    // ロード時
-    window.addEventListener("load", this.onScroll);
-
     // ルートの遷移前（コンポーネントガード解決前）
     this.$router.beforeEach((to, from, next) => {
 			// console.log('global:beforeEach');
@@ -94,11 +100,6 @@ export default {
       this.fvHeight = height;
       // console.log(this.fvHeight);
     },
-    // スクロールを検知
-    onScroll() {
-      this.scrollY = window.scrollY || window.pageYOffset; // window.scrollY はIE11非対応
-    },
-
   },
 };
 </script>
@@ -166,5 +167,9 @@ export default {
     &__list{
       border-bottom: 1px dotted rgba(255,255,255,0.24);
   }
+    &__link-active .v-list-item__icon .v-icon{
+      font-weight: bold;
+      color: #fff  !important;
+    }
 }
 </style>
