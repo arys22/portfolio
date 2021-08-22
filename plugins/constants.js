@@ -8,8 +8,8 @@
       icon: 'mdi-home',
     },
     {
-      name: 'puroduct',
-      path: '/product',
+      name: 'puroducts',
+      path: '/products',
       icon: 'mdi-application',
     },
     {

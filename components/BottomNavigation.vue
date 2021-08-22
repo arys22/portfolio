@@ -1,11 +1,13 @@
 <template>
-  <v-bottom-navigation fixed  light grow color="black" active-class="font-weight-bold black-text body-2" class="text--second"  v-model="value" :background-color="backgroundColor"  :class="{'btn-nav__scroll': hide}">
+  <transition name="fade">
+    <v-bottom-navigation fixed  light grow color="black" active-class="font-weight-bold black-text body-2" class="text--second btn-nav"  v-model="value" :background-color="backgroundColor"  :class="{'btn-nav__scroll': hide}">
 
-    <v-btn v-for="(item, index) in $ITEMS.menuItems" :key="index" :to="item.path" height="100%" exact text>
-        <span>{{ item.name }}</span>
-        <v-icon>{{ item.icon }}</v-icon>
-    </v-btn>
-  </v-bottom-navigation>
+      <v-btn v-for="(item, index) in $ITEMS.menuItems" :key="index" :to="item.path" height="100%" exact text>
+          <span>{{ item.name }}</span>
+          <v-icon>{{ item.icon }}</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+  </transition>
 </template>
 
 <script>
@@ -37,7 +39,7 @@ export default {
     scrollY :{
       handler(newValue, oldValue) {
         // リアクティブ
-        this.$set(this, 'hide', newValue > oldValue);
+        this.$set(this, 'hide', newValue > oldValue );
       },
       // props時
       deep:true,
@@ -49,7 +51,11 @@ export default {
 
 <style lang="scss" scoped>
 // スクロール下は非表示
-.btn-nav__scroll{
+.btn-nav{
+  transition: transform .7s ease-in-out;
+  &__scroll{
   transform:translateY(100%) !important;
 }
+}
+
 </style>
