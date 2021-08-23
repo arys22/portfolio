@@ -89,12 +89,12 @@
 
 <script>
 export default {
-props: {
-  scrollY: {
-    type: Number,
-    default: 0,
-  }
-},
+// props: {
+//   scrollY: {
+//     type: Number,
+//     default: 0,
+//   }
+// },
 mounted() {
   console.log(scrollY);
 },
