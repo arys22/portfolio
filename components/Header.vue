@@ -35,7 +35,7 @@
         <v-list nav >
           <v-subheader class="ml-3">menu</v-subheader>
           <!-- plugins/constrants.jsのmenuItems -->
-            <v-list-item nuxt exact dense :to="item.path" active-class="sp__link-active" v-for="(item, index) in $ITEMS.menuItems" :key="index" class="sp__list text-uppercase mx-1 ">
+            <v-list-item nuxt exact dense :to="item.path" exact-active-class="sp__list-active" v-for="(item, index) in $ITEMS.menuItems" :key="index" class="sp__list text-uppercase mx-1">
               <v-list-item-icon class="ml-3 mr-2">
                 <v-icon left color="#999">{{item.icon}}</v-icon>
               </v-list-item-icon>
@@ -43,7 +43,6 @@
                 <v-list-item-title>{{ item.name }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-
         </v-list>
         <template v-slot:append>
         <div class="px-4 pb-4">
@@ -58,47 +57,45 @@
 
 <script>
 export default {
-   props: {
-    scrollY: {
-      type: Number,
-      default: 0
-    }
-  },
-  data() {
-    return {
-      fvHeight: null,
-      drawer: false,
-    };
-  },
-  created() {
-    // createdのタイミングでイベントリスナーを設定
-    this.setListener();
-  },
-  mounted() {
-    // ルートの遷移前（コンポーネントガード解決前）
-    this.$router.beforeEach((to, from, next) => {
-			// console.log('global:beforeEach');
-      this.fvHeight = null;
-			next();
-		})
-  },
+props: {
+  scrollY: {
+    type: Number,
+    default: 0
+  }
+},
+data() {
+  return {
+    fvHeight: null,
+    drawer: false,
+  };
+},
+created() {
+  // createdのタイミングでイベントリスナーを設定
+  this.setListener();
+},
+mounted() {
+  // ルートの遷移前（コンポーネントガード解決前）
+  this.$router.beforeEach((to, from, next) => {
+    // console.log('global:beforeEach');
+    this.fvHeight = null;
+    next();
+  })
+},
 
-  beforeDestroy() {
-  // 後処理
-  this.$nuxt.$off('getFvHeight');
+beforeDestroy() {
+// 後処理
+this.$nuxt.$off('getFvHeight');
+},
+methods: {
+  setListener() {
+    this.$nuxt.$on('getFvHeight', this.setHeader);
   },
-
-
-  methods: {
-    setListener() {
-      this.$nuxt.$on('getFvHeight', this.setHeader);
-    },
-    setHeader(e) {
-      // 第1引数にはemitで渡した値が入ってくる。
-      // 第2引数以降を渡す場合も同様に、それ以降の引数で受け取れる
-      const height = Math.floor(e);
-      this.fvHeight = height;
-      // console.log(this.fvHeight);
+  setHeader(e) {
+    // 第1引数にはemitで渡した値が入ってくる。
+    // 第2引数以降を渡す場合も同様に、それ以降の引数で受け取れる
+    const height = Math.floor(e);
+    this.fvHeight = height;
+    // console.log(this.fvHeight);
     },
   },
 };
@@ -144,17 +141,18 @@ export default {
     }
   }
 }
-  // sp アイコン 優先度
-  .theme--light.v-btn.v-btn--icon.header__icon{
-      color: #fff;
-      &__scroll{//変化後
-        color: #333;
-      }
-      &:hover{
-        opacity: .8;
-      }
-    }
 
+// sp バーガー 優先度上げ
+.theme--light.v-btn.v-btn--icon.header__icon{
+    color: #fff;
+    &__scroll{//変化後
+      color: #333;
+    }
+    &:hover{
+      opacity: .8;
+    }
+  }
+// spメニュー
 // 現在のページ
 .link-active{
   font-weight: bold;
@@ -162,14 +160,27 @@ export default {
     transform: none;
   }
 }
+.v-icon{
+    transition:transform .5s ease-out;
+    }
+  // ホバー時アイコン
+  .v-list-item:hover .v-icon{
+    // transform: rotateY(180deg);
+    transform: scale(.8);
+    opacity: .8;
+  }
 
 .sp{
-    &__list{
-      border-bottom: 1px dotted rgba(255,255,255,0.24);
+  &__list{
+    border-bottom: 1px dotted rgba(255,255,255,0.24);
   }
-    &__link-active .v-list-item__icon .v-icon{
-      font-weight: bold;
-      color: #fff  !important;
-    }
+  &__list-active .v-list-item__icon .v-icon{
+    font-weight: bold;
+    color: #fff  !important;
+    transform: none;
+    opacity: 1;
+  }
 }
+
+
 </style>

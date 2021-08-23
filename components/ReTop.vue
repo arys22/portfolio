@@ -1,7 +1,7 @@
 <template>
 <transition name="fade">
-  <v-btn @click="$vuetify.goTo(0,{duration:1200,easing: 'easeOutQuart'})" v-show="scrollY>500" fixed bottom right icon elevation=1 class="mb-4 mr-1" small fab>
-    <v-icon>mdi-chevron-up</v-icon>
+  <v-btn @click="$vuetify.goTo(0,{duration:1100,easing: 'easeInCubic'})" v-show="scrollY>500" fixed bottom right icon elevation=2 class="mb-4 mr-1" small fab >
+    <v-icon >mdi-chevron-up</v-icon>
   </v-btn>
 </transition>
 </template>
@@ -25,5 +25,9 @@ export default {
 .fade-enter, .fade-leave-to {
   opacity: 0;
   transform: scale(0);
+}
+
+.v-btn{
+  background-color: #fefefe;
 }
 </style>

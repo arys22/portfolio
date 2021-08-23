@@ -1,6 +1,6 @@
 <template>
   <div id="fv" class=" fv green" :style="style" ref="fv">
-    
+    <TopScrollDown/>
   </div>
 </template>
 
@@ -19,7 +19,6 @@ export default {
       // 100vh WindowSize
       this.getWindowSize();
       window.addEventListener("resize", this.getWindowSize);
-
       // fvの下座標取得
       this.getFvHeight();
       window.addEventListener("resize", this.getFvHeight);
@@ -32,7 +31,6 @@ export default {
     getWindowSize() {
       this.style["--wh"] = `${window.innerHeight - this.$vuetify.application.top}px`;
     },
-
     // fvの下座標取得
     getFvHeight() {
       const dom = this.$refs.fv;
@@ -48,5 +46,6 @@ export default {
 .fv {
   min-height: 100vh;
   min-height: calc(var(--wh, 100vh));
+  position: relative;
 }
 </style>

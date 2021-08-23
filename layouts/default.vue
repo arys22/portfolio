@@ -1,8 +1,8 @@
 <template>
   <v-app dark>
-    <Header :scrollY="scrollY"/>
+      <Header :scrollY="scrollY"/>
     <v-main>
-      <Nuxt/>
+      <Nuxt />
     </v-main>
       <ReTop :scrollY="scrollY"/>
       <BottomNavigation :scrollY="scrollY"/>
@@ -14,7 +14,6 @@
 
 <script>
 export default {
-
   data () {
     return {
       scrollY: 0,

@@ -2,7 +2,7 @@
   <transition name="fade">
     <v-bottom-navigation fixed  light grow color="black" active-class="font-weight-bold black-text body-2" class="text--second btn-nav"  v-model="value" :background-color="backgroundColor"  :class="{'btn-nav__scroll': hide}">
 
-      <v-btn v-for="(item, index) in $ITEMS.menuItems" :key="index" :to="item.path" height="100%" exact text>
+      <v-btn v-for="(item, index) in $ITEMS.menuItems" :key="index" :to="item.path" height="100%" exact text exact-active-class="v-btn__active">
           <span>{{ item.name }}</span>
           <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
@@ -28,18 +28,26 @@ export default {
     backgroundColor () {
       switch (this.value) {
         case 0: return '#fff'
-        case 1: return '#dbdbdb'
-        case 2: return '#d7d7d7'
+        case 1: return '#eee'
+        case 2: return '#ccc'
         default: return '#fff'
       }
-    }
+    },
   },
-    watch: {
+  watch: {
     // 上にスクロールした時に表示
     scrollY :{
       handler(newValue, oldValue) {
         // リアクティブ
-        this.$set(this, 'hide', newValue > oldValue );
+        if (newValue < 400) {
+          this.$set(this, 'hide', true);
+        } else if(newValue > oldValue) {
+          this.$set(this, 'hide', true);
+        }
+        else{
+          this.$set(this, 'hide', false);
+        }
+        // this.$set(this, 'hide', newValue > oldValue );
       },
       // props時
       deep:true,
@@ -52,10 +60,21 @@ export default {
 <style lang="scss" scoped>
 // スクロール下は非表示
 .btn-nav{
-  transition: transform .7s ease-in-out;
+  transition: transform .3s ease-in-out .3s;
   &__scroll{
   transform:translateY(100%) !important;
-}
+  }
 }
 
+// アイコン
+.v-btn .v-icon{
+  transition:transform .4s ease-out;
+}
+.v-btn:hover .v-icon{
+  transform: scale(.8);
+}
+.v-bottom-navigation .v-btn__active  .v-icon{
+  transform:none;
+  font-size: 1.8rem;
+}
 </style>
