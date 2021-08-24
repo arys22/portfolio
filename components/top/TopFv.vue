@@ -1,6 +1,8 @@
 <template>
   <div id="fv" class=" fv green" :style="style" ref="fv">
-    <TopScrollDown/>
+    <FadeIn>
+      <TopScrollDown/>
+    </FadeIn>
   </div>
 </template>
 

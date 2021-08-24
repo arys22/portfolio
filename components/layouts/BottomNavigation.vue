@@ -39,7 +39,7 @@ export default {
     scrollY :{
       handler(newValue, oldValue) {
         // リアクティブ
-        if (newValue < 400) {
+        if (newValue < 600) {
           this.$set(this, 'hide', true);
         } else if(newValue > oldValue) {
           this.$set(this, 'hide', true);

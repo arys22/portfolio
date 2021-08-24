@@ -11,7 +11,7 @@
       $vuetify.goTo('#scroll', {
         duration: 800,
         easing: 'easeOutCubic',
-        offset: -30
+        offset: -45
       })
     "
     class="mb-12 mr-n4"
@@ -30,7 +30,7 @@
   }
   &__mark {
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     left: 50%;
     width: 14px;
     height: 14px;
@@ -48,12 +48,12 @@
       animation-delay: 0s;
     }
     &:nth-of-type(2) {
-      bottom: -30px;
+      bottom: -35px;
       -webkit-animation-delay: 0.15s;
       animation-delay: 0.15s;
     }
     &:nth-of-type(3) {
-      bottom: -45px;
+      bottom: -50px;
       -webkit-animation-delay: 0.3s;
       animation-delay: 0.3s;
     }

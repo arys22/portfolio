@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row>
+    <v-row class="rowt">
       <v-col class="text-center">
         <img src="/v.png" alt="Vuetify.js" class="mb-5" />
         <blockquote class="blockquote">
@@ -13,13 +13,18 @@
         </blockquote>
       </v-col>
     </v-row>
+    <v-row class="row">
+      <v-col>
+        <FadeInOut>
+          <v-btn dark>click</v-btn>
+        </FadeInOut>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-
-
   // metaタグ設定
   head() {
     return {
@@ -37,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.text-center {
-  height: 5000px;
+.row {
+  height: 800px;
 }
 </style>

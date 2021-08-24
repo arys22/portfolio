@@ -3,7 +3,7 @@
     // メニュー
   menuItems: [
     {
-      name: 'home',
+      name: 'top',
       path: '/',
       icon: 'mdi-home',
     },
