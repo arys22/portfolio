@@ -1,6 +1,6 @@
 <template>
 <transition name="fade">
-  <v-btn @click="$vuetify.goTo(0,{duration:1100,easing: 'easeInCubic'})" v-show="scrollY>500" fixed bottom right icon elevation=2 class="mb-4 mr-1" small fab >
+  <v-btn @click="$vuetify.goTo(0,{duration:1000,easing: 'easeOutCubic'})" v-show="scrollY > 500" fixed bottom right icon elevation=2 class="mb-4 mr-1" small fab >
     <v-icon >mdi-chevron-up</v-icon>
   </v-btn>
 </transition>

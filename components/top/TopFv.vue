@@ -1,9 +1,12 @@
 <template>
-  <div id="fv" class=" fv green" :style="style" ref="fv">
-    <FadeIn>
-      <TopScrollDown/>
-    </FadeIn>
-  </div>
+  <v-container fluid  class="fv blue" :style="style" ref="fv">
+    <v-row align="center" no-gutters>
+      <FvText/>
+    </v-row>
+        <transition name="down">
+          <ScrollDown v-show="show" />
+        </transition>
+  </v-container>
 </template>
 
 <script>
@@ -14,6 +17,7 @@ export default {
         "--wh": "100vh"
       },
       fvHeight: null,
+      show: false
     };
   },
   mounted() {
@@ -25,13 +29,16 @@ export default {
       this.getFvHeight();
       window.addEventListener("resize", this.getFvHeight);
     });
+    setTimeout(() => {
+      this.show = true;
+    }, 1500);
   },
-
 
   methods: {
     // 100vh WindowSize - headerの高さ
     getWindowSize() {
-      this.style["--wh"] = `${window.innerHeight - this.$vuetify.application.top}px`;
+      this.style["--wh"] = `${window.innerHeight -
+        this.$vuetify.application.top}px`;
     },
     // fvの下座標取得
     getFvHeight() {
@@ -49,5 +56,19 @@ export default {
   min-height: 100vh;
   min-height: calc(var(--wh, 100vh));
   position: relative;
+  display: flex;
+  align-items: center;
+  padding: 4%;
+}
+
+// スライド スクロールdown
+.down-enter-active,
+.down-leave-active {
+  transition: transform 2.5s ease-in;
+  transform: translate(0px, 0px);
+}
+.down-enter,
+.down-leave-to {
+  transform: translateY(-100vh) translateY(0px);
 }
 </style>

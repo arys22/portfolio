@@ -7,14 +7,14 @@
     height="auto"
     plain
     :ripple="false"
-    @click="
+    @click.stop="
       $vuetify.goTo('#scroll', {
         duration: 800,
         easing: 'easeOutCubic',
         offset: -45
       })
     "
-    class="mb-12 mr-n4"
+    class="mb-12 mr-n4 text-md-h6"
   >
     <span class="v-btn__text">Scroll down</span>
     <span class="v-btn__mark"></span>
@@ -25,6 +25,7 @@
 
 <style lang="scss" scoped>
 .v-btn {
+  right: 4%;
   &__text {
     writing-mode: vertical-rl;
   }

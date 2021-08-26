@@ -39,19 +39,19 @@ export default {
 }
 
 .hidden {
-  animation: fadeOut 1s;
+  animation: fadeOut 1.5s;
   opacity: 0;
 }
 
 .fadein {
   opacity: 1;
-  animation: fadeIn 1s;
+  animation: fadeIn 1.5s;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(50vh) translateX(0px);
+    transform: translateY(30vh) translateX(0px);
   }
   100% {
     opacity: 1;

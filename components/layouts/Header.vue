@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <v-app-bar
       app
       flat
@@ -19,7 +19,7 @@
           nuxt
           exact
           active-class="link-active"
-          class="header__btn"
+          class="header__btn text-md-subtitle-1"
           v-for="(item, index) in $ITEMS.menuItems" :key="index">
           {{item.name}}
         </v-btn>

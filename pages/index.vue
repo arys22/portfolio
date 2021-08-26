@@ -96,7 +96,7 @@ export default {
 //   }
 // },
 mounted() {
-  console.log(scrollY);
+  // console.log(scrollY);
 },
   // metaタグ設定
   head: {
