@@ -1,7 +1,7 @@
 <template>
   <v-container fluid  class="fv blue" :style="style" ref="fv">
     <v-row align="center" no-gutters>
-      <FvText/>
+      <FvTitle/>
     </v-row>
         <transition name="down">
           <ScrollDown v-show="show" />
