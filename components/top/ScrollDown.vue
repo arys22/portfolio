@@ -1,27 +1,45 @@
 <template>
-  <v-btn
-    absolute
-    right
-    bottom
-    text
-    height="auto"
-    plain
-    :ripple="false"
-    @click.stop="
-      $vuetify.goTo('#scroll', {
-        duration: 800,
-        easing: 'easeOutCubic',
-        offset: -45
-      })
-    "
-    class="mb-12 mr-n4 text-md-h6"
-  >
-    <span class="v-btn__text">Scroll down</span>
-    <span class="v-btn__mark"></span>
-    <span class="v-btn__mark"></span>
-    <span class="v-btn__mark"></span>
-  </v-btn>
+  <transition name="down">
+    <v-btn
+      absolute
+      right
+      bottom
+      text
+      height="auto"
+      plain
+      :ripple="false"
+      v-show="show"
+      @click.stop="
+        $vuetify.goTo('#scroll', {
+          duration: 800,
+          easing: 'easeOutCubic',
+          offset: -45
+        })
+      "
+      class="mb-12 mr-n4 text-md-h6"
+    >
+      <span class="v-btn__text">Scroll down</span>
+      <span class="v-btn__mark"></span>
+      <span class="v-btn__mark"></span>
+      <span class="v-btn__mark"></span>
+    </v-btn>
+  </transition>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      show: false
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 1500);
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .v-btn {
@@ -81,5 +99,16 @@
   100% {
     opacity: 0;
   }
+}
+
+// スライド スクロールdown
+.down-enter-active,
+.down-leave-active {
+  transition: transform 2.5s ease-in;
+  transform: translate(0px, 0px);
+}
+.down-enter,
+.down-leave-to {
+  transform: translateY(-100vh) translateY(0px);
 }
 </style>

@@ -1,11 +1,9 @@
 <template>
-  <v-container fluid  class="fv blue" :style="style" ref="fv">
-    <v-row align="center" no-gutters>
-      <FvTitle/>
+  <v-container fluid class="fv blue" :style="style" ref="fv" @click="titleEvent">
+    <v-row align="center" no-gutters >
+      <FvTitle ref="title"/>
+      <ScrollDown/>
     </v-row>
-        <transition name="down">
-          <ScrollDown v-show="show" />
-        </transition>
   </v-container>
 </template>
 
@@ -17,7 +15,7 @@ export default {
         "--wh": "100vh"
       },
       fvHeight: null,
-      show: false
+      // show: false,
     };
   },
   mounted() {
@@ -29,9 +27,6 @@ export default {
       this.getFvHeight();
       window.addEventListener("resize", this.getFvHeight);
     });
-    setTimeout(() => {
-      this.show = true;
-    }, 1500);
   },
 
   methods: {
@@ -46,7 +41,11 @@ export default {
       this.fvHeight = dom.getBoundingClientRect().height;
       // Headerに値を渡す
       this.$nuxt.$emit("getFvHeight", this.fvHeight);
-    }
+    },
+
+    titleEvent(){
+      this.$refs.title.gather();
+    },
   }
 };
 </script>
@@ -59,16 +58,5 @@ export default {
   display: flex;
   align-items: center;
   padding: 4%;
-}
-
-// スライド スクロールdown
-.down-enter-active,
-.down-leave-active {
-  transition: transform 2.5s ease-in;
-  transform: translate(0px, 0px);
-}
-.down-enter,
-.down-leave-to {
-  transform: translateY(-100vh) translateY(0px);
 }
 </style>

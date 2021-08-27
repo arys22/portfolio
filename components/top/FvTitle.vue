@@ -1,5 +1,5 @@
 <template>
-  <v-col class="text  text-md-center">
+  <v-col class="text text-md-center fv__title">
     <transition-group
       tag="div"
       class="text__box"
@@ -17,8 +17,9 @@
         {{ datas.text }}
       </div>
     </transition-group>
-    <Fvtext/>
-    <v-btn @click="gather()">{{ textShow }}</v-btn>
+    <Fvtext class="text-md-h6"/>
+
+    <!-- <v-btn @click="gather()">{{ textShow }}</v-btn> -->
   </v-col>
 </template>
 
@@ -39,13 +40,10 @@ export default {
     this.textArray = this.text.map(el => this.convText(el));
     this.textModel = this.textArray[0];
   },
-  computed: {
-    textShow() {
-      const text = this.show ? "Remove" : "Show";
-      return text;
-    },
-
+  mounted() {
+    this.show = true;
   },
+
   methods: {
     gather() {
       this.show = !this.show;
@@ -55,8 +53,9 @@ export default {
         // textArrayのindex 0,1,2
         this.textModel = this.textArray[this.index];
         }
-      // console.log(this.index)
+        // this.$emit('gather');
     },
+
     // id作成
     convText(text) {
       const alms = {};
@@ -137,8 +136,8 @@ export default {
   }
   &__item {
   transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
-  animation: gapping 1.5s ease-in-out;
-  // animation-delay: 1s;
+  animation: gapping 2s ease-in-out;
+  // animation-delay: .5s;
   // animation-fill-mode: forwards;
 }
 }
@@ -151,6 +150,11 @@ export default {
   }
 }
 
+.fv{
+  &__title{
+    cursor: pointer;
+  }
+}
 .text__box .text__item {
   transition: all 1s cubic-bezier(0, 0.08, 0.05, 1);
 }
@@ -162,7 +166,4 @@ export default {
     }
   }
 }
-
-
-
 </style>
