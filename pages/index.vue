@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index">
     <TopFv />
     <v-container fluid>
       <v-row justify="center" align="center">
@@ -112,3 +112,8 @@ mounted() {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+// .index{
+// }
+</style>

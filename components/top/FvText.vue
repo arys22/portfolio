@@ -3,11 +3,11 @@
     <vue-typer
       :text="[
         'Welcome to my portfolio.',
-        'Click to animate',
         'ようこそポートフォリオへ！',
-        'このページは Topページ になります。',
-        'PRODUCTS は ポートフォリオ一覧ページ です。',
-        'CONTACT は お問い合わせページ です。'
+        'Click to change',
+        'このページはTopページになります。',
+        'ポートフォリオ一覧はPRODUCTSです。',
+        'お問い合わせはCONTACTです。'
       ]"
       :repeat="Infinity"
       :shuffle="false"
@@ -24,5 +24,14 @@
 </template>
 
 <style lang="scss" scoped>
-
+.vue-typer{
+//   transform: translateZ(5px);
+  display: flex;
+  justify-content: flex-start;
+}
+@media screen and(min-width: 960px) {
+  .vue-typer{
+    justify-content: center;
+  }
+}
 </style>

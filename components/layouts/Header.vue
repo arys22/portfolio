@@ -166,7 +166,7 @@ methods: {
   // ホバー時アイコン
   .v-list-item:hover .v-icon{
     // transform: rotateY(180deg);
-    transform: scale(.8);
+    transform: scale(.9);
     opacity: .8;
   }
 

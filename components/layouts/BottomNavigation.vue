@@ -36,7 +36,7 @@ export default {
     // 上にスクロールした時に表示
     scrollY :{
       handler(newValue, oldValue) {
-        // リアクティブ 
+        // リアクティブ
         if (newValue < 500) {
           this.$set(this, 'hide', true);
         } else if(newValue > oldValue) {
@@ -70,7 +70,7 @@ export default {
   transition:transform .3s ease-out;
 }
 .v-btn:hover .v-icon{
-  transform: scale(.8);
+  transform: scale(.9);
 }
 .v-bottom-navigation .v-btn__active .v-icon{
   transform:none;

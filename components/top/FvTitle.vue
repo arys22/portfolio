@@ -1,26 +1,23 @@
 <template>
-  <v-col class="text text-md-center fv__title">
-    <transition-group
-      tag="div"
-      class="text__box"
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      v-on:before-leave="beforeEnter"
-      v-on:leave="leave"
+  <!-- <div class="text text-md-center"> -->
+  <transition-group
+    tag="div"
+    class="text__box"
+    v-on:before-enter="beforeEnter"
+    v-on:enter="enter"
+    v-on:before-leave="beforeEnter"
+    v-on:leave="leave"
+  >
+    <div
+      class="text__item text-sm-h2 text-md-h1 text-uppercase font-weight-bold"
+      v-show="show"
+      v-for="datas in textModel"
+      :key="datas.id"
     >
-      <div
-        class="text__item text-h4 text-sm-h2 text-md-h1 text-uppercase font-weight-bold"
-        v-show="show"
-        v-for="datas in textModel"
-        :key="datas.id"
-      >
-        {{ datas.text }}
-      </div>
-    </transition-group>
-    <Fvtext class="text-md-h6"/>
-
-    <!-- <v-btn @click="gather()">{{ textShow }}</v-btn> -->
-  </v-col>
+      {{ datas.text }}
+    </div>
+  </transition-group>
+  <!-- <Fvtext class="text-md-h6"/> -->
 </template>
 
 <script>
@@ -28,10 +25,10 @@ export default {
   data() {
     return {
       show: false,
-      index: 2,
-      text: ["portfolio","ポートフォリオ","ぽーとふぉりお"],
-      textArray: [],//convTextで文字列を分解＆キーを生成 配列
-      textModel: [],//1文取り出し表示
+      index: 0,
+      text: ["portfolio", "ポートフォリオ", "ぽーとふぉりお"],
+      textArray: [], //convTextで文字列を分解＆キーを生成 配列
+      textModel: [] //1文取り出し表示
     };
   },
   created() {
@@ -48,12 +45,13 @@ export default {
     gather() {
       this.show = !this.show;
       if (this.show) {
-        this.index = this.index < this.textArray.length-1 ? this.index + 1 : 0;
+        this.index =
+          this.index < this.textArray.length - 1 ? this.index + 1 : 0;
         // 0<2 ➡1<2 ➡2<2 ➡0<2 ➡...
         // textArrayのindex 0,1,2
         this.textModel = this.textArray[this.index];
-        }
-        // this.$emit('gather');
+      }
+      // this.$emit('gather');
     },
 
     // id作成
@@ -123,44 +121,45 @@ export default {
         0,
         done
       );
-    },
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.text{
+.text {
   &__box {
     display: flex;
     justify-content: flex-start;
+    font-size: 2.5rem;
+    // transform: translateZ(10px);
   }
   &__item {
-  transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
-  animation: gapping 2s ease-in-out;
-  // animation-delay: .5s;
-  // animation-fill-mode: forwards;
-}
+    transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
+    animation: gapping 2s ease-in-out;
+    // animation-delay: .5s;
+    // animation-fill-mode: forwards;
+    &:hover {
+      color: rgba(252, 252, 252, 0.5);
+      text-shadow: 2px 2px 2px #fefefefe, 0 0 #e1e1e1;
+    }
+  }
 }
 @keyframes gapping {
   0% {
-    margin-left: -10%;
+    margin-left: -12%;
   }
   100% {
     margin: 0px;
   }
 }
 
-.fv{
-  &__title{
-    cursor: pointer;
-  }
-}
 .text__box .text__item {
   transition: all 1s cubic-bezier(0, 0.08, 0.05, 1);
 }
 
 @media screen and(min-width: 960px) {
-  .text{
+  .text {
     &__box {
       justify-content: center;
     }

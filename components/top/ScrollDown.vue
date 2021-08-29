@@ -54,8 +54,8 @@ export default {
     width: 14px;
     height: 14px;
     margin-left: -6px;
-    border-left: 1.7px solid black;
-    border-bottom: 1.7px solid black;
+    border-left: 1.8px solid black;
+    border-bottom: 1.8px solid black;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     -webkit-animation: sdb 2s infinite;
