@@ -10,7 +10,7 @@
     {
       name: 'puroducts',
       path: '/products',
-      icon: 'mdi-application',
+      icon: 'mdi-view-list',
     },
     {
       name: 'contact',

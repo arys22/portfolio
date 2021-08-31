@@ -1,5 +1,6 @@
 <template>
   <div >
+    <!-- mdi-alpha-p-circle-outline -->
     <v-app-bar
       app
       flat
@@ -165,10 +166,16 @@ methods: {
     }
   // ホバー時アイコン
   .v-list-item:hover .v-icon{
-    // transform: rotateY(180deg);
-    transform: scale(.9);
-    opacity: .8;
+    animation: poyon 1.5s 1;
   }
+@keyframes poyon {
+  0%   { transform: scale(1.0, 1.0) translate(0%, 0%); }
+  15%  { transform: scale(0.9, 0.9) translate(0%, 5%); }
+  30%  { transform: scale(1.2, 0.8) translate(0%, 8%); }
+  50%  { transform: scale(0.8, 1.2) translate(0%, -8%); }
+  70%  { transform: scale(1.1, 0.9) translate(0%, 5%); }
+  100% { transform: scale(1.0, 1.0) translate(0%, 0%); }
+}
 
 .sp{
   &__list{

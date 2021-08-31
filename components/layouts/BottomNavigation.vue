@@ -69,9 +69,7 @@ export default {
 .v-btn .v-icon{
   transition:transform .3s ease-out;
 }
-.v-btn:hover .v-icon{
-  transform: scale(.9);
-}
+
 .v-bottom-navigation .v-btn__active .v-icon{
   transform:none;
   font-size: 1.8rem;

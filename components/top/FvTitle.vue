@@ -140,8 +140,8 @@ export default {
     // animation-delay: .5s;
     // animation-fill-mode: forwards;
     &:hover {
-      color: rgba(252, 252, 252, 0.5);
-      text-shadow: 2px 2px 2px #fefefefe, 0 0 #e1e1e1;
+      color: rgba(245, 245, 245, 0.5);
+      text-shadow: 2px 2px 2px #fefefefe, 0 0 #ddd;
     }
   }
 }

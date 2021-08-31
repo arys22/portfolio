@@ -6,16 +6,14 @@
         'ようこそポートフォリオへ！',
         'Click to change',
         'このページはTopページになります。',
-        'ポートフォリオ一覧はPRODUCTSです。',
-        'お問い合わせはCONTACTです。'
       ]"
       :repeat="Infinity"
       :shuffle="false"
       initial-action="typing"
       :pre-type-delay="70"
-      :type-delay="70"
+      :type-delay="300"
       :pre-erase-delay="3000"
-      :erase-delay="250"
+      :erase-delay="300"
       erase-style="backspace"
       :erase-on-complete="false"
       caret-animation="smooth"
@@ -25,13 +23,15 @@
 
 <style lang="scss" scoped>
 .vue-typer{
-//   transform: translateZ(5px);
   display: flex;
   justify-content: flex-start;
+  position: absolute;
+  left: 5%;
+  top: 60%;
 }
 @media screen and(min-width: 960px) {
   .vue-typer{
-    justify-content: center;
+    left: 40%;
   }
 }
 </style>
