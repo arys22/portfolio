@@ -28,7 +28,7 @@ export default {
     rippleEnter() {
       this.$refs.ripples.style.top = `${this.mouseY -
         this.$vuetify.application.top}px`;
-      this.$refs.ripples.style.left = `${this.mouseX - 5}px`;
+      this.$refs.ripples.style.left = `${this.mouseX}px`;
       console.log(this.$parent.rip);
     },
     afterRippleEnter() {
@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 .ripple {
   position: absolute;
-  transition: all 0.6s;
+  transition: all 0.5s;
   &__item {
     display: block;
     position: absolute;
@@ -70,14 +70,14 @@ export default {
 }
 @keyframes wave {
   from {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     box-shadow: 0 0 30px inset #888;
     opacity: 1;
   }
   to {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     opacity: 0;
   }
 }

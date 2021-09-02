@@ -4,7 +4,7 @@
     <v-app-bar
       app
       flat
-      color="black"
+      color="#333"
       class="header"
       :class="{ 'header__scroll': scrollY > fvHeight }"
     >

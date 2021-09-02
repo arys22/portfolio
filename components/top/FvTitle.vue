@@ -141,7 +141,7 @@ export default {
     // animation-fill-mode: forwards;
     &:hover {
       color: rgba(245, 245, 245, 0.5);
-      text-shadow: 2px 2px 2px #fefefefe, 0 0 #ddd;
+      text-shadow: 2px 2px 2px #fefefe, 0 0 #ddd;
     }
   }
 }

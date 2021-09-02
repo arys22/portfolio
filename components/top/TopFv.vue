@@ -1,13 +1,18 @@
 <template>
   <v-container
     fluid
-    class="fv blue"
+    class="fv"
     :style="style"
     ref="fv"
     @click="titleEvent"
     @mousemove="cursorCoordinates"
+    @mouseenter ="mouse = true"
+    @mouseleave ="mouse = false"
+    @mousedown="mouseUp = false,mouseDown = true"
+    @mouseup="mouseUp = true,mouseDown = false"
     :class="{invalid:rip}"
     >
+      <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :class="{show:mouse}"/>
       <v-row  no-gutters ref="wrap" class="fv__wrap">
         <v-col>
           <FvTitle ref="title" />
@@ -30,6 +35,11 @@ export default {
       //マウス位置
       mouseX: 0,
       mouseY: 0,
+      // 表示
+      mouse: false,
+      // クリック
+      mouseDown:false,
+      mouseUp:false,
       // 波紋
       rip: false,
     };
@@ -69,7 +79,8 @@ export default {
     cursorCoordinates(e) {
       this.mouseX = e.pageX;
       this.mouseY = e.pageY;
-      this.transformShadow();
+      window.requestAnimationFrame(this.transformShadow);// titleのshadow
+      window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
     },
     transformShadow(){
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
@@ -107,5 +118,12 @@ export default {
 // 連打防止
 .invalid{
   pointer-events: none;
+}
+
+.show{
+opacity: 1;
+}
+.shrink {
+  transform: scale(0.3);
 }
 </style>
