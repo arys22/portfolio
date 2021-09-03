@@ -12,14 +12,16 @@
     @mouseup="mouseUp = true,mouseDown = false"
     :class="{invalid:rip}"
     >
-      <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :class="{show:mouse}"/>
+        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
       <v-row  no-gutters ref="wrap" class="fv__wrap">
-        <v-col>
+        <v-col >
           <FvTitle ref="title" />
         </v-col>
       </v-row>
-      <Fvtext/>
-      <ScrollDown/>
+      <Fvtext />
+      <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
+      <ScrollDown />
+      </div>
       <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip"/>
   </v-container>
 </template>
@@ -35,11 +37,13 @@ export default {
       //マウス位置
       mouseX: 0,
       mouseY: 0,
-      // 表示
-      mouse: false,
+      // 表示,非表示
+      mouse: true,
       // クリック
       mouseDown:false,
       mouseUp:false,
+      // ホバー時
+      mouseHov:false,
       // 波紋
       rip: false,
     };
@@ -78,7 +82,7 @@ export default {
     // カーソル座標
     cursorCoordinates(e) {
       this.mouseX = e.pageX;
-      this.mouseY = e.pageY;
+      this.mouseY = e.pageY - this.$vuetify.application.top;
       window.requestAnimationFrame(this.transformShadow);// titleのshadow
       window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
     },

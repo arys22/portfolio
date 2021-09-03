@@ -26,14 +26,14 @@ export default {
   },
   methods: {
     rippleEnter() {
-      this.$refs.ripples.style.top = `${this.mouseY -
-        this.$vuetify.application.top}px`;
+      this.$refs.ripples.style.top = `${this.mouseY}px`;
+        // - this.$vuetify.application.top
       this.$refs.ripples.style.left = `${this.mouseX}px`;
-      console.log(this.$parent.rip);
+      // console.log(this.$parent.rip);
     },
     afterRippleEnter() {
       this.$parent.rip = false;
-      console.log(this.$parent.rip);
+      // console.log(this.$parent.rip);
     }
   }
 };

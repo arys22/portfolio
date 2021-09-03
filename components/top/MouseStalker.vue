@@ -1,6 +1,9 @@
 <template>
   <div class="mouse" ref="stalker">
-    <div class="mouse__stalker" :class="{ up: mouseUp,down:mouseDown }"></div>
+    <div
+      class="mouse__stalker"
+      :class="{ up: mouseUp, down: mouseHov, hov: mouseHov }"
+    ></div>
   </div>
 </template>
 
@@ -18,14 +21,18 @@ export default {
     },
     mouseUp: {
       type: Boolean
+    },
+    mouseHov: {
+      type: Boolean
     }
   },
   methods: {
     transformStalker() {
-      let y = this.mouseY - this.$vuetify.application.top;
+      let y = this.mouseY + 15;
       this.$refs.stalker.style.transform =
         "translate(" + this.mouseX + "px, " + y + "px) ";
-    }
+    },
+    
   }
 };
 </script>
@@ -38,7 +45,7 @@ export default {
   width: 1px;
   height: 1px;
   position: absolute;
-  top: 0;
+  top: -15px;
   left: 0;
   z-index: 4;
   pointer-events: none;
@@ -50,34 +57,42 @@ export default {
   opacity: 0;
   &__stalker {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
+    top: -12px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: #ddd;
     // 内側の要素が常に真ん中に来る
     // flex-shrink: 0 ;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 }
 
-
-.down{
-    transform: scale(.8);
+.down {
+  transform: scale(0.8);
 }
 .up {
-  animation: shrink .5s ease-out 1;
+  animation: shrink 0.5s ease-out 1;
 }
 @keyframes shrink {
   from {
-    transform: scale(.8);
+    transform: scale(0.8);
     box-shadow: 0 0 5px inset #000;
     opacity: 1;
   }
   to {
-    transform: scale(.2);
+    transform: scale(0.2);
     opacity: 0;
   }
+}
+
+.hov {
+  top: -36px;
+  left: -36px;
+  width: 72px;
+  height: 72px;
+  background-color: #fff;
+  transition: 0.5s;
 }
 </style>

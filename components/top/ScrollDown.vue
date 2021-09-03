@@ -37,13 +37,19 @@ export default {
     setTimeout(() => {
       this.show = true;
     }, 1500);
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .v-btn {
   right: 4%;
+  transition: transform .5s ease-in-out;
+    &:hover{
+      color: #000;
+      transform: scale(1.05);
+      animation: hov 1.5s ease 1;
+    }
   &__text {
     writing-mode: vertical-rl;
   }
@@ -98,6 +104,17 @@ export default {
   }
   100% {
     opacity: 0;
+  }
+}
+@keyframes hov {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px) scale(1.025);
+  }
+  100% {
+    transform: translateY(0) scale(1.05);
   }
 }
 
