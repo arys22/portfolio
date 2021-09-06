@@ -9,19 +9,18 @@
     @mouseenter ="mouse = true"
     @mouseleave ="mouse = false"
     @mousedown="mouseUp = false,mouseDown = true"
-    @mouseup="mouseUp = true,mouseDown = false"
+    @mouseup="mouseUpChange"
     :class="{invalid:rip}"
     >
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
       <v-row class="fv__row">
-        <v-col ref="wrap" class="fv__wrap">
+        <v-col ref="wrap" class="fv__wrap" cols=12>
           <FvTitle ref="title" />
         </v-col>
-      <Fvtext />
+          <Fvtext />
       </v-row>
-      <Canvas class="fv__canvas"/>
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
-      <ScrollDown class="scroll"/>
+      <ScrollDown />
       </div>
       <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip"/>
   </v-container>
@@ -73,7 +72,7 @@ export default {
       // Headerに値を渡す
       this.$nuxt.$emit("getFvHeight", this.fvHeight);
     },
-    // クリック
+    // クリック時
     titleEvent() {
       //子のmethods
       this.$refs.title.gather();
@@ -97,6 +96,11 @@ export default {
         "translateY(" + -yAxis + "px) translateX(" + -xAxis + "px)";
       this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(100,100,100,.8),"+ xAxis/1.1 + "px " + yAxis/1.1 + "px 2px rgba(10,10,10,.8)");
     },
+    mouseUpChange(){//マウスアップ時
+      this.mouseUp = true;
+      this.mouseDown = false;
+      this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
+    },
   }
 };
 </script>
@@ -115,6 +119,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   &__row{
   z-index: 2;
   }
@@ -127,11 +132,6 @@ export default {
     2px 2px 2px rgba(85,85,85,.8),
     3px 3px 2px rgba(0,0,0,.8);
     color:#fefefefe;
-  }
-  &__canvas{
-    z-index: 0;
-    position: absolute;
-    width: 100%;
   }
 }
 // 連打防止

@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <TopFv />
+    <Canvas class="canvas"/>
     <v-container fluid>
       <v-row justify="center" align="center">
         <v-col cols="12" sm="8" md="6">
@@ -107,6 +108,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .canvas{
+    z-index: 0;
+    position: absolute;
+    width: 170%;
+    top: 300px;
+    left: -40%;
+    transform: rotate(40deg);
+  }
 // .index{
 // }
 </style>
