@@ -13,14 +13,15 @@
     :class="{invalid:rip}"
     >
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
-      <v-row  no-gutters ref="wrap" class="fv__wrap">
-        <v-col >
+      <v-row class="fv__row">
+        <v-col ref="wrap" class="fv__wrap">
           <FvTitle ref="title" />
         </v-col>
-      </v-row>
       <Fvtext />
+      </v-row>
+      <Canvas class="fv__canvas"/>
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
-      <ScrollDown />
+      <ScrollDown class="scroll"/>
       </div>
       <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip"/>
   </v-container>
@@ -83,8 +84,11 @@ export default {
     cursorCoordinates(e) {
       this.mouseX = e.pageX;
       this.mouseY = e.pageY - this.$vuetify.application.top;
+      if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
       window.requestAnimationFrame(this.transformShadow);// titleのshadow
-      window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
+      //ここに書いた処理はスマホの時は無効
+        window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
+      }
     },
     transformShadow(){
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
@@ -99,7 +103,11 @@ export default {
 
 <style lang="scss" scoped>
 .fv {
-  cursor: pointer;
+  // 2重丸カーソル採用時
+  // &,.text,.scroll{
+    // cursor: none;
+    // }
+  cursor: default;
   min-height: 100vh;
   min-height: calc(var(--wh, 100vh));
   padding: 0;
@@ -107,6 +115,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  &__row{
+  z-index: 2;
+  }
   &__wrap {
     padding: 4%;
     transition: all 0s ease;
@@ -116,7 +127,11 @@ export default {
     2px 2px 2px rgba(85,85,85,.8),
     3px 3px 2px rgba(0,0,0,.8);
     color:#fefefefe;
-    background-color: #fff;
+  }
+  &__canvas{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
   }
 }
 // 連打防止

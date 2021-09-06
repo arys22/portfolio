@@ -89,15 +89,8 @@
 
 <script>
 export default {
-// props: {
-//   scrollY: {
-//     type: Number,
-//     default: 0,
-//   }
+// mounted() {
 // },
-mounted() {
-  // console.log(scrollY);
-},
   // metaタグ設定
   head: {
     titleTemplate: null,

@@ -2,7 +2,7 @@
   <div class="mouse" ref="stalker">
     <div
       class="mouse__stalker"
-      :class="{ up: mouseUp, down: mouseHov, hov: mouseHov }"
+      :class="{ up: mouseUp, down: mouseDown, hov: mouseHov }"
     ></div>
   </div>
 </template>
@@ -28,11 +28,10 @@ export default {
   },
   methods: {
     transformStalker() {
-      let y = this.mouseY + 15;
+      let y = this.mouseY + 50;
       this.$refs.stalker.style.transform =
         "translate(" + this.mouseX + "px, " + y + "px) ";
-    },
-    
+    }
   }
 };
 </script>
@@ -45,7 +44,7 @@ export default {
   width: 1px;
   height: 1px;
   position: absolute;
-  top: -15px;
+  top: -50px;
   left: 0;
   z-index: 4;
   pointer-events: none;
@@ -57,15 +56,15 @@ export default {
   opacity: 0;
   &__stalker {
     position: absolute;
-    top: -12px;
-    left: -12px;
-    width: 24px;
-    height: 24px;
+    top: -10px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #ddd;
+    background: rgba($color: #fff, $alpha: 0.8);
     // 内側の要素が常に真ん中に来る
     // flex-shrink: 0 ;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -78,21 +77,22 @@ export default {
 @keyframes shrink {
   from {
     transform: scale(0.8);
-    box-shadow: 0 0 5px inset #000;
+    box-shadow: 0 0 25px inset #555;
     opacity: 1;
   }
   to {
-    transform: scale(0.2);
+    transform: scale(0.1);
+    box-shadow: 0 0 3px inset #000;
     opacity: 0;
   }
 }
 
 .hov {
-  top: -36px;
-  left: -36px;
-  width: 72px;
-  height: 72px;
+  top: -50px;
+  left: -50px;
+  width: 100px;
+  height: 100px;
   background-color: #fff;
-  transition: 0.5s;
+  transition:all 0.5s ease-in-out;
 }
 </style>

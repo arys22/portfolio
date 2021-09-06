@@ -15,7 +15,10 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" }
+      { name: "format-detection", content: "telephone=no" },
+      // 自動翻訳させないための記述
+      // { "http-equiv": "Content-Language", content: "ja" },
+      // { name: "google", content: "notranslate" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
@@ -26,18 +29,18 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // 共通関数
-    '@/plugins/constants.js',
+    "@/plugins/constants.js",
     // vue-typer
-    '@/plugins/vue-typer.client.js',
+    "@/plugins/vue-typer.client.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   // components: true,
   components: [
     {
-      path: '@/components',
-      pathPrefix: false,
-    },
+      path: "@/components",
+      pathPrefix: false
+    }
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
