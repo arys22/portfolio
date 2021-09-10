@@ -2,10 +2,14 @@
   <div class="index">
     <TopFv />
     <Canvas class="canvas"/>
-    <v-container fluid>
-      <v-row justify="center" align="center">
+      <Message id="scroll"/>
+    <v-container fluid class="index__container">
+
+      <Skill/>
+      <v-row justify="center" align="center" tag="section" class="sss">
+        <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
-          <v-card class="logo py-4 d-flex justify-center" id="scroll">
+          <v-card class="logo py-4 d-flex justify-center" >
             <NuxtLogo />
             <VuetifyLogo />
           </v-card>
@@ -90,8 +94,6 @@
 
 <script>
 export default {
-// mounted() {
-// },
   // metaタグ設定
   head: {
     titleTemplate: null,
@@ -103,7 +105,23 @@ export default {
         content: "ポートフォリオサイトです。"
       }
     ]
-  }
+  },
+    data(){
+    return {
+      header: {
+        title: 'portforio' //ヘッダータイトル
+      }
+    }
+  },
+  mounted() {
+    this.updateHeader() //ヘッダータイトル
+  },
+  methods: {
+    updateHeader() {
+      //ヘッダータイトルとして使いたい情報を渡す
+      this.$nuxt.$emit('updateHeader', this.header.title)
+    }
+  },
 };
 </script>
 
@@ -116,6 +134,12 @@ export default {
     left: -40%;
     transform: rotate(40deg);
   }
-// .index{
-// }
+
+.index{
+  &__container{
+  // 最後に適用保留
+  //   background-image: url("~@/assets/img/stone-back.jpg");
+  margin-top: 90px;
+  }
+}
 </style>

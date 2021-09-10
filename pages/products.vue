@@ -19,6 +19,11 @@
           <v-btn dark>click</v-btn>
         </FadeInOut>
       </v-col>
+      <v-col>
+        <FadeIn>
+          <v-btn dark>click</v-btn>
+        </FadeIn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -26,17 +31,33 @@
 <script>
 export default {
   // metaタグ設定
-  head() {
+  head(){
     return {
-      title: "inspire Page",
+      title: "products Page",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "これはinspireページです。"
+          content: "productsページです。ポートフォリオ一覧ページです。"
         }
       ]
     };
+  },
+  data() {
+    return {
+      header: {
+        title: "products" //ヘッダータイトル
+      }
+    };
+  },
+  mounted() {
+    this.updateHeader(); //ヘッダータイトル
+  },
+  methods: {
+    updateHeader() {
+      //ヘッダータイトルとして使いたい情報を渡す
+      this.$nuxt.$emit("updateHeader", this.header.title);
+    }
   }
 };
 </script>

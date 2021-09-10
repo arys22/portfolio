@@ -8,6 +8,10 @@
       class="header"
       :class="{ 'header__scroll': scrollY > fvHeight }"
     >
+      <v-toolbar-title class="white--text" v-show="scrollY == 0|| scrollY < fvHeight">
+        <v-icon color="white">mdi-alpha-p-circle-outline</v-icon>
+        <h1 class="header__title text-h6">{{ title }}</h1>
+        </v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- pc -->
       <!-- plugins/constrants.jsのmenuItems -->
@@ -62,6 +66,10 @@ props: {
   scrollY: {
     type: Number,
     default: 0
+  },
+    title: {//ヘッダータイトル
+    type: String,
+    default: 'portforio'
   }
 },
 data() {
@@ -109,6 +117,9 @@ methods: {
     background-color: transparent !important;
   }
 
+  &__title{
+    display: inline-block;
+  }
   &__btn{
     position: relative;
   &::after{

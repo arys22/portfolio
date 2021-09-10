@@ -13,7 +13,7 @@
     :class="{invalid:rip}"
     >
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
-      <v-row class="fv__row">
+      <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
           <FvTitle ref="title" />
         </v-col>
@@ -122,6 +122,7 @@ export default {
   z-index: 1;
   &__row{
   z-index: 2;
+  position: relative;
   }
   &__wrap {
     padding: 4%;

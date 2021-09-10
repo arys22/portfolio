@@ -27,7 +27,7 @@
   justify-content: flex-start;
   position: absolute;
   left: 5%;
-  top: 60%;
+  bottom: -15px;
 }
 @media screen and(min-width: 960px) {
   .vue-typer{

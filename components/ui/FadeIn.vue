@@ -20,15 +20,9 @@ export default {
   },
   methods: {
     handleScroll() {
-      var top = this.$refs.fade.getBoundingClientRect().top;
-        // ブラウザの表示領域の左上を(0, 0)とする要素のtopまでの高さ
-        // ページが表示される高さwindow.innerHeight
-      if (!this.visible && top + 60 < window.innerHeight && top > 10) {
-        this.visible = true;
-        console.log("表示");
-      }else if (this.visible && top <= 0 || this.visible && top > window.innerHeight) {
-        this.visible = false;
-        console.log("非表示");
+      if (!this.visible) {
+        var top = this.$refs.fade.getBoundingClientRect().top;
+        this.visible = top + 100 < window.innerHeight;
       }
     }
   }
@@ -41,33 +35,22 @@ export default {
 }
 
 .hidden {
-  animation: fadeOut 1.5s;
   opacity: 0;
 }
 
 .fadein {
   opacity: 1;
-  animation: fadeIn 1.5s;
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(30vh) translateX(0px);
+    transform: translateY(50vh) translateX(0px);
   }
   100% {
     opacity: 1;
     transform: translate(0px, 0px);
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20vh) translateX(0px);
   }
 }
 </style>

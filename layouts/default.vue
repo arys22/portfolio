@@ -1,7 +1,9 @@
 <template>
   <v-app dark>
-      <Header :scrollY="scrollY"/>
+      <Header :scrollY="scrollY" :title="title"/>
     <v-main>
+      <!-- svg用 -->
+      <Svgs />
       <Nuxt />
     </v-main>
       <ReTop :scrollY="scrollY"/>
@@ -17,7 +19,11 @@ export default {
   data () {
     return {
       scrollY: 0,
+      title: '', //ヘッダータイトル
     }
+  },
+  created() {
+  this.setListener()//ヘッダータイトル
   },
   mounted() {
   // スクロール時 スクロール位置を取得
@@ -27,9 +33,15 @@ export default {
   },
   methods: {
   // スクロールを検知
-  onScroll() {
-    this.scrollY = window.scrollY || window.pageYOffset; // window.scrollY はIE11非対応
-  },
+    onScroll() {
+      this.scrollY = window.scrollY || window.pageYOffset; // window.scrollY はIE11非対応
+    },
+    setListener() {//ヘッダータイトル
+    // emitで発火させたイベント名にする
+    this.$nuxt.$on('updateHeader', data => {
+        this.title = data;
+      });
+    },
   },
 };
 </script>
