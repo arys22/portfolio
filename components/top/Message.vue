@@ -1,8 +1,11 @@
 <template>
-  <v-row justify="center" align="center" tag="section" class="ma-0 message">
+  <v-row justify="center" align="center" tag="section" class="message">
     <v-col cols="9" sm="5" md="4" class="message__wrap ">
       <v-card color="transparent" flat >
-        <v-card-title class="text-uppercase"><h2>message</h2></v-card-title>
+        <v-card-title class="text-uppercase">
+          <h2>message</h2>
+          <!-- ご挨拶 -->
+        </v-card-title>
         <v-card-text>
           本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文
         </v-card-text>
@@ -16,6 +19,7 @@
 
 <style lang="scss" scoped>
 .message {
+  margin-bottom: 100px;
   &__wrap {
     margin: 0 auto 0 0;
     align-self: start;

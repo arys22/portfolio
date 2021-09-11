@@ -2,10 +2,11 @@
   <div class="index">
     <TopFv />
     <Canvas class="canvas"/>
-      <Message id="scroll"/>
+    <!-- <Message id="scroll"/> -->
     <v-container fluid class="index__container">
+      <!-- <Skill/> -->
+      <Products/>
 
-      <Skill/>
       <v-row justify="center" align="center" tag="section" class="sss">
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
@@ -135,11 +136,10 @@ export default {
     transform: rotate(40deg);
   }
 
-.index{
-  &__container{
-  // 最後に適用保留
-  //   background-image: url("~@/assets/img/stone-back.jpg");
-  margin-top: 90px;
-  }
-}
+// .index{
+//   &__container{
+// //   // 最後に適用保留
+// //   //   background-image: url("~@/assets/img/stone-back.jpg");
+//   }
+// }
 </style>

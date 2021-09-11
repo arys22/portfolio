@@ -1,6 +1,7 @@
 <template>
-  <v-row justify="center" tag="section" align="center" class="ma-0 skill">
-    <h2 class="text-center text-uppercase my-2 font-weight-bold skill__theme">skill</h2>
+  <v-row justify="center" tag="section" align="center" class="skill">
+    <h2 class="text-center text-uppercase my-4 skill__theme">skill</h2>
+    <!-- Web技術 -->
     <v-col cols="12" sm="10" lg="8" >
       <v-row justify="center">
         <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
@@ -90,7 +91,13 @@
             </svg>
 
             <v-card-subtitle>Git・GitHub・Firebase 等</v-card-subtitle>
-            <v-card-text>本文</v-card-text>
+            <v-card-text>
+              <ul>
+                <li>RubyのRuby on Railsチュートリアルを1周程度</li>
+                <li></li>
+                <li></li>
+              </ul>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -101,6 +108,7 @@
 
 <style lang="scss" scoped>
 .skill {
+  margin-bottom: 100px;
   &__theme{
     width: 100%;
   }
