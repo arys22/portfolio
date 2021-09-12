@@ -15,19 +15,19 @@
       <v-spacer></v-spacer>
       <!-- pc -->
       <!-- plugins/constrants.jsのmenuItems -->
-      <v-toolbar-items class="hidden-xs-only">
-        <v-btn
-          color="white"
-          plain
-          :class="{ 'header__btn__scroll': scrollY > fvHeight }"
-          :to="item.path"
-          nuxt
-          exact
-          active-class="link-active"
-          class="header__btn text-md-subtitle-1"
-          v-for="(item, index) in $ITEMS.menuItems" :key="index">
-          {{item.name}}
-        </v-btn>
+      <v-toolbar-items class="hidden-xs-only" >
+          <v-btn
+            color="white"
+            plain
+            :class="{ 'header__btn__scroll': scrollY > fvHeight }"
+            :to="item.path"
+            nuxt
+            exact
+            active-class="link-active"
+            class="header__btn text-md-subtitle-1"
+            v-for="(item, index) in $ITEMS.menuItems" :key="index">
+            {{item.name}}
+          </v-btn>
       </v-toolbar-items>
 
       <!-- sp -->

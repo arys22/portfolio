@@ -66,7 +66,7 @@
               <use xlink:href="#nuxt" x="0" y="0"></use>
             </svg>
 
-            <v-card-subtitle>JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Vuelidate・Node.js・Nuxt.js</v-card-subtitle>
+            <v-card-subtitle>JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js</v-card-subtitle>
             <v-card-text>本文</v-card-text>
           </v-card>
         </v-col>

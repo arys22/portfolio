@@ -42,7 +42,7 @@ export default {
 
 .v-btn {
   background-color: #fefefe;
-  transition: background-color 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   &:hover {
     background-color: #ddd;
   }

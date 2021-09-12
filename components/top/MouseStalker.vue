@@ -4,6 +4,7 @@
       class="mouse__stalker"
       :class="{ up: mouseUp, down: mouseDown, hov: mouseHov }"
     ></div>
+    <div class="mouse__text">click!</div>
   </div>
 </template>
 
@@ -66,10 +67,10 @@ export default {
   opacity: 0;
   &__stalker {
     position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 20px;
-    height: 20px;
+    top: -12px;
+    left: -12px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     box-shadow: 0 0 2px #666;
     opacity: .5;
@@ -86,6 +87,11 @@ export default {
       // background-color: rgba($color: #000000, $alpha: .1);
       transition: all 0.5s ease-in-out;
     }
+  }
+  &__text{
+    opacity: .2;
+    position: absolute;
+    top: 12px;
   }
 }
 
