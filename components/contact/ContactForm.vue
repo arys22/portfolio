@@ -9,9 +9,9 @@
             <v-text-field
               v-model="form.name"
               label="お名前"
-              placeholder="10文字以内で入力してください"
+              placeholder="15文字以内で入力してください"
               autocomplete="name"
-              counter="10"
+              counter="15"
               :rules="[required, limit_length]"
               required
               clearable
@@ -90,7 +90,7 @@ export default {
       // !!は二重否定 undefinedをfalseにするため
       required: v => !!v || "必ず入力してください", // 入力必須の制約
       limit_length: v =>
-        (v && v.length <= 10) || "10文字以内で入力してください", // 文字数の制約
+        (v && v.length <= 15) || "15文字以内で入力してください", // 文字数の制約
       emailRules: v =>
         /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
           v
@@ -107,8 +107,9 @@ export default {
     check() {
       if (this.$refs.form.validate()) {
         // すべてのバリデーションが通過したときのみ
+          this.$router.push({path:'/confirm',query :{ name: this.form.name, email: this.form.email, content: this.form.content}});
         // 入力値を初期化する
-        this.$refs.form.reset();
+        // this.$refs.form.reset();
       } else {
         this.error = true;
       }

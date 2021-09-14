@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-      <ContactConfirm />
+      <Confirm />
   </v-container>
 </template>
 
@@ -22,8 +22,17 @@ export default {
   data(){
     return {
       header: {
-        title: '確認' //ヘッダータイトル
+        title: 'confirm' //内容確認ヘッダータイトル
       }
+    }
+  },
+  mounted() {
+  this.updateHeader() //ヘッダータイトル
+  },
+  methods: {
+    updateHeader() {
+      //ヘッダータイトルとして使いたい情報を渡す
+      this.$nuxt.$emit('updateHeader', this.header.title)
     }
   },
 }

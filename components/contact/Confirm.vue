@@ -1,0 +1,163 @@
+<template>
+  <v-row justify="center" tag="section" align="center" class="confirm">
+    <h2 class="text-center text-uppercase my-4 confirm__title">
+      お問い合わせ内容確認
+    </h2>
+    <v-col cols="12" sm="10" md="8" lg="6">
+      <v-card>
+        <p class="pa-4">
+          お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
+            class="font-weight-bold"
+            >「送信する」</span
+          >ボタンを押して下さい。
+        </p>
+        <v-form ref="vform">
+          <v-card-text>
+
+            <v-text-field
+              v-model="form.name"
+              label="お名前"
+              required
+              prepend-inner-icon="mdi-account"
+              name="name"
+              class="my-5"
+              readonly
+            ></v-text-field>
+
+            <v-text-field
+              v-model="form.email"
+              label="メールアドレス"
+              required
+              prepend-inner-icon="mdi-email"
+              name="email"
+              class="my-5"
+              readonly
+            ></v-text-field>
+
+            <v-textarea
+              v-model="form.content"
+              label="お問い合わせ内容"
+              class="mt-10"
+              outlined
+              counter
+              no-resize
+              rows="7"
+              required
+              auto-grow
+              prepend-inner-icon="mdi-comment"
+              readonly
+            ></v-textarea>
+          </v-card-text>
+          <v-card-actions class="confirm__actions">
+            <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
+              >戻る</v-btn
+            >
+            <v-btn
+              @click="submit"
+              x-large
+              plain
+              rounded
+              block
+              class="confirm__btn--submit"
+            >
+              送信する
+            </v-btn>
+          </v-card-actions>
+        </v-form>
+      </v-card>
+    </v-col>
+  </v-row>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      // 各テキストボックスの値
+      form: {
+        name: "",
+        email: "",
+        content: ""
+      }
+    };
+  },
+  created() {
+    this.setQuery();
+  },
+  methods: {
+    setQuery() {
+      //渡ってきたクエリパラメータをローカルなデータ代入
+      this.form.name = this.$route.query.name;
+      this.form.email = this.$route.query.email;
+      this.form.content = this.$route.query.content;
+    },
+    submit () {
+      this.$router.push({path:'/'});
+    },
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.confirm {
+  margin-bottom: 100px;
+  &__title {
+    width: 100%;
+  }
+  &__actions {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  &__btn {
+    &--back {
+      align-self: start;
+      box-shadow: 0px 1px 5px #b5b6b6, -5px -5px 5px #fff;
+      transition-duration: 0.2s;
+      &:hover {
+        box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
+      }
+    }
+    &--submit {
+      margin: 30px 0 52px;
+      box-shadow: 0px 5px 10px #ccc, -6px -6px 10px #fff;
+      transition-duration: 0.2s;
+      position: relative;
+      font-weight: bold;
+      background-color: #eee;
+      &::after {
+        content: "";
+        width: 11px;
+        height: 11px;
+        border-top: 4px solid #000000de;
+        border-right: 4px solid #000000de;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        opacity: 0.4;
+        transition: transform 0.3s ease-out;
+      }
+      &:hover {
+        box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
+        &::after {
+          transform: translateX(-2px) rotate(45deg);
+          opacity: 0.6;
+          animation: prompt 1.5s ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+@keyframes prompt {
+  0% {
+    transform: translateX(-1px) rotate(45deg);
+  }
+  50% {
+    transform: translateX(4px) rotate(45deg);
+  }
+  100% {
+    transform: translateX(-1px) rotate(45deg);
+  }
+}
+.v-card__actions > .v-btn.confirm__btn--submit {
+  padding-right: 23.1111111111px;
+}
+</style>
