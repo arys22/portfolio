@@ -4,7 +4,7 @@
       <!-- 制作実績一覧 -->
       <h2 class="text-center text-uppercase my-4">products</h2>
       <Carousel />
-      <Btn :url="url">詳細</Btn>
+      <Btn :url="url" class="my-13">詳細</Btn>
       <v-card class="products__card">
           <v-row class="mx-0">
             <v-col cols="12" sm="5">

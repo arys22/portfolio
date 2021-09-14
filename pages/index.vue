@@ -5,8 +5,8 @@
     <!-- <Message id="scroll"/> -->
     <v-container fluid class="index__container">
       <!-- <Skill/> -->
-      <!-- <Products/> -->
-      <!-- <ContactForm/>-->
+      <Products/>
+      <ContactForm/>
       <v-row justify="center" align="center" tag="section" class="sss" id="scroll">
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
@@ -89,6 +89,7 @@
           </v-card>
         </v-col>
       </v-row>
+      <!-- <PageLinks/> sm以上最後-->
     </v-container>
   </div>
 </template>

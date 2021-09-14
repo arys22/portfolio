@@ -48,35 +48,35 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
     &:nth-of-type(2) {
-      border: 1px solid #ccc;
+      border: 1px solid #eee;
       // animation-delay: 0.2s;
       transform: translate(-50%, -50%) scale(.8);
       animation: wave 1.6s ease-out 1;
     }
     &:nth-of-type(3) {
-      border: 1px solid #ccc;
+      border: 1px solid #eee;
       // animation-delay: 0.1s;
       transform: translate(-50%, -50%) scale(.5);
       animation: wave 3.2s ease-out 1;
     }
-    animation: wave .8s ease-out 1;
+    animation: wave .6s ease-out 1;
   }
 }
 @keyframes wave {
   from {
     width: 50px;
     height: 50px;
-    box-shadow: 0 0 30px inset #bbb;
+    box-shadow: 0 0 30px inset #ddd;
     opacity: 1;
   }
   to {
-    box-shadow: 0 0 30px inset #ddd;
+    box-shadow: 0 0 30px inset #eee;
     width: 220px;
     height: 220px;
     opacity: 0;

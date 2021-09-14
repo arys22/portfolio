@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="skill">
-    <h2 class="text-center text-uppercase my-4 skill__theme">skill</h2>
+    <h2 class="text-center text-uppercase my-4 skill__title">skill</h2>
     <!-- Web技術 -->
     <v-col cols="12" sm="10" lg="8" >
       <v-row justify="center">
@@ -109,7 +109,7 @@
 <style lang="scss" scoped>
 .skill {
   margin-bottom: 100px;
-  &__theme{
+  &__title{
     width: 100%;
   }
 }

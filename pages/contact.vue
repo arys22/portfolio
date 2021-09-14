@@ -1,10 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row justify="center" align="center">
-      <v-col cols="12" sm="8" md="6">
-
-      </v-col>
-    </v-row>
+      <ContactForm />
   </v-container>
 </template>
 
@@ -13,12 +9,12 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "products Page",
+      title: "contact Page",
       meta: [
         {
-          hid: "description",
+          hid: "description",//hidキー 個別ページ
           name: "description",
-          content: "contactページです。お問い合わせぺーじです。"
+          content: "contactページです。お問い合わせページです。"
         }
       ]
     };
