@@ -1,16 +1,19 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="confirm">
     <h2 class="text-center text-uppercase my-4 confirm__title">
-      お問い合わせ内容確認
+      <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon>お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
-        <p class="pa-4">
-          お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
-            class="font-weight-bold"
-            >「送信する」</span
-          >ボタンを押して下さい。
-        </p>
+        <div class="confirm__text pa-4">
+          <p>
+            お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
+              class="font-weight-bold"
+              >「送信する」</span
+            >ボタンを押して下さい。
+          </p>
+          <p><v-icon>mdi-alert-circle</v-icon><span class="confirm__caution font-weight-bold">下記のメールアドレスに返信しますので、今一度ご確認ください。</span><br />入力間違いがありますと返信できない場合がありますのでご注意ください。</p>
+        </div>
         <v-form ref="vform">
           <v-card-text>
 
@@ -32,6 +35,8 @@
               name="email"
               class="my-5"
               readonly
+              hint="ご確認ください。"
+              persistent-hint
             ></v-text-field>
 
             <v-textarea
@@ -59,6 +64,7 @@
               rounded
               block
               class="confirm__btn--submit"
+              type="submit"
             >
               送信する
             </v-btn>
@@ -92,7 +98,7 @@ export default {
       this.form.content = this.$route.query.content;
     },
     submit () {
-      this.$router.push({path:'/'});
+      this.$router.push({path:'/complete'});
     },
   }
 };
@@ -103,6 +109,10 @@ export default {
   margin-bottom: 100px;
   &__title {
     width: 100%;
+  }
+  &__text{
+    border: 2px solid #aaa;
+    border-radius: 4px;
   }
   &__actions {
     align-items: flex-end;

@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="skill">
-    <h2 class="text-center text-uppercase my-4 skill__title">skill</h2>
+    <h2 class="text-center text-uppercase my-4 skill__title"><v-icon class="mr-1" color="black">mdi-tools</v-icon>skill</h2>
     <!-- Web技術 -->
     <v-col cols="12" sm="10" lg="8" >
       <v-row justify="center">

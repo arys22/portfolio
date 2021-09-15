@@ -14,7 +14,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "contactの確認ページです。お問い合わせの確認ページです。"
+          content: "お問い合わせの確認ページです。"
         }
       ]
     };

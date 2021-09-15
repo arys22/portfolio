@@ -63,7 +63,7 @@ export default {
   // mix-blend-mode: difference;
   transform: translate(0, 0);
   transition: transform 0.5s cubic-bezier(0, 0, 0.52, 1.13),
-    opacity 0.2s ease-in-out 0.2s;
+  opacity 0.2s ease-in-out 0.2s;
   opacity: 0;
   &__stalker {
     position: absolute;
@@ -75,9 +75,7 @@ export default {
     box-shadow: 0 0 2px #666;
     opacity: .5;
     // background: rgba($color: #111, $alpha: 0.5);
-    // 内側の要素が常に真ん中に来る
-    // flex-shrink: 0 ;
-    transition: all 0.5s ease-in-out ;
+    transition: all .3s ease-in-out ,background-color .3s ease .5s;
     &.hov {
       top: -50px;
       left: -50px;
@@ -96,21 +94,19 @@ export default {
 }
 
 .down {
-  transform: scale(0.9);
+  transform: scale(1.3);
 }
 .up {
   animation: shrink 0.5s ease-out 1;
 }
 @keyframes shrink {
   from {
-    transform: scale(0.8);
-    box-shadow: 0 0 25px inset #aaa;
-    opacity: 1;
+    transform: scale(0.7);
+    box-shadow: 0 0 25px inset #888;
   }
   to {
-    transform: scale(0.2);
-    box-shadow: 0 0 20px inset #fdfdfd;
-    opacity: 0;
+    transform: scale(1);
+    box-shadow: 0 0 5px inset #ddd;
   }
 }
 </style>

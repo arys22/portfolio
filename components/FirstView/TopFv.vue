@@ -10,8 +10,9 @@
     @mouseleave ="mouse = false"
     @mousedown="mouseUp = false,mouseDown = true"
     @mouseup="mouseUpChange"
-    :class="{invalid:rip}"
     >
+    <!-- 連打防止 追加上
+    :class="{invalid:rip}" -->
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
       <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
@@ -136,9 +137,9 @@ export default {
   }
 }
 // 連打防止
-.invalid{
-  pointer-events: none;
-}
+// .invalid{
+//   pointer-events: none;
+// }
 
 .show{
 opacity: 1;

@@ -56,13 +56,13 @@ export default {
     &:nth-of-type(2) {
       border: 1px solid #eee;
       // animation-delay: 0.2s;
-      transform: translate(-50%, -50%) scale(.8);
+      transform: translate(-50%, -50%) scale(.7);
       animation: wave 1.6s ease-out 1;
     }
     &:nth-of-type(3) {
       border: 1px solid #eee;
       // animation-delay: 0.1s;
-      transform: translate(-50%, -50%) scale(.5);
+      transform: translate(-50%, -50%) scale(.4);
       animation: wave 3.2s ease-out 1;
     }
     animation: wave .6s ease-out 1;
@@ -77,8 +77,8 @@ export default {
   }
   to {
     box-shadow: 0 0 30px inset #eee;
-    width: 220px;
-    height: 220px;
+    width: 330px;
+    height: 330px;
     opacity: 0;
   }
 }

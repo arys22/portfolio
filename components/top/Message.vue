@@ -3,7 +3,7 @@
     <v-col cols="9" sm="5" md="4" class="message__wrap ">
       <v-card color="transparent" flat >
         <v-card-title class="text-uppercase">
-          <h2>message</h2>
+          <h2><v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon>message</h2>
           <!-- ご挨拶 -->
         </v-card-title>
         <v-card-text>

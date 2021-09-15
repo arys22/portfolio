@@ -2,7 +2,7 @@
   <v-row justify="center" tag="section" align="center" class="products">
     <v-col cols="12" sm="10" lg="8">
       <!-- 制作実績一覧 -->
-      <h2 class="text-center text-uppercase my-4">products</h2>
+      <h2 class="text-center text-uppercase my-4"><v-icon class="mr-1" color="black">mdi-view-list</v-icon>products</h2>
       <Carousel />
       <Btn :url="url" class="my-13">詳細</Btn>
       <v-card class="products__card">
