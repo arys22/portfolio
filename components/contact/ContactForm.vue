@@ -64,7 +64,7 @@
               >全て削除</v-btn
             >
             <v-btn @click="check" x-large plain rounded block class="contact__btn--check">
-              確認画面
+              入力内容確認画面
             </v-btn>
           </v-card-actions>
         </v-form>

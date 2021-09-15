@@ -1,6 +1,7 @@
 <template>
   <v-container fluid>
-      <Confirm />
+    <StepBar />
+    <Confirm />
   </v-container>
 </template>
 
@@ -19,21 +20,21 @@ export default {
       ]
     };
   },
-  data(){
+  data() {
     return {
       header: {
-        title: 'confirm' //内容確認ヘッダータイトル
+        title: "confirm" //内容確認ヘッダータイトル
       }
-    }
+    };
   },
   mounted() {
-  this.updateHeader() //ヘッダータイトル
+    this.updateHeader(); //ヘッダータイトル
   },
   methods: {
     updateHeader() {
       //ヘッダータイトルとして使いたい情報を渡す
-      this.$nuxt.$emit('updateHeader', this.header.title)
+      this.$nuxt.$emit("updateHeader", this.header.title);
     }
-  },
-}
-  </script>
+  }
+};
+</script>

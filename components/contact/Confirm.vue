@@ -1,7 +1,13 @@
 <template>
-  <v-row justify="center" tag="section" align="center" class="confirm">
+  <v-row
+    justify="center"
+    tag="section"
+    align="center"
+    class="confirm"
+  >
     <h2 class="text-center text-uppercase my-4 confirm__title">
-      <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon>お問い合わせ内容確認
+      <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon
+      >お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
@@ -12,12 +18,17 @@
               >「送信する」</span
             >ボタンを押して下さい。
           </p>
-          <p><v-icon>mdi-alert-circle</v-icon><span class="confirm__caution font-weight-bold">下記のメールアドレスに返信しますので、今一度ご確認ください。</span><br />入力間違いがありますと返信できない場合がありますのでご注意ください。</p>
+          <p>
+            <v-icon>mdi-alert-circle</v-icon
+            ><span class="confirm__caution font-weight-bold"
+              >下記のメールアドレスに返信しますので、今一度ご確認ください。</span
+            ><br />入力間違いがありますと返信できない場合がありますのでご注意ください。
+          </p>
         </div>
-        <v-form ref="vform">
+        <v-form ref="vform" id="postForm">
           <v-card-text>
-
             <v-text-field
+              :rules="[required, limit_length]"
               v-model="form.name"
               label="お名前"
               required
@@ -28,6 +39,7 @@
             ></v-text-field>
 
             <v-text-field
+              :rules="[required, emailRules]"
               v-model="form.email"
               label="メールアドレス"
               required
@@ -40,6 +52,7 @@
             ></v-text-field>
 
             <v-textarea
+              :rules="[required]"
               v-model="form.content"
               label="お問い合わせ内容"
               class="mt-10"
@@ -57,15 +70,18 @@
             <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
               >戻る</v-btn
             >
+            <!-- ローディング -->
             <v-btn
+              :loading="loading"
+              :disabled="loading"
               @click="submit"
               x-large
               plain
               rounded
               block
               class="confirm__btn--submit"
-              type="submit"
             >
+              <!-- type="submit" -->
               送信する
             </v-btn>
           </v-card-actions>
@@ -79,12 +95,22 @@
 export default {
   data() {
     return {
+      //ローディング
+      loading: false,
       // 各テキストボックスの値
       form: {
         name: "",
         email: "",
         content: ""
-      }
+      },
+      // path直接書きで確認画面にこれるので空メール阻止のためのバリテーション
+      required: v => !!v || "必ず入力してください",
+      limit_length: v =>
+        (v && v.length <= 15) || "15文字以内で入力してください",
+      emailRules: v =>
+        /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
+          v
+        ) || "有効なアドレスを入力してください",
     };
   },
   created() {
@@ -97,9 +123,19 @@ export default {
       this.form.email = this.$route.query.email;
       this.form.content = this.$route.query.content;
     },
-    submit () {
-      this.$router.push({path:'/complete'});
-    },
+    submit() {
+      if (this.$refs.vform.validate()) {// すべてのバリデーションが通過したときのみ
+      let form = document.getElementById("postForm");
+      form.addEventListener("submit",evt => {//ローディング
+          this.loading = true;
+        },false);
+
+      this.$router.push({ path: "/complete" });
+      // this.$refs.vform.reset();
+      }else{
+        this.$router.go(-1);;
+      }
+    }
   }
 };
 </script>
@@ -110,7 +146,7 @@ export default {
   &__title {
     width: 100%;
   }
-  &__text{
+  &__text {
     border: 2px solid #aaa;
     border-radius: 4px;
   }

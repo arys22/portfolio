@@ -1,13 +1,19 @@
 <template>
 <v-container fluid>
+  <StepBar/>
   <v-row justify="center" tag="section" align="center" class="conmp">
     <h2 class="text-center text-uppercase my-4 conmp__title">
-      <v-icon class="mr-1" color="black">mdi-email-send-outline</v-icon>お問い合わせ送信完了    
+      <v-icon class="mr-1" color="black">mdi-email-send-outline</v-icon>お問い合わせ送信完了
     </h2>
+    <!-- mdi-email-outline -->
+    <!-- mdi-email-send-outline -->
+    <!-- mdi-email-open-outline -->
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
         <v-card-title>お問い合わせありがとうございました。</v-card-title>
-        <!-- <v-card-subtitle>サブタイトル</v-card-subtitle> -->
+            <svg viewBox="0 0 299.803 190.481" class="conmp__svg">
+              <use xlink:href="#illustrationEmail" x="0" y="0"></use>
+            </svg>
         <v-card-text class="conmp__text">
           <p>
             ご入力いただいたメールアドレス宛に返信いたします。
@@ -61,6 +67,11 @@ export default {
   // margin-bottom: 100px;
   &__title {
     width: 100%;
+  }
+  &__svg{
+    display: block;
+    margin: 0 auto;
+    width: 25%;
   }
 }
 </style>

@@ -75,7 +75,7 @@ export default {
     box-shadow: 0 0 2px #666;
     opacity: .5;
     // background: rgba($color: #111, $alpha: 0.5);
-    transition: all .3s ease-in-out ,background-color .3s ease .5s;
+    transition: all .3s ease-in-out ;
     &.hov {
       top: -50px;
       left: -50px;
@@ -97,12 +97,12 @@ export default {
   transform: scale(1.3);
 }
 .up {
-  animation: shrink 0.5s ease-out 1;
+  animation: shrink 0.3s ease-out 1;
 }
 @keyframes shrink {
   from {
     transform: scale(0.7);
-    box-shadow: 0 0 25px inset #888;
+    box-shadow: 0 0 25px inset #555;
   }
   to {
     transform: scale(1);

@@ -1,6 +1,7 @@
 <template>
   <v-container fluid>
-      <ContactForm />
+    <StepBar />
+    <ContactForm />
   </v-container>
 </template>
 
@@ -12,28 +13,28 @@ export default {
       title: "contact Page",
       meta: [
         {
-          hid: "description",//hidキー 個別ページ
+          hid: "description", //hidキー 個別ページ
           name: "description",
           content: "contactページです。お問い合わせページです。"
         }
       ]
     };
   },
-  data(){
+  data() {
     return {
       header: {
-        title: 'contact' //ヘッダータイトル
+        title: "contact" //ヘッダータイトル
       }
-    }
+    };
   },
   mounted() {
-    this.updateHeader() //ヘッダータイトル
+    this.updateHeader(); //ヘッダータイトル
   },
   methods: {
     updateHeader() {
       //ヘッダータイトルとして使いたい情報を渡す
-      this.$nuxt.$emit('updateHeader', this.header.title)
+      this.$nuxt.$emit("updateHeader", this.header.title);
     }
-  },
-}
+  }
+};
 </script>

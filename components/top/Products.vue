@@ -17,12 +17,13 @@
               <ul>
                 <li>レスポンシブ(モバイルファースト)</li>
                 <li>シンプルなデザインを心がけました。</li>
-                <li>アクションを工夫しました。</li>
+                <li>fvアクションを工夫しました。</li>
+                <li>フォームはgoogleフォームと連携(入力チェック/確認/完了ページ)</li>
                 <li>新たに学んだこと(コード)
                   <ul>
                     <li>iOSでの100vh</li>
                     <li>canvas</li>
-                    <li>svg(symbol→use)</li>
+                    <li>symbol→use</li>
                     <li>Firebaseでの公開 など</li>
                   </ul>
                 </li>
