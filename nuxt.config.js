@@ -92,4 +92,6 @@ export default {
     cache: true, //<-追加
     hardSource: true //<-追加
   }
+
+  
 };

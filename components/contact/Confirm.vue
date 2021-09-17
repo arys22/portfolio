@@ -104,6 +104,7 @@ export default {
         content: ""
       },
       // path直接書きで確認画面にこれるので空メール阻止のためのバリテーション
+      // router.jsでナビゲーションガードも設定している
       required: v => !!v || "必ず入力してください",
       limit_length: v =>
         (v && v.length <= 15) || "15文字以内で入力してください",
@@ -133,10 +134,10 @@ export default {
       this.$router.push({ path: "/complete" });
       // this.$refs.vform.reset();
       }else{
-        this.$router.go(-1);;
+        this.$router.go(-1);
       }
     }
-  }
+  },
 };
 </script>
 

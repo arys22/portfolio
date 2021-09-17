@@ -5,7 +5,7 @@
     <!-- <Message id="scroll"/> -->
     <v-container fluid class="index__container">
       <!-- <Skill/> -->
-      <Products/>
+      <!-- <Products/> -->
       <ContactForm/>
       <v-row justify="center" align="center" tag="section" class="sss" id="scroll">
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->

@@ -24,6 +24,7 @@
                     <li>iOSでの100vh</li>
                     <li>canvas</li>
                     <li>symbol→use</li>
+                    <li>ナビゲーションガード</li>
                     <li>Firebaseでの公開 など</li>
                   </ul>
                 </li>

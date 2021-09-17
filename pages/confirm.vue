@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  middleware: 'authConfirm',
   // metaタグ設定
   head() {
     return {
