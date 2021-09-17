@@ -63,9 +63,7 @@
             <v-btn @click="reset" plain class="contact__btn--reset"
               >全て削除</v-btn
             >
-            <v-btn @click="check" x-large plain rounded block class="contact__btn--check">
-              入力内容確認画面
-            </v-btn>
+            <Btn @click.native="check" class="my-13 pr-6" >入力内容確認画面</Btn>
           </v-card-actions>
         </v-form>
       </v-card>
@@ -122,6 +120,7 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
+  margin-bottom: 100px;
   &__title {
     width: 100%;
   }
@@ -145,31 +144,6 @@ export default {
         box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
       }
     }
-    &--check {
-      margin: 30px 0 52px;
-      box-shadow: 0px 6px 14px #b5b6b6, -6px -6px 14px #fff;
-      transition-duration: 0.2s;
-      position: relative;
-      &::after {
-        content: "";
-        width: 11px;
-        height: 11px;
-        border-top: 4px solid #000000de;
-        border-right: 4px solid #000000de;
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        opacity: 0.4;
-        transition: transform 0.3s ease-out;
-      }
-      &:hover {
-        box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
-        &::after {
-          transform: translateX(-2px) rotate(45deg);
-          opacity: 0.6;
-          animation: prompt 1.5s ease-in-out infinite;
-        }
-      }
-    }
   }
 }
 @keyframes prompt {
@@ -182,8 +156,5 @@ export default {
   100% {
     transform: translateX(-1px) rotate(45deg);
   }
-}
-.v-card__actions > .v-btn.contact__btn--check{
-  padding-right: 23.1111111111px;
 }
 </style>

@@ -1,11 +1,19 @@
 <template>
- <transition name="in">
-  <v-sheet class="d-flex links" tag="nav" elevation="2">
-    <v-btn icon small fab @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
-      v-show="scrollY > 500" class="my-1" v-for="(link, index) in links" :key="index" >
-      <v-icon>{{ link.icon }}</v-icon>
-    </v-btn>
-  </v-sheet>
+  <transition name="in">
+    <v-sheet class="d-flex links" tag="nav" elevation="2">
+      <v-btn
+        icon
+        small
+        fab
+        @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
+        v-show="scrollY > 500"
+        class="my-1"
+        v-for="(link, index) in links"
+        :key="index"
+      >
+        <v-icon>{{ link.icon }}</v-icon>
+      </v-btn>
+    </v-sheet>
   </transition>
 </template>
 
@@ -14,11 +22,11 @@ export default {
   data() {
     return {
       links: [
-        { name: "message", icon: "mdi-email-outline" },
-        { name: "skill", icon: "mdi-email-outline" },
-        { name: "products", icon: "mdi-email-outline" },
-        { name: "contact", icon: "mdi-email-outline" },
-        ]
+        { name: "message", icon: "mdi-file-document-outline" },
+        { name: "skill", icon: "mdi-tools" },
+        { name: "products", icon: "mdi-view-list" },
+        { name: "contact", icon: "mdi-email-outline" }
+      ]
     };
   }
 };
@@ -34,7 +42,7 @@ export default {
   opacity: 0;
   transform: translateX(-70px);
 }
-.links{
+.links {
   flex-direction: column;
   width: 40px;
   position: fixed;

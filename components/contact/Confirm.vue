@@ -143,7 +143,7 @@ export default {
 
 <style lang="scss" scoped>
 .confirm {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   &__title {
     width: 100%;
   }

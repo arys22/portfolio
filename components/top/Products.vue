@@ -4,7 +4,7 @@
       <!-- 制作実績一覧 -->
       <h2 class="text-center text-uppercase my-4"><v-icon class="mr-1" color="black">mdi-view-list</v-icon>products</h2>
       <Carousel />
-      <Btn :url="url" class="my-13">詳細</Btn>
+      <Btn  @click.native="transition" class="my-13">詳細</Btn>
       <v-card class="products__card">
           <v-row class="mx-0">
             <v-col cols="12" sm="5">
@@ -40,11 +40,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      url: "/products"
-    };
-  }
+  methods: {
+    transition(){
+      this.$router.push({path:'/products'});
+    }
+  },
 };
 </script>
 

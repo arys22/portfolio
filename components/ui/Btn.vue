@@ -1,17 +1,11 @@
 <template>
-  <v-btn nuxt exact :to="url" class="btn__box" x-large rounded plain block>
+  <v-btn  class="btn__box" x-large rounded plain block>
     <slot></slot>
   </v-btn>
 </template>
 
 <script>
 export default {
-  props: {
-    url: {
-      type: String,
-      required: true
-    }
-  }
 };
 </script>
 

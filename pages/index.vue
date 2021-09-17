@@ -2,12 +2,12 @@
   <div class="index">
     <TopFv />
     <Canvas class="canvas"/>
-    <!-- <Message id="scroll"/> -->
-    <v-container fluid class="index__container">
-      <!-- <Skill/> -->
-      <!-- <Products/> -->
-      <ContactForm/>
-      <v-row justify="center" align="center" tag="section" class="sss" id="scroll">
+    <!-- <Message id="message"/> -->
+    <v-container fluid class="index__container" id="scroll">
+      <!-- <Skill id="skill"/> -->
+      <Products id="products"/>
+      <ContactForm id="contact"/>
+      <v-row justify="center" align="center" tag="section" class="sss" >
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
           <v-card class="logo py-4 d-flex justify-center" >
