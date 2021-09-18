@@ -3,10 +3,11 @@
     <TopFv />
     <Canvas class="canvas"/>
     <!-- <Message id="message"/> -->
-    <v-container fluid class="index__container" id="scroll">
+    <v-container fluid class="index__container">
       <!-- <Skill id="skill"/> -->
-      <Products id="products"/>
+      <!-- <Products id="products"/> -->
       <ContactForm id="contact"/>
+      <!-- <PageLinks/>  -->
       <v-row justify="center" align="center" tag="section" class="sss" >
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
@@ -89,7 +90,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <!-- <PageLinks/> sm以上最後-->
+
     </v-container>
   </div>
 </template>

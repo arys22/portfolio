@@ -1,13 +1,13 @@
 <template>
   <transition name="in">
-    <v-sheet class="d-flex links" tag="nav" elevation="2">
+    <v-sheet class="links d-none d-sm-flex" tag="nav" elevation="2" >
+      <!-- v-show="scrollY > 500" -->
       <v-btn
         icon
         small
         fab
-        @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
-        v-show="scrollY > 500"
-        class="my-1"
+        @click="$vuetify.goTo(`#${link.name}`, { duration: 1000, easing: 'easeOutCubic' })"
+        class="my-2"
         v-for="(link, index) in links"
         :key="index"
       >
@@ -46,8 +46,8 @@ export default {
   flex-direction: column;
   width: 40px;
   position: fixed;
-  bottom: 100px;
-  right: 20px;
+  bottom: 80px;
+  right: 8px;
   border-radius: 20px;
 }
 .v-btn {

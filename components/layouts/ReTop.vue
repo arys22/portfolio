@@ -8,7 +8,7 @@
       right
       icon
       elevation="2"
-      class="mb-4 mr-1"
+      class="mb-4 mr-n2"
       small
       fab
     >

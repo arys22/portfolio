@@ -10,13 +10,14 @@
     <!-- mdi-email-open-outline -->
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
-        <v-card-title>お問い合わせありがとうございました。</v-card-title>
+        <v-card-title class="justify-center">お問い合わせありがとうございました。</v-card-title>
             <svg viewBox="0 0 299.803 190.481" class="conmp__svg">
               <use xlink:href="#illustrationEmail" x="0" y="0"></use>
             </svg>
         <v-card-text class="conmp__text">
-          <p>
-            ご入力いただいたメールアドレス宛に返信いたします。
+          <p class="font-weight-bold">
+            <v-icon color="#ff1493">mdi-alert-circle</v-icon>
+            ご入力いただいたメールアドレス宛てに受付完了のメールを自動で送信いたしましたのでご確認ください。
           </p>
           <p>
             万一、返信メールが届かない場合は、送信トラブル等の可能性もありますので、大変お手数ではございますが、もう一度フォームよりお問い合わせお願いいたします。

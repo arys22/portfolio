@@ -1,10 +1,5 @@
 <template>
-  <v-row
-    justify="center"
-    tag="section"
-    align="center"
-    class="confirm"
-  >
+  <v-row justify="center" tag="section" align="center" class="confirm">
     <h2 class="text-center text-uppercase my-4 confirm__title">
       <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon
       >お問い合わせ内容確認
@@ -19,38 +14,44 @@
             >ボタンを押して下さい。
           </p>
           <p>
-            <v-icon>mdi-alert-circle</v-icon
+            <v-icon color="#ff1493">mdi-alert-circle</v-icon
             ><span class="confirm__caution font-weight-bold"
               >下記のメールアドレスに返信しますので、今一度ご確認ください。</span
             ><br />入力間違いがありますと返信できない場合がありますのでご注意ください。
           </p>
         </div>
-        <v-form ref="vform" id="postForm">
+        <!-- googleフォームと連携 action=”url” target="dummy" 追加 -->
+        <v-form
+          ref="vform"
+          target="dummy"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScq1mh70mKQJLgpWVyoZ3-XIGydpZJchbYsblUgKhzIeo2uAw/formResponse"
+        >
           <v-card-text>
+            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
             <v-text-field
               :rules="[required, limit_length]"
               v-model="form.name"
               label="お名前"
               required
               prepend-inner-icon="mdi-account"
-              name="name"
               class="my-5"
               readonly
+              name="entry.1210533588"
             ></v-text-field>
-
+            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
             <v-text-field
               :rules="[required, emailRules]"
               v-model="form.email"
               label="メールアドレス"
               required
               prepend-inner-icon="mdi-email"
-              name="email"
+              name="entry.369018561"
               class="my-5"
               readonly
               hint="ご確認ください。"
               persistent-hint
             ></v-text-field>
-
+            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
             <v-textarea
               :rules="[required]"
               v-model="form.content"
@@ -64,29 +65,29 @@
               auto-grow
               prepend-inner-icon="mdi-comment"
               readonly
+              name="entry.1655379305"
             ></v-textarea>
           </v-card-text>
           <v-card-actions class="confirm__actions">
             <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
               >戻る</v-btn
             >
-            <!-- ローディング -->
             <v-btn
-              :loading="loading"
-              :disabled="loading"
               @click="submit"
               x-large
               plain
               rounded
               block
               class="confirm__btn--submit"
+              type="submit"
             >
-              <!-- type="submit" -->
               送信する
             </v-btn>
           </v-card-actions>
         </v-form>
       </v-card>
+      <!-- iframeタグを追加 target="dummy"-->
+      <iframe name="dummy" style="display:none;"></iframe>
     </v-col>
   </v-row>
 </template>
@@ -95,8 +96,6 @@
 export default {
   data() {
     return {
-      //ローディング
-      loading: false,
       // 各テキストボックスの値
       form: {
         name: "",
@@ -111,7 +110,7 @@ export default {
       emailRules: v =>
         /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
           v
-        ) || "有効なアドレスを入力してください",
+        ) || "有効なアドレスを入力してください"
     };
   },
   created() {
@@ -125,19 +124,15 @@ export default {
       this.form.content = this.$route.query.content;
     },
     submit() {
-      if (this.$refs.vform.validate()) {// すべてのバリデーションが通過したときのみ
-      let form = document.getElementById("postForm");
-      form.addEventListener("submit",evt => {//ローディング
-          this.loading = true;
-        },false);
-
-      this.$router.push({ path: "/complete" });
-      // this.$refs.vform.reset();
-      }else{
+      if (this.$refs.vform.validate()) {
+        // すべてのバリデーションが通過したときのみ
+        this.$router.push({ path: "/complete" });
+        // this.$refs.vform.reset();
+      } else {
         this.$router.go(-1);
       }
     }
-  },
+  }
 };
 </script>
 

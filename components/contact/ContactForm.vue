@@ -6,6 +6,10 @@
         <v-form ref="form">
           <v-card-text>
             <p>お気軽にご連絡ください。</p>
+            <p>
+              自動で受付完了メールを送信いたします。<br>
+              <span class="contact__comment">※メールが届かない場合は、ご入力のメールアドレス違いや迷惑メール対策設定などをご確認のうえ、再度、お問い合わせをお願いいたします。</span>
+            </p>
             <v-text-field
               v-model="form.name"
               label="お名前"
@@ -65,6 +69,7 @@
             >
             <Btn @click.native="check" class="my-13 pr-6" >入力内容確認画面</Btn>
           </v-card-actions>
+
         </v-form>
       </v-card>
     </v-col>
@@ -123,6 +128,9 @@ export default {
   margin-bottom: 100px;
   &__title {
     width: 100%;
+  }
+  &__comment{
+    font-size: .7rem;
   }
   &__error {
     transition: all 0.3s ease;

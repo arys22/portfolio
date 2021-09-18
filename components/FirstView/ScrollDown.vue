@@ -10,7 +10,7 @@
       :ripple="false"
       v-show="show"
       @click.stop="
-        $vuetify.goTo('#scroll', {
+        $vuetify.goTo('#message', {
           duration: 800,
           easing: 'easeOutCubic',
           offset: -45
