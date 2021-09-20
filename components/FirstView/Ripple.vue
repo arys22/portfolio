@@ -15,13 +15,16 @@
 export default {
   props: {
     mouseX: {
-      type: Number
+      type: Number,
+      default:0,
     },
     mouseY: {
-      type: Number
+      type: Number,
+      default:0,
     },
     rip: {
-      type: Boolean
+      type: Boolean,
+      default:false,
     }
   },
   methods: {

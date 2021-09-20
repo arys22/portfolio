@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="confirm">
-    <h2 class="text-center text-uppercase my-4 confirm__title">
+    <h2 class="text-center  my-4 confirm__title">
       <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon
       >お問い合わせ内容確認
     </h2>
@@ -127,7 +127,6 @@ export default {
       if (this.$refs.vform.validate()) {
         // すべてのバリデーションが通過したときのみ
         this.$router.push({ path: "/complete" });
-        // this.$refs.vform.reset();
       } else {
         this.$router.go(-1);
       }

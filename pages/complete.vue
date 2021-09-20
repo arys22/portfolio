@@ -2,7 +2,7 @@
 <v-container fluid>
   <StepBar/>
   <v-row justify="center" tag="section" align="center" class="conmp">
-    <h2 class="text-center text-uppercase my-4 conmp__title">
+    <h2 class="text-center  my-4 conmp__title">
       <v-icon class="mr-1" color="black">mdi-email-send-outline</v-icon>お問い合わせ送信完了
     </h2>
     <!-- mdi-email-outline -->

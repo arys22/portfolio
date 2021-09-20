@@ -6,7 +6,7 @@
       <Svgs />
       <Nuxt />
     </v-main>
-      <ReTop :scrollY="scrollY"/>
+      <BackTop :scrollY="scrollY"/>
       <BottomNavigation :scrollY="scrollY"/>
     <v-footer absolute class="text-center" padless color="#f5f5f5">
       <v-col class="font-weight-medium text-center py-0" cols="12">&copy; <small>{{ new Date().getFullYear() }} portfolio</small></v-col>

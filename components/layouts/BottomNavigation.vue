@@ -2,7 +2,7 @@
     <v-bottom-navigation fixed light grow color="black" active-class="font-weight-bold black-text body-2" class="text--second btn-nav"  v-model="value" :background-color="backgroundColor"  :class="{'btn-nav__scroll': hide}">
 
       <v-btn v-for="(item, index) in $ITEMS.menuItems" :key="index" :to="item.path" height="100%" exact text exact-active-class="v-btn__active">
-          <span>{{ item.name }}</span>
+          <span class="text-uppercase">{{ item.name }}</span>
           <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
@@ -64,7 +64,6 @@ export default {
   }
 }
 
-
 // アイコン
 .v-btn .v-icon{
   transition:transform .3s ease-out;
@@ -75,4 +74,5 @@ export default {
   font-size: 1.8rem;
   margin-bottom: 3px;
 }
+
 </style>

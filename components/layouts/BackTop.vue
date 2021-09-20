@@ -1,6 +1,9 @@
 <template>
+    <v-tooltip left color="grey" transition="slide-x-reverse-transition" open-delay="300">
+        <template v-slot:activator="{ on }">
   <transition name="fade">
     <v-btn
+      v-on="on"
       @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
       v-show="scrollY > 500"
       fixed
@@ -15,6 +18,9 @@
       <v-icon>mdi-chevron-up</v-icon>
     </v-btn>
   </transition>
+    </template>
+      <span class="text-capitalize">top</span>
+      </v-tooltip>
 </template>
 
 <script>
@@ -41,13 +47,12 @@ export default {
 }
 
 .v-btn {
-  background-color: #fefefe;
+  background-color: transparent;
   transition: all 0.5s ease-in-out;
   &:hover {
     background-color: #ddd;
   }
   &:hover > &__content .v-icon {
-    // transform: translateY(-2px);
     color: #fff;
     animation: updown 1.5s ease infinite;
   }

@@ -13,7 +13,8 @@
     >
     <!-- 連打防止 追加上
     :class="{invalid:rip}" -->
-        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}"/>
+        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}" />
+        <!-- v-show="mouseY < fvHeight" -->
       <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
           <FvTitle ref="title" />
@@ -48,6 +49,10 @@ export default {
       // 波紋
       rip: false,
     };
+  },
+  created() {//PageLinksのマウスホバー時のマウスストーカーイベント
+    this.$nuxt.$on('mouseEnter', this.onNav);
+    this.$nuxt.$on('mouseLeave', this.offNav);
   },
   mounted() {
     this.dom = this.$refs.fv; //fv取得
@@ -101,6 +106,14 @@ export default {
       this.mouseUp = true;
       this.mouseDown = false;
       this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
+    },
+    onNav(){//PageLinksのマウスホバー時
+      this.mouseHov = true;
+      this.mouse = true;
+    },
+    offNav(){//PageLinksのマウスホバー時
+    this.mouseHov = false;
+    this.mouse = false;
     },
   }
 };

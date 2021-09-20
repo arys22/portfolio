@@ -18,19 +18,24 @@ export default {
   },
   props: {
     mouseX: {
-      type: Number
+      type: Number,
+      default:0,
     },
     mouseY: {
-      type: Number
+      type: Number,
+      default: 0,
     },
     mouseDown: {
-      type: Boolean
+      type: Boolean,
+      default:false,
     },
     mouseUp: {
-      type: Boolean
+      type: Boolean,
+      default:false,
     },
     mouseHov: {
-      type: Boolean
+      type: Boolean,
+      default:false,
     }
   },
   methods: {
@@ -73,16 +78,15 @@ export default {
     height: 24px;
     border-radius: 50%;
     box-shadow: 0 0 2px #666;
-    opacity: .5;
-    // background: rgba($color: #111, $alpha: 0.5);
+    opacity: .6;
     transition: all .3s ease-in-out ;
     &.hov {
       top: -50px;
       left: -50px;
       width: 100px;
       height: 100px;
-      opacity: 0.2;
-      // background-color: rgba($color: #000000, $alpha: .1);
+      opacity: .3;
+      box-shadow: 0 0 5px #000;
       transition: all 0.5s ease-in-out;
     }
   }

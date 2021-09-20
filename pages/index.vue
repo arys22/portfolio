@@ -1,17 +1,17 @@
 <template>
   <div class="index">
     <TopFv />
-    <Canvas class="canvas"/>
+    <Canvas class="canvas" />
     <!-- <Message id="message"/> -->
     <v-container fluid class="index__container">
       <!-- <Skill id="skill"/> -->
       <!-- <Products id="products"/> -->
-      <ContactForm id="contact"/>
-      <!-- <PageLinks/>  -->
-      <v-row justify="center" align="center" tag="section" class="sss" >
+      <ContactForm id="contact" />
+      <PageLinks/>
+      <v-row justify="center" align="center" tag="section" class="sss">
         <!-- <v-col cols="12" sm="10" lg="8" ></v-col> -->
         <v-col cols="12" sm="8" md="6">
-          <v-card class="logo py-4 d-flex justify-center" >
+          <v-card class="logo py-4 d-flex justify-center">
             <NuxtLogo />
             <VuetifyLogo />
           </v-card>
@@ -90,7 +90,6 @@
           </v-card>
         </v-col>
       </v-row>
-
     </v-container>
   </div>
 </template>
@@ -109,34 +108,34 @@ export default {
       }
     ]
   },
-    data(){
+  data() {
     return {
       header: {
-        title: 'portforio' //ヘッダータイトル
+        title: "portfolio" //ヘッダータイトル
       }
-    }
+    };
   },
   mounted() {
-    this.updateHeader() //ヘッダータイトル
+    this.updateHeader(); //ヘッダータイトル
   },
   methods: {
     updateHeader() {
       //ヘッダータイトルとして使いたい情報を渡す
-      this.$nuxt.$emit('updateHeader', this.header.title)
+      this.$nuxt.$emit("updateHeader", this.header.title);
     }
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-  .canvas{
-    z-index: 0;
-    position: absolute;
-    width: 170%;
-    top: 300px;
-    left: -40%;
-    transform: rotate(40deg);
-  }
+.canvas {
+  z-index: 0;
+  position: absolute;
+  width: 170%;
+  top: 300px;
+  left: -40%;
+  transform: rotate(40deg);
+}
 
 // .index{
 //   &__container{
