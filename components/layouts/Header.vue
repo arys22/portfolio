@@ -12,7 +12,7 @@
         class="white--text"
         v-show="scrollY == 0 || scrollY < fvHeight"
       >
-        <v-icon color="white">mdi-alpha-p-circle-outline</v-icon>
+        <v-icon color="white" class="header__icon">mdi-alpha-p-circle-outline</v-icon>
         <h1 class="header__title text-h6">{{ title }}</h1>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -147,7 +147,10 @@ export default {
   &__scroll {
     background-color: transparent !important;
   }
-
+  &__icon{
+    transform: rotateY(740deg);
+    animation: turn 4s ease-out forwards 10s 1;
+  }
   &__title {
     display: inline-block;
   }
@@ -187,6 +190,11 @@ export default {
   }
 }
 
+@keyframes turn {
+  100% {
+    transform: rotateY(0deg);
+  }
+}
 // sp バーガー 優先度上げ
 .theme--light.v-btn.v-btn--icon.header__icon {
   color: #fff;

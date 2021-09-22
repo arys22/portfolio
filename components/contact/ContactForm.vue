@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="contact">
-    <h2 class="text-center text-capitalize my-4 contact__title"><v-icon class="mr-1" color="black">mdi-email-outline</v-icon>contact</h2>
+    <h2 class="text-center text-capitalize my-4 contact__title"><v-icon class="mr-1" color="black">mdi-email-outline</v-icon>お問い合わせ<br><span class="text-subtitle-1">contact</span></h2>
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card>
         <v-form ref="form">
@@ -128,6 +128,7 @@ export default {
   margin-bottom: 100px;
   &__title {
     width: 100%;
+    line-height: 1;
   }
   &__comment{
     font-size: .7rem;

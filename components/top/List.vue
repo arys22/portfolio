@@ -1,13 +1,17 @@
 <template>
-  <v-row justify="center" tag="section" align="center" class="products">
+  <v-row justify="center" tag="section" align="center" class="list">
     <v-col cols="12" sm="10" lg="8">
-      <!-- 制作実績一覧 -->
-      <h2 class="text-center text-capitalize my-4">
-        <v-icon class="mr-1" color="black">mdi-view-list</v-icon>products
+      <!-- 制作一覧 -->
+      <h2 class="text-center text-capitalize my-4 list__title">
+        <v-icon class="mr-1" color="black">mdi-view-list</v-icon
+        >制作物<br /><span class="text-subtitle-1">list</span>
       </h2>
       <Carousel />
+      <FadeIn>
       <Btn @click.native="transition" class="my-13">詳細</Btn>
-      <v-card class="products__card">
+      </FadeIn>
+      <FadeIn>
+      <v-card class="list__card">
         <v-row class="mx-0">
           <v-col cols="12" sm="5">
             <v-img
@@ -52,6 +56,7 @@
           </v-col>
         </v-row>
       </v-card>
+      </FadeIn>
     </v-col>
   </v-row>
 </template>
@@ -60,15 +65,18 @@
 export default {
   methods: {
     transition() {
-      this.$router.push({ path: "/products" });
+      this.$router.push({ path: "/list" });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.products {
-  margin-bottom: 100px;
+.list {
+  margin-bottom: 150px;
+  &__title {
+    line-height: 1;
+  }
   &__card {
     width: fit-content;
   }

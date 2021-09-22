@@ -31,14 +31,14 @@
 <script>
 export default {
   // metaタグ設定
-  head(){
+  head() {
     return {
-      title: "products Page",
+      title: "list Page",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "productsページです。ポートフォリオ一覧ページです。"
+          content: "listページです。ポートフォリオ一覧ページです。"
         }
       ]
     };
@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       header: {
-        title: "products" //ヘッダータイトル
+        title: "list" //ヘッダータイトル
       }
     };
   },

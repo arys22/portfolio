@@ -1,5 +1,5 @@
 <template>
-  <div ref="fade" :class="{ fadein: visible, hidden: !visible }" class="fade">
+  <div ref="fade" :class="{ fadeScale: visible, hidden: !visible }" class="fade">
     <slot v-show="visible"></slot>
   </div>
 </template>
@@ -32,25 +32,26 @@ export default {
 <style scoped>
 .fade {
   transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  height: inherit;
 }
 
 .hidden {
   opacity: 0;
 }
 
-.fadein {
+.fadeScale {
   opacity: 1;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeScale 2s ease-in-out;
 }
 
-@keyframes fadeIn {
+@keyframes fadeScale {
   0% {
     opacity: 0;
-    transform: translateY(50vh) translateX(0px);
+    /* transform: scale(0.1); */
   }
   100% {
     opacity: 1;
-    transform: translate(0px, 0px);
+    /* transform: scale(1); */
   }
 }
 </style>

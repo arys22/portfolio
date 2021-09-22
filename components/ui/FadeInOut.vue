@@ -6,9 +6,15 @@
 
 <script>
 export default {
+  props:{
+    delay:{
+      type:Number,
+      default:0,
+    }
+  },
   data() {
     return {
-      visible: false
+      visible: false,
     };
   },
   mounted() {
@@ -25,10 +31,11 @@ export default {
         // ページが表示される高さwindow.innerHeight
       if (!this.visible && top + 60 < window.innerHeight && top > 10) {
         this.visible = true;
-        console.log("表示");
+        this.$refs.fade.style.animationDelay = this.delay + "s"
+        // console.log("表示");
       }else if (this.visible && top <= 0 || this.visible && top > window.innerHeight) {
         this.visible = false;
-        console.log("非表示");
+        // console.log("非表示");
       }
     }
   }
@@ -41,19 +48,19 @@ export default {
 }
 
 .hidden {
-  animation: fadeOut 1.5s;
+  animation: fadeOut 1.5s ease-in-out forwards;
   opacity: 0;
 }
 
 .fadein {
-  opacity: 1;
-  animation: fadeIn 1.5s;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(30vh) translateX(0px);
+    transform: translateY(35vh) translateX(0px);
   }
   100% {
     opacity: 1;
@@ -67,7 +74,7 @@ export default {
   }
   100% {
     opacity: 0;
-    transform: translateY(20vh) translateX(0px);
+    transform: translateY(25vh) translateX(0px);
   }
 }
 </style>

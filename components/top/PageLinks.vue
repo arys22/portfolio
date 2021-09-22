@@ -1,5 +1,12 @@
 <template>
-  <v-menu rounded="xl " bottom offset-y nudge-bottom="4" min-width="50" transition="slide-y-transition">
+  <v-menu
+    rounded="xl "
+    bottom
+    offset-y
+    nudge-bottom="4"
+    min-width="50"
+    transition="slide-y-transition"
+  >
     <!-- メニューのアクティベーター -->
     <template v-slot:activator="{ on }">
       <transition name="in">
@@ -11,7 +18,10 @@
           elevation="2"
           v-show="navIn"
           @click="change = !change"
-          ><v-icon class="links__icon">{{ change ? 'mdi-menu-up' : 'mdi-menu-down' }}</v-icon></v-btn>
+          ><v-icon class="links__icon">{{
+            change ? "mdi-menu-up" : "mdi-menu-down"
+          }}</v-icon></v-btn
+        >
       </transition>
     </template>
     <!-- メニューになるコンテンツ -->
@@ -54,11 +64,11 @@ export default {
       links: [
         { name: "message", icon: "mdi-file-document-outline" },
         { name: "skill", icon: "mdi-tools" },
-        { name: "products", icon: "mdi-view-list" },
+        { name: "list", icon: "mdi-view-list" },
         { name: "contact", icon: "mdi-email-outline" }
       ],
-      navIn: false,//アイコン時間差
-      change:false,//アイコンクリック
+      navIn: false, //アイコン時間差
+      change: false //アイコンクリック
     };
   },
   mounted() {
@@ -80,7 +90,7 @@ export default {
 }
 .links {
   position: fixed;
-  top:70px;
+  top: 70px;
   right: 4px;
   z-index: 1;
   &__menu {
