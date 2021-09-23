@@ -6,6 +6,7 @@
     <v-container fluid class="index__container">
       <Skill id="skill" />
       <List id="list" />
+      <div class="index__space"></div>
       <ContactForm id="contact" />
       <PageLinks />
       <!-- <v-row justify="center" align="center" tag="section" class="sss">
@@ -136,10 +137,11 @@ export default {
   transform: rotate(40deg);
 }
 
-// .index{
-//   &__container{
-// //   // 最後に適用保留
-// //   //   background-image: url("~@/assets/img/stone-back.jpg");
-//   }
-// }
+.index {
+  &__space {
+    width: 100vw;
+    height: 65px;
+    background-color: #f6f6f6;
+  }
+}
 </style>

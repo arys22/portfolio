@@ -125,7 +125,8 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  margin-bottom: 100px;
+  padding: 15px 0 80px;
+  background-color: #f6f6f6;
   &__title {
     width: 100%;
     line-height: 1;

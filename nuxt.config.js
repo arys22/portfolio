@@ -31,7 +31,9 @@ export default {
     // 共通関数
     "@/plugins/constants.js",
     // vue-typer
-    "@/plugins/vue-typer.client.js"
+    "@/plugins/vue-typer.client.js",
+    // vue-parallax-js
+    { src :'~/plugins/vue-parallax-js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -93,5 +95,5 @@ export default {
     hardSource: true //<-追加
   }
 
-  
+
 };

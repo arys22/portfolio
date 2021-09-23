@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- mdi-alpha-p-circle-outline -->
     <v-app-bar
       app
       flat
@@ -12,7 +11,7 @@
         class="white--text"
         v-show="scrollY == 0 || scrollY < fvHeight"
       >
-        <v-icon color="white" class="header__icon">mdi-alpha-p-circle-outline</v-icon>
+        <v-icon color="white" class="header__mark">mdi-alpha-p-circle-outline</v-icon>
         <h1 class="header__title text-h6">{{ title }}</h1>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -147,7 +146,7 @@ export default {
   &__scroll {
     background-color: transparent !important;
   }
-  &__icon{
+  &__mark{
     transform: rotateY(740deg);
     animation: turn 4s ease-out forwards 10s 1;
   }

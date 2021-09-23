@@ -137,7 +137,8 @@ export default {
 
 <style lang="scss" scoped>
 .confirm {
-  margin-bottom: 50px;
+  padding: 15px 0 80px;
+  background-color: #f6f6f6;
   &__title {
     width: 100%;
   }

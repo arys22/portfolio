@@ -2,7 +2,7 @@
   <v-row align="center" tag="section" class="message">
     <h2 class="text-capitalize text-center my-4 message__title">
       <v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon
-      >ご挨拶<br><span class="text-subtitle-1">message</span>
+      >ご挨拶<br /><span class="text-subtitle-1">message</span>
     </h2>
     <!-- ご挨拶 -->
     <v-col cols="9" sm="5" md="4" class="message__wrap ">
@@ -15,12 +15,12 @@
       </v-card>
     </v-col>
     <v-col cols="9" sm="5" md="4" class="message__img">
-      <v-sheet class="message__bg"></v-sheet>
+      <v-sheet class="message__bg" v-parallax="-0.02"></v-sheet>
       <Fade class="message__fade">
-        <v-sheet class="message__bg message__bg--code"></v-sheet>
+          <v-sheet class="message__bg message__bg--code" v-parallax="0.03"></v-sheet>
       </Fade>
       <Fade>
-        <v-sheet class="message__bg message__bg--pc"></v-sheet>
+        <v-sheet class="message__bg message__bg--pc" v-parallax="0.07"></v-sheet>
       </Fade>
     </v-col>
   </v-row>
@@ -28,8 +28,8 @@
 
 <style lang="scss" scoped>
 .message {
-  margin-bottom: 180px;
-  padding: 0 28px;
+  margin-bottom: 100px;
+  padding: 80px 28px 40px;
   justify-content: end;
   &__title {
     width: 100%;
@@ -51,6 +51,7 @@
     background-color: #ebebeb;
     width: 80%;
     height: 100%;
+    transition: transform .5s ease-in-out;
     &--code {
       top: -15%;
       left: 15%;
@@ -59,7 +60,6 @@
       background-position: center center;
       box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
         0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
-
     }
     &--pc {
       z-index: 1;
@@ -105,7 +105,7 @@
   .message__bg {
     &--code {
       background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash (2).jpg");
-      }
+    }
     &--pc {
       background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash (2).jpg");
     }

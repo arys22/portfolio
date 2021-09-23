@@ -29,7 +29,7 @@ export default {
       var top = this.$refs.fade.getBoundingClientRect().top;
         // ブラウザの表示領域の左上を(0, 0)とする要素のtopまでの高さ
         // ページが表示される高さwindow.innerHeight
-      if (!this.visible && top + 60 < window.innerHeight && top > 10) {
+      if (!this.visible && top + 10 < window.innerHeight && top > 10) {
         this.visible = true;
         this.$refs.fade.style.animationDelay = this.delay + "s"
         // console.log("表示");
