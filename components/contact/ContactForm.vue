@@ -1,77 +1,85 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="contact">
-    <h2 class="text-center text-capitalize my-4 contact__title"><v-icon class="mr-1" color="black">mdi-email-outline</v-icon>お問い合わせ<br><span class="text-subtitle-1">contact</span></h2>
+    <h2 class="text-center text-capitalize my-4 contact__title">
+      <v-icon class="mr-1" color="black">mdi-email-outline</v-icon
+      >お問い合わせ<br /><span class="text-subtitle-1">contact</span>
+    </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-card>
-        <v-form ref="form">
-          <v-card-text>
-            <p>お気軽にご連絡ください。</p>
-            <p>
-              自動で受付完了メールを送信いたします。<br>
-              <span class="contact__comment">※メールが届かない場合は、ご入力のメールアドレス違いや迷惑メール対策設定などをご確認のうえ、再度、お問い合わせをお願いいたします。</span>
-            </p>
-            <v-text-field
-              v-model="form.name"
-              label="お名前"
-              placeholder="15文字以内で入力してください"
-              autocomplete="name"
-              counter="15"
-              :rules="[required, limit_length]"
-              required
-              clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-account"
-              name="name"
-              class="my-5"
-            ></v-text-field>
+      <FadeIn>
+        <v-card>
+          <v-form ref="form" class="contact__form">
+            <v-card-text>
+              <p>お気軽にご連絡ください。</p>
+              <p>
+                自動で受付完了メールを送信いたします。<br />
+                <span class="contact__comment"
+                  >※メールが届かない場合は、ご入力のメールアドレス違いや迷惑メール対策設定などをご確認のうえ、再度、お問い合わせをお願いいたします。</span
+                >
+              </p>
+              <v-text-field
+                v-model="form.name"
+                label="お名前"
+                placeholder="15文字以内で入力してください"
+                autocomplete="name"
+                counter="15"
+                :rules="[required, limit_length]"
+                required
+                clearable
+                clear-icon="mdi-close-circle"
+                prepend-inner-icon="mdi-account"
+                name="name"
+                class="my-5"
+              ></v-text-field>
 
-            <v-text-field
-              v-model="form.email"
-              label="メールアドレス"
-              placeholder="sample@sample.com"
-              hint="sample@sample.com"
-              persistent-hint
-              autocomplete="email"
-              type="email"
-              :rules="[required, emailRules]"
-              required
-              clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-email"
-              name="email"
-              class="my-5"
-            ></v-text-field>
+              <v-text-field
+                v-model="form.email"
+                label="メールアドレス"
+                placeholder="sample@sample.com"
+                hint="sample@sample.com"
+                persistent-hint
+                autocomplete="email"
+                type="email"
+                :rules="[required, emailRules]"
+                required
+                clearable
+                clear-icon="mdi-close-circle"
+                prepend-inner-icon="mdi-email"
+                name="email"
+                class="my-5"
+              ></v-text-field>
 
-            <v-textarea
-              :rules="[required]"
-              v-model="form.content"
-              label="お問い合わせ内容"
-              placeholder="お気軽にお問い合わせください。"
-              class="mt-10"
-              outlined
-              counter
-              no-resize
-              rows="7"
-              required
-              auto-grow
-              clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-comment"
-            ></v-textarea>
-            <p class="contact__error" v-show="error">
-              <v-icon>mdi-checkbox-marked-circle</v-icon>
-              入力内容をご確認ください。
-            </p>
-          </v-card-text>
-          <v-card-actions class="contact__actions">
-            <v-btn @click="reset" plain class="contact__btn--reset"
-              >全て削除</v-btn
-            >
-            <Btn @click.native="check" class="my-13 pr-6" >入力内容確認画面</Btn>
-          </v-card-actions>
-
-        </v-form>
-      </v-card>
+              <v-textarea
+                :rules="[required]"
+                v-model="form.content"
+                label="お問い合わせ内容"
+                placeholder="お気軽にお問い合わせください。"
+                class="mt-10"
+                outlined
+                counter
+                no-resize
+                rows="7"
+                required
+                auto-grow
+                clearable
+                clear-icon="mdi-close-circle"
+                prepend-inner-icon="mdi-comment"
+              ></v-textarea>
+              <p class="contact__error" v-show="error">
+                <v-icon>mdi-checkbox-marked-circle</v-icon>
+                入力内容をご確認ください。
+              </p>
+            </v-card-text>
+            <v-card-actions class="contact__actions">
+              <v-btn @click="reset" plain class="contact__btn--reset"
+                >全て削除</v-btn
+              >
+              <Btn @click.native="check" class="my-13 pr-6"
+                >入力内容確認画面</Btn
+              >
+            </v-card-actions>
+          </v-form>
+        </v-card>
+      </FadeIn>
     </v-col>
   </v-row>
 </template>
@@ -95,7 +103,7 @@ export default {
       emailRules: v =>
         /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
           v
-        ) || "有効なアドレスを入力してください",
+        ) || "有効なアドレスを入力してください"
       // /.+@.+\..+/
     };
   },
@@ -109,13 +117,20 @@ export default {
       if (this.$refs.form.validate()) {
         // すべてのバリデーションが通過したときのみ
         // 確認画面に遷移して送る
-          this.$router.push({path:'/confirm',query :{ name: this.form.name, email: this.form.email, content: this.form.content}});
+        this.$router.push({
+          path: "/confirm",
+          query: {
+            name: this.form.name,
+            email: this.form.email,
+            content: this.form.content
+          }
+        });
       } else {
         this.error = true;
       }
     },
     reset() {
-        // 入力値を初期化する
+      // 入力値を初期化する
       this.$refs.form.reset();
       this.error = false;
     }
@@ -130,9 +145,13 @@ export default {
   &__title {
     width: 100%;
     line-height: 1;
+    z-index: 1;
   }
-  &__comment{
-    font-size: .7rem;
+  &__form{
+    z-index: 1;
+  }
+  &__comment {
+    font-size: 0.7rem;
   }
   &__error {
     transition: all 0.3s ease;

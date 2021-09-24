@@ -22,7 +22,7 @@ export default {
     handleScroll() {
       if (!this.visible) {
         var top = this.$refs.fade.getBoundingClientRect().top;
-        this.visible = top + 100 < window.innerHeight;
+        this.visible = top + 50 < window.innerHeight;
       }
     }
   }
@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .fade {
   transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
-  height: inherit;
+  /* height: inherit; */
 }
 
 .hidden {

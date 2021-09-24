@@ -27,13 +27,13 @@ export default {
   methods: {
     handleScroll() {
       var top = this.$refs.fade.getBoundingClientRect().top;
-        // ブラウザの表示領域の左上を(0, 0)とする要素のtopまでの高さ
-        // ページが表示される高さwindow.innerHeight
-      if (!this.visible && top + 10 < window.innerHeight && top > 10) {
+      if (!this.visible && top + 80 < window.innerHeight ) {
+          // ブラウザの表示領域の左上を(0, 0)とする要素のtopまでの高さ
+          // ページが表示される高さwindow.innerHeight
         this.visible = true;
-        this.$refs.fade.style.animationDelay = this.delay + "s"
         // console.log("表示");
-      }else if (this.visible && top <= 0 || this.visible && top > window.innerHeight) {
+        this.$refs.fade.style.animationDelay = this.delay + "s"
+      }else if(this.visible && top + 80 > window.innerHeight){
         this.visible = false;
         // console.log("非表示");
       }
@@ -48,7 +48,6 @@ export default {
 }
 
 .hidden {
-  animation: fadeOut 1.5s ease-in-out forwards;
   opacity: 0;
 }
 
@@ -60,21 +59,13 @@ export default {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(35vh) translateX(0px);
+    /* transform: translateX(0px) translateY(40vh) ; */
+    transform: scale(.1);
   }
   100% {
     opacity: 1;
-    transform: translate(0px, 0px);
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: translate(0px, 0px);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(25vh) translateX(0px);
+    /* transform: translate(0px, 0px); */
+    transform: scale(1);
   }
 }
 </style>

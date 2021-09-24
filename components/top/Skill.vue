@@ -1,123 +1,140 @@
 <template>
-  <v-row justify="center" tag="section" align="center" class="skill" >
-      <h2 class="text-center text-capitalize my-4 skill__title">
-        <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
-          class="text-subtitle-1"
-          >skill</span
-        >
-      </h2>
-      <v-col cols="12" sm="10" lg="8">
-        <v-row justify="center" class="skill__wrap" v-parallax="0.06">
-          <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+  <v-row justify="center" tag="section" align="center" class="skill">
+    <h2 class="text-center text-capitalize my-4 skill__title">
+      <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
+        class="text-subtitle-1"
+        >skill</span
+      >
+    </h2>
+    <v-col cols="12" sm="10" lg="8" class="skill__wrap">
+      <v-row justify="center">
+        <v-col cols="11">
+          <FadeIn>
+          <p>
+            日々進化し続ける技術をキャッチアップするための研鑽はもちろんのこと、クライアントの悩みや課題を解決できるよう、クライアントの目線での視点など、多角的に捉えられるように研鑽していきます。
+          </p>
+          </FadeIn>
+        </v-col>
+        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+          <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
                 <h3>html・css</h3>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInOut>
+                <FadeInDelay>
                   <!-- html -->
                   <svg viewBox="0 0 256 361" class="svg">
                     <use xlink:href="#html" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.1">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.15">
                   <!-- css -->
                   <svg viewBox="0 0 256 361" class="svg">
                     <use xlink:href="#css" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.2">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.25">
                   <!-- sass -->
                   <svg viewBox="0 0 256 192" class="svg">
                     <use xlink:href="#sass" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.3">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.35">
                   <!-- bootstrap -->
                   <svg viewBox="0 0 256 256" class="svg">
                     <use xlink:href="#bootstrap" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
+                </FadeInDelay>
               </div>
-              <v-card-subtitle>html・css・sass(scss)・bootstrap</v-card-subtitle>
+              <v-card-subtitle
+                >html・css・sass(scss)・bootstrap</v-card-subtitle
+              >
               <v-card-text>
                 <ul>
-                  <li>本文</li>
-                  <li>本文</li>
-                  <li>本文</li>
-                  <li>本文</li>
-                  <li>本文</li>
+                  <li>
+                    できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
+                  </li>
+                  <li>レスポンシブ対応(モバイルファースト)</li>
+                  <li>scssでBEM記法で記述しています。</li>
+                  <li>bootstrap使用時は、グリッドシステムを利用します。</li>
+                  <li>XDからのコーディング可能です。</li>
+                  <li>今後は、特にSEO対策の理解を深めていきます。</li>
                 </ul>
               </v-card-text>
             </v-card>
-          </v-col>
-          <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+          </FadeIn>
+        </v-col>
+        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+          <FadeIn>
             <v-card>
               <v-card-title class="text-capitalize">
                 <h3>JavaScript</h3>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInOut>
+                <FadeInDelay>
                   <!-- js -->
                   <svg viewBox="0 0 256 256" class="svg">
                     <use xlink:href="#js" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.1">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.15">
                   <!-- vue -->
                   <svg viewBox="0 0 256 221" class="svg">
                     <use xlink:href="#vue" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.2">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.25">
                   <!-- vuetify -->
                   <svg viewBox="0 0 256 293" class="svg">
                     <use xlink:href="#vuetify" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.3">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.35">
                   <!-- node -->
                   <svg viewBox="0 0 512 314" class="svg">
                     <use xlink:href="#node" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.4">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.45">
                   <!-- nuxt -->
                   <svg viewBox="0 0 256 191" class="svg">
                     <use xlink:href="#nuxt" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
+                </FadeInDelay>
               </div>
               <v-card-subtitle
                 >JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js</v-card-subtitle
               >
               <v-card-text>本文</v-card-text>
             </v-card>
-          </v-col>
-          <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+          </FadeIn>
+        </v-col>
+        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+          <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
                 <h3>その他</h3>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInOut>
+                <FadeInDelay>
                   <!-- git -->
                   <svg viewBox="0 0 256 256" class="svg">
                     <use xlink:href="#git" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.1">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.15">
                   <!-- github -->
                   <svg viewBox="0 0 256 250" class="svg">
                     <use xlink:href="#github" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
-                <FadeInOut :delay="0.2">
+                </FadeInDelay>
+                <FadeInDelay :delay="0.25">
                   <!-- firebase -->
                   <svg viewBox="0 0 256 351" class="svg">
                     <use xlink:href="#firebase" x="0" y="0"></use>
                   </svg>
-                </FadeInOut>
+                </FadeInDelay>
               </div>
               <v-card-subtitle>Git・GitHub・Firebase 等</v-card-subtitle>
               <v-card-text>
@@ -128,29 +145,42 @@
                 </ul>
               </v-card-text>
             </v-card>
-          </v-col>
-        </v-row>
-      </v-col>
+          </FadeIn>
+        </v-col>
+      </v-row>
+    </v-col>
+    <div class="skill__back text-uppercase" v-parallax="-0.17">skill</div>
   </v-row>
 </template>
 <style lang="scss" scoped>
 .skill {
-  background-image: url("~@/assets/img/stone-back.jpg" );
+  background-image: url("~@/assets/img/stone-back.jpg");
   background-repeat: repeat;
   padding: 80px 0 100px;
+  position: relative;
   &__title {
     width: 100%;
     line-height: 1;
-    transition: transform .5s ease-in-out;
   }
-  &__wrap{
-    transition: transform .5s ease-in-out;
-    padding-top: 20px;
+  &__wrap {
+    z-index: 1;
   }
   &__icon {
     display: flex;
     flex-wrap: wrap;
     padding: 0 14px;
+  }
+  &__back {
+    font-size: 15vw;
+    font-weight: bolder;
+    font-style: italic;
+    color: #d9d9d9;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    white-space: nowrap;
+    transition: transform 0.7s ease-in-out;
   }
 }
 @media screen and (min-width: 600px) {

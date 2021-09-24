@@ -148,7 +148,7 @@ export default {
   }
   &__mark{
     transform: rotateY(740deg);
-    animation: turn 4s ease-out forwards 10s 1;
+    animation: turn 5s ease-out forwards 10s 1;
   }
   &__title {
     display: inline-block;

@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="text text-md-center"> -->
   <transition-group
     tag="div"
     class="text__box"
@@ -17,7 +16,6 @@
       {{ datas.text }}
     </div>
   </transition-group>
-  <!-- <Fvtext class="text-md-h6"/> -->
 </template>
 
 <script>

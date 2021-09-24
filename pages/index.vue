@@ -1,12 +1,14 @@
 <template>
   <div class="index">
     <TopFv />
-    <Canvas class="canvas" />
+    <!-- <Canvas class="canvas" /> -->
     <Message id="message" />
     <v-container fluid class="index__container">
       <Skill id="skill" />
       <List id="list" />
-      <div class="index__space"></div>
+      <div class="contact__space">
+            <div class="contact__back text-uppercase" v-parallax="-0.17">contact</div>
+      </div>
       <ContactForm id="contact" />
       <PageLinks />
       <!-- <v-row justify="center" align="center" tag="section" class="sss">
@@ -137,11 +139,25 @@ export default {
   transform: rotate(40deg);
 }
 
-.index {
+.contact{
+  // position: relative;
   &__space {
     width: 100vw;
     height: 65px;
     background-color: #f6f6f6;
+    position: relative;
   }
+  &__back {
+      font-size: 15vw;
+      font-weight: bolder;
+      font-style: italic;
+      color: #d9d9d9;
+      opacity: 0.7;
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      white-space: nowrap;
+      transition: transform 0.7s ease-in-out;
+    }
 }
 </style>

@@ -98,22 +98,14 @@ export default {
     transformShadow(){
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
       let yAxis = (window.innerHeight / 2 - this.mouseY) / 35;
-      this.$refs.wrap.style.transform =
-        "translateY(" + -yAxis + "px) translateX(" + -xAxis + "px)";
+      // this.$refs.wrap.style.transform =
+      //   "translateY(" + -yAxis + "px) translateX(" + -xAxis + "px)";
       this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(100,100,100,.8),"+ xAxis/1.1 + "px " + yAxis/1.1 + "px 2px rgba(10,10,10,.8)");
     },
     mouseUpChange(){//マウスアップ時
       this.mouseUp = true;
       this.mouseDown = false;
       this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
-    },
-    onNav(){//PageLinksのマウスホバー時
-      this.mouseHov = true;
-      this.mouse = true;
-    },
-    offNav(){//PageLinksのマウスホバー時
-    this.mouseHov = false;
-    this.mouse = false;
     },
   }
 };

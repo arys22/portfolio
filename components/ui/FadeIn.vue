@@ -22,7 +22,7 @@ export default {
     handleScroll() {
       if (!this.visible) {
         var top = this.$refs.fade.getBoundingClientRect().top;
-        this.visible = top + 100 < window.innerHeight;
+        this.visible = top + 60 < window.innerHeight;
       }
     }
   }

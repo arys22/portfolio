@@ -5,87 +5,89 @@
       >お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-card>
-        <div class="confirm__text pa-4">
-          <p>
-            お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
-              class="font-weight-bold"
-              >「送信する」</span
-            >ボタンを押して下さい。
-          </p>
-          <p>
-            <v-icon color="#ff1493">mdi-alert-circle</v-icon
-            ><span class="confirm__caution font-weight-bold"
-              >下記のメールアドレスに返信しますので、今一度ご確認ください。</span
-            ><br />入力間違いがありますと返信できない場合がありますのでご注意ください。
-          </p>
-        </div>
-        <!-- googleフォームと連携 action=”url” target="dummy" 追加 -->
-        <v-form
-          ref="vform"
-          target="dummy"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScq1mh70mKQJLgpWVyoZ3-XIGydpZJchbYsblUgKhzIeo2uAw/formResponse"
-        >
-          <v-card-text>
-            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
-            <v-text-field
-              :rules="[required, limit_length]"
-              v-model="form.name"
-              label="お名前"
-              required
-              prepend-inner-icon="mdi-account"
-              class="my-5"
-              readonly
-              name="entry.1210533588"
-            ></v-text-field>
-            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
-            <v-text-field
-              :rules="[required, emailRules]"
-              v-model="form.email"
-              label="メールアドレス"
-              required
-              prepend-inner-icon="mdi-email"
-              name="entry.369018561"
-              class="my-5"
-              readonly
-              hint="ご確認ください。"
-              persistent-hint
-            ></v-text-field>
-            <!-- googleフォームと連携 name="entry.xxxx"追加 -->
-            <v-textarea
-              :rules="[required]"
-              v-model="form.content"
-              label="お問い合わせ内容"
-              class="mt-10"
-              outlined
-              counter
-              no-resize
-              rows="7"
-              required
-              auto-grow
-              prepend-inner-icon="mdi-comment"
-              readonly
-              name="entry.1655379305"
-            ></v-textarea>
-          </v-card-text>
-          <v-card-actions class="confirm__actions">
-            <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
-              >戻る</v-btn
-            >
-            <v-btn
-              @click="submit"
-              x-large
-              plain
-              rounded
-              block
-              class="confirm__btn--submit"
-              type="submit"
-            >
-              送信する
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card>
+      <FadeIn>
+        <v-card>
+          <div class="confirm__text pa-4">
+            <p>
+              お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
+                class="font-weight-bold"
+                >「送信する」</span
+              >ボタンを押して下さい。
+            </p>
+            <p>
+              <v-icon color="#ff1493">mdi-alert-circle</v-icon
+              ><span class="confirm__caution font-weight-bold"
+                >下記のメールアドレスに返信しますので、今一度ご確認ください。</span
+              ><br />入力間違いがありますと返信できない場合がありますのでご注意ください。
+            </p>
+          </div>
+          <!-- googleフォームと連携 action=”url” target="dummy" 追加 -->
+          <v-form
+            ref="vform"
+            target="dummy"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScq1mh70mKQJLgpWVyoZ3-XIGydpZJchbYsblUgKhzIeo2uAw/formResponse"
+          >
+            <v-card-text>
+              <!-- googleフォームと連携 name="entry.xxxx"追加 -->
+              <v-text-field
+                :rules="[required, limit_length]"
+                v-model="form.name"
+                label="お名前"
+                required
+                prepend-inner-icon="mdi-account"
+                class="my-5"
+                readonly
+                name="entry.1210533588"
+              ></v-text-field>
+              <!-- googleフォームと連携 name="entry.xxxx"追加 -->
+              <v-text-field
+                :rules="[required, emailRules]"
+                v-model="form.email"
+                label="メールアドレス"
+                required
+                prepend-inner-icon="mdi-email"
+                name="entry.369018561"
+                class="my-5"
+                readonly
+                hint="ご確認ください。"
+                persistent-hint
+              ></v-text-field>
+              <!-- googleフォームと連携 name="entry.xxxx"追加 -->
+              <v-textarea
+                :rules="[required]"
+                v-model="form.content"
+                label="お問い合わせ内容"
+                class="mt-10"
+                outlined
+                counter
+                no-resize
+                rows="7"
+                required
+                auto-grow
+                prepend-inner-icon="mdi-comment"
+                readonly
+                name="entry.1655379305"
+              ></v-textarea>
+            </v-card-text>
+            <v-card-actions class="confirm__actions">
+              <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
+                >戻る</v-btn
+              >
+              <v-btn
+                @click="submit"
+                x-large
+                plain
+                rounded
+                block
+                class="confirm__btn--submit"
+                type="submit"
+              >
+                送信する
+              </v-btn>
+            </v-card-actions>
+          </v-form>
+        </v-card>
+      </FadeIn>
       <!-- iframeタグを追加 target="dummy"-->
       <iframe name="dummy" style="display:none;"></iframe>
     </v-col>

@@ -15,9 +15,9 @@
     </v-row>
     <v-row class="row">
       <v-col>
-        <FadeInOut>
+        <FadeInDelay>
           <v-btn dark>click</v-btn>
-        </FadeInOut>
+        </FadeInDelay>
       </v-col>
       <v-col>
         <FadeIn>

@@ -62,7 +62,7 @@
         </v-card>
       </FadeIn>
     </v-col>
-    <div class="list__bg text-uppercase" v-parallax.horizontal="-0.2">portfolio<br>list</div>
+    <div class="list__back text-uppercase" v-parallax="-0.17">list</div>
   </v-row>
 </template>
 
@@ -94,17 +94,17 @@ export default {
   &__card {
     width: fit-content;
   }
-  &__bg {
+  &__back {
     font-size: 15vw;
     font-weight: bolder;
     font-style: italic;
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    top: 0%;
+    top: 5%;
     left: 3%;
     white-space: nowrap;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.7s ease-in-out;
   }
 }
 </style>
