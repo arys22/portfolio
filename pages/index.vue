@@ -2,14 +2,14 @@
   <div class="index">
     <TopFv />
     <!-- <Canvas class="canvas" /> -->
-    <Message id="message" />
+    <!-- <Message id="message" /> -->
     <v-container fluid class="index__container">
-      <Skill id="skill" />
+      <!-- <Skill id="skill" /> -->
       <List id="list" />
-      <div class="contact__space">
+      <!-- <div class="contact__space">
             <div class="contact__back text-uppercase" v-parallax="-0.17">contact</div>
-      </div>
-      <ContactForm id="contact" />
+      </div> -->
+      <!-- <ContactForm id="contact" /> -->
       <PageLinks />
       <!-- <v-row justify="center" align="center" tag="section" class="sss">
         <v-col cols="12" sm="8" md="6">

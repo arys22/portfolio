@@ -1,37 +1,67 @@
 <template>
-  <client-only>
-    <vue-typer
-      :text="[
-        'Welcome to my portfolio.',
-        'ようこそポートフォリオへ！',
-        'Click to change',
-        'このページはTopページになります。',
-      ]"
-      :repeat="Infinity"
-      :shuffle="false"
-      initial-action="typing"
-      :pre-type-delay="70"
-      :type-delay="300"
-      :pre-erase-delay="3000"
-      :erase-delay="300"
-      erase-style="backspace"
-      :erase-on-complete="false"
-      caret-animation="smooth"
-    ></vue-typer>
-  </client-only>
+  <transition name="down">
+    <client-only>
+      <vue-typer
+        :text="[
+          'Welcome to my portfolio.',
+          'ようこそポートフォリオへ！',
+          'このページはTOPページになります。',
+          'ポートフォリオ一覧はLISTページです。',
+          'CONTACTからお気軽にお問い合わせください。'
+        ]"
+        :repeat="Infinity"
+        :shuffle="false"
+        initial-action="typing"
+        :pre-type-delay="70"
+        :type-delay="300"
+        :pre-erase-delay="3000"
+        :erase-delay="300"
+        erase-style="backspace"
+        :erase-on-complete="false"
+        caret-animation="smooth"
+        v-show="show"
+      ></vue-typer>
+    </client-only>
+  </transition>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      show: false
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 3700);
+  }
+};
+</script>
+
 <style lang="scss" scoped>
-.vue-typer{
+.vue-typer {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0 auto;
   position: absolute;
+  top: 5%;
   left: 5%;
-  bottom: -15px;
+  max-width: 75%;
 }
-@media screen and(min-width: 960px) {
-  .vue-typer{
-    left: 40%;
-  }
+.down-enter-active,
+.down-leave-active {
+  transition: transform 1.6s ease-in;
 }
+.down-enter,
+.down-leave-to {
+  transform: translateX(0) translateY(-80px);
+}
+// @media screen and(min-width: 600px) {
+//   .vue-typer{
+//     margin-left: 35%;
+//   }
+// }
 </style>

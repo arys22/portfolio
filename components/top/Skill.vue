@@ -6,16 +6,16 @@
         >skill</span
       >
     </h2>
-    <v-col cols="12" sm="10" lg="8" class="skill__wrap">
+    <v-col cols="11" sm="10" lg="8" class="skill__wrap">
       <v-row justify="center">
-        <v-col cols="11">
+        <v-col cols="12">
           <FadeIn>
-          <p>
-            日々進化し続ける技術をキャッチアップするための研鑽はもちろんのこと、クライアントの悩みや課題を解決できるよう、クライアントの目線での視点など、多角的に捉えられるように研鑽していきます。
-          </p>
+            <p>
+              日々進化し続ける技術をキャッチアップするための学びはもちろんのこと、悩みや課題や目標を解決できるよう、クライアントの目線での視点や、使う人のものであることを常に意識して、多角的に捉えられるように研鑽していきます。
+            </p>
           </FadeIn>
         </v-col>
-        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+        <v-col cols="12" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
@@ -47,7 +47,7 @@
                   </svg>
                 </FadeInDelay>
               </div>
-              <v-card-subtitle
+              <v-card-subtitle class="skill__subtitle"
                 >html・css・sass(scss)・bootstrap</v-card-subtitle
               >
               <v-card-text>
@@ -65,7 +65,7 @@
             </v-card>
           </FadeIn>
         </v-col>
-        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+        <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card>
               <v-card-title class="text-capitalize">
@@ -103,14 +103,23 @@
                   </svg>
                 </FadeInDelay>
               </div>
-              <v-card-subtitle
+              <v-card-subtitle class="skill__subtitle"
                 >JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js</v-card-subtitle
               >
-              <v-card-text>本文</v-card-text>
+              <v-card-text>
+                <ul>
+                  <li>
+                    主にJavaScript,フレームワークはVue.jsを中心に開発しています。
+                  </li>
+                  <li>基本的な機能の実装はできます。</li>
+                  <!-- <li>ロジックを考えるのが好きです。</li> -->
+                  <li>APIなど、より一層の習熟の必要があります。</li>
+                </ul>
+              </v-card-text>
             </v-card>
           </FadeIn>
         </v-col>
-        <v-col cols="11" sm="6" md="4" class="skill__box" tag="section">
+        <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
@@ -136,12 +145,16 @@
                   </svg>
                 </FadeInDelay>
               </div>
-              <v-card-subtitle>Git・GitHub・Firebase 等</v-card-subtitle>
+              <v-card-subtitle class="skill__subtitle"
+                >Git・GitHub・Firebase 等</v-card-subtitle
+              >
               <v-card-text>
                 <ul>
+                  <li>エディタは Visual Studio Code</li>
+                  <li>Git/GitHub基本操作</li>
+                  <li>Firebase?</li>
+                  <li>今後はバックエンドの理解を深めていきます。</li>
                   <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                  <li></li>
-                  <li></li>
                 </ul>
               </v-card-text>
             </v-card>
@@ -169,6 +182,11 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0 14px;
+  }
+  &__subtitle {
+    font-weight: 600;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 1rem;
   }
   &__back {
     font-size: 15vw;

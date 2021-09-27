@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       index: 0,
-      bgColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f", "transparent"]
+      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f", "#666"]
     };
   },
   props: {
@@ -45,8 +45,8 @@ export default {
         "translate(" + this.mouseX + "px, " + y + "px) ";
     },
     bgcChange() {
-      this.$refs.stalker.style.backgroundColor= this.bgColor[this.index];
-      this.index < this.bgColor.length - 1 ? this.index ++ : this.index = 0;
+      this.$refs.stalker.style.borderColor= this.bdColor[this.index];
+      this.index < this.bdColor.length - 1 ? this.index ++ : this.index = 0;
     }
   }
 };
@@ -77,7 +77,8 @@ export default {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    box-shadow: 0 0 2px #666;
+    // box-shadow: 0 0 2px #666;
+    border: 2.5px solid;
     opacity: .6;
     transition: all .3s ease-in-out ;
     &.hov {
@@ -98,7 +99,7 @@ export default {
 }
 
 .down {
-  transform: scale(1.3);
+  transform: scale(1.35);
 }
 .up {
   animation: shrink 0.3s ease-out 1;
@@ -106,11 +107,10 @@ export default {
 @keyframes shrink {
   from {
     transform: scale(0.7);
-    box-shadow: 0 0 25px inset #555;
+    box-shadow: 0 0 1px inset #ddd;
   }
   to {
     transform: scale(1);
-    box-shadow: 0 0 5px inset #ddd;
   }
 }
 </style>

@@ -1,28 +1,79 @@
 <template>
   <v-container fluid>
-    <v-row class="rowt">
-      <v-col class="text-center">
-        <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-        <blockquote class="blockquote">
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <!-- <em>&mdash;John Johnson</em> -->
-            </small>
-          </footer>
-        </blockquote>
-      </v-col>
-    </v-row>
-    <v-row class="row">
-      <v-col>
-        <FadeInDelay>
-          <v-btn dark>click</v-btn>
-        </FadeInDelay>
-      </v-col>
-      <v-col>
-        <FadeIn>
-          <v-btn dark>click</v-btn>
-        </FadeIn>
+      <!-- <h2 class="text-center text-capitalize my-4">
+      <v-icon class="mr-1" color="black">mdi-view-list</v-icon>
+      制作物一覧<br />
+      <span class="text-subtitle-1">list</span>
+      </h2> -->
+
+    <v-row  justify="center" class="list__Wrapper">
+      <v-col cols="12" sm="10" lg="8" class="list__wrap" >
+
+        <v-sheet tag="section" class="pa-4 mt-2 mb-12">
+            <h2 class="text-capitalize mt-2 mb-3 mx-2 list__title">
+            コーディング
+            <span class="text-subtitle-2">coding</span>
+            </h2>
+          <v-row  >
+            <v-col cols="12" sm="6" class="list__box" >
+              <v-card>
+                <v-img
+                  src="https://via.placeholder.com/500x375"
+                  alt="デモ"
+                  max-height="200"
+                ></v-img>
+                  <!-- max-width="300"
+                  max-height="200" -->
+                <v-card-title>タイトル</v-card-title>
+                <v-card-subtitle>サブタイトル</v-card-subtitle>
+                <v-card-text>本文</v-card-text>
+                <v-card-actions>アクション</v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6" class="list__box" >
+              <v-card>
+                <v-card-title>タイトル</v-card-title>
+                <v-card-subtitle>サブタイトル</v-card-subtitle>
+                <v-card-text>本文</v-card-text>
+                <v-card-actions>アクション</v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-sheet>
+
+        <v-sheet tag="section" class="pa-4 mt-2 mb-12" >
+            <h2 class="text-capitalize mt-2 mb-3 mx-2 list__title">
+            コーディング
+            <span class="text-subtitle-2">coding</span>
+            </h2>
+          <v-row  >
+            <v-col cols="12" sm="6" class="list__box" >
+              <v-card>
+                <v-img
+                  src="https://via.placeholder.com/500x375"
+                  alt="デモ"
+                  max-height="200"
+                ></v-img>
+                  <!-- max-width="300"
+                  max-height="200" -->
+                <v-card-title>タイトル</v-card-title>
+                <v-card-subtitle>サブタイトル</v-card-subtitle>
+                <v-card-text>本文</v-card-text>
+                <v-card-actions>アクション</v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="12" sm="6" class="list__box" >
+              <v-card>
+                <v-card-title>タイトル</v-card-title>
+                <v-card-subtitle>サブタイトル</v-card-subtitle>
+                <v-card-text>本文</v-card-text>
+                <v-card-actions>アクション</v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-sheet>
+
+
       </v-col>
     </v-row>
   </v-container>
@@ -63,7 +114,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.row {
-  height: 800px;
+.list {
+  &__title{
+    font-size: 1.25rem;
+  }
 }
 </style>

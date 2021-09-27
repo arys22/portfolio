@@ -45,7 +45,6 @@ export default {
 .v-btn {
   left: 50%;
   transform: translateX(-50%);
-  // bottom:25px;
   transition: transform .5s ease-in-out;
   display: flex;
   align-items: flex-end;
@@ -128,6 +127,5 @@ export default {
 .down-enter,
 .down-leave-to {
   transform: translateX(-50%) translateY(-100vh);
-  //  translateY(0px)
 }
 </style>

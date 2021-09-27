@@ -37,7 +37,7 @@ export default {
       this.info.seconds = this.info.seconds + 0.014;
       this.info.t = this.info.seconds * Math.PI;
       // 自身の再起呼び出し
-      setTimeout(this.update, 38);
+      setTimeout(this.update, 40);
     },
     draw(canvas, color) {
       // 対象のcanvasのコンテキストを取得

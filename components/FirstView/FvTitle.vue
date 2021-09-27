@@ -8,7 +8,7 @@
     v-on:leave="leave"
   >
     <div
-      class="text__item text-sm-h2 text-md-h1 text-uppercase font-weight-bold"
+      class="text__item  text-md-h1 text-uppercase font-weight-black"
       v-show="show"
       v-for="datas in textModel"
       :key="datas.id"
@@ -128,15 +128,13 @@ export default {
 .text {
   &__box {
     display: flex;
-    justify-content: flex-start;
-    font-size: 2.5rem;
-    // transform: translateZ(10px);
+    // justify-content: flex-start;
+    justify-content: center;
+    font-size: 2.6rem;
   }
   &__item {
     transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
     animation: gapping 2s ease-in-out;
-    // animation-delay: .5s;
-    // animation-fill-mode: forwards;
     &:hover {
       color: rgba(245, 245, 245, 0.5);
       text-shadow: 2px 2px 2px #fefefe, 0 0 #ddd;
@@ -153,13 +151,14 @@ export default {
 }
 
 .text__box .text__item {
-  transition: all 1s cubic-bezier(0, 0.08, 0.05, 1);
+  transition: all 1.8s cubic-bezier(0, 0.08, 0.05, 1);
 }
 
-@media screen and(min-width: 960px) {
+@media screen and(min-width: 600px) {
   .text {
     &__box {
-      justify-content: center;
+
+      font-size: 4rem;
     }
   }
 }

@@ -17,7 +17,7 @@
       <FadeIn>
         <v-card class="list__card">
           <v-row class="mx-0">
-            <v-col cols="12" sm="5">
+            <v-col cols="12" md="5">
               <v-img
                 src="https://via.placeholder.com/500x375"
                 alt="デモ"
@@ -25,35 +25,39 @@
                 max-height="200"
               ></v-img>
             </v-col>
-            <v-col cols="12" sm="7">
+            <v-col cols="12" md="7">
               <v-card-title>portfolio</v-card-title>
               <v-card-subtitle>html/css/vuetify/nuxt.js</v-card-subtitle>
               <v-card-text>
                 <ul>
                   <li>レスポンシブ(モバイルファースト)</li>
-                  <li>シンプルなデザインを心がけました。</li>
+                  <li>デザインとアクションは引き算を心がけました。</li>
+                  <li>ヘッダーメニュー→fv過ぎたら色変化、sp時バーガーメニュー、ボトムナビ→上スクロール時表示、ページ内リンク</li>
                   <li>fvアクションを工夫しました。</li>
                   <li>
-                    フォームはgoogleフォームと連携、自動返信メール(入力チェック/確認/完了ページ)
+                    フォームはgoogleフォームと連携、自動返信メール、入力チェック/確認ページ/完了ページ
                   </li>
+                  <li></li>
                   <li>
                     新たに学んだこと(コード)
                     <ul>
-                      <li>iOSでの100vh</li>
+                      <!-- <li>iOSでの100vh</li> -->
                       <li>canvas</li>
                       <li>symbol→use</li>
+                      <li>vuetify使用時は、使用する箇所としない箇所を分ける</li>
                       <li>ナビゲーションガード</li>
                       <li>Firebaseでの公開 など</li>
                     </ul>
                   </li>
                 </ul>
-                <p class="ma-2">
+                <p class="mt-7 mb-0">
                   コードの詳細
                   <a
                     href="https://github.com/arys22/portfolio"
                     target="_blank"
                     rel="noopener"
-                    >git hub</a
+                    class="list__link ml-4"
+                    ><v-icon color="#1976d2">mdi-github</v-icon>git hub</a
                   >
                 </p>
               </v-card-text>
@@ -93,6 +97,9 @@ export default {
   }
   &__card {
     width: fit-content;
+  }
+  &__link{
+    text-decoration: none;
   }
   &__back {
     font-size: 15vw;

@@ -5,7 +5,6 @@
       >お問い合わせ<br /><span class="text-subtitle-1">contact</span>
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-      <FadeIn>
         <v-card>
           <v-form ref="form" class="contact__form">
             <v-card-text>
@@ -79,7 +78,6 @@
             </v-card-actions>
           </v-form>
         </v-card>
-      </FadeIn>
     </v-col>
   </v-row>
 </template>

@@ -4,32 +4,29 @@
       <v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon
       >ご挨拶<br /><span class="text-subtitle-1">message</span>
     </h2>
-    <v-col cols="11"  md="5" class="message__wrap ">
-      <v-card color="transparent" flat>
+    <v-col cols="12"  md="5" class="message__wrap ">
         <FadeIn>
-          <v-card-text >
             <p>
               はじめまして。齋藤と申します。<br>
-              この度はポートフォリオサイトに訪問いただきありがとうございます。<br>
-              このサイトは、これまでに手がけた制作物、身につけたスキルをまとめています。<br>
+              この度はポートフォリオサイトに訪問いただきありがとうございます。<br><br>
+              このサイトは、これまでに手がけた制作物、スキルをまとめています。<br>
               私自身、まだまだ至らない点はたくさんありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングができるよう心がけていきます。<br>
               今後ともよろしくお願いいたします。
             </p>
-          </v-card-text>
         </FadeIn>
-      </v-card>
     </v-col>
     <v-col cols="9"  md="4" class="message__img">
       <v-sheet class="message__bg" ></v-sheet>
       <Fade>
         <v-sheet
           class="message__bg message__bg--code"
-
+          elevation="8"
         ></v-sheet>
       </Fade>
       <Fade>
         <v-sheet
           class="message__bg message__bg--pc"
+          elevation="16"
         ></v-sheet>
       </Fade>
     </v-col>
@@ -48,9 +45,8 @@
     line-height: 1;
   }
   &__wrap {
-    margin: 0 auto 0 0;
+    margin-bottom: 60px;
     align-self: start;
-    padding-bottom: 30px;
     z-index: 1;
   }
   &__img {
@@ -64,7 +60,6 @@
     background-color: #ebebeb;
     width: 80%;
     height: 100%;
-    // transition: transform 0.4s ease-in-out;
     &--code {
       z-index: 1;
       top: -20%;
@@ -72,8 +67,6 @@
       background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
       background-size: cover;
       background-position: center center;
-      box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
-        0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
     }
     &--pc {
       z-index: 1;
@@ -82,8 +75,6 @@
       background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash.jpg");
       background-size: cover;
       background-position: center center;
-      box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%),
-        0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%);
     }
   }
   &__back {
@@ -93,7 +84,7 @@
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    bottom: -15%;
+    bottom: -13%;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;
@@ -109,9 +100,6 @@
 @media screen and (min-width: 960px) {
   .message {
     justify-content: space-around;
-    &__wrap {
-      margin-right: 0;
-    }
     &__img {
       margin-top: 150px;
     }
@@ -123,7 +111,7 @@
       }
       &--pc {
         top: 30%;
-        left: -45%;
+        left: -30%;
         width: 100%;
       }
     }

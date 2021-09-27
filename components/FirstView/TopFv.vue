@@ -2,7 +2,6 @@
   <v-container
     fluid
     class="fv"
-    :style="style"
     ref="fv"
     @click="titleEvent"
     @mousemove="cursorCoordinates"
@@ -13,18 +12,17 @@
     >
     <!-- 連打防止 追加上
     :class="{invalid:rip}" -->
+        <Fvtext />
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}" />
-        <!-- v-show="mouseY < fvHeight" -->
+      <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip" ref="ripple"/>
       <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
           <FvTitle ref="title" />
         </v-col>
-          <Fvtext />
       </v-row>
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
       <ScrollDown />
       </div>
-      <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip"/>
   </v-container>
 </template>
 
@@ -32,9 +30,6 @@
 export default {
   data() {
     return {
-      style: {
-        "--wh": "100vh"
-      },
       fvHeight: null,
       //マウス位置
       mouseX: 0,
@@ -50,28 +45,25 @@ export default {
       rip: false,
     };
   },
-  created() {//PageLinksのマウスホバー時のマウスストーカーイベント
-    this.$nuxt.$on('mouseEnter', this.onNav);
-    this.$nuxt.$on('mouseLeave', this.offNav);
-  },
   mounted() {
     this.dom = this.$refs.fv; //fv取得
+      // // 100vh WindowSize fvの高さ 保留
+      // this.getWindowSize();
+      // window.addEventListener("resize", this.getWindowSize);
+
     this.$nextTick(() => {//DOM更新後
-      // 100vh WindowSize
-      this.getWindowSize();
-      window.addEventListener("resize", this.getWindowSize);
       // fvの下座標取得
       this.getFvHeight();
       window.addEventListener("resize", this.getFvHeight);
     });
   },
-
   methods: {
-    // 100vh WindowSize - headerの高さ
-    getWindowSize() {
-      this.style["--wh"] = `${window.innerHeight -
-        this.$vuetify.application.top}px`;
-    },
+    // // 100vh fv WindowSize - headerの高さ 保留
+    // getWindowSize() {
+    //   // this.dom.style.height=`${window.innerHeight  - this.$vuetify.application.top}px`;
+    //     console.log(window.innerHeight)
+    // },
+
     // fvの下座標取得
     getFvHeight() {
       this.fvHeight = this.dom.getBoundingClientRect().height;
@@ -98,14 +90,13 @@ export default {
     transformShadow(){
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
       let yAxis = (window.innerHeight / 2 - this.mouseY) / 35;
-      // this.$refs.wrap.style.transform =
-      //   "translateY(" + -yAxis + "px) translateX(" + -xAxis + "px)";
       this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(100,100,100,.8),"+ xAxis/1.1 + "px " + yAxis/1.1 + "px 2px rgba(10,10,10,.8)");
     },
     mouseUpChange(){//マウスアップ時
       this.mouseUp = true;
       this.mouseDown = false;
       this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
+      this.$refs.ripple.changeRippleColor();//ripple色変化
     },
   }
 };
@@ -113,13 +104,8 @@ export default {
 
 <style lang="scss" scoped>
 .fv {
-  // 2重丸カーソル採用時
-  // &,.text,.scroll{
-    // cursor: none;
-    // }
   cursor: default;
-  min-height: 100vh;
-  min-height: calc(var(--wh, 100vh));
+  height: calc(100vh - 56px);
   padding: 0;
   position: relative;
   display: flex;
@@ -131,7 +117,7 @@ export default {
   position: relative;
   }
   &__wrap {
-    padding: 4%;
+    padding: 2% 4%;
     transition: all 0s ease;
     text-shadow:
     -1px -1px 1px rgba(255,255,255,.8),
@@ -151,5 +137,10 @@ opacity: 1;
 }
 .shrink {
   transform: scale(0.3);
+}
+@media screen and (min-width: 960px) {
+  .fv{
+    height: calc(100vh - 64px);
+  }
 }
 </style>
