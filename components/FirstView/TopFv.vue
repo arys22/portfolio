@@ -8,7 +8,7 @@
     @mouseenter ="mouse = true"
     @mouseleave ="mouse = false"
     @mousedown="mouseUp = false,mouseDown = true"
-    @mouseup="mouseUpChange"
+    @mouseup="mouseUp = true,mouseDown = false"
     >
     <!-- 連打防止 追加上
     :class="{invalid:rip}" -->
@@ -74,6 +74,8 @@ export default {
     titleEvent() {
       //子のmethods
       this.$refs.title.gather();
+      this.$refs.ripple.changeRippleColor();//ripple色変化
+      this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
       this.rip = !this.rip;
     },
 
@@ -91,12 +93,6 @@ export default {
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
       let yAxis = (window.innerHeight / 2 - this.mouseY) / 35;
       this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(100,100,100,.8),"+ xAxis/1.1 + "px " + yAxis/1.1 + "px 2px rgba(10,10,10,.8)");
-    },
-    mouseUpChange(){//マウスアップ時
-      this.mouseUp = true;
-      this.mouseDown = false;
-      this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
-      this.$refs.ripple.changeRippleColor();//ripple色変化
     },
   }
 };

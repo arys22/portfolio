@@ -157,8 +157,10 @@ export default {
       align-self: start;
       box-shadow: 0px 1px 5px #b5b6b6, -5px -5px 5px #fff;
       transition-duration: 0.2s;
+      background-color: #fff;
       &:hover {
         box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
+        background-color: #fcfcfc;
       }
     }
     &--submit {

@@ -3,7 +3,7 @@
     <v-app-bar
       app
       flat
-      color="#333"
+      color="#222"
       class="header"
       :class="{ header__scroll: scrollY > fvHeight }"
     >
@@ -105,7 +105,8 @@ export default {
   data() {
     return {
       fvHeight: null,
-      drawer: false
+      drawer: false,
+
     };
   },
   created() {
@@ -135,14 +136,15 @@ export default {
       const height = Math.floor(e);
       this.fvHeight = height;
       // console.log(this.fvHeight);
-    }
+    },
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .header {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.7s ease-in-out;
+
   &__scroll {
     background-color: transparent !important;
   }

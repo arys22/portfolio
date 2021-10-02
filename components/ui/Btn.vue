@@ -6,14 +6,15 @@
 
 <script>
 export default {
-};
+}
 </script>
 
 <style lang="scss">
 .btn__box {
-  box-shadow: 0px 6px 14px #b5b6b6, -6px -6px 14px #fff;
+  box-shadow: 0px 5px 12px #c0c0c0, -5px -5px 12px #fff;
   transition-duration: 0.2s;
   position: relative;
+  background-color: #fff;
   &::after {
     content: "";
     width: 11px;
@@ -27,6 +28,7 @@ export default {
   }
   &:hover {
     box-shadow: 0 0 4px #babbbd, -2px -2px 4px #fff;
+    background-color: #fcfcfc;
     &::after {
       transform: translateX(-2px) rotate(45deg);
       opacity: 0.6;

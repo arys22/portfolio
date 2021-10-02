@@ -12,7 +12,9 @@
         <Carousel />
       </FadeIn>
       <FadeIn>
-        <Btn @click.native="transition" class="mt-8 mb-16 list__btn">一覧</Btn>
+        <Btn @click.native="transitionPage" class="mt-8 mb-16 list__btn"
+          >一覧</Btn
+        >
       </FadeIn>
       <FadeIn>
         <v-card class="list__card">
@@ -23,6 +25,7 @@
                 alt="デモ"
                 max-width="300"
                 max-height="200"
+                class="mx-auto"
               ></v-img>
             </v-col>
             <v-col cols="12" md="7">
@@ -31,32 +34,34 @@
               <v-card-text>
                 <ul>
                   <li>レスポンシブ(モバイルファースト)</li>
+                  <li>Retina対応</li>
+                  <li>ライブラリ(vue-parallax-js、vue-typer)</li>
                   <li>デザインとアクションは引き算を心がけました。</li>
-                  <li>ヘッダーメニュー→fv過ぎたら色変化、sp時バーガーメニュー、ボトムナビ→上スクロール時表示、ページ内リンク</li>
+                  <li>
+                    ヘッダーメニュー：fv過ぎたら色変化、sp時バーガーメニュー、ボトムナビ：上スクロール時表示、ページ内リンク
+                  </li>
                   <li>fvアクションを工夫しました。</li>
                   <li>
                     フォームはgoogleフォームと連携、自動返信メール、入力チェック/確認ページ/完了ページ
                   </li>
-                  <li></li>
+                  <li>ナビゲーションガード</li>
+                  <li>SSG（Static Site Generator）</li>
+                  <li>Firebaseでの公開</li>
                   <li>
-                    新たに学んだこと(コード)
-                    <ul>
-                      <!-- <li>iOSでの100vh</li> -->
-                      <li>canvas</li>
+                    <!-- 新たに学んだこと -->
+                    <!-- <li>iOSでの100vh</li> -->
+                    <!-- <li>canvas</li>
                       <li>symbol→use</li>
-                      <li>vuetify使用時は、使用する箇所としない箇所を分ける</li>
-                      <li>ナビゲーションガード</li>
-                      <li>Firebaseでの公開 など</li>
-                    </ul>
+                      <li>vuetify使用時は、使用する箇所としない箇所を分ける</li> -->
                   </li>
                 </ul>
                 <p class="mt-7 mb-0">
-                  コードの詳細
+                  コードの詳細:
                   <a
                     href="https://github.com/arys22/portfolio"
                     target="_blank"
-                    rel="noopener"
-                    class="list__link ml-4"
+                    rel="noopener noreferrer"
+                    class="text-decoration-none list__link"
                     ><v-icon color="#1976d2">mdi-github</v-icon>git hub</a
                   >
                 </p>
@@ -73,7 +78,7 @@
 <script>
 export default {
   methods: {
-    transition() {
+    transitionPage() {
       this.$router.push({ path: "/list" });
     }
   }
@@ -92,14 +97,39 @@ export default {
   &__wrap {
     z-index: 1;
   }
-  &__btn{
+  &__btn {
     background-color: #fff;
   }
   &__card {
     width: fit-content;
   }
-  &__link{
-    text-decoration: none;
+  &__link {
+    transition: opacity 0.2s ease-in-out;
+    margin-left: 12px;
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    position: relative;
+    &:hover {
+      opacity: 0.7;
+      &::after {
+        transform: translateX(-2px) rotate(45deg);
+        animation: prompt 1.5s ease-in-out infinite;
+      }
+    }
+    &::after {
+      content: "";
+      right: 0px;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-top: 2.5px solid #1976d2;
+      border-right: 2.5px solid #1976d2;
+      transform: rotate(45deg);
+      opacity: 0.4;
+      transition: transform 0.3s ease-out;
+      position: absolute;
+    }
   }
   &__back {
     font-size: 15vw;

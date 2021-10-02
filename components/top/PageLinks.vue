@@ -2,10 +2,10 @@
   <v-menu
     rounded="xl "
     bottom
-    offset-y
-    nudge-bottom="4"
     min-width="50"
     transition="slide-y-transition"
+    offset-y
+    nudge-bottom="2"
   >
     <!-- メニューのアクティベーター -->
     <template v-slot:activator="{ on }">

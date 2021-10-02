@@ -1,20 +1,20 @@
 <template>
   <v-container fluid>
-      <!-- <h2 class="text-center text-capitalize my-4">
-      <v-icon class="mr-1" color="black">mdi-view-list</v-icon>
-      制作物一覧<br />
-      <span class="text-subtitle-1">list</span>
-      </h2> -->
-
     <v-row  justify="center" class="list__Wrapper">
-      <v-col cols="12" sm="10" lg="8" class="list__wrap" >
-
+      <v-col cols="12" sm="11" lg="9" class="list__wrap" >
+        <!-- <p>
+          <v-icon>mdi-cursor-default-click-outline</v-icon>
+          詳細表示
+        </p> -->
+        <!-- cursor-default-click-outline -->
+        <!-- magnify-expand -->
         <v-sheet tag="section" class="pa-4 mt-2 mb-12">
-            <h2 class="text-capitalize mt-2 mb-3 mx-2 list__title">
+            <h2 class="text-capitalize mt-2 mb-6 mx-2 list__title">
             コーディング
             <span class="text-subtitle-2">coding</span>
             </h2>
-          <v-row  >
+          <v-row >
+            <Product/>
             <v-col cols="12" sm="6" class="list__box" >
               <v-card>
                 <v-img
@@ -72,7 +72,6 @@
             </v-col>
           </v-row>
         </v-sheet>
-
 
       </v-col>
     </v-row>
