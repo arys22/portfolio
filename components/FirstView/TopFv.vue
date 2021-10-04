@@ -84,7 +84,7 @@ export default {
       this.mouseX = e.pageX;
       this.mouseY = e.pageY - this.$vuetify.application.top;
       if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
-      window.requestAnimationFrame(this.transformShadow);// titleのshadow
+        window.requestAnimationFrame(this.transformShadow);// titleのshadow
       //ここに書いた処理はスマホの時は無効
         window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
       }

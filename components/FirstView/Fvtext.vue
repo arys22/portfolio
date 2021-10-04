@@ -50,6 +50,7 @@ export default {
   top: 5%;
   left: 5%;
   max-width: 75%;
+  pointer-events: none;
 }
 .down-enter-active,
 .down-leave-active {

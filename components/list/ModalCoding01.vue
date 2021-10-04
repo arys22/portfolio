@@ -26,17 +26,6 @@
         </v-tab>
         <v-tab href="#tab-2">
           <v-img
-            :src="require('@/assets/img/coding1/CONTACT.png')"
-            alt="コーディングcontactページ"
-            position="center top"
-            width="90"
-            height="68"
-            class="modal__img"
-          >
-          </v-img>
-        </v-tab>
-        <v-tab href="#tab-3">
-          <v-img
             :src="require('@/assets/img/coding1/TOP_sp1.png')"
             alt="コーディングでスマホのtopページ1"
             position="center top"
@@ -46,10 +35,21 @@
           >
           </v-img>
         </v-tab>
+        <v-tab href="#tab-3">
+          <v-img
+            :src="require('@/assets/img/coding1/CONTACT.png')"
+            alt="コーディングcontactページ"
+            position="center top"
+            width="90"
+            height="68"
+            class="modal__img"
+          >
+          </v-img>
+        </v-tab>
         <v-tab href="#tab-4">
           <v-img
             :src="require('@/assets/img/coding1/CONTACT_sp1.png')"
-            alt="コーディングでスマホのtopページ2"
+            alt="コーディングでスマホのcontactページ"
             position="center top"
             width="50"
             height="68"
@@ -84,14 +84,6 @@
             </v-img>
           </v-tab-item>
           <v-tab-item value="tab-2">
-            <v-img
-              :src="require('@/assets/img/coding1/CONTACT.png')"
-              alt="コーディングcontactページ"
-              position="center top"
-              max-width="600"
-            ></v-img>
-          </v-tab-item>
-          <v-tab-item value="tab-3">
             <v-row class="ma-0">
               <v-col cols="6">
                 <v-img
@@ -112,6 +104,14 @@
                 ></v-img>
               </v-col>
             </v-row>
+          </v-tab-item>
+          <v-tab-item value="tab-3">
+            <v-img
+              :src="require('@/assets/img/coding1/CONTACT.png')"
+              alt="コーディングcontactページ"
+              position="center top"
+              max-width="600"
+            ></v-img>
           </v-tab-item>
           <v-tab-item value="tab-4">
             <v-row class="ma-0">
@@ -148,11 +148,14 @@
       <v-divider class="hidden-xs-only" vertical />
       <v-col cols="12" sm="6" md="4" class="pt-sm-6">
         <v-divider class="hidden-sm-and-up" />
-        <v-card-title class="pt-sm-3"
-          >XDデザインカンプからコーディング</v-card-title
-        >
+        <v-card-title class="pt-sm-3">
+          XDデザインカンプからコーディング
+          <svg viewBox="0 0 240 234" class="svg">
+            <use xlink:href="#xd" x="0" y="0"></use>
+          </svg>
+        </v-card-title>
         <v-card-subtitle>html/css(scss)/javascript 使用</v-card-subtitle>
-        <v-card-text>
+        <v-card-text class="pb-0">
           <ul>
             <li>レスポンシブ(モバイルファースト)対応</li>
             <li>ピクセルパーフェクト</li>
@@ -166,30 +169,34 @@
             </li>
           </ul>
           <v-divider class="my-3" />
-          <p>
+          <p class="mb-0">
             コード詳細:
             <a
-              href="https://drive.google.com/drive/folders/1p_vrNtp4EBv-lxqdkjKIqpWvSNnudDnD?usp=sharing"
+              href="https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2">mdi-google-drive</v-icon>
+              ><v-icon color="#1976d2" class="text-body-1"
+                >mdi-google-drive</v-icon
+              >
               google Drive
             </a>
             <br />
             webサイト:
             <a
-              href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.corporatedesign01.com/html/"
+              href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2">mdi-web</v-icon>
-              公開ページ
+              ><v-icon color="#1976d2" class="text-body-1"
+                >mdi-file-outline</v-icon
+              >
+              sampleページ
             </a>
             <br />
-            (google Driveからの公開ページ)
+            (google Driveでの公開ページ)
             <br />
-            <span class="text--second">※新たなタブで開きます</span>
+            <span class="text-caption">※新たなタブで開きます</span>
           </p>
         </v-card-text>
       </v-col>
@@ -294,5 +301,10 @@ export default {
       right: 5px;
     }
   }
+}
+
+.svg {
+  width: 25px;
+  margin-right: 5px;
 }
 </style>

@@ -17,19 +17,20 @@
       <v-spacer></v-spacer>
       <!-- pc -->
       <!-- plugins/constrants.jsのmenuItems -->
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-xs-only" @mouseenter="delayActive" @mouseleave="isActive=false">
         <v-btn
           color="white"
           plain
-          :class="{ header__btn__scroll: scrollY > fvHeight }"
-          :to="item.path"
-          nuxt
-          exact
+          :class="{ header__btn_scroll: scrollY > fvHeight , header__btn_active:isActive}"
           active-class="link-active"
           class="header__btn text-md-subtitle-1"
           v-for="(item, index) in $ITEMS.menuItems"
           :key="index"
+          :to="item.path"
+          nuxt
+          exact
         >
+          <!-- @click="delayActive(item.path)" -->
           {{ item.name }}
         </v-btn>
       </v-toolbar-items>
@@ -58,7 +59,7 @@
       height="auto"
     >
       <v-list nav>
-        <v-subheader class="ml-3">menu</v-subheader>
+        <v-subheader class="ml-3">メニュー</v-subheader>
         <!-- plugins/constrants.jsのmenuItems -->
         <v-list-item
           nuxt
@@ -81,7 +82,7 @@
       <template v-slot:append>
         <div class="px-4 pb-4">
           <v-btn block @click.stop="drawer = !drawer">
-            close
+            閉じる
           </v-btn>
         </div>
       </template>
@@ -106,7 +107,7 @@ export default {
     return {
       fvHeight: null,
       drawer: false,
-
+      isActive:false,//ボタンの遅延設定
     };
   },
   created() {
@@ -137,6 +138,13 @@ export default {
       this.fvHeight = height;
       // console.log(this.fvHeight);
     },
+
+    delayActive(){//ページ遷移botann遅延
+    setTimeout(() => {
+      this.isActive = true;
+      console.log("ok");
+      }, 800);
+    },
   }
 };
 </script>
@@ -157,6 +165,7 @@ export default {
   }
   &__btn {
     position: relative;
+    pointer-events: none;
     &::after {
       position: absolute;
       bottom: 10px;
@@ -173,7 +182,10 @@ export default {
       transform-origin: left top;
       transform: scale(1, 1);
     }
-    &__scroll {
+    &_active{
+      pointer-events: auto;
+    }
+    &_scroll {
       //変化後
       color: #333 !important;
       &::after {
@@ -182,7 +194,7 @@ export default {
       }
     }
   }
-  &__scroll .link-active {
+  &_scroll .link-active {
     // スクロール変化後の現在のページ
     font-weight: bold;
     &::after {

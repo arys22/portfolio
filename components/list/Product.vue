@@ -3,7 +3,6 @@
     <v-card class="product__card">
       <v-row class="mx-0">
         <v-col cols="12" sm="4">
-          <!-- src="https://via.placeholder.com/500x375" -->
           <v-img
             :src="require('@/assets/img/coding1/TOP2-1.png')"
             alt="コーディング画像1"
@@ -29,22 +28,22 @@
             <p class="mb-0 pt-1">
             コード詳細:
             <a
-              href="https://drive.google.com/drive/folders/1p_vrNtp4EBv-lxqdkjKIqpWvSNnudDnD?usp=sharing"
+              href="https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none product__link"
-              ><v-icon color="#1976d2">mdi-google-drive</v-icon>
+              ><v-icon color="#1976d2" class="text-body-1">mdi-google-drive</v-icon>
               google Drive
             </a>
             <br />
             webサイト:
             <a
-              href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.corporatedesign01.com/html/"
+              href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none product__link"
-            ><v-icon color="#1976d2">mdi-web</v-icon>
-            公開ページ
+            ><v-icon color="#1976d2" class="text-body-1">mdi-file-outline</v-icon>
+            sampleページ
           </a>
           </p>
           </v-card-text>

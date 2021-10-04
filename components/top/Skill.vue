@@ -206,6 +206,8 @@
     margin: 0 auto 0 0;
   }
 }
+
+
 .svg {
   width: 50px;
   padding: 0 5px 0;
