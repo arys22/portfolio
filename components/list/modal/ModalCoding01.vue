@@ -100,13 +100,14 @@
               <use xlink:href="#xd" x="0" y="0"></use>
             </svg>
           </v-card-title>
-          <v-card-subtitle>html/css(scss)/javascript 使用</v-card-subtitle>
+          <v-card-subtitle>HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle>
           <v-card-text class="pb-0">
             <ul>
               <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
               <li>ピクセルパーフェクト</li>
+              <li>CSS設計はBEM記法</li>
               <li>
-                アクション
+                主なアクション
                 <ul>
                   <li>スマホ時、バーガーメニュー</li>
                   <li>ヘッダーは、ファーストビュー過ぎると色変化</li>
@@ -227,7 +228,7 @@ export default {
 .modal {
   position: relative;
   &__active {
-    background-color: #e3e3e3;
+    background-color: rgb(0 0 0 / 30%);
   }
   &__active .modal__img {
     box-shadow: none;

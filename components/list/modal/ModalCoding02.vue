@@ -98,17 +98,19 @@
               <use xlink:href="#xd" x="0" y="0"></use>
             </svg>
           </v-card-title>
-          <v-card-subtitle>html/css(scss)/javascript 使用</v-card-subtitle>
+          <v-card-subtitle>HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle>
           <v-card-text class="pb-0">
             <ul>
-              <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
+              <li>レスポンシブ(モバイルファースト)スマホ、タブレット、pc、3種類対応</li>
+              <li>Retina高解像度対応</li>
               <li>ピクセルパーフェクト</li>
+              <li>googleマップ</li>
+              <li>CSS設計はBEM記法</li>
               <li>
-                アクション
+                主なアクション
                 <ul>
-                  <li>スマホ時、バーガーメニュー</li>
-                  <li>ヘッダーは、ファーストビュー過ぎると色変化</li>
-                  <li>ファーストビューのスライダー表示(3画像)</li>
+                  <li>バーガーメニュー</li>
+                  <li>ヘッダーは、ファーストビュー過ぎると個別に色変化</li>
                 </ul>
               </li>
             </ul>
@@ -116,7 +118,7 @@
             <p class="mb-0">
               コード詳細:
               <a
-                href="https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing"
+                href="https://drive.google.com/drive/folders/1g_FEX5jw7VwIIueJfB8Whxe_Kwvvh4z8?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-decoration-none modal__link"
@@ -128,7 +130,7 @@
               <br />
               webサイト:
               <a
-                href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/"
+                href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.DIGSMILE.com/html/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-decoration-none modal__link"
@@ -274,7 +276,7 @@ export default {
 .modal {
   position: relative;
   &__active {
-    background-color: #e3e3e3;
+    background-color: rgb(0 0 0 / 30%);
   }
   &__active .modal__img {
     box-shadow: none;

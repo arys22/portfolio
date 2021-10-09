@@ -30,11 +30,10 @@
             </v-col>
             <v-col cols="12" md="7">
               <v-card-title>portfolio</v-card-title>
-              <v-card-subtitle>html/css/vuetify/nuxt.js</v-card-subtitle>
+              <v-card-subtitle>HTML/CSS(SCSS)/Vuetify/Nuxt.js</v-card-subtitle>
               <v-card-text>
                 <ul>
                   <li>レスポンシブ(モバイルファースト)</li>
-                  <li>Retina対応</li>
                   <li>ライブラリ(vue-parallax-js、vue-typer)</li>
                   <li>デザインとアクションは引き算を心がけました。</li>
                   <li>
@@ -44,6 +43,7 @@
                   <li>
                     フォームはgoogleフォームと連携、自動返信メール、入力チェック/確認ページ/完了ページ
                   </li>
+                  <li>listページの見やすさを工夫しました。</li>
                   <li>ナビゲーションガード</li>
                   <li>SSG（Static Site Generator）</li>
                   <li>Firebaseでの公開</li>

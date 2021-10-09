@@ -48,7 +48,7 @@
                 </FadeInDelay>
               </div>
               <v-card-subtitle class="skill__subtitle"
-                >html・css・sass(scss)・bootstrap</v-card-subtitle
+                >HTML・CSS・Sass(SCSS)・Bootstrap</v-card-subtitle
               >
               <v-card-text>
                 <ul>
@@ -213,12 +213,4 @@
   padding: 0 5px 0;
 }
 
-// // レスポンシブ Retina
-// @media screen and (min-width: 1269px),
-//   (-webkit-min-device-pixel-ratio: 2),
-//   (min-resolution: 2dppx) {
-//   .skill {
-//     background-image: url("~@/assets/img/andrew-neel-cckf4TsHAuw-unsplash.jpg");
-//   }
-// }
 </style>

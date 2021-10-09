@@ -100,17 +100,32 @@
               <use xlink:href="#xd" x="0" y="0"></use>
             </svg>
           </v-card-title>
-          <v-card-subtitle>html/css(scss)/javascript 使用</v-card-subtitle>
+          <v-card-subtitle>HTML/CSS(SCSS)/Vue.js 使用</v-card-subtitle>
           <v-card-text class="pb-0">
             <ul>
+              <li>全8ページ</li>
               <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
+              <li>Retina高解像度対応</li>
               <li>ピクセルパーフェクト</li>
               <li>
-                アクション
+                コード
+                <ul>
+                  <li>CSS設計はBEM記法</li>
+                  <li>Dart Sass（@use）</li>
+                  <li>gulp使用</li>
+                  <li>可読性を高めるためにSCSSのディレクトリ構成をBlock単位等、細かく設定、工夫しました。</li>
+                  <li>パンくずリスト(構造化データ)</li>
+                </ul>
+              </li>
+              <li>
+                主なアクション
                 <ul>
                   <li>スマホ時、バーガーメニュー</li>
-                  <li>ヘッダーは、ファーストビュー過ぎると色変化</li>
-                  <li>ファーストビューのスライダー表示(3画像)</li>
+                  <li>ヘッダーは、スクロールすると色変化</li>
+                  <li>上へスクロールして戻るボタン</li>
+                  <li>hover時とscrolldownのアニメーション</li>
+                  <li>topページのWORKSのスライダー(vue-awesome-swiper使用)</li>
+                  <li>newsページのページネーション(vuejs-paginate使用)</li>
                 </ul>
               </li>
             </ul>
@@ -118,19 +133,19 @@
             <p class="mb-0">
               コード詳細:
               <a
-                href="https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing"
+                href="https://github.com/arys22/pon-design"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-decoration-none modal__link"
                 ><v-icon color="#1976d2" class="text-body-1"
-                  >mdi-google-drive</v-icon
+                  >mdi-github</v-icon
                 >
-                google Drive
+                GitHub
               </a>
               <br />
               webサイト:
               <a
-                href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/"
+                href="https://arys22.github.io/pon-design/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-decoration-none modal__link"
@@ -140,7 +155,7 @@
                 sampleページ
               </a>
               <br />
-              (google Driveでの公開ページ)
+              (GitHub Pagesでの公開ページ)
               <br />
               <span class="text-caption">※新たなタブで開きます</span>
             </p>
@@ -341,7 +356,7 @@ export default {
 .modal {
   position: relative;
   &__active {
-    background-color: #e3e3e3;
+    background-color: rgb(0 0 0 / 30%);
   }
   &__active .modal__img {
     box-shadow: none;
