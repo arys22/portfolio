@@ -13,8 +13,9 @@
             コーディング
             <span class="text-subtitle-2">coding</span>
             </h2>
+            <Coding/>
           <v-row >
-            <Product/>
+            <!-- <Product/> -->
             <v-col cols="12" sm="6" class="list__box" >
               <v-card>
                 <v-img

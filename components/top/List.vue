@@ -62,7 +62,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-decoration-none list__link"
-                    ><v-icon color="#1976d2" class="text-h6">mdi-github</v-icon>git hub</a
+                    ><v-icon color="#1976d2" class="text-h6">mdi-github</v-icon>GitHub</a
                   >
                 </p>
               </v-card-text>

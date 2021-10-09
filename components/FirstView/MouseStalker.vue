@@ -87,7 +87,7 @@ export default {
       width: 100px;
       height: 100px;
       opacity: .3;
-      box-shadow: 0 0 5px #000;
+      box-shadow: 0 0 5px rgb(236, 235, 235);
       transition: all 0.5s ease-in-out;
     }
   }
@@ -107,7 +107,7 @@ export default {
 @keyframes shrink {
   from {
     transform: scale(0.7);
-    box-shadow: 0 0 1px inset #ddd;
+    box-shadow: 0 0 1px inset #eee;
   }
   to {
     transform: scale(1);

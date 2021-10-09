@@ -142,8 +142,7 @@ export default {
     delayActive(){//ページ遷移botann遅延
     setTimeout(() => {
       this.isActive = true;
-      console.log("ok");
-      }, 800);
+      }, 1000);
     },
   }
 };
