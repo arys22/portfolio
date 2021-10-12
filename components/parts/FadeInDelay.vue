@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 .fade {
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: transform 2.5s cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
 
 .hidden {
@@ -53,7 +53,7 @@ export default {
 
 .fadein {
   opacity: 0;
-  animation: fadeIn 1.5s ease-in-out forwards;
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
 @keyframes fadeIn {

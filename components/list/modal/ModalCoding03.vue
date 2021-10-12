@@ -112,8 +112,8 @@
                 <ul>
                   <li>CSS設計はBEM記法</li>
                   <li>Dart Sass（@use）</li>
-                  <li>gulp使用</li>
                   <li>可読性を高めるためにSCSSのディレクトリ構成をBlock単位等、細かく設定、工夫しました。</li>
+                  <li>gulp使用</li>
                   <li>パンくずリスト(構造化データ)</li>
                 </ul>
               </li>

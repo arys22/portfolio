@@ -68,7 +68,7 @@ export default {
   // mix-blend-mode: difference;
   transform: translate(0, 0);
   transition: transform 0.5s cubic-bezier(0, 0, 0.52, 1.13),
-  opacity 0.2s ease-in-out 0.2s;
+  opacity 0.2s ease-out 0.2s;
   opacity: 0;
   &__stalker {
     position: absolute;
@@ -80,7 +80,7 @@ export default {
     // box-shadow: 0 0 2px #666;
     border: 2.5px solid;
     opacity: .6;
-    transition: all .3s ease-in-out ;
+    transition: all .3s ease-out ;
     &.hov {
       top: -50px;
       left: -50px;
@@ -88,7 +88,7 @@ export default {
       height: 100px;
       opacity: .3;
       box-shadow: 0 0 5px rgb(236, 235, 235);
-      transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-out;
     }
   }
   &__text{

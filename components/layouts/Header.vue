@@ -12,7 +12,10 @@
         v-show="scrollY == 0 || scrollY < fvHeight"
       >
         <v-icon color="white" class="header__mark">mdi-alpha-p-circle-outline</v-icon>
-        <h1 class="header__title text-h6">{{ title }}</h1>
+        <transition  name="title">
+          <!-- mode=”out-in” -->
+        <h1 class="header__title text-h6 text-capitalize" v-show="show">{{ title }}</h1>
+        </transition>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- pc -->
@@ -108,6 +111,7 @@ export default {
       fvHeight: null,
       drawer: false,
       isActive:false,//ボタンの遅延設定
+      show:false,//h1タグ
     };
   },
   created() {
@@ -115,12 +119,21 @@ export default {
     this.setListener();
   },
   mounted() {
+    this.show = true;//h1
     // ルートの遷移前（コンポーネントガード解決前）
     this.$router.beforeEach((to, from, next) => {
       // console.log('global:beforeEach');
       this.fvHeight = null;
+      this.show = false;//h1
       next();
     });
+    // ルートの遷移後
+    this.$router.afterEach((to, from, next) => {
+			setTimeout( () => {
+				// console.log('global:afterEach');
+        this.show =true;//h1
+			}, 1000);
+		})
   },
 
   beforeDestroy() {
@@ -154,10 +167,6 @@ export default {
 
   &__scroll {
     background-color: transparent !important;
-  }
-  &__mark{
-    transform: rotateY(740deg);
-    animation: turn 5s ease-out forwards 10s 1;
   }
   &__title {
     display: inline-block;
@@ -202,11 +211,6 @@ export default {
   }
 }
 
-@keyframes turn {
-  100% {
-    transform: rotateY(0deg);
-  }
-}
 // sp バーガー 優先度上げ
 .theme--light.v-btn.v-btn--icon.header__icon {
   color: #fff;
@@ -229,30 +233,7 @@ export default {
 .v-icon {
   transition: transform 0.5s ease-out;
 }
-// ホバー時アイコン
-.v-list-item:hover .v-icon {
-  animation: poyon 1.5s 1;
-}
-@keyframes poyon {
-  0% {
-    transform: scale(1, 1) translate(0%, 0%);
-  }
-  15% {
-    transform: scale(0.9, 0.9) translate(0%, 5%);
-  }
-  30% {
-    transform: scale(1.2, 0.8) translate(0%, 8%);
-  }
-  50% {
-    transform: scale(0.8, 1.2) translate(0%, -8%);
-  }
-  70% {
-    transform: scale(1.1, 0.9) translate(0%, 5%);
-  }
-  100% {
-    transform: scale(1, 1) translate(0%, 0%);
-  }
-}
+
 
 .sp {
   &__list {
@@ -264,5 +245,28 @@ export default {
     transform: none;
     opacity: 1;
   }
+}
+
+.title-enter {
+  transform: translate(-50px, 0);
+  opacity: 0;
+}
+.title-enter-to {
+  transform: translate(0px, 0);
+  opacity: 1;
+}
+.title-enter-active {
+  transition: all 1s 0s ease-out;
+}
+.title-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.title-leave-to {
+  transform: translate(100px, 0);
+  opacity: 0;
+}
+.title-leave-active {
+  transition: all .5s 0s ease-in;
 }
 </style>

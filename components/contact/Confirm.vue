@@ -5,7 +5,6 @@
       >お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-      <FadeIn>
         <v-card>
           <div class="confirm__text pa-4">
             <p>
@@ -14,11 +13,12 @@
                 >「送信する」</span
               >ボタンを押して下さい。
             </p>
-            <p>
-              <v-icon color="#ff1493">mdi-alert-circle</v-icon
-              ><span class="confirm__caution font-weight-bold"
-                >下記のメールアドレスに返信しますので、今一度ご確認ください。</span
-              ><br />入力間違いがありますと返信できない場合がありますのでご注意ください。
+            <p class="mb-0">
+              <span class="font-weight-bold confirm__caution">
+                <v-icon color="#ff1493">mdi-alert-circle</v-icon
+              ><FadeSlide>下記のメールアドレスに返信しますので、今一度ご確認ください。</FadeSlide>
+                </span>
+              <span class="text-caption">※入力間違いがありますと返信できない場合がありますのでご注意ください。</span>
             </p>
           </div>
           <!-- googleフォームと連携 action=”url” target="dummy" 追加 -->
@@ -87,7 +87,6 @@
             </v-card-actions>
           </v-form>
         </v-card>
-      </FadeIn>
       <!-- iframeタグを追加 target="dummy"-->
       <iframe name="dummy" style="display:none;"></iframe>
     </v-col>
@@ -147,6 +146,10 @@ export default {
   &__text {
     border: 2px solid #aaa;
     border-radius: 4px;
+  }
+  &__caution{
+    display: flex;
+    align-items: flex-start;
   }
   &__actions {
     align-items: flex-end;

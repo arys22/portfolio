@@ -22,7 +22,7 @@ export default {
     handleScroll() {
       if (!this.visible) {
         var top = this.$refs.fade.getBoundingClientRect().top;
-        this.visible = top + 50 < window.innerHeight;
+        this.visible = top + 80 < window.innerHeight;
       }
     }
   }
@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .fade {
-  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: transform 400ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   /* height: inherit; */
 }
 
@@ -41,7 +41,7 @@ export default {
 
 .fadeScale {
   opacity: 1;
-  animation: fadeScale 2s ease-in-out;
+  animation: fadeScale .4s ease-in-out;
 }
 
 @keyframes fadeScale {

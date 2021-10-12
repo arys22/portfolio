@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <Breadcrumbs :items-data="breadData"/>
     <StepBar />
     <v-row justify="center" tag="section" align="center" class="conmp">
       <h2 class="text-center  my-4 conmp__title">
@@ -10,10 +11,9 @@
       <!-- mdi-email-send-outline -->
       <!-- mdi-email-open-outline -->
       <v-col cols="12" sm="10" md="8" lg="6">
-        <FadeIn>
           <v-card>
             <v-card-title class="justify-center"
-              >お問い合わせありがとうございました。</v-card-title
+              ><FadeSlide>お問い合わせありがとうございました</FadeSlide></v-card-title
             >
             <svg viewBox="0 0 299.803 190.481" class="conmp__svg">
               <use xlink:href="#illustrationEmail" x="0" y="0"></use>
@@ -28,7 +28,6 @@
               </p>
             </v-card-text>
           </v-card>
-        </FadeIn>
       </v-col>
     </v-row>
   </v-container>
@@ -53,7 +52,30 @@ export default {
     return {
       header: {
         title: "complete" //内容確認ヘッダータイトル
-      }
+      },
+      breadData:[//パンくず
+        {
+          text: 'top',
+          icon:"mdi-home",
+          disabled: false,
+          path: '/',
+        },
+        {
+          text: 'お問い合わせ',
+          disabled: false,
+          path: '/contact',
+        },
+        {
+          text: '確認',
+          disabled: true,
+          path: '/confirm',
+        },
+        {
+          text: '送信完了',
+          disabled: true,
+          path: '/complete',
+        },
+      ],
     };
   },
   mounted() {

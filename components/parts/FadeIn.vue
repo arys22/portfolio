@@ -22,7 +22,7 @@ export default {
     handleScroll() {
       if (!this.visible) {
         var top = this.$refs.fade.getBoundingClientRect().top;
-        this.visible = top + 60 < window.innerHeight;
+        this.visible = top + 50 < window.innerHeight;
       }
     }
   }
@@ -40,7 +40,7 @@ export default {
 
 .fadein {
   opacity: 1;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2s ease-out;
 }
 
 @keyframes fadeIn {

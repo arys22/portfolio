@@ -1,105 +1,173 @@
 <template>
-  <v-col cols="12" md="6" class="product">
-    <v-card class="product__card">
-      <v-row class="mx-0">
-        <v-col cols="12" sm="4">
-          <v-hover v-slot="{ hover }">
-            <v-img
-              :class="{ 'on-hover': hover }"
-              :src="require('@/assets/img/coding1/TOP2-1.png')"
-              alt="コーディング画像1"
-              max-width="267"
-              max-height="200"
-              position="center top"
-              class="product__img"
-              id="activator"
-            >
-              <!-- @click.stop="dialog= true" v-show="hover"-->
-              <!-- hover時 -->
-                <div  class="product__wrap" :class="{ 'delay-hover': hover }">
+  <v-row>
+    <v-col
+      cols="12"
+      md="6"
+      class="product mb-10"
+      v-for="item in items"
+      :key="item.id"
+    >
+      <v-card>
+        <v-row class="mx-0">
+          <v-col cols="12" sm="4">
+            <v-hover v-slot="{ hover }">
+              <v-img
+                :class="{ 'on-hover': hover }"
+                :src="item.img_src"
+                :alt="`コーディング画像${item.id}`"
+                max-width="267"
+                max-height="200"
+                position="center top"
+                class="product__img"
+                @click.stop="open(item.component)"
+              >
+                <!-- hover時 -->
+                <div class="product__wrap" :class="{ 'delay-hover': hover }">
                   <span
                     class="product__wrap--title"
                     :class="{ 'delay-hover': hover }"
-                    >全２ページ</span
+                    >全{{ item.page }}ページ</span
                   >
                   <span
                     class="product__wrap--text"
                     :class="{ 'delay-hover': hover }"
                   >
-                    top,contact
+                    {{ item.page_type }}
                   </span>
                 </div>
+              </v-img>
+            </v-hover>
+          </v-col>
+          <v-col cols="12" sm="8" class="product__text">
+            <v-card-title class="pt-0">{{ item.title }}</v-card-title>
+            <v-card-subtitle class="py-0">{{ item.lang }}</v-card-subtitle>
+            <v-card-text class="py-1">
+              <ul>
+                <li>{{ item.desc }}</li>
+                <li>{{ item.range }}</li>
+              </ul>
+              <p class="mb-0 pt-1">
+                コード詳細:
+                <a
+                  :href="item.code_href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none product__link"
+                  >
+                  <v-icon color="#1976d2" class="text-body-1">{{
+                    item.icon
+                  }}</v-icon>
+                  {{ item.code_type }}
+                </a>
+                <br />
+                webサイト:
+                <a
+                  :href="item.web_href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-decoration-none product__link"
+                  >
+                  <v-icon color="#1976d2" class="text-body-1"
+                    >mdi-file-outline</v-icon
+                  >
+                  sampleページ
+                </a>
+              </p>
+            </v-card-text>
+            <v-card-actions>
+              <!-- モーダルウィンドウ -->
+              <v-btn
+                @click.stop="open(item.component)"
+                class="product__btn"
+                plain
+                rounded
+              >
+                詳細表示
+              </v-btn>
 
-            </v-img>
-          </v-hover>
-        </v-col>
-        <v-col cols="12" sm="8" class="product__text">
-          <v-card-title class="pt-0">コーポレートサイト</v-card-title>
-          <v-card-subtitle class="py-0"
-            >html/css(scss)/javascript</v-card-subtitle
-          >
-          <v-card-text class="py-1">
-            <ul>
-              <li>XDデザインカンプからコーディング</li>
-              <li>レスポンシブ(スマホ、pc)</li>
-            </ul>
-            <p class="mb-0 pt-1">
-              コード詳細:
-              <a
-                href="https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none product__link"
-                ><v-icon color="#1976d2" class="text-body-1"
-                  >mdi-google-drive</v-icon
-                >
-                google Drive
-              </a>
-              <br />
-              webサイト:
-              <a
-                href="https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-decoration-none product__link"
-                ><v-icon color="#1976d2" class="text-body-1"
-                  >mdi-file-outline</v-icon
-                >
-                sampleページ
-              </a>
-            </p>
-          </v-card-text>
-          <v-card-actions>
-            <!-- モーダルウィンドウ -->
-            <v-dialog
-              v-model="dialog"
-              :fullscreen="$vuetify.breakpoint.xsOnly"
-              transition="scale-transition"
-              activator="#activator"
-              max-width="1000"
-            >
-              <!-- アクティベータースロット -->
-              <template v-slot:activator="{ on }">
-                <v-btn v-on="on" class="product__btn" plain rounded>
-                  詳細表示
-                </v-btn>
-              </template>
-              <!-- ダイアログコンテンツ -->
-              <ModalCoding01 @close="dialog = false" />
-            </v-dialog>
-          </v-card-actions>
-        </v-col>
-      </v-row>
-    </v-card>
-  </v-col>
+            </v-card-actions>
+          </v-col>
+        </v-row>
+      </v-card>
+    </v-col>
+    <v-dialog
+      v-model="dialog"
+      :fullscreen="$vuetify.breakpoint.xsOnly"
+      transition="scale-transition"
+      max-width="1000"
+    >
+      <!-- ダイアログコンテンツ -->
+      <!-- @close モーダルの× -->
+      <Component :is="componentTitle" @close="dialog = false"/>
+    </v-dialog>
+  </v-row>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
+      componentTitle: null,
+      items: [
+        {
+          id: 1,
+          title: "コーポレートサイト",
+          desc: "XDデザインカンプからコーディング",
+          range: "レスポンシブ(スマホ、pc)",
+          lang: "HTML/CSS(SCSS)/JavaScript",
+          page: "2",
+          page_type: "top, contact",
+          img_src: require("@/assets/img/coding1/TOP2-1.png"),
+          code_href:
+            "https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing",
+          icon: "mdi-google-drive",
+          code_type: "google Drive",
+          web_href:
+            "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/",
+          component:"ModalCoding01",
+        },
+        {
+          id: 2,
+          title: "コーポレートサイト",
+          desc: "XDデザインカンプからコーディング",
+          range: "レスポンシブ(スマホ、タブレット、pc)",
+          lang: "HTML/CSS(SCSS)/JavaScript",
+          page: "3",
+          page_type: "top, about, contact",
+          img_src: require("@/assets/img/coding2/home_pc1-min.png"),
+          code_href:
+            "https://drive.google.com/drive/folders/1g_FEX5jw7VwIIueJfB8Whxe_Kwvvh4z8?usp=sharing",
+          icon: "mdi-google-drive",
+          code_type: "google Drive",
+          web_href:
+            "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.DIGSMILE.com/html/",
+          component:"ModalCoding02",
+        },
+        {
+          id: 3,
+          title: "コーポレートサイト",
+          desc: "XDデザインカンプからコーディング",
+          range: "レスポンシブ(スマホ、pc)",
+          lang: "HTML/CSS(SCSS)/Vue.js",
+          page: "8",
+          page_type:
+            "top, news, article, service, works, company, recruit, contact",
+          img_src: require("@/assets/img/coding3/index1-pc-min.png"),
+          code_href: "https://github.com/arys22/pon-design",
+          icon: "mdi-github",
+          code_type: "GitHub",
+          web_href: "https://arys22.github.io/pon-design/",// GitHub Pages
+          component:"ModalCoding03",
+        }
+      ]
     };
+  },
+  methods: {
+    open (component){
+      this.dialog = true;
+      this.componentTitle = component;
+    }
   }
 };
 </script>
@@ -138,9 +206,9 @@ export default {
     );
     transition: all 0.3s ease-out;
     &.delay-hover {
-        transform: translateY(-100%);
-        opacity: 1;
-      }
+      transform: translateY(-100%);
+      opacity: 1;
+    }
     &--title {
       position: relative;
       left: 0;
@@ -153,6 +221,7 @@ export default {
       }
     }
     &--text {
+      width: 100%;
       font-size: 14px;
       font-weight: normal;
       position: relative;

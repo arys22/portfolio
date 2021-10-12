@@ -36,7 +36,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 1500);
+    }, 1000);
   },
 };
 </script>
@@ -45,7 +45,7 @@ export default {
 .v-btn {
   left: 50%;
   transform: translateX(-50%);
-  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-out;
   display: flex;
   align-items: flex-end;
     &:hover{
@@ -121,7 +121,7 @@ export default {
 // スライド スクロールdown
 .down-enter-active,
 .down-leave-active {
-  transition: transform 2.5s ease-in;
+  transition: transform 2.5s ease-out;
   transform: translate(-50%, 0px);
 }
 .down-enter,

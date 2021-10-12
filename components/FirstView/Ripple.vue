@@ -61,7 +61,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    border: 2.5px ridge ;
+    border: 2.5px solid ;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -82,7 +82,7 @@ export default {
     width: 50px;
     height: 50px;
     opacity: 1;
-    border-width: 3px;
+    border-width: 4px;
   }
   to {
     width: 330px;

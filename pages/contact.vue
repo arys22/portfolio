@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <Breadcrumbs :items-data="breadData"/>
     <StepBar />
     <ContactForm />
   </v-container>
@@ -24,7 +25,20 @@ export default {
     return {
       header: {
         title: "contact" //ヘッダータイトル
-      }
+      },
+      breadData:[//パンくず
+        {
+          text: 'top',
+          icon:"mdi-home",
+          disabled: false,
+          path: '/',
+        },
+        {
+          text: 'お問い合わせ',
+          disabled: true,
+          path: '/contact',
+        },
+      ],
     };
   },
   mounted() {

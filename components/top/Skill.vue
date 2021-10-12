@@ -6,50 +6,39 @@
         >skill</span
       >
     </h2>
-    <v-col cols="11" sm="10" lg="8" class="skill__wrap">
+    <v-col cols="11" sm="10" lg="8" class="skill__wrap" >
       <v-row justify="center">
         <v-col cols="12">
-          <FadeIn>
+          <FadeSlide>
             <p>
               日々進化し続ける技術をキャッチアップするための学びはもちろんのこと、悩みや課題や目標を解決できるよう、クライアントの目線での視点や、使う人のものであることを常に意識して、多角的に捉えられるように研鑽していきます。
             </p>
-          </FadeIn>
+          </FadeSlide>
         </v-col>
-        <v-col cols="12" md="4" class="skill__box" tag="section">
+        <v-col cols="12" md="4" class="skill__box" tag="section" >
           <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
+              <FadeSlide>
                 <h3>html・css</h3>
+              </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInDelay>
-                  <!-- html -->
+                <template v-for="(skill,index) in firstSkills" >
+                <FadeInDelay :delay="skill.delay" :key="index">
                   <svg viewBox="0 0 256 361" class="svg">
-                    <use xlink:href="#html" x="0" y="0"></use>
+                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
                   </svg>
                 </FadeInDelay>
-                <FadeInDelay :delay="0.15">
-                  <!-- css -->
-                  <svg viewBox="0 0 256 361" class="svg">
-                    <use xlink:href="#css" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.25">
-                  <!-- sass -->
-                  <svg viewBox="0 0 256 192" class="svg">
-                    <use xlink:href="#sass" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.35">
-                  <!-- bootstrap -->
-                  <svg viewBox="0 0 256 256" class="svg">
-                    <use xlink:href="#bootstrap" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                </template>
               </div>
-              <v-card-subtitle class="skill__subtitle"
-                >HTML・CSS・Sass(SCSS)・Bootstrap</v-card-subtitle
-              >
+              <v-card-subtitle class="skill__subtitle">
+              <FadeSlide>
+                HTML・CSS・Sass(SCSS)・Bootstrap
+              </FadeSlide>
+                </v-card-subtitle>
+              <v-divider class="skill__border"/>
+              <Fade>
               <v-card-text>
                 <ul>
                   <li>
@@ -57,55 +46,39 @@
                   </li>
                   <li>レスポンシブ対応(モバイルファースト)</li>
                   <li>scssでBEM記法で記述しています。</li>
-                  <li>bootstrap使用時は、グリッドシステムを利用します。</li>
+                  <li>bootstrap使用時は、グリッドシステムを利用</li>
                   <li>XDからのコーディング可能です。</li>
                   <li>今後は、特にSEO対策の理解を深めていきます。</li>
                 </ul>
               </v-card-text>
+              </Fade>
             </v-card>
-          </FadeIn>
+            </FadeIn>
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card>
               <v-card-title class="text-capitalize">
+              <FadeSlide>
                 <h3>JavaScript</h3>
+              </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInDelay>
-                  <!-- js -->
-                  <svg viewBox="0 0 256 256" class="svg">
-                    <use xlink:href="#js" x="0" y="0"></use>
+                <template v-for="(skill,index) in secondSkills" >
+                <FadeInDelay :delay="skill.delay" :key="index">
+                  <svg viewBox="0 0 256 300" class="svg">
+                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
                   </svg>
                 </FadeInDelay>
-                <FadeInDelay :delay="0.15">
-                  <!-- vue -->
-                  <svg viewBox="0 0 256 221" class="svg">
-                    <use xlink:href="#vue" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.25">
-                  <!-- vuetify -->
-                  <svg viewBox="0 0 256 293" class="svg">
-                    <use xlink:href="#vuetify" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.35">
-                  <!-- node -->
-                  <svg viewBox="0 0 512 314" class="svg">
-                    <use xlink:href="#node" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.45">
-                  <!-- nuxt -->
-                  <svg viewBox="0 0 256 191" class="svg">
-                    <use xlink:href="#nuxt" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                </template>
               </div>
-              <v-card-subtitle class="skill__subtitle"
-                >JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js</v-card-subtitle
-              >
+              <v-card-subtitle class="skill__subtitle">
+              <FadeSlide>
+                JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js
+              </FadeSlide>
+                </v-card-subtitle>
+              <v-divider class="skill__border"/>
+              <Fade>
               <v-card-text>
                 <ul>
                   <li>
@@ -116,55 +89,81 @@
                   <li>APIなど、より一層の習熟の必要があります。</li>
                 </ul>
               </v-card-text>
+              </Fade>
             </v-card>
-          </FadeIn>
+            </FadeIn>
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card>
               <v-card-title class="text-uppercase">
+              <FadeSlide>
                 <h3>その他</h3>
+              </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <FadeInDelay>
-                  <!-- git -->
-                  <svg viewBox="0 0 256 256" class="svg">
-                    <use xlink:href="#git" x="0" y="0"></use>
+                <template v-for="(skill,index) in thirdSkills" >
+                <FadeInDelay :delay="skill.delay" :key="index">
+                  <svg viewBox="0 0 256 300" class="svg">
+                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
                   </svg>
                 </FadeInDelay>
-                <FadeInDelay :delay="0.15">
-                  <!-- github -->
-                  <svg viewBox="0 0 256 250" class="svg">
-                    <use xlink:href="#github" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
-                <FadeInDelay :delay="0.25">
-                  <!-- firebase -->
-                  <svg viewBox="0 0 256 351" class="svg">
-                    <use xlink:href="#firebase" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                </template>
               </div>
-              <v-card-subtitle class="skill__subtitle"
-                >Git・GitHub・Firebase 等</v-card-subtitle
-              >
+              <v-card-subtitle class="skill__subtitle">
+              <FadeSlide>
+                Git・GitHub・Firebase 等
+              </FadeSlide>
+                </v-card-subtitle>
+              <v-divider class="skill__border"/>
+              <Fade>
               <v-card-text>
                 <ul>
                   <li>エディタは Visual Studio Code</li>
                   <li>Git/GitHub基本操作</li>
+                  <li>RubyのRuby on Railsチュートリアルを1周程度</li>
                   <li>Firebase?</li>
                   <li>今後はバックエンドの理解を深めていきます。</li>
-                  <li>RubyのRuby on Railsチュートリアルを1周程度</li>
                 </ul>
               </v-card-text>
+              </Fade>
             </v-card>
-          </FadeIn>
+            </FadeIn>
         </v-col>
       </v-row>
     </v-col>
     <div class="skill__back text-uppercase" v-parallax="-0.17">skill</div>
   </v-row>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      // アイコン
+      firstSkills:[
+        {name:"html" ,delay:0.25},
+        {name:"css",delay:0.5},
+        {name:"sass",delay:0.75},
+        {name:"bootstrap",delay:1},
+      ],
+      secondSkills:[
+        {name:"js" ,delay:0.25},
+        {name:"vue",delay:0.5},
+        {name:"vuetify",delay:0.75},
+        {name:"node",delay:1},
+        {name:"nuxt",delay:1.25},
+      ],
+      thirdSkills:[
+        {name:"git" ,delay:0.25},
+        {name:"github",delay:0.5},
+        {name:"firebase",delay:0.75},
+      ],
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .skill {
   background-image: url("~@/assets/img/stone-back.jpg");
@@ -185,8 +184,11 @@
   }
   &__subtitle {
     font-weight: 600;
-    border-bottom: 1px dotted #ccc;
-    margin-bottom: 1rem;
+  }
+  &__border{
+    border-style:  dotted;
+    width: 95%;
+    margin: 0 auto;
   }
   &__back {
     font-size: 15vw;

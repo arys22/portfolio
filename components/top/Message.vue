@@ -5,32 +5,32 @@
       >ご挨拶<br /><span class="text-subtitle-1">message</span>
     </h2>
     <v-col cols="12"  md="5" class="message__wrap ">
-        <FadeIn>
+        <FadeSlide>
             <p>
               はじめまして。齋藤と申します。<br>
-              この度はポートフォリオサイトに訪問いただきありがとうございます。<br><br>
+              この度はポートフォリオサイトに訪問いただきありがとうございます。<br>
               このサイトは、これまでに手がけた制作物、スキルをまとめています。<br>
               私自身、まだまだ至らない点はたくさんありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングができるよう心がけていきます。<br>
               今後ともよろしくお願いいたします。
             </p>
-        </FadeIn>
+        </FadeSlide>
     </v-col>
     <v-col cols="9"  md="4" class="message__img">
+      <Fade>
       <v-sheet class="message__bg" ></v-sheet>
+      </Fade>
       <Fade>
         <v-sheet
           class="message__bg message__bg--code"
           elevation="8"
         ></v-sheet>
       </Fade>
-      <Fade>
         <v-sheet
           class="message__bg message__bg--pc"
           elevation="16"
         ></v-sheet>
-      </Fade>
     </v-col>
-          <div class="message__back text-uppercase" v-parallax="-0.17">message</div>
+        <div class="message__back text-uppercase" v-parallax="-0.17">message</div>
   </v-row>
 </template>
 
@@ -84,7 +84,7 @@
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    bottom: -13%;
+    bottom: -15%;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;

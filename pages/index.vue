@@ -4,8 +4,8 @@
     <!-- <Canvas class="canvas" /> -->
     <!-- <Message id="message" /> -->
     <v-container fluid class="index__container">
-      <!-- <Skill id="skill" /> -->
-      <List id="list" />
+      <Skill id="skill" />
+      <!-- <List id="list" /> -->
       <!-- <div class="contact__space">
             <div class="contact__back text-uppercase" v-parallax="-0.17">contact</div>
       </div> -->

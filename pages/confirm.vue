@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <Breadcrumbs :items-data="breadData"/>
     <StepBar />
     <Confirm />
   </v-container>
@@ -18,14 +19,32 @@ export default {
           name: "description",
           content: "お問い合わせの確認ページです。"
         }
-      ]
+      ],
     };
   },
   data() {
     return {
       header: {
         title: "confirm" //内容確認ヘッダータイトル
-      }
+      },
+      breadData:[//パンくず
+        {
+          text: 'top',
+          icon:"mdi-home",
+          disabled: false,
+          path: '/',
+        },
+        {
+          text: 'お問い合わせ',
+          disabled: false,
+          path: '/contact',
+        },
+        {
+          text: '確認',
+          disabled: true,
+          path: '/confirm',
+        },
+      ],
     };
   },
   mounted() {

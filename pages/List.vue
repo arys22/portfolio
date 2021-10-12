@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+        <Breadcrumbs :items-data="breadData"/>
     <v-row  justify="center" class="list__Wrapper">
       <v-col cols="12" sm="11" lg="9" class="list__wrap" >
         <!-- <p>
@@ -8,39 +9,14 @@
         </p> -->
         <!-- cursor-default-click-outline -->
         <!-- magnify-expand -->
-        <v-sheet tag="section" class="pa-4 mt-2 mb-12">
-            <h2 class="text-capitalize mt-2 mb-6 mx-2 list__title">
-            コーディング
-            <span class="text-subtitle-2">coding</span>
+        <!-- <v-sheet tag="section" class="pa-4 mt-2 mb-12"> -->
+            <h2 class="text-capitalize mt-2 mb-10 mx-2 list__title">
+            <!-- <v-icon class="mr-1" color="black">mdi-view-list</v-icon> -->
+            制作物
+            <span class="text-subtitle-2 text-capitalize">list</span>
             </h2>
-            <Coding/>
-          <v-row >
-            <!-- <Product/> -->
-            <v-col cols="12" sm="6" class="list__box" >
-              <v-card>
-                <v-img
-                  src="https://via.placeholder.com/500x375"
-                  alt="デモ"
-                  max-height="200"
-                ></v-img>
-                  <!-- max-width="300"
-                  max-height="200" -->
-                <v-card-title>タイトル</v-card-title>
-                <v-card-subtitle>サブタイトル</v-card-subtitle>
-                <v-card-text>本文</v-card-text>
-                <v-card-actions>アクション</v-card-actions>
-              </v-card>
-            </v-col>
-            <v-col cols="12" sm="6" class="list__box" >
-              <v-card>
-                <v-card-title>タイトル</v-card-title>
-                <v-card-subtitle>サブタイトル</v-card-subtitle>
-                <v-card-text>本文</v-card-text>
-                <v-card-actions>アクション</v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-sheet>
+            <Product/>
+        <!-- </v-sheet> -->
 
         <v-sheet tag="section" class="pa-4 mt-2 mb-12" >
             <h2 class="text-capitalize mt-2 mb-3 mx-2 list__title">
@@ -98,7 +74,20 @@ export default {
     return {
       header: {
         title: "list" //ヘッダータイトル
-      }
+      },
+      breadData:[//パンくず
+        {
+          text: 'top',
+          icon:"mdi-home",
+          disabled: false,
+          path: '/',
+        },
+        {
+          text: '制作物',
+          disabled: true,
+          path: '/list',
+        },
+      ],
     };
   },
   mounted() {

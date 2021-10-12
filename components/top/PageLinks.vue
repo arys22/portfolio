@@ -74,7 +74,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.navIn = true;
-    }, 4700);
+    }, 3300);
   }
 };
 </script>
@@ -82,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 .in-enter-active,
 .in-leave-active {
-  transition: 2s ease-in;
+  transition: 2.2s ease-out;
 }
 .in-enter,
 .in-leave-to {
@@ -103,7 +103,7 @@ export default {
 }
 .v-btn {
   background-color: transparent;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-out;
   pointer-events: auto;
   &:hover {
     background-color: #ddd;
