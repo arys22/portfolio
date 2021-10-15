@@ -4,7 +4,7 @@
       <img class="top-op__gif" src="@/assets/img/logo-p.gif" width="66" height="66" alt="logo" >
     </div>
     <div class="top-op__bg up" v-show="!show">
-      <img class="top-op__img" src="@/assets/img/logo-100.png" alt="logo" width="22" height="22" >
+      <img class="top-op__img" src="@/assets/img/logo-180.png" alt="logo" width="22" height="22" >
     </div>
   </div>
 </template>

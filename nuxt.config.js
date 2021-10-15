@@ -14,13 +14,16 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "ポートフォリオのサイトです。" },
+      { hid: "description", name: "description", content: "ポートフォリオのwebサイトです。制作物などをまとめています。" },
       { name: "format-detection", content: "telephone=no" },
       // 自動翻訳させないための記述
       // { "http-equiv": "Content-Language", content: "ja" },
       // { name: "google", content: "notranslate" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      {  hid: 'icon',rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '180x180', href: '@/assets/logo-180.png' }//ファビコン
+  ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
