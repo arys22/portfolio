@@ -36,7 +36,9 @@ export default {
     this.textModel = this.textArray[0];
   },
   mounted() {
+    setTimeout(() => {
     this.show = true;
+    },3700);
   },
 
   methods: {
@@ -151,7 +153,7 @@ export default {
 }
 
 .text__box .text__item {
-  transition: all 1.8s cubic-bezier(0, 0.08, 0.05, 1);
+  transition: all 2s cubic-bezier(0, 0.08, 0.05, 1);
 }
 
 @media screen and(min-width: 600px) {

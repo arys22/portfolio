@@ -11,7 +11,7 @@
         class="white--text"
         v-show="scrollY == 0 || scrollY < fvHeight"
       >
-        <v-icon color="white" class="header__mark">mdi-alpha-p-circle-outline</v-icon>
+        <img class="header__mark" src="@/assets/img/logo-32.png" alt="logo" width="22" height="22"/>
         <transition  name="title">
           <!-- mode=”out-in” -->
         <h1 class="header__title text-h6 text-capitalize" v-show="show">{{ title }}</h1>
@@ -164,7 +164,9 @@ export default {
 <style lang="scss" scoped>
 .header {
   transition: all 0.7s ease-in-out;
-
+  &__mark{
+    vertical-align: middle;
+  }
   &__scroll {
     background-color: transparent !important;
   }
@@ -248,7 +250,7 @@ export default {
 }
 
 .title-enter {
-  transform: translate(-50px, 0);
+  transform: translate(50px, 0);
   opacity: 0;
 }
 .title-enter-to {
@@ -263,7 +265,7 @@ export default {
   opacity: 1;
 }
 .title-leave-to {
-  transform: translate(100px, 0);
+  transform: translate(-100px, 0);
   opacity: 0;
 }
 .title-leave-active {

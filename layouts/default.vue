@@ -1,5 +1,6 @@
 <template>
   <v-app dark>
+      <Opening/>
       <Header :scrollY="scrollY" :title="title"/>
     <v-main>
       <!-- svg用 -->
@@ -15,7 +16,9 @@
 </template>
 
 <script>
+import Opening from '~/components/layouts/Opening.vue';
 export default {
+  components: { Opening },
   data () {
     return {
       scrollY: 0,

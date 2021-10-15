@@ -35,7 +35,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 2200);
+    }, 800);
   }
 };
 </script>
@@ -54,7 +54,7 @@ export default {
 }
 .down-enter-active,
 .down-leave-active {
-  transition: transform 2s ease-out;
+  transition: transform 1s ease-out;
 }
 .down-enter,
 .down-leave-to {

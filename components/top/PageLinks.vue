@@ -8,21 +8,26 @@
     nudge-bottom="2"
   >
     <!-- メニューのアクティベーター -->
-    <template v-slot:activator="{ on }">
-      <transition name="in">
-        <v-btn
-          v-on="on"
-          class="links"
-          icon
-          large
-          elevation="2"
-          v-show="navIn"
-          @click="change = !change"
-          ><v-icon class="links__icon">{{
-            change ? "mdi-menu-up" : "mdi-menu-down"
-          }}</v-icon></v-btn
-        >
-      </transition>
+    <template v-slot:activator="{ on: menu }">
+        <v-tooltip transition="slide-x-reverse-transition" open-delay="300" left color="grey">
+          <template v-slot:activator="{ on: tooltip }">
+          <transition name="in">
+            <v-btn
+              v-on="{ ...tooltip, ...menu }"
+              class="links"
+              icon
+              large
+              elevation="2"
+              v-show="navIn"
+              @click="change = !change"
+              ><v-icon class="links__icon">{{
+                change ? "mdi-menu-up" : "mdi-menu-down"
+              }}</v-icon></v-btn
+            >
+          </transition>
+          </template>
+          <span class="text-capitalize">scroll menu</span>
+        </v-tooltip>
     </template>
     <!-- メニューになるコンテンツ -->
     <v-sheet class="links__menu " tag="nav">
@@ -74,7 +79,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.navIn = true;
-    }, 3300);
+    }, 1200);
   }
 };
 </script>
@@ -82,7 +87,7 @@ export default {
 <style lang="scss" scoped>
 .in-enter-active,
 .in-leave-active {
-  transition: 2.2s ease-out;
+  transition: 1.3s ease-out;
 }
 .in-enter,
 .in-leave-to {

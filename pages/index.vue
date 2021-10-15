@@ -97,7 +97,9 @@
 </template>
 
 <script>
+import Opening from '~/components/layouts/Opening.vue';
 export default {
+  components: { Opening },
   // metaタグ設定
   head: {
     titleTemplate: null,
@@ -119,6 +121,7 @@ export default {
   },
   mounted() {
     this.updateHeader(); //ヘッダータイトル
+
   },
   methods: {
     updateHeader() {

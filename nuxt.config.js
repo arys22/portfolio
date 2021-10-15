@@ -93,7 +93,5 @@ export default {
     parallel: true, //<-追加
     cache: true, //<-追加
     hardSource: true //<-追加
-  }
-
-
+  },
 };
