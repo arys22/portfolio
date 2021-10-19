@@ -13,7 +13,7 @@
     <!-- 連打防止 追加上
     :class="{invalid:rip}" -->
         <Fvtext />
-        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :class="{show:mouse}" />
+        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :mouse="mouse"/>
       <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip" ref="ripple"/>
       <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
@@ -23,6 +23,7 @@
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
       <ScrollDown />
       </div>
+      <BgLogo :logo="logo"/>
   </v-container>
 </template>
 
@@ -35,7 +36,7 @@ export default {
       mouseX: 0,
       mouseY: 0,
       // 表示,非表示
-      mouse: true,
+      mouse: false,
       // クリック
       mouseDown:false,
       mouseUp:false,
@@ -43,6 +44,8 @@ export default {
       mouseHov:false,
       // 波紋
       rip: false,
+      // logo
+      logo: true,
     };
   },
   mounted() {
@@ -77,22 +80,24 @@ export default {
       this.$refs.ripple.changeRippleColor();//ripple色変化
       this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
       this.rip = !this.rip;
+      this.logo = !this.logo;
     },
 
     // カーソル座標
     cursorCoordinates(e) {
       this.mouseX = e.pageX;
-      this.mouseY = e.pageY - this.$vuetify.application.top;
+      this.mouseY = e.pageY  - this.$vuetify.application.top;
       if(!navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/)){
         //ここに書いた処理はスマホの時は無効
-        window.requestAnimationFrame(this.transformShadow);// titleのshadow
         window.requestAnimationFrame(this.$refs.mouseStalker.transformStalker);//マウスストーカー
+        window.requestAnimationFrame(this.transformShadow);// titleのshadow
       }
     },
+
     transformShadow(){
       let xAxis = (window.innerWidth / 2 - this.mouseX) / 40;
       let yAxis = (window.innerHeight / 2 - this.mouseY) / 35;
-      this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(100,100,100,.8),"+ xAxis/1.1 + "px " + yAxis/1.1 + "px 2px rgba(10,10,10,.8)");
+      this.$refs.wrap.style.textShadow =(""+ xAxis/2 + "px " + yAxis/2 + "px 3px rgba(0,0,0,.8)");
     },
   }
 };
@@ -110,7 +115,7 @@ export default {
   z-index: 1;
   &__row{
   z-index: 2;
-  position: relative;
+  position: absolute;
   }
   &__wrap {
     padding: 2% 4%;
@@ -128,12 +133,7 @@ export default {
 //   pointer-events: none;
 // }
 
-.show{
-opacity: 1;
-}
-.shrink {
-  transform: scale(0.3);
-}
+
 @media screen and (min-width: 960px) {
   .fv{
     height: calc(100vh - 64px);

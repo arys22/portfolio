@@ -31,7 +31,7 @@ export default {
 
 <style scoped>
 .fade {
-  transition: transform 400ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: transform 1800ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   /* height: inherit; */
 }
 
@@ -41,7 +41,7 @@ export default {
 
 .fadeScale {
   opacity: 1;
-  animation: fadeScale .4s ease-in-out;
+  animation: fadeScale 1.8s ease-in-out;
 }
 
 @keyframes fadeScale {

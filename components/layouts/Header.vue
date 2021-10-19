@@ -11,7 +11,9 @@
         class="white--text"
         v-show="scrollY == 0 || scrollY < fvHeight"
       >
-        <img class="header__mark" src="@/assets/img/logo-32.png" alt="logo" width="22" height="22"/>
+        <svg viewBox="0 0 500 500" width="22" height="22" class="header__mark">
+          <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
+        </svg>
         <transition  name="title">
           <!-- mode=”out-in” -->
         <h1 class="header__title text-h6 text-capitalize" v-show="show">{{ title }}</h1>

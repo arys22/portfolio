@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       index: 0,
-      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f","#666" ],
+      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f","#666","#eee" ],
       styles:{
         borderColor:'transparent',
       },
@@ -56,12 +56,15 @@ export default {
 .ripple {
   position: absolute;
   transition: all 0.6s;
+  z-index: 100;
+  // 重なると反転
+  mix-blend-mode: difference;
   &__item {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    border: 2.5px solid ;
+    border: 4px solid ;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -79,14 +82,14 @@ export default {
 }
 @keyframes wave {
   from {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     opacity: 1;
     border-width: 4px;
   }
   to {
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
     opacity: 0;
     border-width: 0px;
   }

@@ -3,9 +3,9 @@
     <v-btn
       absolute
       right
-      bottom
       text
       plain
+      rounded
       :ripple="false"
       v-show="show"
       @click.stop="
@@ -15,8 +15,8 @@
           offset: -45
         })
       "
-      class="text-md-h6 v-btn"
-      height="75"
+      class="text-md-h6 v-btn py-1 px-2"
+      height="83"
     >
       <span class="v-btn__mark"></span>
       <span class="v-btn__mark"></span>
@@ -36,18 +36,20 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 5000);
+    }, 5300);
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .v-btn {
+  bottom: 3px;
   left: 50%;
   transform: translateX(-50%);
   transition: transform .5s ease-in;
   display: flex;
   align-items: flex-end;
+  background-color: #fff;
     &:hover{
       color: #000;
       transform: translateX(-50%) scale(1.05);
@@ -82,6 +84,9 @@ export default {
       -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
     }
+  }
+  &__text{
+    pointer-events: none;
   }
 }
 @-webkit-keyframes sdb {

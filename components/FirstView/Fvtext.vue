@@ -51,6 +51,10 @@ export default {
   left: 5%;
   max-width: 75%;
   pointer-events: none;
+  background-color: #fff;
+  padding: 0 5px;
+  border-radius: 5px;
+
 }
 .down-enter-active,
 .down-leave-active {

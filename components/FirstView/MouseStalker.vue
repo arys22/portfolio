@@ -1,10 +1,9 @@
 <template>
-  <div class="mouse" ref="mouse">
-    <div ref="stalker"
-      class="mouse__stalker"
-      :class="{ up: mouseUp, down: mouseDown, hov: mouseHov }"
-    ></div>
-    <div class="mouse__text">click!</div>
+  <div
+    ref="mouse"
+    class="mouse"
+    :class="{ up: mouseUp, down: mouseDown, hov: mouseHov, show: mouse }"
+  ><span class="mouse__text">click!</span>
   </div>
 </template>
 
@@ -13,40 +12,44 @@ export default {
   data() {
     return {
       index: 0,
-      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f", "#666"]
+      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f", "#222","#fff"]
     };
   },
   props: {
     mouseX: {
       type: Number,
-      default:0,
+      default: 0
     },
     mouseY: {
       type: Number,
-      default: 0,
+      default: 0
     },
     mouseDown: {
       type: Boolean,
-      default:false,
+      default: false
     },
     mouseUp: {
       type: Boolean,
-      default:false,
+      default: false
     },
     mouseHov: {
       type: Boolean,
-      default:false,
+      default: false
+    },
+    mouse: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     transformStalker() {
-      let y = this.mouseY + 50;
       this.$refs.mouse.style.transform =
-        "translate(" + this.mouseX + "px, " + y + "px) ";
+        "translate(" + this.mouseX + "px, " + this.mouseY + "px) ";
     },
     bgcChange() {
-      this.$refs.stalker.style.borderColor= this.bdColor[this.index];
-      this.index < this.bdColor.length - 1 ? this.index ++ : this.index = 0;
+      // this.$refs.mouse.style.borderColor= this.bdColor[this.index];
+      this.$refs.mouse.style.backgroundColor = this.bdColor[this.index];
+      this.index < this.bdColor.length - 1 ? this.index++ : (this.index = 0);
     }
   }
 };
@@ -54,63 +57,64 @@ export default {
 
 <style lang="scss" scoped>
 .mouse {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  top: -50px;
-  left: 0;
-  z-index: 5;
+  z-index: 100;
   pointer-events: none;
-  // 重なると反転
-  // mix-blend-mode: difference;
-  transform: translate(0, 0);
-  transition: transform 0.5s cubic-bezier(0, 0, 0.52, 1.13),
-  opacity 0.2s ease-out 0.2s;
   opacity: 0;
-  &__stalker {
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    // box-shadow: 0 0 2px #666;
-    border: 2.5px solid;
-    opacity: .6;
-    transition: all .3s ease-out ;
-    &.hov {
-      top: -50px;
-      left: -50px;
-      width: 100px;
-      height: 100px;
-      opacity: .3;
-      box-shadow: 0 0 5px rgb(236, 235, 235);
-      transition: all 0.5s ease-out;
-    }
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  // border: 4px solid #222;
+  background-color: #fff;
+  transform: translate(0, 0);
+  transition: transform 0.1s ease-out, opacity 0.3s ease-in-out 0.2s, width 0.3s ease, height 0.3s ease;
+  // 重なると反転
+  mix-blend-mode: difference;
+  &.hov {
+    // transform: scale(.5);
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    // opacity: 0.5;
+  }
+  &.show {
+    opacity: 1;
+  }
+  &.down {
+    // transform: scale(1.35);
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+  &.up {
+    animation: shrink 0.3s ease-out 1;
   }
   &__text{
-    opacity: .2;
+    opacity: .5;
     position: absolute;
-    top: 12px;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
-.down {
-  transform: scale(1.35);
-}
-.up {
-  animation: shrink 0.3s ease-out 1;
-}
 @keyframes shrink {
-  from {
-    transform: scale(0.7);
-    box-shadow: 0 0 1px inset #eee;
+  0% {
+    // transform: scale(0.7);
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
   }
-  to {
-    transform: scale(1);
+  100% {
+    top: -15px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

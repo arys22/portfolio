@@ -21,8 +21,11 @@ export default {
       // { name: "google", content: "notranslate" }
     ],
     link: [
-      {  hid: 'icon',rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '180x180', href: '@/assets/logo-180.png' }//ファビコン
+      { hid: 'icon', rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
+      { hid: 'icon32', rel: 'icon', type: 'image/png', sizes: '32x32', href: '@/assets/img/logo-32.png' },
+      { hid: 'icon16', rel: 'icon', type: 'image/png', sizes: '16x16', href: '@/assets/img/logo-32.png' },
+      {  rel: "mask-icon",  href: "/logo.svg", color:"#333" },
+      {  rel: 'apple-touch-icon', sizes: '180x180', href: '@/assets/img/logo-180.png' }
   ]
   },
 

@@ -38,7 +38,7 @@ export default {
   mounted() {
     setTimeout(() => {
     this.show = true;
-    },3700);
+    },5000);
   },
 
   methods: {
@@ -137,10 +137,11 @@ export default {
   &__item {
     transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
     animation: gapping 2s ease-out;
-    &:hover {
-      color: rgba(245, 245, 245, 0.5);
-      text-shadow: 2px 2px 2px #fefefe, 0 0 #ddd;
-    }
+    pointer-events: none;
+    // &:hover {
+    //   color: rgba(245, 245, 245, 0.5);
+    //   text-shadow: 2px 2px 2px #fefefe, 0 0 #ddd;
+    // }
   }
 }
 @keyframes gapping {
