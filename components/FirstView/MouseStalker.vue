@@ -3,18 +3,13 @@
     ref="mouse"
     class="mouse"
     :class="{ up: mouseUp, down: mouseDown, hov: mouseHov, show: mouse }"
+    :style="bgColor"
   ><span class="mouse__text">click!</span>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      index: 0,
-      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f", "#222","#fff"]
-    };
-  },
   props: {
     mouseX: {
       type: Number,
@@ -39,19 +34,25 @@ export default {
     mouse: {
       type: Boolean,
       default: false
-    }
+    },
+    color: {
+      type:String,
+      default:"#fff",
+    },
   },
   methods: {
     transformStalker() {
       this.$refs.mouse.style.transform =
         "translate(" + this.mouseX + "px, " + this.mouseY + "px) ";
     },
-    bgcChange() {
-      // this.$refs.mouse.style.borderColor= this.bdColor[this.index];
-      this.$refs.mouse.style.backgroundColor = this.bdColor[this.index];
-      this.index < this.bdColor.length - 1 ? this.index++ : (this.index = 0);
+  },
+  computed: {
+    bgColor(){
+      return{
+        '--bg-color': this.color,
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -66,8 +67,7 @@ export default {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  // border: 4px solid #222;
-  background-color: #fff;
+  background-color: var(--bg-color);
   transform: translate(0, 0);
   transition: transform 0.1s ease-out, opacity 0.3s ease-in-out 0.2s, width 0.3s ease, height 0.3s ease;
   // 重なると反転

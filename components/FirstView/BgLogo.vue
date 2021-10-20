@@ -10,11 +10,10 @@
     <circle  cx="250" cy="250" r="200" class="logo__inner-circle--s" :class="{stop : logo}"/>
   </svg>
 
-
 <!-- 円 中 -->
   <svg viewBox="0 0 500 500" class="logo__circle" :class="{stop : logo}">
     <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
-      <path class="logo__circle--m" :class="{stop : logo}" d="M2253 4500 c-174 -18 -488 -102 -541 -145 -1 -1 7 -23 19 -49 15 -36
+      <path class="logo__circle--m" :class="{stop : logo}" :style="lineColor" d="M2253 4500 c-174 -18 -488 -102 -541 -145 -1 -1 7 -23 19 -49 15 -36
       25 -47 37 -43 10 3 58 20 107 37 50 17 137 43 195 58 102 25 113 26 425 26
       l320 0 125 -31 c69 -17 159 -44 200 -58 176 -63 396 -188 527 -299 130 -110
       355 -351 423 -453 196 -292 302 -661 303 -1048 0 -385 -106 -752 -302 -1045
@@ -30,13 +29,13 @@
       70 578 0 207 -4 279 -18 355 -65 347 -201 645 -413 906 -166 205 -455 443
       -669 551 -146 74 -376 146 -570 179 -106 18 -462 27 -582 14z"/>
     </g>
-    <circle  cx="250" cy="250" r="199" class="logo__circle--mb" :class="{stop : logo}"/>
+    <circle  cx="250" cy="250" r="196" class="logo__circle--mb" :class="{stop : logo}"/>
   </svg>
 
   <!-- 円 外 -->
   <svg viewBox="0 0 500 500" class="logo__outer-circle" :class="{stop : logo}">
     <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
-    <path class="logo__outer-circle--l" :class="{stop : logo}" d="M2865 4919 l-7 -41 -42 6 c-94 14 -416 18 -546 7 -346 -31 -672 -134
+    <path class="logo__outer-circle--l" :class="{stop : logo}" :style="lineColor" d="M2865 4919 l-7 -41 -42 6 c-94 14 -416 18 -546 7 -346 -31 -672 -134
     -950 -300 -209 -126 -327 -216 -493 -380 -256 -251 -426 -493 -537 -766 -113
     -278 -168 -516 -182 -790 l-3 -50 -49 -3 -49 -3 6 -197 c9 -291 43 -483 132
     -743 46 -132 176 -398 253 -515 268 -408 661 -743 1112 -946 279 -126 537
@@ -74,12 +73,23 @@ export default {
     logo: {
       type: Boolean,
       default: true,
-    }
+    },
+    color: {
+      type: String,
+      default:"#eee"
+    },
   },
   mounted() {
     setTimeout(() => {
       this.show= true;
     }, 2500);
+  },
+  computed: {
+    lineColor(){
+      return{
+        '--line-color': this.color,
+      }
+    }
   },
 };
 </script>
@@ -108,13 +118,13 @@ export default {
       position: absolute;
       width: 50%;
       height: 50%;
-      animation: rotate-s 30s infinite ease-in-out alternate;
+      transform: rotate(110deg);
     &--s{
       fill: transparent;
       stroke: #eee;
       stroke-width: 10;
       stroke-opacity: .6;
-      animation: circle-s 30s infinite ease-in-out alternate;
+      animation: circle-s 20s infinite ease-in-out alternate;
     }
   }
 
@@ -123,20 +133,14 @@ export default {
     position: absolute;
     width: 63%;
     height: 63%;
-    // opacity: .7;
-    animation: rotate-m 45s infinite ease-in-out alternate 1s;
+    animation: rotate-r 45s infinite ease-in-out alternate 1s;
       &--m{//枠
         fill: #fafafa;
-        stroke: #666;
-        stroke-opacity: .7;
+        stroke: var(--line-color);//#666
+        stroke-opacity: 0;
         stroke-width: 5;
-        animation: circle-m 45s infinite ease-in-out alternate 1s;
+        animation: circle-m 40s infinite ease-in-out alternate;
       }
-
-    &.slide{
-      width: 62%;
-      height: 62%;
-    }
     &--mb{//太
       fill: transparent;
       stroke: #eee;
@@ -150,19 +154,19 @@ export default {
     width: 62%;
     height: 62%;
     // opacity: .9;
-    animation: rotate-s 100s infinite ease-in-out alternate 2s;
-  &--l{
-    fill: #ececec;
-    stroke: #666;
-    stroke-opacity: .9;
-    stroke-width: 7;
-    animation: circle-l 80s infinite ease-in-out alternate 2s;
-    }
+    animation: rotate 100s infinite ease-in-out alternate;
+    &--l{
+      fill: #ececec;
+      stroke: var(--line-color);//#666
+      stroke-opacity: 0;
+      stroke-width: 7;
+      animation: circle-l 70s infinite ease-in-out alternate 1s;
+      }
     &--b{
       fill: transparent;
       stroke: #aaa;
       stroke-width: 34;
-      animation: circle-b 80s infinite ease-in-out alternate;
+      animation: circle-b 70s infinite ease-in-out alternate;
     }
   }
 }
@@ -175,34 +179,39 @@ export default {
   }
 }
 
-// 回転s
-@keyframes rotate-s {
+// 回転
+@keyframes rotate {
   0% { transform: rotate(0deg); }
   100% {transform: rotate(320deg);}
 }
-// 回転m
-@keyframes rotate-m {
+// 回転 逆
+@keyframes rotate-r {
   0% { transform: rotate(0deg); }
-  100% {transform: rotate(-250deg);}
+  100% {transform: rotate(-350deg);}
 }
 
 //円 s
 @keyframes circle-s {
   // stroke-dasharray: 破線の長さ 破線の間隔;200x2x3.14=1256
   0% { stroke-dasharray: 1300 100; }
-  50%{stroke-dasharray: 250 530;}
-  100% { stroke-dasharray: 330 330; }
+  25%{ stroke-dasharray: 550 230; }
+  50%{ stroke-dasharray: 250 150; }
+  75%{ stroke-dasharray:330 70; }
+  100% { stroke-dasharray: 830 230; }
 }
 
 //円 m 枠
 @keyframes circle-m {
   // stroke-dasharray: 破線の長さ 破線の間隔;
-  0%{stroke-dasharray: 9000 3000;}
-  100% { stroke-dasharray: 2000 1000;}
+  0% {
+    stroke-dasharray: 0 6500;
+    stroke-opacity: .7;
+    }
+  100%{stroke-dasharray: 9000 3000;}
 }
 //円 m 太
 @keyframes circle-mb {
-  // stroke-dasharray: 破線の長さ 破線の間隔;1256
+  // stroke-dasharray: 破線の長さ 破線の間隔;1231
   0% { stroke-dasharray: 100 680;}
   100%{stroke-dasharray: 300 230;}
 }
@@ -210,8 +219,11 @@ export default {
   // 円 l
   @keyframes circle-l {
     // stroke-dasharray: 破線の長さ 破線の間隔;16000
-    0% { stroke-dasharray: 15800 15000; }
-    99.9%,to { stroke-dasharray: 3000 5000; }
+    0% {
+      stroke-dasharray: 0 9000;
+      stroke-opacity: .9;
+    }
+    99.9%,to  { stroke-dasharray: 15800 15000; }
   }
 
   @keyframes circle-b {

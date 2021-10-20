@@ -6,7 +6,7 @@
     @after-enter="afterRippleEnter"
   >
     <div v-show="rip" ref="ripples" class="ripple">
-      <span class="ripple__item" v-for="i in 3" :key="i" :style="styles"/>
+      <span class="ripple__item" v-for="i in 3" :key="i" :style="borderColor"/>
     </div>
   </transition>
 </template>
@@ -25,15 +25,14 @@ export default {
     rip: {
       type: Boolean,
       default:false,
+    },
+    color: {
+      type:String,
+      default:"#eee",
     }
   },
   data() {
     return {
-      index: 0,
-      bdColor: ["#0ff", "#ff0", "#f00", "#00f", "#f0f","#666","#eee" ],
-      styles:{
-        borderColor:'transparent',
-      },
     };
   },
   methods: {
@@ -44,11 +43,14 @@ export default {
     afterRippleEnter() {
       this.$parent.rip = false;
     },
-    changeRippleColor() {
-      this.styles['borderColor']= this.bdColor[this.index];
-      this.index < this.bdColor.length - 1 ? this.index ++ : this.index = 0;
+  },
+    computed: {
+    borderColor(){
+      return{
+        '--border-color': this.color,
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -66,6 +68,7 @@ export default {
     left: 0;
     border: 4px solid ;
     border-radius: 50%;
+    border-color: var(--border-color);
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;

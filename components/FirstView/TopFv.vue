@@ -13,8 +13,8 @@
     <!-- 連打防止 追加上
     :class="{invalid:rip}" -->
         <Fvtext />
-        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :mouse="mouse"/>
-      <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip" ref="ripple"/>
+        <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :mouse="mouse" :color="color" />
+      <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip" :color="color" ref="ripple"/>
       <v-row class="fv__row" dense>
         <v-col ref="wrap" class="fv__wrap" cols=12>
           <FvTitle ref="title" />
@@ -23,7 +23,7 @@
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
       <ScrollDown />
       </div>
-      <BgLogo :logo="logo"/>
+      <BgLogo :color="color" :logo="logo"/>
   </v-container>
 </template>
 
@@ -44,8 +44,13 @@ export default {
       mouseHov:false,
       // 波紋
       rip: false,
-      // logo
+      // logo アニメ on off
       logo: true,
+      //クリック時の色変
+      color:"#fff",
+      index: 0,
+      colorList: [ "#0000ff", "#0ff", "#666", "#ffff00", "#ff00ff", "#fefefe" ],
+      //ここまで
     };
   },
   mounted() {
@@ -77,8 +82,10 @@ export default {
     titleEvent() {
       //子のmethods
       this.$refs.title.gather();
-      this.$refs.ripple.changeRippleColor();//ripple色変化
-      this.$refs.mouseStalker.bgcChange();//マウスストーカー色変化
+      //色変化 ripple マウスストーカー bg線
+      this.color = this.colorList[this.index];
+      this.index < this.colorList.length - 1 ? this.index++ : (this.index = 0);
+
       this.rip = !this.rip;
       this.logo = !this.logo;
     },
