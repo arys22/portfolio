@@ -9,9 +9,8 @@
     @mouseleave ="mouse = false"
     @mousedown="mouseUp = false,mouseDown = true"
     @mouseup="mouseUp = true,mouseDown = false"
+    :class="{invalid : !showTitle}"
     >
-    <!-- 連打防止 追加上
-    :class="{invalid:rip}" -->
         <Fvtext />
         <MouseStalker ref="mouseStalker" :mouseX="mouseX" :mouseY="mouseY" :mouseUp="mouseUp" :mouseDown="mouseDown" :mouseHov="mouseHov" :mouse="mouse" :color="color" />
       <Ripple :mouseX="mouseX" :mouseY="mouseY" :rip="rip" :color="color" ref="ripple"/>
@@ -20,10 +19,10 @@
           <FvTitle ref="title" />
         </v-col>
       </v-row>
+      <BgLogo :color="color" :logo="logo"/>
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
       <ScrollDown />
       </div>
-      <BgLogo :color="color" :logo="logo"/>
   </v-container>
 </template>
 
@@ -40,6 +39,7 @@ export default {
       // クリック
       mouseDown:false,
       mouseUp:false,
+      showTitle: false,
       // ホバー時
       mouseHov:false,
       // 波紋
@@ -49,7 +49,7 @@ export default {
       //クリック時の色変
       color:"#fff",
       index: 0,
-      colorList: [ "#0000ff", "#0ff", "#666", "#ffff00", "#ff00ff", "#fefefe" ],
+      colorList: [ "#0000ff", "#0ff", "#ff00ff", "#ffff00", "#555", "#fff" ],
       //ここまで
     };
   },
@@ -64,6 +64,10 @@ export default {
       this.getFvHeight();
       window.addEventListener("resize", this.getFvHeight);
     });
+
+    setTimeout(() => {
+    this.showTitle = true;
+    },5100);
   },
   methods: {
     // // 100vh fv WindowSize - headerの高さ 保留
@@ -86,8 +90,8 @@ export default {
       this.color = this.colorList[this.index];
       this.index < this.colorList.length - 1 ? this.index++ : (this.index = 0);
 
-      this.rip = !this.rip;
-      this.logo = !this.logo;
+      this.rip = !this.rip;//波紋
+      this.logo = !this.logo;//ロゴアニメ
     },
 
     // カーソル座標
@@ -113,6 +117,7 @@ export default {
 <style lang="scss" scoped>
 .fv {
   cursor: default;
+  width: 100%;
   height: calc(100vh - 56px);
   padding: 0;
   position: relative;
@@ -121,8 +126,9 @@ export default {
   align-items: center;
   z-index: 1;
   &__row{
-  z-index: 2;
+  z-index: 5;
   position: absolute;
+  pointer-events: none;
   }
   &__wrap {
     padding: 2% 4%;
@@ -135,10 +141,10 @@ export default {
     color:#fefefefe;
   }
 }
-// 連打防止
-// .invalid{
-//   pointer-events: none;
-// }
+//clickさせないため
+.invalid{
+  pointer-events: none;
+}
 
 
 @media screen and (min-width: 960px) {

@@ -10,7 +10,7 @@
               はじめまして。齋藤と申します。<br>
               この度はポートフォリオサイトに訪問いただきありがとうございます。<br>
               このサイトは、これまでに手がけた制作物、スキルをまとめています。<br>
-              私自身、まだまだ至らない点はたくさんありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングができるよう心がけていきます。<br>
+              私自身、まだまだ至らない点がありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングができるよう心がけていきます。<br>
               今後ともよろしくお願いいたします。
             </p>
         </FadeSlide>
@@ -36,8 +36,8 @@
 
 <style lang="scss" scoped>
 .message {
-  margin-bottom: 100px;
-  padding: 80px 24px 40px;
+  z-index: 1;
+  padding: 80px 24px 150px;
   justify-content: end;
   position: relative;
   &__title {
@@ -84,7 +84,7 @@
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    bottom: -15%;
+    bottom: 0;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;
@@ -93,7 +93,7 @@
 //sd以上
 @media screen and (min-width: 600px) {
     .message {
-    padding: 80px 8.33% 40px;
+    padding: 80px 8.33% 150px;
     }
   }
 // md以上

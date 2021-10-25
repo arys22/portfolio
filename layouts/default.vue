@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark >
       <Opening/>
       <Header :scrollY="scrollY" :title="title"/>
     <v-main>

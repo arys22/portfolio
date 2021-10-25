@@ -98,24 +98,22 @@ export default {
   top: 70px;
   right: 4px;
   z-index: 1;
-  &__menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 3;
-    pointer-events: none;
-  }
-}
-.v-btn {
-  background-color: transparent;
+
+   background-color: #fff;
   transition: all 0.7s ease-out;
   pointer-events: auto;
   &:hover {
     background-color: #ddd;
   }
-  &:hover > &__content .v-icon {
+  &:hover  &__icon {
     color: #fff;
     transform: scale(1.15);
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
   }
 }
 </style>

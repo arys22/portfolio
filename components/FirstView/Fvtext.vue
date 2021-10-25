@@ -5,6 +5,7 @@
         :text="[
           'Welcome to my portfolio.',
           'ようこそポートフォリオへ！',
+          'Please click!!',
           'このページはTOPページになります。',
           'ポートフォリオ一覧はLISTページです。',
           'CONTACTからお気軽にお問い合わせください。'
@@ -47,14 +48,13 @@ export default {
   flex-wrap: wrap;
   margin: 0 auto;
   position: absolute;
-  top: 5%;
+  top: 25px;
   left: 5%;
   max-width: 75%;
   pointer-events: none;
-  background-color: #fff;
   padding: 0 5px;
   border-radius: 5px;
-
+  z-index: 5;
 }
 .down-enter-active,
 .down-leave-active {

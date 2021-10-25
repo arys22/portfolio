@@ -2,7 +2,6 @@
   <transition name="down">
     <v-btn
       absolute
-      right
       text
       plain
       rounded
@@ -15,13 +14,12 @@
           offset: -45
         })
       "
-      class="text-md-h6 v-btn py-1 px-2"
-      height="83"
+      class="v-btn py-2"
+      height="165"
+      small
     >
-      <span class="v-btn__mark"></span>
-      <span class="v-btn__mark"></span>
-      <span class="v-btn__mark"></span>
-      <span class="v-btn__text text-capitalize">scroll</span>
+      <span class="v-btn__mark" v-for="i in 3" :key="i"></span>
+      <span class="v-btn__text text-capitalize">scroll down</span>
     </v-btn>
   </transition>
 </template>
@@ -36,28 +34,29 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 5300);
+    }, 5800);
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .v-btn {
-  bottom: 3px;
-  left: 50%;
-  transform: translateX(-50%);
+  z-index: 1;
+  bottom: 5px;
+  right: 4px;
   transition: transform .5s ease-in;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
   background-color: #fff;
     &:hover{
       color: #000;
-      transform: translateX(-50%) scale(1.05);
+      transform: scale(1.05);
       animation: hov 1.5s ease 1;
     }
   &__mark {
     position: absolute;
-    top: -23px;
+    bottom: -15px;
     left: 50%;
     width: 18px;
     height: 18px;
@@ -71,22 +70,23 @@ export default {
     opacity: 0;
     box-sizing: border-box;
     &:nth-of-type(1) {
-      top: -53px;
       -webkit-animation-delay: 0s;
       animation-delay: 0s;
     }
     &:nth-of-type(2) {
-      top: -38px;
+      bottom: -30px;
       -webkit-animation-delay: 0.2s;
       animation-delay: 0.2s;
     }
     &:nth-of-type(3) {
+      bottom: -45px;
       -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
     }
   }
   &__text{
     pointer-events: none;
+    writing-mode: vertical-rl;
   }
 }
 @-webkit-keyframes sdb {
@@ -113,13 +113,13 @@ export default {
 }
 @keyframes hov {
   0% {
-    transform: translateX(-50%) translateY(0);
+    transform:  translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(10px) scale(1.025);
+    transform:  translateY(10px) scale(1.025);
   }
   100% {
-    transform: translateX(-50%) translateY(0) scale(1.05);
+    transform:  translateY(0) scale(1.05);
   }
 }
 
@@ -127,10 +127,10 @@ export default {
 .down-enter-active,
 .down-leave-active {
   transition: transform 2.3s ease-out;
-  transform: translate(-50%, 0px);
+  transform: translatY(0px);
 }
 .down-enter,
 .down-leave-to {
-  transform: translateX(-50%) translateY(-100vh);
+  transform:  translateY(-100vh);
 }
 </style>

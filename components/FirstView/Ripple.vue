@@ -56,6 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 .ripple {
+  pointer-events: none;
   position: absolute;
   transition: all 0.6s;
   z-index: 100;

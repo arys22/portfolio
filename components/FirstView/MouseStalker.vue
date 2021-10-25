@@ -4,7 +4,7 @@
     class="mouse"
     :class="{ up: mouseUp, down: mouseDown, hov: mouseHov, show: mouse }"
     :style="bgColor"
-  ><span class="mouse__text">click!</span>
+  >
   </div>
 </template>
 
@@ -42,8 +42,9 @@ export default {
   },
   methods: {
     transformStalker() {
+      this.y = this.mouseY + 100
       this.$refs.mouse.style.transform =
-        "translate(" + this.mouseX + "px, " + this.mouseY + "px) ";
+        "translate(" + this.mouseX + "px, " + this.y + "px) ";
     },
   },
   computed: {
@@ -62,7 +63,7 @@ export default {
   pointer-events: none;
   opacity: 0;
   position: absolute;
-  top: -16px;
+  top: -116px;
   left: -16px;
   width: 32px;
   height: 32px;
@@ -74,7 +75,7 @@ export default {
   mix-blend-mode: difference;
   &.hov {
     // transform: scale(.5);
-    top: -50px;
+    top: -150px;
     left: -50px;
     width: 100px;
     height: 100px;
@@ -85,7 +86,7 @@ export default {
   }
   &.down {
     // transform: scale(1.35);
-    top: -20px;
+    top: -120px;
     left: -20px;
     width: 40px;
     height: 40px;
@@ -93,25 +94,18 @@ export default {
   &.up {
     animation: shrink 0.3s ease-out 1;
   }
-  &__text{
-    opacity: .5;
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 @keyframes shrink {
   0% {
     // transform: scale(0.7);
-    top: -8px;
+    top: -108px;
     left: -8px;
     width: 16px;
     height: 16px;
   }
   100% {
-    top: -15px;
+    top: -115px;
     left: -15px;
     width: 30px;
     height: 30px;

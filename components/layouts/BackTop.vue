@@ -47,7 +47,7 @@ export default {
 }
 
 .v-btn {
-  background-color: transparent;
+  background-color: #fff;
   transition: all 0.5s ease-in-out;
   &:hover {
     background-color: #ddd;

@@ -41,7 +41,7 @@ export default {
     left: 0;
     margin: 0 auto;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 99;
     background: #222;
     &.up{

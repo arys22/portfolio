@@ -130,14 +130,12 @@ export default {
 .text {
   &__box {
     display: flex;
-    // justify-content: flex-start;
     justify-content: center;
     font-size: 2.6rem;
   }
   &__item {
     transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
     animation: gapping 2s ease-out;
-    pointer-events: none;
     // &:hover {
     //   color: rgba(245, 245, 245, 0.5);
     //   text-shadow: 2px 2px 2px #fefefe, 0 0 #ddd;
@@ -155,6 +153,24 @@ export default {
 
 .text__box .text__item {
   transition: all 2s cubic-bezier(0, 0.08, 0.05, 1);
+}
+
+/* トランジション用スタイル */
+/* 動いている間 */
+.v-enter-active,
+.v-leave-active,
+.v-move {
+  transition: all 1s;
+}
+/* 同じ場所に入ってこれるように */
+.v-leave-active {
+  position: absolute;
+}
+/* 入ってくる時消える時 */
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }
 
 @media screen and(min-width: 600px) {
