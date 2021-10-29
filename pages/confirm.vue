@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       header: {
-        title: "confirm" //内容確認ヘッダータイトル
+        title: "お問い合わせ内容確認ページ" //内容確認ヘッダータイトル
       },
       breadData:[//パンくず
         {

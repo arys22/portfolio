@@ -18,7 +18,7 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "list Page",
+      title: "Portfolio一覧ページ",
       meta: [
         {
           hid: "description",

@@ -35,7 +35,7 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "complete Page",
+      title: "お問い合わせ完了ページ",
       meta: [
         {
           hid: "description",

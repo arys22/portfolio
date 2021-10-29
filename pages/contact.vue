@@ -11,7 +11,7 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "contact Page",
+      title: "お問い合わせページ",
       meta: [
         {
           hid: "description", //hidキー 個別ページ
