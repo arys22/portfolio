@@ -7,7 +7,7 @@
       v-for="item in items"
       :key="item.id"
     >
-      <v-card>
+      <v-card class="py-7">
         <v-row class="mx-0">
           <v-col cols="12" sm="4">
             <v-hover v-slot="{ hover }">

@@ -66,7 +66,7 @@ export default {
     font-size: 1.25rem;
   }
   &__wrap{
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
 }
 </style>

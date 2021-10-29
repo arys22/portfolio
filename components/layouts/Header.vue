@@ -15,7 +15,6 @@
           <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
         </svg>
         <transition  name="title">
-          <!-- mode=”out-in” -->
         <h1 class="header__title text-h6 text-capitalize" v-show="show">{{ title }}</h1>
         </transition>
       </v-toolbar-title>

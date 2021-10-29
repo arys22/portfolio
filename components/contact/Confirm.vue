@@ -5,7 +5,7 @@
       >お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-        <v-card>
+        <v-card class="pt-4">
           <div class="confirm__text pa-4">
             <p>
               お問い合わせ内容はこちらで宜しいでしょうか？<br />よろしければ<span
@@ -138,7 +138,7 @@ export default {
 
 <style lang="scss" scoped>
 .confirm {
-  padding: 15px 0 80px;
+  padding: 15px 0 100px;
   background-color: #f6f6f6;
   &__title {
     width: 100%;

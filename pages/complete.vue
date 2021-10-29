@@ -7,11 +7,8 @@
         <v-icon class="mr-1" color="black">mdi-email-send-outline</v-icon
         >お問い合わせ送信完了
       </h2>
-      <!-- mdi-email-outline -->
-      <!-- mdi-email-send-outline -->
-      <!-- mdi-email-open-outline -->
       <v-col cols="12" sm="10" md="8" lg="6">
-          <v-card>
+          <v-card class="pt-4">
             <v-card-title class="justify-center"
               ><FadeSlide>お問い合わせありがとうございました</FadeSlide></v-card-title
             >
@@ -92,7 +89,7 @@ export default {
 
 <style lang="scss" scoped>
 .conmp {
-  padding: 15px 0 80px;
+  padding: 15px 0 100px;
   background-color: #f6f6f6;
   &__title {
     width: 100%;

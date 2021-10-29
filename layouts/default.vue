@@ -1,5 +1,5 @@
 <template>
-  <v-app dark >
+  <v-app dark class="app">
       <Opening/>
       <Header :scrollY="scrollY" :title="title"/>
     <v-main>
@@ -50,6 +50,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app{
+  overflow: hidden;
+}
 .v-footer{
   z-index: 4;
 }

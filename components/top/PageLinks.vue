@@ -47,7 +47,7 @@
             fab
             @click="
               $vuetify.goTo(`#${link.name}`, {
-                duration: 1000,
+                duration: 1500,
                 easing: 'easeOutCubic'
               })
             "
@@ -97,7 +97,7 @@ export default {
   position: fixed;
   top: 70px;
   right: 4px;
-  z-index: 1;
+  z-index: 50;
 
    background-color: #fff;
   transition: all 0.7s ease-out;

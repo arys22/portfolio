@@ -49,7 +49,7 @@ export default {
       //クリック時の色変
       color:"#fff",
       index: 0,
-      colorList: [ "#0000ff", "#0ff", "#ff00ff", "#ffff00", "#555", "#fff" ],
+      colorList: [ "#555",  "#fff", "#0ff", "#fff", "#FF53bb",  "#fff" ],
       //ここまで
     };
   },

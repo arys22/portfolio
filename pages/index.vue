@@ -1,16 +1,16 @@
 <template>
   <div class="index">
     <TopFv />
-    <PageLinks />
     <Message id="message" />
     <v-container fluid class="index__container">
-      <!-- <Skill id="skill" /> -->
-      <!-- <List id="list" /> -->
-      <!-- <div class="contact__space">
+      <Skill id="skill" />
+      <List id="list" />
+      <div class="contact__space">
             <div class="contact__back text-uppercase" v-parallax="-0.17">contact</div>
-      </div> -->
-      <!-- <ContactForm id="contact" /> -->
+      </div>
+      <ContactForm id="contact" />
     </v-container>
+    <PageLinks />
   </div>
 </template>
 

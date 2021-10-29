@@ -17,7 +17,7 @@
         </v-col>
         <v-col cols="12" md="4" class="skill__box" tag="section" >
           <FadeIn>
-            <v-card>
+            <v-card class="py-4">
               <v-card-title class="text-uppercase">
               <FadeSlide>
                 <h3>html・css</h3>
@@ -57,7 +57,7 @@
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
-            <v-card>
+            <v-card class="py-4">
               <v-card-title class="text-capitalize">
               <FadeSlide>
                 <h3>JavaScript</h3>
@@ -95,7 +95,7 @@
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
-            <v-card>
+            <v-card class="py-4">
               <v-card-title class="text-uppercase">
               <FadeSlide>
                 <h3>その他</h3>
@@ -168,7 +168,7 @@ export default {
 .skill {
   background-image: url("~@/assets/img/stone-back.jpg");
   background-repeat: repeat;
-  padding: 80px 0 100px;
+  padding: 80px 0 150px;
   position: relative;
   &__title {
     width: 100%;

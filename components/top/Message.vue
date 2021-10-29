@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 .message {
   z-index: 1;
-  padding: 80px 24px 150px;
+  padding: 80px 24px 200px;
   justify-content: end;
   position: relative;
   &__title {
@@ -93,7 +93,7 @@
 //sd以上
 @media screen and (min-width: 600px) {
     .message {
-    padding: 80px 8.33% 150px;
+    padding: 80px 8.33% 250px;
     }
   }
 // md以上

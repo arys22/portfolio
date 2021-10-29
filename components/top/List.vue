@@ -17,7 +17,7 @@
         >
       </FadeIn>
       <FadeIn>
-        <v-card class="list__card">
+        <v-card class="list__card py-8">
           <v-row class="mx-0">
             <v-col cols="12" md="5">
             <Fade>
@@ -46,7 +46,7 @@
                 <ul>
                   <li>レスポンシブ(モバイルファースト)</li>
                   <li>ライブラリ(vue-parallax-js、vue-typer)</li>
-                  <li>デザインとアクションは引き算を心がけました。</li>
+                  <li>デザインは引き算を心がけました。</li>
                   <li>
                     ヘッダーメニュー：fv過ぎたら色変化、sp時バーガーメニュー、ボトムナビ：上スクロール時表示、ページ内リンク
                   </li>
@@ -61,11 +61,6 @@
                   <li>SSG（Static Site Generator）</li>
                   <li>Firebaseでの公開</li>
                   <li>
-                    <!-- 新たに学んだこと -->
-                    <!-- <li>iOSでの100vh</li> -->
-                    <!-- <li>canvas</li>
-                      <li>symbol→use</li>
-                      <li>vuetify使用時は、使用する箇所としない箇所を分ける</li> -->
                   </li>
                 </ul>
               </Fade>
@@ -103,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
 .list {
-  padding: 80px 0 100px;
+  padding: 80px 0 150px;
   position: relative;
   &__title {
     line-height: 1;

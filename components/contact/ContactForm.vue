@@ -5,7 +5,7 @@
       >お問い合わせ<br /><span class="text-subtitle-1">contact</span>
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
-      <v-card>
+      <v-card class="pt-4">
         <v-form ref="form" class="contact__form">
           <v-card-text>
             <p>お気軽にご連絡ください。</p>
@@ -136,7 +136,7 @@ export default {
 
 <style lang="scss" scoped>
 .contact {
-  padding: 15px 0 80px;
+  padding: 15px 0 100px;
   background-color: #f6f6f6;
   &__title {
     width: 100%;
