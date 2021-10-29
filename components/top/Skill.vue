@@ -170,6 +170,7 @@ export default {
   background-repeat: repeat;
   padding: 80px 0 150px;
   position: relative;
+  z-index: 1;
   &__title {
     width: 100%;
     line-height: 1;
