@@ -36,7 +36,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.show = true;
-    }, 800);
+    }, 1000);
   }
 };
 </script>

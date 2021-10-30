@@ -2,20 +2,26 @@
   <div class="logo" >
 
     <!-- P -->
-    <svg viewBox="0 0 500 500" class="logo__mark" v-show="show" >
-      <use xlink:href="#logo-text" x="0" y="0" class="logo__mark--p" :style="lineColor"></use>
+    <svg viewBox="0 0 500 500" class="logo__mark" v-show="!logo" >
+      <use xlink:href="#logo" x="0" y="0" class="logo__mark--p" :style="lineColor"></use>
     </svg>
 
     <!-- 円 内 -->
-    <svg viewBox="0 0 500 500" class="logo__inner-circle">
-      <!-- 細 -->
-      <circle
-        cx="250"
-        cy="250"
-        r="200"
-        class="logo__inner-circle--ss"
-        :style="lineColor"
-      />
+    <svg viewBox="0 0 512 512" class="logo__inner-circle" v-show="logo">
+      <g>
+        <rect x="239.75" width="32.517" height="83.95" ></rect>
+        <rect x="239.75" y="428.05" width="32.517" height="83.95" ></rect>
+        <polygon points="113.934,42.425 155.9,115.134 184.067,98.875 142.084,26.167 	"></polygon>
+        <polygon  points="327.95,413.125 369.934,485.833 398.084,469.575 356.116,396.859 	"></polygon>
+        <polygon  points="115.134,155.892 42.434,113.916 26.184,142.084 98.884,184.05 	"></polygon>
+        <polygon  points="396.867,356.1 469.583,398.084 485.834,369.916 413.134,327.934 	" ></polygon>
+        <polygon  points="83.95,239.742 0,239.734 0,272.258 83.95,272.258 	"></polygon>
+        <rect x="428.05" y="239.734"  width="83.95" height="32.525" ></rect>
+        <polygon  points="98.884,327.95 26.167,369.916 42.434,398.084 115.134,356.1 	"></polygon>
+        <polygon  points="413.134,184.05 485.834,142.084 469.583,113.916 396.867,155.892 	"></polygon>
+        <polygon  points="113.917,469.575 142.084,485.833 184.05,413.125 155.9,396.866 	"></polygon>
+        <polygon  points="398.084,42.425 369.917,26.167 327.934,98.875 356.1,115.134 	"></polygon>
+      </g>
     </svg>
 
     <!-- 円 中 -->
@@ -161,23 +167,7 @@
         -105 1z"/>
       </g>
     </svg>
-    <!-- 円 bg 内-->
-    <svg viewBox="0 0 512 512" class="logo__bg logo__bg-circle--0">
-      <g>
-        <rect x="239.75" width="32.517" height="83.95" ></rect>
-        <rect x="239.75" y="428.05" width="32.517" height="83.95" ></rect>
-        <polygon points="113.934,42.425 155.9,115.134 184.067,98.875 142.084,26.167 	"></polygon>
-        <polygon  points="327.95,413.125 369.934,485.833 398.084,469.575 356.116,396.859 	"></polygon>
-        <polygon  points="115.134,155.892 42.434,113.916 26.184,142.084 98.884,184.05 	"></polygon>
-        <polygon  points="396.867,356.1 469.583,398.084 485.834,369.916 413.134,327.934 	" ></polygon>
-        <polygon  points="83.95,239.742 0,239.734 0,272.258 83.95,272.258 	"></polygon>
-        <rect x="428.05" y="239.734"  width="83.95" height="32.525" ></rect>
-        <polygon  points="98.884,327.95 26.167,369.916 42.434,398.084 115.134,356.1 	"></polygon>
-        <polygon  points="413.134,184.05 485.834,142.084 469.583,113.916 396.867,155.892 	"></polygon>
-        <polygon  points="113.917,469.575 142.084,485.833 184.05,413.125 155.9,396.866 	"></polygon>
-        <polygon  points="398.084,42.425 369.917,26.167 327.934,98.875 356.1,115.134 	"></polygon>
-      </g>
-    </svg>
+
     <!-- 円 bg 色-->
     <svg viewBox="0 0 500 500" class="logo__bg logo__bg-circle" :style="lineColor" :class="{ stop: logo }">
       <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
@@ -936,11 +926,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      show: false
-    };
-  },
   props: {
     logo: {
       type: Boolean,
@@ -950,11 +935,6 @@ export default {
       type: String,
       default: "#eee"
     }
-  },
-  mounted() {
-    setTimeout(() => {
-      this.show = true;
-    }, 2500);
   },
   computed: {
     lineColor() {
@@ -977,32 +957,26 @@ export default {
   pointer-events: none;
   &__mark {
     position: absolute;
-    max-width: 100px;
-    // width: 20%;
+    max-width: 96px;
     height: auto;
     z-index: 1;
     &--p {
       stroke: var(--line-color);
       stroke-width: 30px;
-      stroke-dasharray: 10000;
-      animation: dash 6s ease ;
-      fill: #fff;
+      stroke-dasharray: 20000;
+      animation: dash 5s ease forwards;
+      fill: transparent;
       transition: all .8s ease-out ;
     }
   }
     //内
   &__inner-circle {
     position: absolute;
-    max-width: 120px;
-    // width: 25%;
-    height: auto;
-    &--ss {
-      fill: transparent;
-      stroke: var(--line-color);
-      stroke-width: 2;
-      stroke-opacity: 1;
-      transition: all 1s ease-out .2s;
-    }
+    max-width: 105px;
+    stroke: #ddd;
+    stroke-width: 3;
+    fill: none;
+    transition: all .3 ease;
   }
 
     //中
@@ -1012,14 +986,14 @@ export default {
     // width: 50%;
     height: auto;
     transform: rotate(35deg);
-    animation: rotate-r 70s infinite ease-in-out alternate 1s;
+    animation: rotate-r 70s infinite ease alternate;
     &--m {
       //枠
       fill: #eee;
       stroke: var(--line-color); //#666
       stroke-opacity: 0;
       stroke-width: 10;
-      animation: circle-m 85s infinite ease-in-out alternate;
+      animation: circle-m 85s infinite ease alternate;
       transition: all 1s ease-out .6s;
     }
     &--mb {
@@ -1036,14 +1010,14 @@ export default {
     position: absolute;
     max-width: 300px;
     height: auto;
-    animation: rotate 130s infinite ease-in-out alternate;
+    animation: rotate 130s infinite ease alternate;
     z-index: -1;
     &--l {
       fill: #f1f1f1;
       stroke: var(--line-color);
       stroke-opacity: 0;
       stroke-width: 10;
-      animation: circle-l 100s infinite ease-in-out alternate 1s;
+      animation: circle-l 100s infinite ease alternate;
       transition: all 1s ease-out .8s;
     }
     &--b {
@@ -1096,7 +1070,7 @@ export default {
       // height: calc(50% - 39px);
       border-style: none none solid solid;
       border-bottom-left-radius: 5px;
-      animation: line-1 25s ease  forwards;
+      animation: line-1 25s ease forwards 5s;
       &::after{
         top: -4.5px;
         left: -6.5px;
@@ -1109,7 +1083,7 @@ export default {
       // height: calc(49% - 37px);
       border-style: none solid solid none;
       border-bottom-right-radius: 5px;
-      animation: line-2 25s ease 1s forwards;
+      animation: line-2 25s ease  forwards 5s;
       &::after{
         top: -5px;
         right: -5.7px;
@@ -1122,7 +1096,7 @@ export default {
       // height: calc(49% - 85px);
       border-style: solid solid none none;
       border-top-right-radius: 5px;
-      animation: line-3 25s ease 2s forwards;
+      animation: line-3 25s ease forwards 5s;
       &::after{
         bottom: -5px;
         right: -5.7px;
@@ -1149,14 +1123,8 @@ export default {
       fill: none;
       stroke: var(--line-color);
       stroke-width: 15;
-      animation: rotate 80s infinite ease-in-out alternate;
+      animation: rotate 30s infinite ease alternate;
       transition: all 1.2s ease-out .4s;
-      &--0{
-        max-width: 105px;
-        stroke: #ddd;
-        stroke-width: 3;
-        fill: none;
-      }
     }
   }
   &__scale{
@@ -1173,20 +1141,13 @@ export default {
     transform: rotate(-40deg);
   }
 }
-// logo
+// .logo
 @keyframes dash {
-  0% {
-    stroke: #222;
-    stroke-width: 40px;
-    stroke-dashoffset: 10000;
-    }
-  70%{
-    stroke: #222;
-    stroke-width: 40px;
-    stroke-dashoffset:0;
-    }
-  100% {
-    stroke-dashoffset:0;
+  0%{
+    stroke-dashoffset: 20000;
+  }
+  100%{
+    stroke-dashoffset: 0;
   }
 }
 // 線1

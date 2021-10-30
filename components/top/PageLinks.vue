@@ -79,7 +79,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.navIn = true;
-    }, 1200);
+    }, 1500);
   }
 };
 </script>

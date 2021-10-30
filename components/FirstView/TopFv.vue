@@ -49,7 +49,8 @@ export default {
       //クリック時の色変
       color:"#fff",
       index: 0,
-      colorList: [ "#555",  "#fff", "#0ff", "#fff", "#FF53bb",  "#fff" ],
+      colorList: [ "#555",  "#fff" ],
+      // , "#0ff", "#fff", "#FF53bb",  "#fff"
       //ここまで
     };
   },
@@ -67,7 +68,7 @@ export default {
 
     setTimeout(() => {
     this.showTitle = true;
-    },5100);
+    },3700);
   },
   methods: {
     // // 100vh fv WindowSize - headerの高さ 保留

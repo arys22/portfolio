@@ -1,10 +1,12 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="skill">
     <h2 class="text-center text-capitalize my-4 skill__title">
+    <Fade>
       <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
         class="text-subtitle-1"
         >skill</span
       >
+    </Fade>
     </h2>
     <v-col cols="11" sm="10" lg="8" class="skill__wrap" >
       <v-row justify="center">
@@ -198,7 +200,7 @@ export default {
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;
