@@ -8,7 +8,7 @@
     v-on:leave="leave"
   >
     <div
-      class="text__item  text-md-h1 text-uppercase font-weight-black"
+      class="text__item  text-md-h1  font-weight-black"
       v-show="show"
       v-for="datas in textModel"
       :key="datas.id"
@@ -24,7 +24,7 @@ export default {
     return {
       show: false,
       index: 0,
-      text: ["portfolio", "ポートフォリオ", "ぽーとふぉりお"],
+      text: ["PORTFOLIO", "Portfolio", "ポートフォリオ" ],
       textArray: [], //convTextで文字列を分解＆キーを生成 配列
       textModel: [] //1文取り出し表示
     };

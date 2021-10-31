@@ -96,29 +96,31 @@
       <polyline points="190 ,200 178, 168  165, 168 150, 182 120, 182 " stroke="#ddd" stroke-width=".5"/>
       <circle cx="190" cy="201" r="1"  stroke="#ddd" />
       <circle cx="119" cy="182" r="1"  stroke="#ddd" />
-      <polyline points="153, 200 130, 200 110, 210 60, 210 "/>
+      <polyline points="182,210 160, 200 130, 200 110, 210 60, 210 "/>
       <circle cx="59" cy="210" r="2" />
-      <polyline points="142, 245  130,  238 10, 238 3, 227 "/>
+      <polyline points="171, 245  150,  238 10, 238 3, 227 "/>
       <circle cx="3" cy="226" r="2" />
-      <polyline points="188, 265 160,280 120, 280 107, 280 100, 265 35, 265"/>
+      <polyline points="207, 265 190,280 120, 280 107, 280 100, 265 35, 265"/>
       <circle cx="34" cy="265" r="2"/>
       <polyline points="107, 280 90, 290 " stroke-width=".5"/>
       <circle cx="89" cy="290.5" r="1" />
       <polyline points="167, 320 140, 295 120,295" stroke="#ddd" stroke-width=".5"/>
       <circle cx="119" cy="295" r="1" stroke="#ddd"/>
+      <circle cx="168" cy="321" r="1" stroke="#ddd"/>
 
       <!-- 右 -->
       <polyline points="308, 158  335, 168 380, 168 420, 190" stroke="#ddd" stroke-width=".5"/>
+      <circle cx="307" cy="157.5" r="1" stroke="#ddd" />
       <circle cx="421" cy="191" r="1" stroke="#ddd" />
-      <polyline points="314, 240 380,240 400,225 430, 225  470, 225 495, 230"/>
+      <polyline points="295,240 314, 240 380,240 400,225 430, 225  470, 225 495, 230"/>
       <circle cx="496" cy="230.5" r="2"  />
-      <polyline points="347, 200 380, 200 430, 225" stroke-width=".5"/>
-      <polyline points="356, 270 364, 260  400, 260 430,250 480,250"/>
+      <polyline points="318, 210  380, 210 430, 225" stroke-width=".5"/>
+      <polyline points="326, 270 346,270 356, 260  400, 260 430,250 480,250"/>
       <circle cx="481" cy="250" r="2" />
-      <polyline points="360, 300 370,300 390, 280 430, 280 450,270" stroke-width=".5"/>
+      <polyline points="310,300 346, 300 360, 300 370,300 390, 280 430, 280 450,270" stroke-width=".5"/>
       <circle cx="451" cy="269.5" r="1" />
-      <polyline points="346, 300  360, 300 390, 350" stroke="#ddd" stroke-width=".5"/>
-      <circle cx="391" cy="351" r="1" stroke="#ddd" />
+      <polyline points=" 360, 300 390, 350" stroke-width=".5"/>
+      <circle cx="391" cy="351" r="1" />
     </svg>
     <!-- 線 -->
     <div class="logo__line" v-for="i in 3" :key="i" :style="lineColor" :class="{ stop: logo }"/>
@@ -166,6 +168,13 @@
         200 597 0 597 0 25 -25 c32 -32 75 -33 104 -2 28 29 28 57 1 91 -27 34 -71 35
         -105 1z"/>
       </g>
+      <polyline points="1400, 303 1275, 303" fill="none" stroke="#f5f5f5" stroke-width="1"/>
+      <polyline points="1400, 200 1300, 200 1200, 150 1110, 150 1050 , 150 1000,100 810,100 780,130" fill="none" stroke="#f1f1f1" stroke-width="4"/>
+      <circle cx="780" cy="130" r="9" fill="#f5f5f5"/>
+      <polyline points="1050 , 150 980,200 920,200 830, 300 780,300 760,320" fill="none" stroke="#f5f5f5" stroke-width="2"/>
+      <circle cx="760" cy="320" r="5" fill="#f5f5f5"/>
+      <polyline points="885 ,240 940,240 1010,280 1070, 280 " fill="none" stroke="#f5f5f5" stroke-width="2"/>
+      <circle cx="1070" cy="280" r="5" fill="#f5f5f5"/>
     </svg>
 
     <!-- 円 bg 色-->
@@ -954,7 +963,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  // pointer-events: none;
   &__mark {
     position: absolute;
     max-width: 96px;
@@ -1034,14 +1043,14 @@ export default {
     opacity: .7;
     position: absolute;
     width: 100%;
-    min-width: 375px;
-    max-width: 652px;
+    min-width: 513px;
+    max-width: 900px;
     height: auto;
     fill: none;
     stroke: var(--line-color);
     stroke-opacity: .7;
     stroke-width: 1px;
-    z-index: -2;
+    // z-index: -2;
     transition: all 1.2s ease-out .6s;
   }
 
@@ -1141,6 +1150,7 @@ export default {
     transform: rotate(-40deg);
   }
 }
+
 // .logo
 @keyframes dash {
   0%{
