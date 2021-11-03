@@ -19,6 +19,9 @@
           <FvTitle ref="title" />
         </v-col>
       </v-row>
+      <!-- 背景シンプルver -->
+      <!-- <Logo :color="color" :logo="logo"/> -->
+      <!-- 背景 ラインver-->
       <BgLogo :color="color" :logo="logo"/>
       <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
       <ScrollDown />
@@ -49,7 +52,7 @@ export default {
       //クリック時の色変
       color:"#fff",
       index: 0,
-      colorList: [ "#555",  "#fff" ],
+      colorList: [ "#555",  "#fff" , "#0ff", "#fff", "#fd33bb",  "#fff","#7fff00", "#fff"],
       // , "#0ff", "#fff", "#FF53bb",  "#fff"
       //ここまで
     };
@@ -139,7 +142,7 @@ export default {
     1px 1px 2px rgba(170, 170, 170,.8),
     2px 2px 2px rgba(85,85,85,.8),
     3px 3px 2px rgba(0,0,0,.8);
-    color:#fefefefe;
+    color:#fff;
   }
 }
 //clickさせないため

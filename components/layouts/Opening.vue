@@ -21,7 +21,7 @@ export default {
   mounted (){
     setTimeout( () => {
       this.show =false;
-    }, 1000);
+    }, 1500);
   },
   computed: {
     headerSize(){
@@ -45,8 +45,8 @@ export default {
     z-index: 99;
     background: #222;
     &.up{
-      animation-duration: 1.5s;
-      animation-delay: .8s;
+      animation-duration: 1.8s;
+      animation-delay: 1s;
       animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
       animation-name: top-op;
@@ -62,8 +62,7 @@ export default {
     position: fixed;
     top: 17.8px;
     left: 16px;
-    animation: logo ease-in-out .7s;
-    animation-delay: 0s;
+    animation: logo ease-in-out .5s;
   }
 }
 @keyframes logo {

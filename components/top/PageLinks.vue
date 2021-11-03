@@ -97,7 +97,7 @@ export default {
   position: fixed;
   top: 70px;
   right: 4px;
-  z-index: 50;
+  z-index: 5;
 
    background-color: #fff;
   transition: all 0.7s ease-out;

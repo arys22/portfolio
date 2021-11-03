@@ -3,7 +3,7 @@
     <client-only>
       <vue-typer
         :text="[
-          'Welcome to my portfolio.',
+          'Welcome to my portfolio',
           'ようこそポートフォリオへ！',
           'Please click!!',
           'このページはTOPページになります。',

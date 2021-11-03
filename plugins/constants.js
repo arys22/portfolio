@@ -2,7 +2,7 @@ const ITEMS = {
   // メニュー
   menuItems: [
     {
-      name: "top",
+      name: "home",
       path: "/",
       icon: "mdi-home"
     },

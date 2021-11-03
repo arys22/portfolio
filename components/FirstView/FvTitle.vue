@@ -1,14 +1,14 @@
 <template>
   <transition-group
     tag="div"
-    class="text__box"
+    class="text__box text-md-h3 text-lg-h2"
     v-on:before-enter="beforeEnter"
     v-on:enter="enter"
     v-on:before-leave="beforeEnter"
     v-on:leave="leave"
   >
     <div
-      class="text__item  text-md-h1  font-weight-black"
+      class="text__item  font-weight-black"
       v-show="show"
       v-for="datas in textModel"
       :key="datas.id"
@@ -131,7 +131,7 @@ export default {
   &__box {
     display: flex;
     justify-content: center;
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
   &__item {
     transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
@@ -176,8 +176,7 @@ export default {
 @media screen and(min-width: 600px) {
   .text {
     &__box {
-
-      font-size: 4rem;
+      font-size: 2.5rem;
     }
   }
 }
