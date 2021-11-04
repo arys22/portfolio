@@ -129,6 +129,12 @@ export default {
 <style lang="scss" scoped>
 .text {
   &__box {
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
     display: flex;
     justify-content: center;
     font-size: 2rem;
