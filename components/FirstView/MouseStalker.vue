@@ -70,7 +70,7 @@ export default {
   border-radius: 50%;
   background-color: var(--bg-color);
   transform: translate(0, 0);
-  transition: transform 0.1s ease-out, opacity 0.3s ease-in-out 0.2s, width 0.3s ease, height 0.3s ease;
+  transition: transform 0.1s ease-out, opacity 0.3s ease-in-out 0.2s, width 0.3s ease, height 0.3s ease ,top .3s ease,left .3s ease;
   // 重なると反転
   mix-blend-mode: difference;
   &.hov {

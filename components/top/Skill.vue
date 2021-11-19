@@ -1,14 +1,14 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="skill">
     <h2 class="text-center text-capitalize my-4 skill__title">
-    <Fade>
-      <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
-        class="text-subtitle-1"
-        >skill</span
-      >
-    </Fade>
+      <Fade>
+        <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
+          class="text-subtitle-1"
+          >skill</span
+        >
+      </Fade>
     </h2>
-    <v-col cols="11" sm="10" lg="8" class="skill__wrap" >
+    <v-col cols="11" sm="10" lg="8" class="skill__wrap">
       <v-row justify="center">
         <v-col cols="12">
           <FadeSlide>
@@ -17,119 +17,121 @@
             </p>
           </FadeSlide>
         </v-col>
-        <v-col cols="12" md="4" class="skill__box" tag="section" >
+        <v-col cols="12" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card class="py-4">
               <v-card-title class="text-uppercase">
-              <FadeSlide>
-                <h3>html・css</h3>
-              </FadeSlide>
+                <FadeSlide>
+                  <h3>html・css</h3>
+                </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <template v-for="(skill,index) in firstSkills" >
-                <FadeInDelay :delay="skill.delay" :key="index">
-                  <svg viewBox="0 0 256 361" class="svg">
-                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                <template v-for="(skill, index) in firstSkills">
+                  <FadeInDelay :delay="skill.delay" :key="index">
+                    <svg viewBox="0 0 256 361" class="svg">
+                      <use :xlink:href="'#' + skill.name" x="0" y="0"></use>
+                    </svg>
+                  </FadeInDelay>
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle">
-              <FadeSlide>
-                HTML・CSS・Sass(SCSS)・Bootstrap
-              </FadeSlide>
-                </v-card-subtitle>
-              <v-divider class="skill__border"/>
+                <FadeSlide>
+                  HTML・CSS・Sass(SCSS)・Bootstrap
+                </FadeSlide>
+              </v-card-subtitle>
+              <v-divider class="skill__border" />
               <Fade>
-              <v-card-text>
-                <ul>
-                  <li>
-                    できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
-                  </li>
-                  <li>レスポンシブ対応(モバイルファースト)</li>
-                  <li>scssでBEM記法で記述しています。</li>
-                  <li>bootstrap使用時は、グリッドシステムを利用</li>
-                  <li>XDからのコーディング可能です。</li>
-                  <li>今後は、特にSEO対策の理解を深めていきます。</li>
-                </ul>
-              </v-card-text>
+                <v-card-text>
+                  <ul>
+                    <li>
+                      できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
+                    </li>
+                    <li>レスポンシブ対応(モバイルファースト)</li>
+                    <li>scssでBEM記法で記述しています。</li>
+                    <li>bootstrap使用時は、グリッドシステムを利用</li>
+                    <li>XDからのコーディング可能です。</li>
+                    <li>今後は、特にSEO対策の理解を深めていきます。</li>
+                  </ul>
+                </v-card-text>
               </Fade>
             </v-card>
-            </FadeIn>
+          </FadeIn>
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card class="py-4">
               <v-card-title class="text-capitalize">
-              <FadeSlide>
-                <h3>JavaScript</h3>
-              </FadeSlide>
+                <FadeSlide>
+                  <h3>JavaScript</h3>
+                </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <template v-for="(skill,index) in secondSkills" >
-                <FadeInDelay :delay="skill.delay" :key="index">
-                  <svg viewBox="0 0 256 300" class="svg">
-                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                <template v-for="(skill, index) in secondSkills">
+                  <FadeInDelay :delay="skill.delay" :key="index">
+                    <svg viewBox="0 0 256 300" class="svg">
+                      <use :xlink:href="'#' + skill.name" x="0" y="0"></use>
+                    </svg>
+                  </FadeInDelay>
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle">
-              <FadeSlide>
-                JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js
-              </FadeSlide>
-                </v-card-subtitle>
-              <v-divider class="skill__border"/>
+                <FadeSlide>
+                  JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js
+                </FadeSlide>
+              </v-card-subtitle>
+              <v-divider class="skill__border" />
               <Fade>
-              <v-card-text>
-                <ul>
-                  <li>
-                    主にJavaScript,フレームワークはVue.jsを中心に開発しています。
-                  </li>
-                  <li>基本的な機能の実装はできます。</li>
-                  <li>APIなど、より一層の習熟の必要があります。</li>
-                </ul>
-              </v-card-text>
+                <v-card-text>
+                  <ul>
+                    <li>
+                      主にJavaScript,フレームワークはVue.jsを中心に開発しています。
+                    </li>
+                    <li>基本的な機能の実装はできます。</li>
+                    <li>
+                      API、Jestを利用してのテスト等、より一層の習熟の必要があります。
+                    </li>
+                  </ul>
+                </v-card-text>
               </Fade>
             </v-card>
-            </FadeIn>
+          </FadeIn>
         </v-col>
         <v-col cols="12" sm="6" md="4" class="skill__box" tag="section">
           <FadeIn>
             <v-card class="py-4">
               <v-card-title class="text-uppercase">
-              <FadeSlide>
-                <h3>その他</h3>
-              </FadeSlide>
+                <FadeSlide>
+                  <h3>その他</h3>
+                </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
-                <template v-for="(skill,index) in thirdSkills" >
-                <FadeInDelay :delay="skill.delay" :key="index">
-                  <svg viewBox="0 0 256 300" class="svg">
-                    <use :xlink:href="'#'+ skill.name" x="0" y="0"></use>
-                  </svg>
-                </FadeInDelay>
+                <template v-for="(skill, index) in thirdSkills">
+                  <FadeInDelay :delay="skill.delay" :key="index">
+                    <svg viewBox="0 0 256 300" class="svg">
+                      <use :xlink:href="'#' + skill.name" x="0" y="0"></use>
+                    </svg>
+                  </FadeInDelay>
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle">
-              <FadeSlide>
-                Git・GitHub・Firebase 等
-              </FadeSlide>
-                </v-card-subtitle>
-              <v-divider class="skill__border"/>
+                <FadeSlide>
+                  Git・GitHub・Firebase 等
+                </FadeSlide>
+              </v-card-subtitle>
+              <v-divider class="skill__border" />
               <Fade>
-              <v-card-text>
-                <ul>
-                  <li>エディタは Visual Studio Code</li>
-                  <li>Git/GitHub基本操作</li>
-                  <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                  <li>Firebase?</li>
-                  <li>今後はバックエンドの理解を深めていきます。</li>
-                </ul>
-              </v-card-text>
+                <v-card-text>
+                  <ul>
+                    <li>エディタは Visual Studio Code</li>
+                    <li>Git/GitHub基本操作</li>
+                    <li>RubyのRuby on Railsチュートリアルを1周程度</li>
+                    <li>Firebase?</li>
+                    <li>今後はバックエンドの理解を深めていきます。</li>
+                  </ul>
+                </v-card-text>
               </Fade>
             </v-card>
-            </FadeIn>
+          </FadeIn>
         </v-col>
       </v-row>
     </v-col>
@@ -142,27 +144,27 @@ export default {
   data() {
     return {
       // アイコン
-      firstSkills:[
-        {name:"html" ,delay:0.25},
-        {name:"css",delay:0.5},
-        {name:"sass",delay:0.75},
-        {name:"bootstrap",delay:1},
+      firstSkills: [
+        { name: "html", delay: 0.25 },
+        { name: "css", delay: 0.5 },
+        { name: "sass", delay: 0.75 },
+        { name: "bootstrap", delay: 1 }
       ],
-      secondSkills:[
-        {name:"js" ,delay:0.25},
-        {name:"vue",delay:0.5},
-        {name:"vuetify",delay:0.75},
-        {name:"node",delay:1},
-        {name:"nuxt",delay:1.25},
+      secondSkills: [
+        { name: "js", delay: 0.25 },
+        { name: "vue", delay: 0.5 },
+        { name: "vuetify", delay: 0.75 },
+        { name: "node", delay: 1 },
+        { name: "nuxt", delay: 1.25 }
       ],
-      thirdSkills:[
-        {name:"git" ,delay:0.25},
-        {name:"github",delay:0.5},
-        {name:"firebase",delay:0.75},
-      ],
-    }
-  },
-}
+      thirdSkills: [
+        { name: "git", delay: 0.25 },
+        { name: "github", delay: 0.5 },
+        { name: "firebase", delay: 0.75 }
+      ]
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -187,8 +189,8 @@ export default {
   &__subtitle {
     font-weight: 600;
   }
-  &__border{
-    border-style:  dotted;
+  &__border {
+    border-style: dotted;
     width: 95%;
     margin: 0 auto;
   }
@@ -211,10 +213,8 @@ export default {
   }
 }
 
-
 .svg {
   width: 50px;
   padding: 0 5px 0;
 }
-
 </style>

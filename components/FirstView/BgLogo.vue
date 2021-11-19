@@ -224,7 +224,7 @@ export default {
       stroke-dasharray: 20000;
       stroke-opacity: 0;
       animation: dash 1.3s ease forwards .2s;
-      fill: none;
+      fill: #fff;
       transition: all .2s ease-out;
     }
   }
@@ -282,7 +282,7 @@ export default {
       stroke:#f6f6f6;
       stroke: var(--line-color);
       stroke-width: 115px;
-      stroke-opacity: .07;
+      stroke-opacity: .08;
       animation: circle-b 90s infinite ease-in-out alternate;
       transition: all .3s ease-out ;
     }
@@ -303,7 +303,7 @@ export default {
     z-index: -2;
     stroke-dasharray: 800;
     stroke-dashoffset: 800;
-    animation: dash-2 4s ease forwards 2.5s;
+    animation: dash-2 4s ease forwards 2.7s;
   }
 
   // 線
@@ -353,8 +353,8 @@ export default {
     &:nth-of-type(3) {
       top: 51%;
       left: calc(50% + 48px);
-      // 29px
-      // height: calc(49% - 85px);
+      // 29+48=77
+      // height: calc(49% - 87.5px);
       border-style: solid solid none none;
       border-top-right-radius: 5px;
       animation: line-3 20s ease forwards 2s;
@@ -426,7 +426,7 @@ export default {
 @keyframes line-3 {
 0%{width: 0; height: 0;}
 50%{width: calc(50% - 77px); height: 0;}
-100%{width: calc(50% - 77px); height: calc(49% - 85px);}
+100%{width: calc(50% - 77px); height: calc(49% - 87.5px);}
 }
 
 // 回転

@@ -23,9 +23,7 @@
       <!-- <Logo :color="color" :logo="logo"/> -->
       <!-- 背景 ラインver-->
       <BgLogo :color="color" :logo="logo"/>
-      <div @mouseenter="mouseHov = true" @mouseleave="mouseHov = false">
-      <ScrollDown />
-      </div>
+      <ScrollDown @mouseenter.native="mouseHov = true" @mouseleave.native="mouseHov = false"/>
   </v-container>
 </template>
 

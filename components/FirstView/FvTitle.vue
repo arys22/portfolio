@@ -1,7 +1,7 @@
 <template>
   <transition-group
     tag="div"
-    class="text__box text-md-h3 text-lg-h2"
+    class="text__box"
     v-on:before-enter="beforeEnter"
     v-on:enter="enter"
     v-on:before-leave="beforeEnter"
@@ -24,7 +24,7 @@ export default {
     return {
       show: false,
       index: 0,
-      text: ["PORTFOLIO", "Portfolio", "ポートフォリオ" ],
+      text: ["PORTFOLIO", "Portfolio","Welcome" ],
       textArray: [], //convTextで文字列を分解＆キーを生成 配列
       textModel: [] //1文取り出し表示
     };
@@ -129,15 +129,16 @@ export default {
 <style lang="scss" scoped>
 .text {
   &__box {
-    font-family: "Helvetica Neue",
+    font-family: fantasy,"Helvetica Neue",
     Arial,
     "Hiragino Kaku Gothic ProN",
+    'ヒラギノ角ゴ ProN W3',
     "Hiragino Sans",
     Meiryo,
     sans-serif;
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   &__item {
     transition: 0.4s cubic-bezier(0, 0.08, 0.05, 1);
@@ -182,7 +183,21 @@ export default {
 @media screen and(min-width: 600px) {
   .text {
     &__box {
-      font-size: 2.5rem;
+      font-size: 3rem;
+    }
+  }
+}
+@media screen and(min-width: 960px) {
+  .text {
+    &__box {
+      font-size: 3.5rem;
+    }
+  }
+}
+@media screen and(min-width: 1264px) {
+  .text {
+    &__box {
+      font-size: 4rem;
     }
   }
 }

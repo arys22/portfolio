@@ -53,7 +53,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-decoration-none product__link"
-                  >
+                >
                   <v-icon color="#1976d2" class="text-body-1">{{
                     item.icon
                   }}</v-icon>
@@ -66,7 +66,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="text-decoration-none product__link"
-                  >
+                >
                   <v-icon color="#1976d2" class="text-body-1"
                     >mdi-file-outline</v-icon
                   >
@@ -84,7 +84,6 @@
               >
                 詳細表示
               </v-btn>
-
             </v-card-actions>
           </v-col>
         </v-row>
@@ -98,7 +97,7 @@
     >
       <!-- ダイアログコンテンツ -->
       <!-- @close モーダルの× -->
-      <Component :is="componentTitle" @close="dialog = false"/>
+      <Component :is="componentTitle" @close="dialog = false" />
     </v-dialog>
   </v-row>
 </template>
@@ -125,7 +124,7 @@ export default {
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/",
-          component:"ModalCoding01",
+          component: "ModalCoding01"
         },
         {
           id: 2,
@@ -142,7 +141,7 @@ export default {
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.DIGSMILE.com/html/",
-          component:"ModalCoding02",
+          component: "ModalCoding02"
         },
         {
           id: 3,
@@ -157,14 +156,29 @@ export default {
           code_href: "https://github.com/arys22/pon-design",
           icon: "mdi-github",
           code_type: "GitHub",
-          web_href: "https://arys22.github.io/pon-design/",// GitHub Pages
-          component:"ModalCoding03",
+          web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
+          component: "ModalCoding03"
+        },
+        {
+          id: 4,
+          title: "架空のLP(オリジナル)",
+          desc: "設定からデザイン、コーディング、全て",
+          range: "レスポンシブ(スマホ、pc)",
+          lang: "HTML/CSS(SCSS)/JavaScript",
+          page: "1",
+          page_type: "架空のグランピング施設",
+          img_src: require("@/assets/img/LP1/LP_pc-1-min.png"),
+          code_href: "https://github.com/arys22/pon-design",
+          icon: "mdi-github",
+          code_type: "GitHub",
+          web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
+          component: "ModalLP01"
         }
       ]
     };
   },
   methods: {
-    open (component){
+    open(component) {
       this.dialog = true;
       this.componentTitle = component;
     }
