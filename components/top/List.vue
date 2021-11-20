@@ -2,12 +2,10 @@
   <v-row justify="center" tag="section" align="center" class="list">
     <!-- 制作一覧 -->
     <h2 class="text-center text-capitalize my-4 list__title">
-    <Fade>
-      <v-icon class="mr-1" color="black">mdi-view-list</v-icon>制作物<br /><span
-        class="text-subtitle-1"
-        >list</span
-      >
-    </Fade>
+      <Fade>
+        <v-icon class="mr-1" color="black">mdi-view-list</v-icon
+        >制作物<br /><span class="text-subtitle-1">list</span>
+      </Fade>
     </h2>
     <v-col cols="12" sm="10" lg="8" class="list__wrap">
       <Fade>
@@ -22,67 +20,71 @@
         <v-card class="list__card py-8">
           <v-row class="mx-0">
             <v-col cols="12" md="5">
-            <Fade>
-              <v-img
-                src="https://via.placeholder.com/500x375"
-                alt="デモ"
-                max-width="300"
-                max-height="200"
-                class="mx-auto"
-              ></v-img>
-            </Fade>
+              <Fade>
+                <v-img
+                  :src="require('@/assets/img/portfolio/Portfolio.png')"
+                  alt="Portfolioサイト"
+                  max-width="250"
+                  max-height="350"
+                  class="mx-auto list__img"
+                  position="center top"
+                ></v-img>
+              </Fade>
             </v-col>
 
             <v-col cols="12" md="7">
               <v-card-title>
+                <FadeSlide>
+                  portfolio
+                </FadeSlide>
+              </v-card-title>
               <FadeSlide>
-                portfolio
+                <v-card-subtitle
+                  >HTML/CSS(SCSS)/Vuetify/Nuxt.js</v-card-subtitle
+                >
               </FadeSlide>
-                </v-card-title>
-              <FadeSlide>
-              <v-card-subtitle>HTML/CSS(SCSS)/Vuetify/Nuxt.js</v-card-subtitle>
-              </FadeSlide>
-              <v-divider class="skill__border"/>
+              <v-divider class="list__border" />
               <v-card-text>
-              <Fade>
-                <ul>
-                  <li>レスポンシブ(モバイルファースト)</li>
-                  <li>ライブラリ(vue-parallax-js、vue-typer)</li>
-                  <li>デザインは引き算を心がけました。</li>
-                  <li>
-                    ヘッダーメニュー：fv過ぎたら色変化、sp時バーガーメニュー、ボトムナビ：上スクロール時表示、ページ内リンク
-                  </li>
-                  <li>svg操作</li>
-                  <li>fvアクションを工夫しました。</li>
-                  <li>fadeアクション4種類</li>
-                  <li>listページのモーダルの見やすさを工夫しました。</li>
-                  <li>
-                    フォームはgoogleフォームと連携、受付時、自動返信メール、入力チェック/確認ページ/完了ページ
-                  </li>
-                  <li>ナビゲーションガード</li>
-                  <li>SSG（Static Site Generator）</li>
-                  <li>Firebaseでの公開</li>
-                  <li>
-                  </li>
-                </ul>
-              </Fade>
-              <FadeSlide>
-                <p class="mt-7 mb-0">
-                  コードの詳細:
-                  <a
-                    href="https://github.com/arys22/portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-decoration-none list__link"
-                    ><v-icon color="#1976d2" class="text-h6">mdi-github</v-icon>GitHub</a
-                  >
-                </p>
+                <Fade>
+                  <ul>
+                    <li>レスポンシブ(モバイルファースト)</li>
+                    <li>ライブラリ(vue-parallax-js, vue-typer)</li>
+                    <li>デザインは引き算を心がけました。</li>
+                    <li>
+                      ヘッダーメニュー(fv過ぎたら色変化)、sp時バーガーメニュー、ボトムナビ(上スクロール時表示)、ページ内リンク
+                    </li>
+                    <li>svg操作</li>
+                    <li>fvアクションを工夫しました。</li>
+                    <li>fadeアクション4種類</li>
+                    <li>listページのモーダルの見やすさを工夫しました。</li>
+                    <li>パンくずリスト</li>
+                    <li>
+                      フォームはgoogleフォームと連携、受付時に自動返信メール、入力チェック/確認ページ/完了ページ
+                    </li>
+                    <li>ナビゲーションガード</li>
+                    <li>SSG（Static Site Generator）</li>
+                    <li>Firebaseでの公開</li>
+                  </ul>
+                </Fade>
+                <FadeSlide>
+                  <p class="mt-7 mb-0">
+                    コードの詳細:
+                    <a
+                      href="https://github.com/arys22/portfolio"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-decoration-none list__link"
+                      ><v-icon color="#1976d2" class="text-h6"
+                        >mdi-github</v-icon
+                      >GitHub</a
+                    >
+                  </p>
                 </FadeSlide>
               </v-card-text>
             </v-col>
           </v-row>
         </v-card>
-        </FadeIn>
+      </FadeIn>
     </v-col>
     <div class="list__back text-uppercase" v-parallax="-0.17">list</div>
   </v-row>
@@ -115,6 +117,15 @@ export default {
   }
   &__card {
     width: fit-content;
+  }
+  &__img {
+    box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
+      0px 7px 10px 1px rgb(0 0 0 / 14%), 0px 2px 16px 1px rgb(0 0 0 / 12%);
+  }
+  &__border {
+    border-style: dotted;
+    width: 95%;
+    margin: 0 auto;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

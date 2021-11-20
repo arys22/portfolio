@@ -23,6 +23,10 @@
             height="68"
             class="modal__img"
           >
+            <span>
+              {{ tab.type }}
+            </span>
+            <br />
             <span class="modal__img-text">
               {{ tab.name }}
             </span>
@@ -49,6 +53,7 @@
                 class="modal__item-img"
               >
               </v-img>
+              <p class="mt-5">・・・省略</p>
             </template>
 
             <template v-else-if="tab.type == 'sp'">
@@ -92,90 +97,47 @@
       <v-col cols="12" sm="6" md="4" class="pt-sm-6">
         <v-divider class="hidden-sm-and-up" />
         <v-card-title class="pt-sm-3">
-          架空のグランピング施設のLP(オリジナル)
+          Portfolio
         </v-card-title>
-        <v-card-subtitle>HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle>
+        <v-card-subtitle>HTML/CSS(SCSS)/Vue/Vuetify/Nuxt</v-card-subtitle>
         <v-card-text class="pb-0">
-          <p class="mb-1 font-weight-bold">設定・デザイン</p>
-          <ol>
+          <ul>
+            <li>デザインは引き算を心がけました。</li>
+            <li>レスポンシブ(モバイルファースト)</li>
+            <li>ライブラリ(vue-parallax-js, vue-typer)使用</li>
             <li>
-              5w1h
+              主なアクション
               <ul>
-                <li>何を(目的)・認知、平日の利用増に繋げる</li>
-                <li>いつ・隙間時間</li>
-                <li>どこで・スマホメイン</li>
-                <li>だれが・子を持つ女性(ペルソナ設定)</li>
-                <li>なぜ・サービス内容確認と他との比較</li>
-                <li>どのように・ママ友の口コミ→検索</li>
+                <li>
+                  ヘッダーメニュー(fv過ぎたら色変化)、sp時バーガーメニュー、ボトムナビ(上スクロール時のみ表示)ページ内リンク、topへボタン
+                </li>
+                <li>svg操作、アニメーション</li>
+                <li>マウスストーカー(クリック時波紋etc...)</li>
+                <li>
+                  fadeアクション4種類(その場、下から、何度も、textスライド)
+                </li>
+                <li>listページのモーダルの見やすさを工夫しました。</li>
+                <li>パンくずリスト</li>
+                <li>
+                  フォームはgoogleフォームと連携、受付時に自動返信メール、入力チェック(バリテーション)→確認ページ→完了ページ
+                </li>
+                <li>ナビゲーションガード</li>
               </ul>
             </li>
-            <li>
-              ペルソナ設定(ターゲット)<br />
-              『35歳、女性、住所(立川市)、今は主婦、車免許なし、子2歳、家事、育児に追われ疲弊、etc...』
-            </li>
-            <li>デザイン</li>
-            <ul>
-              <li>あえて女性向けのサイトを制作</li>
-              <li>
-                見やすさとできるだけ直感的にわかるように文字を簡潔に写真を多様
-              </li>
-              <li>ロゴ作成</li>
-              <li>平日のお得感</li>
-            </ul>
-          </ol>
-          <p class="my-1 font-weight-bold">コード</p>
-          <ul>
-            <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
-            <li>CSS設計はBEM記法</li>
-            <li>
-              主なアクション(js)
-              <ul>
-                <li>バーガーメニュー</li>
-                <li>メニューは、ファーストビュー過ぎると色変化</li>
-                <li>ファーストビューのスライダー表示(3画像)</li>
-                <li>svg操作(アニメーション)</li>
-                <li>topへ戻るボタン(スクロールをjs管理)</li>
-                <li>aタグの内部リンクスクロール(スクロールをjs管理)</li>
-                <li>hover時アニメーション</li>
-                <li>スライダー自動＋ボタン(可変対応)</li>
-                <li>アコーディオンメニュー</li>
-                <li>予約日初期表示をアクセスした日</li>
-              </ul>
-            </li>
-          </ul>
-          <p class="my-1 font-weight-bold">製作期間</p>
-          <ul>
-            <li>設定・デザイン : 5日</li>
-            <li>素材集め : 1日</li>
-            <li>コード(文章考えながら) : 4日</li>
-            <li>修正・最終確認 : 1日</li>
-            <li>製作期間 : 11日</li>
+            <li>SSG（Static Site Generator）</li>
+            <li>Firebaseでの公開</li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">
             コード詳細:
             <a
-              href=""
+              href="https://github.com/arys22/portfolio"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
               ><v-icon color="#1976d2" class="text-body-1">mdi-github</v-icon>
               GitHub
             </a>
-            <br />
-            webサイト:
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1"
-                >mdi-file-outline</v-icon
-              >
-              sampleページ
-            </a>
-            <br />
-            (GitHub Pagesでの公開ページ)
             <br />
             <span class="text-caption">※新たなタブで開きます</span>
           </p>
@@ -208,31 +170,22 @@ export default {
       tabs: [
         {
           id: 1,
-          src_tab: require("@/assets/img/LP1/LP_pc-1-min.png"),
-          alt: "LPのpc画面上部",
-          src_2: require("@/assets/img/LP1/LP_pc-2-min.png"),
-          alt_2: "LPのpc画面下部",
+          src_tab: require("@/assets/img/portfolio/Portfolio.png"),
+          alt: "portfolioのpc画面上部",
+          src: require("@/assets/img/portfolio/Portfolio.png"),
           width: "90",
-          type: "sp",
-          name: "PC"
+          type: "pc",
+          name: "home"
         },
         {
           id: 2,
-          src_tab: require("@/assets/img/LP1/LP_sp-1-min.png"),
-          alt: "LPのスマホ画面上部",
-          src_2: require("@/assets/img/LP1/LP_sp-2-min.png"),
-          alt_2: "LPのスマホ画面下部",
+          src_tab: require("@/assets/img/portfolio/Portfolio-sp.png"),
+          alt: "portfolioのスマホ画面上部",
+          src_2: require("@/assets/img/portfolio/Portfolio-sp-2.png"),
+          alt_2: "portfolioのスマホ画面下部",
           width: "50",
           type: "sp",
-          name: "SP"
-        },
-        {
-          id: 3,
-          src_tab: require("@/assets/img/LP1/LP_menu-min.png"),
-          alt: "menu画面",
-          width: "50",
-          type: "menu",
-          name: "menu"
+          name: "home"
         }
       ]
     };

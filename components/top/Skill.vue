@@ -90,6 +90,7 @@
                     <li>
                       API、Jestを利用してのテスト等、より一層の習熟の必要があります。
                     </li>
+                    <li>今はVue.jsが一番好きです。</li>
                   </ul>
                 </v-card-text>
               </Fade>
@@ -126,7 +127,7 @@
                     <li>Git/GitHub基本操作</li>
                     <li>RubyのRuby on Railsチュートリアルを1周程度</li>
                     <li>Firebase?</li>
-                    <li>今後はバックエンドの理解を深めていきます。</li>
+                    <li>今後はバックエンドの理解も深めていきます。</li>
                   </ul>
                 </v-card-text>
               </Fade>

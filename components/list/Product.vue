@@ -168,11 +168,26 @@ export default {
           page: "1",
           page_type: "架空のグランピング施設",
           img_src: require("@/assets/img/LP1/LP_pc-1-min.png"),
-          code_href: "https://github.com/arys22/pon-design",
+          code_href: "",
           icon: "mdi-github",
           code_type: "GitHub",
-          web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
+          web_href: "", // GitHub Pages
           component: "ModalLP01"
+        },
+        {
+          id: 5,
+          title: "ポートフォリオ",
+          desc: "デザイン、コーディング",
+          range: "レスポンシブ(スマホ、pc)",
+          lang: "HTML/CSS(SCSS)/Vue.js/Nuxt.js",
+          page: "5",
+          page_type: "home, list, contact, 確認ページ, 完了ページ",
+          img_src: require("@/assets/img/portfolio/Portfolio.png"),
+          code_href: "https://github.com/arys22/portfolio",
+          icon: "mdi-github",
+          code_type: "GitHub",
+          web_href: "", // GitHub Pages
+          component: "ModalPortfolio"
         }
       ]
     };

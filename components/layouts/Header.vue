@@ -14,18 +14,27 @@
         <svg viewBox="0 0 500 500" width="22" height="22" class="header__mark">
           <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
         </svg>
-        <transition  name="title">
-        <h1 class="header__title text-h6 text-capitalize" v-show="show">{{ title }}</h1>
+        <transition name="title">
+          <h1 class="header__title text-h6 text-capitalize" v-show="show">
+            {{ title }}
+          </h1>
         </transition>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <!-- pc -->
       <!-- plugins/constrants.jsのmenuItems -->
-      <v-toolbar-items class="hidden-xs-only" @mouseenter="delayActive" @mouseleave="isActive=false">
+      <v-toolbar-items
+        class="hidden-xs-only"
+        @mouseenter="delayActive"
+        @mouseleave="isActive = false"
+      >
         <v-btn
           color="white"
           plain
-          :class="{ header__btn_scroll: scrollY > fvHeight , header__btn_active:isActive}"
+          :class="{
+            header__btn_scroll: scrollY > fvHeight,
+            header__btn_active: isActive
+          }"
           active-class="link-active"
           class="header__btn text-md-subtitle-1"
           v-for="(item, index) in $ITEMS.menuItems"
@@ -47,8 +56,10 @@
         :class="{ header__icon__scroll: scrollY > fvHeight }"
         large
         elevation="2"
+        @mouseenter="delayActive"
+        @mouseleave="isActive = false"
       >
-      <v-icon>{{ drawer ? 'mdi-window-close' : 'mdi-menu' }}</v-icon>
+        <v-icon>{{ drawer ? "mdi-window-close" : "mdi-menu" }}</v-icon>
       </v-app-bar-nav-icon>
     </v-app-bar>
     <!-- メニュー -->
@@ -111,8 +122,8 @@ export default {
     return {
       fvHeight: null,
       drawer: false,
-      isActive:false,//ボタンの遅延設定
-      show:false,//h1タグ
+      isActive: false, //ボタンの遅延設定
+      show: false //h1タグ
     };
   },
   created() {
@@ -120,21 +131,21 @@ export default {
     this.setListener();
   },
   mounted() {
-    this.show = true;//h1
+    this.show = true; //h1
     // ルートの遷移前（コンポーネントガード解決前）
     this.$router.beforeEach((to, from, next) => {
       // console.log('global:beforeEach');
       this.fvHeight = null;
-      this.show = false;//h1
+      this.show = false; //h1
       next();
     });
     // ルートの遷移後
     this.$router.afterEach((to, from, next) => {
-			setTimeout( () => {
-				// console.log('global:afterEach');
-        this.show =true;//h1
-			}, 1000);
-		})
+      setTimeout(() => {
+        // console.log('global:afterEach');
+        this.show = true; //h1
+      }, 1000);
+    });
   },
 
   beforeDestroy() {
@@ -153,11 +164,12 @@ export default {
       // console.log(this.fvHeight);
     },
 
-    delayActive(){//ページ遷移botann遅延
-    setTimeout(() => {
-      this.isActive = true;
+    delayActive() {
+      //ページ遷移botann遅延
+      setTimeout(() => {
+        this.isActive = true;
       }, 1000);
-    },
+    }
   }
 };
 </script>
@@ -165,7 +177,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   transition: all 0.7s ease-in-out;
-  &__mark{
+  &__mark {
     vertical-align: middle;
   }
   &__scroll {
@@ -193,7 +205,7 @@ export default {
       transform-origin: left top;
       transform: scale(1, 1);
     }
-    &_active{
+    &_active {
       pointer-events: auto;
     }
     &_scroll {
@@ -237,7 +249,6 @@ export default {
   transition: transform 0.5s ease-out;
 }
 
-
 .sp {
   &__list {
     border-bottom: 1px dotted rgba(255, 255, 255, 0.24);
@@ -270,6 +281,6 @@ export default {
   opacity: 0;
 }
 .title-leave-active {
-  transition: all .5s 0s ease-in;
+  transition: all 0.5s 0s ease-in;
 }
 </style>
