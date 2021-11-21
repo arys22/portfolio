@@ -60,18 +60,20 @@
                   {{ item.code_type }}
                 </a>
                 <br />
-                webサイト:
-                <a
-                  :href="item.web_href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-decoration-none product__link"
-                >
-                  <v-icon color="#1976d2" class="text-body-1"
-                    >mdi-file-outline</v-icon
+                <template v-if="item.id !== 5">
+                  webサイト:
+                  <a
+                    :href="item.web_href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-decoration-none product__link"
                   >
-                  sampleページ
-                </a>
+                    <v-icon color="#1976d2" class="text-body-1"
+                      >mdi-file-outline</v-icon
+                    >
+                    sampleページ
+                  </a>
+                </template>
               </p>
             </v-card-text>
             <v-card-actions>
@@ -153,7 +155,7 @@ export default {
           page_type:
             "top, news, article, service, works, company, recruit, contact",
           img_src: require("@/assets/img/coding3/index1-pc-min.png"),
-          code_href: "https://github.com/arys22/pon-design",
+          code_href: "https://github.com/arys22/pon-design.git",
           icon: "mdi-github",
           code_type: "GitHub",
           web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
@@ -168,10 +170,10 @@ export default {
           page: "1",
           page_type: "架空のグランピング施設",
           img_src: require("@/assets/img/LP1/LP_pc-1-min.png"),
-          code_href: "",
+          code_href: "https://github.com/arys22/LP.git",
           icon: "mdi-github",
           code_type: "GitHub",
-          web_href: "", // GitHub Pages
+          web_href: "https://arys22.github.io/LP/", // GitHub Pages
           component: "ModalLP01"
         },
         {
@@ -183,10 +185,10 @@ export default {
           page: "5",
           page_type: "home, list, contact, 確認ページ, 完了ページ",
           img_src: require("@/assets/img/portfolio/Portfolio.png"),
-          code_href: "https://github.com/arys22/portfolio",
+          code_href: "https://github.com/arys22/portfolio.git",
           icon: "mdi-github",
           code_type: "GitHub",
-          web_href: "", // GitHub Pages
+          web_href: "",
           component: "ModalPortfolio"
         }
       ]

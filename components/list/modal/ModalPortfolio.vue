@@ -131,7 +131,7 @@
           <p class="mb-0">
             コード詳細:
             <a
-              href="https://github.com/arys22/portfolio"
+              href="https://github.com/arys22/portfolio.git"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"

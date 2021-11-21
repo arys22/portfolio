@@ -70,7 +70,7 @@
                   <p class="mt-7 mb-0">
                     コードの詳細:
                     <a
-                      href="https://github.com/arys22/portfolio"
+                      href="https://github.com/arys22/portfolio.git"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-decoration-none list__link"

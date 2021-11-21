@@ -155,7 +155,7 @@
           <p class="mb-0">
             コード詳細:
             <a
-              href=""
+              href="https://github.com/arys22/LP.git"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
@@ -165,7 +165,7 @@
             <br />
             webサイト:
             <a
-              href=""
+              href="https://arys22.github.io/LP/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
