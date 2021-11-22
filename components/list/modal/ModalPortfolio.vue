@@ -112,7 +112,9 @@
                   ヘッダーメニュー(fv過ぎたら色変化)、sp時バーガーメニュー、ボトムナビ(上スクロール時のみ表示)ページ内リンク、topへボタン
                 </li>
                 <li>svg操作、アニメーション</li>
-                <li>マウスストーカー(クリック時波紋etc...)</li>
+                <li>
+                  マウスストーカー(影変化、クリック時波紋、etc...)fvで少し遊んでもらえるようにしました。
+                </li>
                 <li>
                   fadeアクション4種類(その場、下から、何度も、textスライド)
                 </li>
@@ -125,7 +127,7 @@
               </ul>
             </li>
             <li>SSG（Static Site Generator）</li>
-            <li>Firebaseでの公開</li>
+            <li>Netlifyでの公開</li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">

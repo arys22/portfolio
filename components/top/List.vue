@@ -54,7 +54,7 @@
                       ヘッダーメニュー(fv過ぎたら色変化)、sp時バーガーメニュー、ボトムナビ(上スクロール時表示)、ページ内リンク
                     </li>
                     <li>svg操作</li>
-                    <li>fvアクションを工夫しました。</li>
+                    <li>fvのアクションを工夫しました。</li>
                     <li>fadeアクション4種類</li>
                     <li>listページのモーダルの見やすさを工夫しました。</li>
                     <li>パンくずリスト</li>
@@ -63,7 +63,7 @@
                     </li>
                     <li>ナビゲーションガード</li>
                     <li>SSG（Static Site Generator）</li>
-                    <li>Firebaseでの公開</li>
+                    <li>Netlifyでの公開</li>
                   </ul>
                 </Fade>
                 <FadeSlide>

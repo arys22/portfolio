@@ -168,7 +168,7 @@ export default {
       //ページ遷移botann遅延
       setTimeout(() => {
         this.isActive = true;
-      }, 1000);
+      }, 1200);
     }
   }
 };

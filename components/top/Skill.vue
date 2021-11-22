@@ -116,7 +116,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle">
                 <FadeSlide>
-                  Git・GitHub・Firebase 等
+                  Git・GitHub・Netlify 等
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -126,7 +126,7 @@
                     <li>エディタは Visual Studio Code</li>
                     <li>Git/GitHub基本操作</li>
                     <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                    <li>Firebase?</li>
+                    <li>Netlify</li>
                     <li>今後はバックエンドの理解も深めていきます。</li>
                   </ul>
                 </v-card-text>
@@ -161,7 +161,7 @@ export default {
       thirdSkills: [
         { name: "git", delay: 0.25 },
         { name: "github", delay: 0.5 },
-        { name: "firebase", delay: 0.75 }
+        { name: "netlify", delay: 0.75 }
       ]
     };
   }

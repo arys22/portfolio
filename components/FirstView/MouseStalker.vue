@@ -4,8 +4,7 @@
     class="mouse"
     :class="{ up: mouseUp, down: mouseDown, hov: mouseHov, show: mouse }"
     :style="bgColor"
-  >
-  </div>
+  ></div>
 </template>
 
 <script>
@@ -36,24 +35,24 @@ export default {
       default: false
     },
     color: {
-      type:String,
-      default:"#fff",
-    },
+      type: String,
+      default: "#fff"
+    }
   },
   methods: {
     transformStalker() {
-      this.y = this.mouseY + 100
+      this.y = this.mouseY + 100;
       this.$refs.mouse.style.transform =
         "translate(" + this.mouseX + "px, " + this.y + "px) ";
-    },
-  },
-  computed: {
-    bgColor(){
-      return{
-        '--bg-color': this.color,
-      }
     }
   },
+  computed: {
+    bgColor() {
+      return {
+        "--bg-color": this.color
+      };
+    }
+  }
 };
 </script>
 
@@ -70,7 +69,8 @@ export default {
   border-radius: 50%;
   background-color: var(--bg-color);
   transform: translate(0, 0);
-  transition: transform 0.1s ease-out, opacity 0.3s ease-in-out 0.2s, width 0.3s ease, height 0.3s ease ,top .3s ease,left .3s ease;
+  transition: transform 0.05s ease-out, opacity 0.3s ease-in-out 0.2s,
+    width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
   // 重なると反転
   mix-blend-mode: difference;
   &.hov {
