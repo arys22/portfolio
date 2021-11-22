@@ -14,23 +14,43 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "ポートフォリオのwebサイトです。制作物などをまとめています。" },
-      { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "description",
+        name: "description",
+        content: "ポートフォリオのwebサイトです。制作物などをまとめています。"
+      },
+      { name: "format-detection", content: "telephone=no" }
       // 自動翻訳させないための記述
       // { "http-equiv": "Content-Language", content: "ja" },
       // { name: "google", content: "notranslate" }
     ],
     link: [
-      { hid: 'icon', rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
-      { hid: 'icon32', rel: 'icon', type: 'image/png', sizes: '32x32', href: '@/assets/img/logo-32.png' },
-      { hid: 'icon16', rel: 'icon', type: 'image/png', sizes: '16x16', href: '@/assets/img/logo-32.png' },
-      {  rel: "mask-icon",  href: "/logo.svg", color:"#333" },
-      {  rel: 'apple-touch-icon', sizes: '180x180', href: '@/assets/img/logo-180.png' }
-  ]
+      { hid: "icon", rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
+      {
+        hid: "icon32",
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "@/assets/img/logo-32.png"
+      },
+      {
+        hid: "icon16",
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "@/assets/img/logo-32.png"
+      },
+      { rel: "mask-icon", href: "/logo.svg", color: "#333" },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "@/assets/img/logo-180.png"
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.css',],
+  css: ["@/assets/css/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -39,7 +59,7 @@ export default {
     // vue-typer
     "@/plugins/vue-typer.client.js",
     // vue-parallax-js
-    { src :'~/plugins/vue-parallax-js', ssr: false },
+    { src: "~/plugins/vue-parallax-js", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -99,5 +119,5 @@ export default {
     parallel: true, //<-追加
     cache: true, //<-追加
     hardSource: true //<-追加
-  },
+  }
 };
