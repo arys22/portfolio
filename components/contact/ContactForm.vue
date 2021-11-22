@@ -114,12 +114,12 @@ export default {
         // すべてのバリデーションが通過したときのみ
         // 確認画面に遷移して送る
         this.$router.push({
-          path: "/confirm"
-          // query: {
-          //   name: this.form.name,
-          //   email: this.form.email,
-          //   content: this.form.content
-          // }
+          path: "/confirm",
+          query: {
+            name: this.form.name,
+            email: this.form.email,
+            content: this.form.content
+          }
         });
       } else {
         this.error = true;
