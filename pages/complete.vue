@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <Breadcrumbs :items-data="breadData"/>
+    <Breadcrumbs :items-data="breadData" />
     <StepBar />
     <v-row justify="center" tag="section" align="center" class="conmp">
       <h2 class="text-center  my-4 conmp__title">
@@ -8,23 +8,25 @@
         >お問い合わせ送信完了
       </h2>
       <v-col cols="12" sm="10" md="8" lg="6">
-          <v-card class="pt-4">
-            <v-card-title class="justify-center"
-              ><FadeSlide>お問い合わせありがとうございました</FadeSlide></v-card-title
-            >
-            <svg viewBox="0 0 299.803 190.481" class="conmp__svg">
-              <use xlink:href="#illustrationEmail" x="0" y="0"></use>
-            </svg>
-            <v-card-text class="conmp__text">
-              <p class="font-weight-bold">
-                <v-icon color="#ff1493">mdi-alert-circle</v-icon>
-                ご入力いただいたメールアドレス宛てに受付完了のメールを自動で送信いたしましたのでご確認ください。
-              </p>
-              <p>
-                万一、返信メールが届かない場合は、送信トラブル等の可能性もありますので、大変お手数ではございますが、もう一度フォームよりお問い合わせお願いいたします。
-              </p>
-            </v-card-text>
-          </v-card>
+        <v-card class="pt-4">
+          <v-card-title class="justify-center"
+            ><FadeSlide
+              >お問い合わせありがとうございました</FadeSlide
+            ></v-card-title
+          >
+          <svg viewBox="0 0 299.803 190.481" class="conmp__svg">
+            <use xlink:href="#illustrationEmail" x="0" y="0"></use>
+          </svg>
+          <v-card-text class="conmp__text">
+            <p class="font-weight-bold">
+              <v-icon color="#ff1493">mdi-alert-circle</v-icon>
+              ご入力いただいたメールアドレス宛てに受付完了のメールを自動で送信いたしましたのでご確認ください。
+            </p>
+            <p>
+              万一、返信メールが届かない場合は、送信トラブル等の可能性もありますので、大変お手数ではございますが、もう一度フォームよりお問い合わせお願いいたします。
+            </p>
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -40,7 +42,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "お問い合わせの完了ページです。"
+          content: "お問い合わせの完了をお知らせするページです。"
         }
       ]
     };
@@ -48,31 +50,32 @@ export default {
   data() {
     return {
       header: {
-        title: "complete" //内容確認ヘッダータイトル
+        title: "completion" //ヘッダータイトル
       },
-      breadData:[//パンくず
+      breadData: [
+        //パンくず
         {
-          text: 'top',
-          icon:"mdi-home",
+          text: "top",
+          icon: "mdi-home",
           disabled: false,
-          path: '/',
+          path: "/"
         },
         {
-          text: 'お問い合わせ',
+          text: "お問い合わせ",
           disabled: false,
-          path: '/contact',
+          path: "/contact"
         },
         {
-          text: '確認',
+          text: "確認",
           disabled: true,
-          path: '/confirm',
+          path: "/confirm"
         },
         {
-          text: '送信完了',
+          text: "送信完了",
           disabled: true,
-          path: '/complete',
-        },
-      ],
+          path: "/complete"
+        }
+      ]
     };
   },
   mounted() {

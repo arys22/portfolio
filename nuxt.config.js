@@ -17,12 +17,14 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "ポートフォリオのwebサイトです。制作物などをまとめています。"
+        content:
+          "エンジニアのportfolio(ポートフォリオ)サイトです。私のwebスキル、制作物をまとめて紹介しています。"
       },
-      { name: "format-detection", content: "telephone=no" }
+      { name: "author", content: "齋藤" },
+      { name: "format-detection", content: "telephone=no" },
       // 自動翻訳させないための記述
-      // { "http-equiv": "Content-Language", content: "ja" },
-      // { name: "google", content: "notranslate" }
+      { "http-equiv": "Content-Language", content: "ja" },
+      { name: "google", content: "notranslate" }
     ],
     link: [
       { hid: "icon", rel: "icon", type: "image/svg+xml", href: "/logo.svg" },

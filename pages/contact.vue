@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <Breadcrumbs :items-data="breadData"/>
+    <Breadcrumbs :items-data="breadData" />
     <StepBar />
     <ContactForm />
   </v-container>
@@ -16,7 +16,8 @@ export default {
         {
           hid: "description", //hidキー 個別ページ
           name: "description",
-          content: "contactページです。お問い合わせページです。"
+          content:
+            "エンジニアのportfolio(ポートフォリオ)サイトのcontact(お問い合わせ)ページです。"
         }
       ]
     };
@@ -26,19 +27,20 @@ export default {
       header: {
         title: "contact" //ヘッダータイトル
       },
-      breadData:[//パンくず
+      breadData: [
+        //パンくず
         {
-          text: 'top',
-          icon:"mdi-home",
+          text: "top",
+          icon: "mdi-home",
           disabled: false,
-          path: '/',
+          path: "/"
         },
         {
-          text: 'お問い合わせ',
+          text: "お問い合わせ",
           disabled: true,
-          path: '/contact',
-        },
-      ],
+          path: "/contact"
+        }
+      ]
     };
   },
   mounted() {

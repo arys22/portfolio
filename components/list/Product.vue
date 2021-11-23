@@ -99,14 +99,28 @@
     >
       <!-- ダイアログコンテンツ -->
       <!-- @close モーダルの× -->
-
-      <Component :is="componentTitle" @close="dialog = false" />
+      <keep-alive>
+        <Component :is="componentTitle" @close="dialog = false" />
+      </keep-alive>
     </v-dialog>
   </v-row>
 </template>
 
 <script>
+// ssgなので事前
+import ModalCoding01 from "@/components/list/modal/ModalCoding01.vue";
+import ModalCoding02 from "@/components/list/modal/ModalCoding02.vue";
+import ModalCoding03 from "@/components/list/modal/ModalCoding03.vue";
+import ModalLP01 from "@/components/list/modal/ModalLP01.vue";
+import ModalPortfolio from "@/components/list/modal/ModalPortfolio.vue";
 export default {
+  components: {
+    ModalCoding01,
+    ModalCoding02,
+    ModalCoding03,
+    ModalLP01,
+    ModalPortfolio
+  },
   data() {
     return {
       dialog: false,

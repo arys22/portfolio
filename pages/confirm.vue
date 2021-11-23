@@ -17,7 +17,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "お問い合わせの確認ページです。"
+          content: "お問い合わせの内容をもう一度確認していただくページです。"
         }
       ],
     };
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       header: {
-        title: "お問い合わせ内容確認ページ" //内容確認ヘッダータイトル
+        title: "confirmation" //内容確認ヘッダータイトル
       },
       breadData:[//パンくず
         {

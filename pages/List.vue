@@ -1,13 +1,13 @@
 <template>
   <v-container fluid>
-        <Breadcrumbs :items-data="breadData"/>
-    <v-row  justify="center" class="list__Wrapper">
-      <v-col cols="12" sm="11" lg="9" class="list__wrap" >
-            <h2 class="text-capitalize mt-2 mb-10 mx-2 list__title">
-            制作物
-            <span class="text-subtitle-2 text-capitalize">list</span>
-            </h2>
-            <Product/>
+    <Breadcrumbs :items-data="breadData" />
+    <v-row justify="center" class="list__Wrapper">
+      <v-col cols="12" sm="11" lg="9" class="list__wrap">
+        <h2 class="text-capitalize mt-2 mb-10 mx-2 list__title">
+          制作物
+          <span class="text-subtitle-2 text-capitalize">list</span>
+        </h2>
+        <Product />
       </v-col>
     </v-row>
   </v-container>
@@ -23,7 +23,8 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "listページです。ポートフォリオ一覧ページです。"
+          content:
+            "portfolio(ポートフォリオ)の一覧ページです。デザインからコーディング等、制作物の紹介ページになります。"
         }
       ]
     };
@@ -33,19 +34,20 @@ export default {
       header: {
         title: "list" //ヘッダータイトル
       },
-      breadData:[//パンくず
+      breadData: [
+        //パンくず
         {
-          text: 'top',
-          icon:"mdi-home",
+          text: "top",
+          icon: "mdi-home",
           disabled: false,
-          path: '/',
+          path: "/"
         },
         {
-          text: '制作物',
+          text: "制作物",
           disabled: true,
-          path: '/list',
-        },
-      ],
+          path: "/list"
+        }
+      ]
     };
   },
   mounted() {
@@ -62,10 +64,10 @@ export default {
 
 <style lang="scss" scoped>
 .list {
-  &__title{
+  &__title {
     font-size: 1.25rem;
   }
-  &__wrap{
+  &__wrap {
     padding-bottom: 60px;
   }
 }
