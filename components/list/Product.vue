@@ -100,7 +100,8 @@
     >
       <!-- ダイアログコンテンツ -->
       <!-- @close モーダルの× -->
-      <Component :is="componentTitle" @close="dialog = false" />
+
+      <!-- <Component :is="componentTitle" @close="dialog = false" /> -->
     </v-dialog>
   </v-row>
 </template>
