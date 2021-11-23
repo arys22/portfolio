@@ -96,6 +96,7 @@
       :fullscreen="$vuetify.breakpoint.xsOnly"
       transition="scale-transition"
       max-width="1000"
+      eager
     >
       <!-- ダイアログコンテンツ -->
       <!-- @close モーダルの× -->
