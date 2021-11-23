@@ -96,12 +96,11 @@
       :fullscreen="$vuetify.breakpoint.xsOnly"
       transition="scale-transition"
       max-width="1000"
-      eager
     >
       <!-- ダイアログコンテンツ -->
       <!-- @close モーダルの× -->
 
-      <!-- <Component :is="componentTitle" @close="dialog = false" /> -->
+      <Component :is="componentTitle" @close="dialog = false" />
     </v-dialog>
   </v-row>
 </template>
