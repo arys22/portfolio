@@ -108,17 +108,17 @@
 
 <script>
 // ssgなので事前
-import ModalCoding01 from "@/components/list/modal/ModalCoding01.vue";
-import ModalCoding02 from "@/components/list/modal/ModalCoding02.vue";
-import ModalCoding03 from "@/components/list/modal/ModalCoding03.vue";
-import ModalLP01 from "@/components/list/modal/ModalLP01.vue";
+import ModalCoding1 from "@/components/list/modal/ModalCoding1.vue";
+import ModalCoding2 from "@/components/list/modal/ModalCoding2.vue";
+import ModalCoding3 from "@/components/list/modal/ModalCoding3.vue";
+import ModalLP1 from "@/components/list/modal/ModalLP1.vue";
 import ModalPortfolio from "@/components/list/modal/ModalPortfolio.vue";
 export default {
   components: {
-    ModalCoding01,
-    ModalCoding02,
-    ModalCoding03,
-    ModalLP01,
+    ModalCoding1,
+    ModalCoding2,
+    ModalCoding3,
+    ModalLP1,
     ModalPortfolio
   },
   data() {
@@ -141,7 +141,7 @@ export default {
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/",
-          component: "ModalCoding01"
+          component: "ModalCoding1"
         },
         {
           id: 2,
@@ -158,7 +158,7 @@ export default {
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.DIGSMILE.com/html/",
-          component: "ModalCoding02"
+          component: "ModalCoding2"
         },
         {
           id: 3,
@@ -174,7 +174,7 @@ export default {
           icon: "mdi-github",
           code_type: "GitHub",
           web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
-          component: "ModalCoding03"
+          component: "ModalCoding3"
         },
         {
           id: 4,
@@ -189,7 +189,7 @@ export default {
           icon: "mdi-github",
           code_type: "GitHub",
           web_href: "https://arys22.github.io/LP/", // GitHub Pages
-          component: "ModalLP01"
+          component: "ModalLP1"
         },
         {
           id: 5,
