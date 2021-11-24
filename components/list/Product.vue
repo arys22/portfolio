@@ -108,7 +108,7 @@
 
 <script>
 // ssgなので事前
-import ModalCoding1 from "@/components/ModalCoding1.vue";
+import ModalCoding1 from "@/components/list/modal/ModalCoding1.vue";
 import ModalCoding2 from "@/components/list/modal/ModalCoding2.vue";
 import ModalCoding3 from "@/components/list/modal/ModalCoding3.vue";
 import ModalLP1 from "@/components/list/modal/ModalLP1.vue";
