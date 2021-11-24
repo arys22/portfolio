@@ -7,7 +7,7 @@
       v-for="item in items"
       :key="item.id"
     >
-      <v-card class="py-7">
+      <v-card tag="section" class="py-7">
         <v-row class="mx-0">
           <v-col cols="12" sm="4">
             <v-hover v-slot="{ hover }">
@@ -39,7 +39,7 @@
             </v-hover>
           </v-col>
           <v-col cols="12" sm="8" class="product__text">
-            <v-card-title class="pt-0">{{ item.title }}</v-card-title>
+            <v-card-title class="pt-0" tag="h3">{{ item.title }}</v-card-title>
             <v-card-subtitle class="py-0">{{ item.lang }}</v-card-subtitle>
             <v-card-text class="py-1">
               <ul>

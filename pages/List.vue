@@ -2,7 +2,7 @@
   <v-container fluid>
     <Breadcrumbs :items-data="breadData" />
     <v-row justify="center" class="list__Wrapper">
-      <v-col cols="12" sm="11" lg="9" class="list__wrap">
+      <v-col tag="section" cols="12" sm="11" lg="9" class="list__wrap">
         <h2 class="text-capitalize mt-2 mb-10 mx-2 list__title">
           制作物
           <span class="text-subtitle-2 text-capitalize">list</span>

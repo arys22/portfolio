@@ -17,7 +17,7 @@
         >
       </FadeIn>
       <FadeIn>
-        <v-card class="list__card py-8">
+        <v-card class="list__card py-8" tag="section">
           <v-row class="mx-0">
             <v-col cols="12" md="5">
               <Fade>
@@ -33,7 +33,7 @@
             </v-col>
 
             <v-col cols="12" md="7">
-              <v-card-title>
+              <v-card-title tag="h3">
                 <FadeSlide>
                   portfolio
                 </FadeSlide>
