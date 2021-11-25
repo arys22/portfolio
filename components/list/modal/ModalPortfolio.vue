@@ -128,7 +128,8 @@
                 <li>ナビゲーションガード</li>
               </ul>
             </li>
-            <li>SSG（Static Site Generator）Netlifyでの公開</li>
+            <li>SSG（Static Site Generator）</li>
+            <li>Netlifyでの公開</li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">
