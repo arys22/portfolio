@@ -5,11 +5,11 @@
         <v-col cols="7">
           <v-img
             :src="item.src"
-            :lazy-src="item.src"
             :alt="item.alt"
             class="carousel__img"
             position="center top"
           >
+            <!-- :lazy-src="item.src" -->
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular
