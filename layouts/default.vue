@@ -11,9 +11,9 @@
     <BottomNavigation :scrollY="scrollY" />
     <v-footer absolute class="text-center" padless color="#f5f5f5">
       <v-col class="font-weight-medium text-center py-0" cols="12"
-        >&copy;
+        >Copyright &copy;
         <small class="f-f footer__text"
-          >{{ new Date().getFullYear() }} portfolio</small
+          >{{ new Date().getFullYear() }} saito All rights reserved.</small
         ></v-col
       >
     </v-footer>
