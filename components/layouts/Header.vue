@@ -178,17 +178,17 @@ export default {
 .header {
   transition: all 0.7s ease-in-out;
   &__mark {
-    vertical-align: text-top;
+    position: relative;
+    top: 4px;
   }
   &__scroll {
     background-color: transparent !important;
   }
   &__title {
     display: inline-block;
-    // vertical-align: middle;
+    padding-left: 5px;
     font-size: 1.25rem;
     font-weight: 500;
-    line-height: 2rem;
     letter-spacing: 0.0125em;
   }
   &__btn {
