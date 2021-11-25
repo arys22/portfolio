@@ -105,6 +105,7 @@
         <v-card-text class="pb-0">
           <ul>
             <li>デザインは引き算を心がけました。</li>
+            <li>ロゴ作成</li>
             <li>レスポンシブ(モバイルファースト)</li>
             <li>ライブラリ(vue-typer, vue-parallax-js)使用</li>
             <li>
