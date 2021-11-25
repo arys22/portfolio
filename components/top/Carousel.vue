@@ -23,11 +23,11 @@
         <v-col cols="4">
           <v-img
             :src="item.src_sp"
-            :lazy-src="item.src_sp"
             :alt="item.alt_sp"
             class="carousel__img"
             position="center top"
           >
+            <!-- :lazy-src="item.src_sp" -->
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular
