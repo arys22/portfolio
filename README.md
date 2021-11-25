@@ -71,4 +71,4 @@ More information about the usage of this directory in [the documentation](https:
 。
 ## version
 * node v14.17.5
-* npm v6.14.14
+* npm  v6.14.14
