@@ -125,6 +125,7 @@
                   <ul>
                     <li>エディタは Visual Studio Code</li>
                     <li>Git/GitHub基本操作</li>
+                    <li>Markdown記法</li>
                     <li>RubyのRuby on Railsチュートリアルを1周程度</li>
                     <li>Netlify</li>
                     <li>今後はバックエンドの理解も深めていきます。</li>
