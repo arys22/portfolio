@@ -9,8 +9,13 @@
   >
     <!-- メニューのアクティベーター -->
     <template v-slot:activator="{ on: menu }">
-        <v-tooltip transition="slide-x-reverse-transition" open-delay="300" left color="grey">
-          <template v-slot:activator="{ on: tooltip }">
+      <v-tooltip
+        transition="slide-x-reverse-transition"
+        open-delay="300"
+        left
+        color="grey"
+      >
+        <template v-slot:activator="{ on: tooltip }">
           <transition name="in">
             <v-btn
               v-on="{ ...tooltip, ...menu }"
@@ -25,9 +30,9 @@
               }}</v-icon></v-btn
             >
           </transition>
-          </template>
-          <span class="text-capitalize">scroll menu</span>
-        </v-tooltip>
+        </template>
+        <span class="text-capitalize">menu</span>
+      </v-tooltip>
     </template>
     <!-- メニューになるコンテンツ -->
     <v-sheet class="links__menu " tag="nav">
@@ -99,13 +104,13 @@ export default {
   right: 4px;
   z-index: 5;
 
-   background-color: #fff;
+  background-color: #fff;
   transition: all 0.7s ease-out;
   pointer-events: auto;
   &:hover {
     background-color: #ddd;
   }
-  &:hover  &__icon {
+  &:hover &__icon {
     color: #fff;
     transform: scale(1.15);
   }

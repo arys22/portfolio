@@ -99,19 +99,21 @@
         <v-card-title class="pt-sm-3">
           Portfolio
         </v-card-title>
-        <v-card-subtitle>HTML/CSS(SCSS)/Vue/Vuetify/Nuxt</v-card-subtitle>
+        <v-card-subtitle class="f-f"
+          >HTML/CSS(SCSS)/Vue/Vuetify/Nuxt</v-card-subtitle
+        >
         <v-card-text class="pb-0">
           <ul>
             <li>デザインは引き算を心がけました。</li>
             <li>レスポンシブ(モバイルファースト)</li>
-            <li>ライブラリ(vue-parallax-js, vue-typer)使用</li>
+            <li>ライブラリ(vue-typer, vue-parallax-js)使用</li>
             <li>
               主なアクション
               <ul>
                 <li>
-                  ヘッダーメニュー(fv過ぎたら色変化)、sp時バーガーメニュー、ボトムナビ(上スクロール時のみ表示)ページ内リンク、topへボタン
+                  ヘッダーメニュー(fv過ぎたら色変化)・sp時バーガーメニュー・ボトムナビ(上スクロール時のみ表示)ページ内リンク・topへボタン
                 </li>
-                <li>svg操作、アニメーション</li>
+                <li>svg操作・アニメーション</li>
                 <li>
                   マウスストーカー(影変化、クリック時波紋、etc...)fvで少し遊んでもらえるようにしました。
                 </li>
@@ -121,13 +123,12 @@
                 <li>listページのモーダルの見やすさを工夫しました。</li>
                 <li>パンくずリスト</li>
                 <li>
-                  フォームはgoogleフォームと連携、受付時に自動返信メール、入力チェック(バリテーション)→確認ページ→完了ページ
+                  フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック(バリテーション)→確認ページ→完了ページ
                 </li>
                 <li>ナビゲーションガード</li>
               </ul>
             </li>
-            <li>SSG（Static Site Generator）</li>
-            <li>Netlifyでの公開</li>
+            <li>SSG（Static Site Generator）Netlifyでの公開</li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">
@@ -137,7 +138,9 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1">mdi-github</v-icon>
+              ><v-icon color="#1976d2" class="text-body-1 modal__code"
+                >mdi-github</v-icon
+              >
               GitHub
             </a>
             <br />
@@ -261,6 +264,9 @@ export default {
       transition: transform 0.3s ease-out;
       position: absolute;
     }
+  }
+  &__code {
+    vertical-align: baseline;
   }
   &__actions {
     width: 100%;

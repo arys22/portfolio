@@ -5,7 +5,7 @@
       <v-col tag="section" cols="12" sm="11" lg="9" class="list__wrap">
         <h2 class="text-capitalize mt-2 mb-10 mx-2 list__title">
           制作物
-          <span class="text-subtitle-2 text-capitalize">list</span>
+          <span class="list__subtitle f-f text-capitalize">list</span>
         </h2>
         <Product />
       </v-col>
@@ -66,6 +66,10 @@ export default {
 .list {
   &__title {
     font-size: 1.25rem;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: normal;
   }
   &__wrap {
     padding-bottom: 60px;

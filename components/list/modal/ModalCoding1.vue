@@ -101,7 +101,9 @@
             <use xlink:href="#xd" x="0" y="0"></use>
           </svg>
         </v-card-title>
-        <v-card-subtitle>HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle>
+        <v-card-subtitle class="f-f"
+          >HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle
+        >
         <v-card-text class="pb-0">
           <ul>
             <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
@@ -136,7 +138,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1"
+              ><v-icon color="#1976d2" class="text-body-1 modal__sample"
                 >mdi-file-outline</v-icon
               >
               sampleページ
@@ -291,6 +293,9 @@ export default {
       transition: transform 0.3s ease-out;
       position: absolute;
     }
+  }
+  &__sample {
+    margin-left: 2.1px;
   }
   &__actions {
     width: 100%;

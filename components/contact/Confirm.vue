@@ -35,7 +35,7 @@
                 label="お名前"
                 required
                 prepend-inner-icon="mdi-account"
-                class="my-5"
+                class="my-5 f-f"
                 readonly
                 name="entry.1210533588"
               ></v-text-field>
@@ -47,7 +47,7 @@
                 required
                 prepend-inner-icon="mdi-email"
                 name="entry.369018561"
-                class="my-5"
+                class="my-5 f-f"
                 readonly
                 hint="ご確認ください。"
                 persistent-hint
@@ -57,7 +57,7 @@
                 :rules="[required]"
                 v-model="form.content"
                 label="お問い合わせ内容"
-                class="mt-10"
+                class="mt-10 f-f"
                 outlined
                 counter
                 no-resize

@@ -3,7 +3,7 @@
     <h2 class="text-capitalize text-center my-4 message__title">
       <Fade>
         <v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon
-        >ご挨拶<br /><span class="text-subtitle-1">message</span>
+        >ご挨拶<br /><span class="message__subtitle f-f">message</span>
       </Fade>
     </h2>
     <v-col cols="12" md="5" class="message__wrap ">
@@ -12,7 +12,7 @@
           はじめまして。齋藤と申します。<br />
           この度は、ポートフォリオサイトに訪問いただきありがとうございます。<br />
           このサイトは、これまでに手がけた制作物、スキルをまとめています。<br />
-          私自身、まだまだ至らない点がありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングができるよう心がけていきます。<br />
+          私自身、まだまだ至らない点がありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングしていきます。<br />
           今後ともよろしくお願いいたします。
         </p>
       </FadeSlide>
@@ -42,6 +42,10 @@
     z-index: 1;
     width: 100%;
     line-height: 1;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: normal;
   }
   &__wrap {
     margin-bottom: 60px;

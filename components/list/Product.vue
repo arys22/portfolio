@@ -29,7 +29,7 @@
                     >全{{ item.page }}ページ</span
                   >
                   <span
-                    class="product__wrap--text"
+                    class="product__wrap--text f-f"
                     :class="{ 'delay-hover': hover }"
                   >
                     {{ item.page_type }}
@@ -39,8 +39,10 @@
             </v-hover>
           </v-col>
           <v-col cols="12" sm="8" class="product__text">
-            <v-card-title class="pt-0" tag="h3">{{ item.title }}</v-card-title>
-            <v-card-subtitle class="py-0">{{ item.lang }}</v-card-subtitle>
+            <v-card-title class="pt-0"
+              ><h3>{{ item.title }}</h3></v-card-title
+            >
+            <v-card-subtitle class="py-0 f-f">{{ item.lang }}</v-card-subtitle>
             <v-card-text class="py-1">
               <ul>
                 <li>{{ item.desc }}</li>
@@ -54,7 +56,7 @@
                   rel="noopener noreferrer"
                   class="text-decoration-none product__link"
                 >
-                  <v-icon color="#1976d2" class="text-body-1">{{
+                  <v-icon color="#1976d2" class="text-body-1 product__code">{{
                     item.icon
                   }}</v-icon>
                   {{ item.code_type }}
@@ -68,7 +70,7 @@
                     rel="noopener noreferrer"
                     class="text-decoration-none product__link"
                   >
-                    <v-icon color="#1976d2" class="text-body-1"
+                    <v-icon color="#1976d2" class="text-body-1 product__sample"
                       >mdi-file-outline</v-icon
                     >
                     sampleページ
@@ -193,7 +195,7 @@ export default {
         },
         {
           id: 5,
-          title: "ポートフォリオ",
+          title: "Portfolio",
           desc: "デザイン、コーディング",
           range: "レスポンシブ(スマホ、pc)",
           lang: "HTML/CSS(SCSS)/Vue.js/Nuxt.js",
@@ -226,7 +228,6 @@ export default {
     box-shadow: 0px 6px 6px -3px rgb(0 0 0 / 20%),
       0px 10px 14px 1px rgb(0 0 0 / 14%), 0px 4px 18px 3px rgb(0 0 0 / 12%);
     transition: box-shadow 0.3s ease-in-out;
-    color: #fff;
     font-weight: bold;
     &.on-hover {
       box-shadow: none;
@@ -234,6 +235,7 @@ export default {
   }
   //hover時
   &__wrap {
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -313,6 +315,12 @@ export default {
       transition: transform 0.3s ease-out;
       position: absolute;
     }
+  }
+  &__code {
+    vertical-align: text-top;
+  }
+  &__sample {
+    margin-left: 2.1px;
   }
   &__btn {
     width: 100%;

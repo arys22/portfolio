@@ -29,7 +29,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "エンジニアのportfolio(ポートフォリオ)サイトです。私のwebスキル、制作物をまとめて紹介しています。"
+          "エンジニアのportfolio(ポートフォリオ)サイトです。習得したwebスキル、制作物をまとめて紹介しています。"
       }
     ]
   },

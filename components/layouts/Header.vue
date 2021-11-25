@@ -4,7 +4,7 @@
       app
       flat
       color="#222"
-      class="header"
+      class="header f-f"
       :class="{ header__scroll: scrollY > fvHeight }"
     >
       <v-toolbar-title
@@ -15,7 +15,7 @@
           <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
         </svg>
         <transition name="title">
-          <h1 class="header__title text-h6 text-capitalize" v-show="show">
+          <h1 class="header__title text-capitalize f-f" v-show="show">
             {{ title }}
           </h1>
         </transition>
@@ -178,13 +178,18 @@ export default {
 .header {
   transition: all 0.7s ease-in-out;
   &__mark {
-    vertical-align: middle;
+    vertical-align: text-top;
   }
   &__scroll {
     background-color: transparent !important;
   }
   &__title {
     display: inline-block;
+    // vertical-align: middle;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 0.0125em;
   }
   &__btn {
     position: relative;

@@ -3,7 +3,7 @@
     <h2 class="text-center text-capitalize my-4 skill__title">
       <Fade>
         <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
-          class="text-subtitle-1"
+          class="skill__subtitle f-f"
           >skill</span
         >
       </Fade>
@@ -20,9 +20,9 @@
         <v-col cols="12" md="4" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
-              <v-card-title class="text-uppercase" tag="h3">
+              <v-card-title class="text-uppercase">
                 <FadeSlide>
-                  html・css
+                  <h3>html・css</h3>
                 </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
@@ -34,7 +34,7 @@
                   </FadeInDelay>
                 </template>
               </div>
-              <v-card-subtitle class="skill__subtitle">
+              <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
                   HTML・CSS・Sass(SCSS)・Bootstrap
                 </FadeSlide>
@@ -60,9 +60,9 @@
         <v-col cols="12" sm="6" md="4" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
-              <v-card-title class="text-capitalize" tag="h3">
+              <v-card-title class="text-capitalize">
                 <FadeSlide>
-                  JavaScript・Node.js
+                  <h3>JavaScript・Node.js</h3>
                 </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
@@ -74,7 +74,7 @@
                   </FadeInDelay>
                 </template>
               </div>
-              <v-card-subtitle class="skill__subtitle">
+              <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
                   JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js
                 </FadeSlide>
@@ -100,9 +100,9 @@
         <v-col cols="12" sm="6" md="4" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
-              <v-card-title class="text-uppercase" tag="h3">
+              <v-card-title class="text-uppercase">
                 <FadeSlide>
-                  その他
+                  <h3>その他</h3>
                 </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
@@ -114,7 +114,7 @@
                   </FadeInDelay>
                 </template>
               </div>
-              <v-card-subtitle class="skill__subtitle">
+              <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
                   Git・GitHub・Netlify 等
                 </FadeSlide>
@@ -178,6 +178,10 @@ export default {
   &__title {
     width: 100%;
     line-height: 1;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: normal;
   }
   &__wrap {
     z-index: 1;

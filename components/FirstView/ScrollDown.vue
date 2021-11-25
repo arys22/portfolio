@@ -18,7 +18,7 @@
       height="165"
       small
     >
-      <span class="v-btn__text ">scroll down</span>
+      <span class="v-btn__text">scroll down</span>
       <span class="v-btn__mark" v-for="i in 3" :key="i"></span>
     </v-btn>
   </transition>
@@ -35,7 +35,7 @@ export default {
     setTimeout(() => {
       this.show = true;
     }, 5500);
-  },
+  }
 };
 </script>
 
@@ -49,12 +49,12 @@ export default {
   align-items: flex-start;
   justify-content: center;
   background-color: #fff;
-    &:hover{
-      color: #000;
-      transform: scale(1.05);
-      animation: hov 1.5s ease 1;
-    }
-  &__text{
+  &:hover {
+    color: #000;
+    transform: scale(1.05);
+    animation: hov 1.5s ease 1;
+  }
+  &__text {
     // position: relative;
     pointer-events: none;
     writing-mode: vertical-rl;
@@ -98,13 +98,13 @@ export default {
 }
 @keyframes hov {
   0% {
-    transform:  translateY(0);
+    transform: translateY(0);
   }
   50% {
-    transform:  translateY(10px) scale(1.025);
+    transform: translateY(10px) scale(1.025);
   }
   100% {
-    transform:  translateY(0) scale(1.05);
+    transform: translateY(0) scale(1.05);
   }
 }
 
@@ -116,6 +116,6 @@ export default {
 }
 .down-enter,
 .down-leave-to {
-  transform:  translateY(-130vh);
+  transform: translateY(-130vh);
 }
 </style>

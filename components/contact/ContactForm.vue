@@ -2,7 +2,7 @@
   <v-row justify="center" tag="section" align="center" class="contact">
     <h2 class="text-center text-capitalize my-4 contact__title">
       <v-icon class="mr-1" color="black">mdi-email-outline</v-icon
-      >お問い合わせ<br /><span class="text-subtitle-1">contact</span>
+      >お問い合わせ<br /><span class="contact__subtitle f-f">contact</span>
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
       <v-card class="pt-4">
@@ -27,7 +27,7 @@
               clear-icon="mdi-close-circle"
               prepend-inner-icon="mdi-account"
               name="name"
-              class="my-5"
+              class="my-5 f-f"
             ></v-text-field>
 
             <v-text-field
@@ -44,7 +44,7 @@
               clear-icon="mdi-close-circle"
               prepend-inner-icon="mdi-email"
               name="email"
-              class="my-5"
+              class="my-5 f-f"
             ></v-text-field>
 
             <v-textarea
@@ -52,7 +52,7 @@
               v-model="form.content"
               label="お問い合わせ内容"
               placeholder="お気軽にお問い合わせください。"
-              class="mt-10"
+              class="mt-10 f-f"
               outlined
               counter
               no-resize
@@ -142,6 +142,10 @@ export default {
     width: 100%;
     line-height: 1;
     z-index: 1;
+  }
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: normal;
   }
   &__form {
     z-index: 1;
