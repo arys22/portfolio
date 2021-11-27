@@ -40,7 +40,7 @@
           </v-col>
           <v-col cols="12" sm="8" class="product__text">
             <v-card-title class="pt-0"
-              ><h3>{{ item.title }}</h3></v-card-title
+              ><h3 class="f-f">{{ item.title }}</h3></v-card-title
             >
             <v-card-subtitle class="py-0 f-f">{{ item.lang }}</v-card-subtitle>
             <v-card-text class="py-1">

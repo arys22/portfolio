@@ -35,7 +35,7 @@
             <v-col cols="12" md="7">
               <v-card-title>
                 <FadeSlide>
-                  <h3>Portfolio</h3>
+                  <h3 class="f-f">Portfolio</h3>
                 </FadeSlide>
               </v-card-title>
               <FadeSlide>
