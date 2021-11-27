@@ -60,7 +60,7 @@
         <v-col cols="12" sm="6" md="4" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
-              <v-card-title class="text-capitalize">
+              <v-card-title>
                 <FadeSlide>
                   <h3>JavaScript・Node.js</h3>
                 </FadeSlide>

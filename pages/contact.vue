@@ -11,7 +11,7 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "お問い合わせページ",
+      title: "Portfolioのお問い合わせページ｜Portfolio",
       meta: [
         {
           hid: "description", //hidキー 個別ページ

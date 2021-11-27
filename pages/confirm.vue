@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <Breadcrumbs :items-data="breadData"/>
+    <Breadcrumbs :items-data="breadData" />
     <StepBar />
     <Confirm />
   </v-container>
@@ -8,18 +8,19 @@
 
 <script>
 export default {
-  middleware: 'authConfirm',
+  middleware: "authConfirm",
   // metaタグ設定
   head() {
     return {
-      title: "confirm Page",
+      title: "Portfolioの確認ページ｜Portfolio",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "お問い合わせの内容をもう一度確認していただくページです。"
+          content:
+            "エンジニアのportfolio(ポートフォリオ)サイトのお問い合わせの内容をもう一度確認していただくページです。"
         }
-      ],
+      ]
     };
   },
   data() {
@@ -27,24 +28,25 @@ export default {
       header: {
         title: "confirmation" //内容確認ヘッダータイトル
       },
-      breadData:[//パンくず
+      breadData: [
+        //パンくず
         {
-          text: 'top',
-          icon:"mdi-home",
+          text: "top",
+          icon: "mdi-home",
           disabled: false,
-          path: '/',
+          path: "/"
         },
         {
-          text: 'お問い合わせ',
+          text: "お問い合わせ",
           disabled: false,
-          path: '/contact',
+          path: "/contact"
         },
         {
-          text: '確認',
+          text: "確認",
           disabled: true,
-          path: '/confirm',
-        },
-      ],
+          path: "/confirm"
+        }
+      ]
     };
   },
   mounted() {

@@ -37,12 +37,13 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "お問い合わせ完了ページ",
+      title: "Portfolioのお問い合わせ完了ページ｜Portfolio",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "お問い合わせの完了をお知らせするページです。"
+          content:
+            "エンジニアのportfolio(ポートフォリオ)サイトのお問い合わせの完了をお知らせするページです。"
         }
       ]
     };
