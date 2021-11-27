@@ -37,7 +37,7 @@ export default {
   // metaタグ設定
   head() {
     return {
-      title: "Portfolioのお問い合わせ完了ページ｜Portfolio",
+      title: "Portfolioのお問い合わせ完了ページ",
       meta: [
         {
           hid: "description",

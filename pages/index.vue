@@ -23,7 +23,7 @@ export default {
   // metaタグ設定
   head: {
     titleTemplate: null,
-    title: "Portfolio(ポートフォリオ)サイト｜Portfolio",
+    title: "Portfolio(ポートフォリオ)サイト",
     meta: [
       {
         hid: "description",
