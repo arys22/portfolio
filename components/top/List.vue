@@ -55,7 +55,10 @@
                       ヘッダーメニュー(fv過ぎたら色変化)・sp時バーガーメニュー・ボトムナビ(上スクロール時のみ表示)・ページ内リンク
                     </li>
                     <li>svg操作</li>
-                    <li>fvのアクションを工夫しました。</li>
+                    <li>
+                      First
+                      viewのclickアクションを工夫しました。(少し遊んでもらえるようにしました。)
+                    </li>
                     <li>fadeアクション5種類</li>
                     <li>listページのモーダルの見やすさを工夫しました。</li>
                     <li>パンくずリスト</li>
@@ -133,15 +136,15 @@ export default {
     margin: 0 auto;
   }
   &__icon {
-    font-size: 1.25rem;
-    vertical-align: top;
+    font-size: 1.25rem !important;
+    vertical-align: top !important;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;
     margin-left: 12px;
     position: relative;
     display: inline-block;
-    width: 90px;
+    width: 100px;
     position: relative;
     &:hover {
       opacity: 0.7;
@@ -152,7 +155,7 @@ export default {
     }
     &::after {
       content: "";
-      right: 0px;
+      right: 10px;
       top: 8px;
       width: 8px;
       height: 8px;

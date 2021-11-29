@@ -7,7 +7,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s - portfolio(ポートフォリオ)",
-    title: "portfolio",
+    title: "portfolio(ポートフォリオ)",
     htmlAttrs: {
       lang: "ja"
     },
