@@ -49,6 +49,7 @@
                     <li>レスポンシブ対応(モバイルファースト)</li>
                     <li>SEOを意識したコーディング</li>
                     <li>scssでBEM記法で記述しています。</li>
+                    <li>Dart Sass</li>
                     <li>bootstrap使用時は、グリッドシステムを利用</li>
                     <li>XDからのコーディング可能です。</li>
                   </ul>
@@ -83,11 +84,15 @@
               <Fade>
                 <v-card-text>
                   <ul>
+                    <li>Gulp</li>
                     <li>
                       主にJavaScript、フレームワークはVue.jsを中心に開発しています。
                     </li>
+                    <!-- <li>
+                      Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
+                    </li> -->
                     <li>
-                      API、Jestを利用してのテスト等、より一層の習熟の必要があります。
+                      Jestを利用してのテスト等、より一層の習熟の必要があります。
                     </li>
                     <li>今はVue.jsが一番好きです。</li>
                   </ul>
