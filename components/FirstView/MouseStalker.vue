@@ -73,6 +73,17 @@ export default {
     width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
   // 重なると反転
   mix-blend-mode: difference;
+  &::after {
+    content: "click";
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-transform: capitalize;
+    text-shadow: 1px 1px black;
+    pointer-events: none;
+  }
   &.hov {
     // transform: scale(.5);
     top: -150px;
@@ -90,9 +101,15 @@ export default {
     left: -20px;
     width: 40px;
     height: 40px;
+    &::after {
+      content: "";
+    }
   }
   &.up {
     animation: shrink 0.3s ease-out 1;
+    &::after {
+      content: "";
+    }
   }
 }
 
