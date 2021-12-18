@@ -85,18 +85,15 @@ export default {
     pointer-events: none;
   }
   &.hov {
-    // transform: scale(.5);
     top: -150px;
     left: -50px;
     width: 100px;
     height: 100px;
-    // opacity: 0.5;
   }
   &.show {
     opacity: 1;
   }
   &.down {
-    // transform: scale(1.35);
     top: -120px;
     left: -20px;
     width: 40px;
