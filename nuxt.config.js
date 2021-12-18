@@ -83,7 +83,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    // Google アナリティクス
+    "@nuxtjs/google-gtag"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -122,5 +124,10 @@ export default {
     parallel: true, //<-追加
     cache: true, //<-追加
     hardSource: true //<-追加
+  },
+  // Google アナリティクス
+  "google-gtag": {
+    id: "G-R3RERTLRD0",
+    debug: true // Enable to track in dev mode.
   }
 };
