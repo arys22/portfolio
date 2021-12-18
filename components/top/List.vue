@@ -67,6 +67,8 @@
                       フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック・確認ページ・完了ページ
                     </li>
                     <li>ナビゲーションガード</li>
+                    <li>Google Analytics ｱﾅﾘﾃｨｸｽ導入</li>
+                    <li>Google Search Console ｻｰﾁｺﾝｿｰﾙ導入</li>
                     <li>SSG（Static Site Generator）</li>
                     <li>Netlifyでの公開</li>
                   </ul>
