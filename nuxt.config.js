@@ -127,7 +127,7 @@ export default {
   },
   // Google アナリティクス
   "google-gtag": {
-    id: "G-R3RERTLRD0",
+    id: "G-E6PJET4FKF",
     debug: true // Enable to track in dev mode.
   }
 };
