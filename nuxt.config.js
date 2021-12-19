@@ -49,6 +49,16 @@ export default {
         sizes: "180x180",
         href: "@/assets/img/logo-180.png"
       }
+    ],
+    // Google アナリティクス
+    script: [
+      {
+        async: true,
+        src: "https: //www.googletagmanager.com/gtag/js?id= G-E6PJET4FKF"
+      },
+      {
+        innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(‘js’, new Date());gtag(‘config’, ‘G-E6PJET4FKF’);`
+      }
     ]
   },
 
@@ -124,10 +134,5 @@ export default {
     parallel: true, //<-追加
     cache: true, //<-追加
     hardSource: true //<-追加
-  },
-  // Google アナリティクス
-  "google-gtag": {
-    id: "G-E6PJET4FKF",
-    debug: true // Enable to track in dev mode.
   }
 };
