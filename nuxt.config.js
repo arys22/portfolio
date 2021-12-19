@@ -127,6 +127,6 @@ export default {
   },
   // Google アナリティクス
   googleAnalytics: {
-    id: "UA-215610127-1"
+    id: "UA-215610127-2"
   }
 };
