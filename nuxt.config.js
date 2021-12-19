@@ -49,16 +49,6 @@ export default {
         sizes: "180x180",
         href: "@/assets/img/logo-180.png"
       }
-    ],
-    // Google アナリティクス
-    script: [
-      {
-        async: true,
-        src: "https: //www.googletagmanager.com/gtag/js?id= G-E6PJET4FKF"
-      },
-      {
-        innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(‘js’, new Date());gtag(‘config’, ‘G-E6PJET4FKF’);`
-      }
     ]
   },
 
@@ -95,7 +85,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // Google アナリティクス
-    "@nuxtjs/google-gtag"
+    "@nuxtjs/google-analytics"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -134,5 +124,9 @@ export default {
     parallel: true, //<-追加
     cache: true, //<-追加
     hardSource: true //<-追加
+  },
+  // Google アナリティクス
+  googleAnalytics: {
+    id: "UA-215610127-1"
   }
 };
