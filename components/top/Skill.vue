@@ -120,7 +120,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  Git・GitHub・Netlify 等
+                  Git・GitHub・Netlify・Docker 等
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -131,7 +131,8 @@
                     <li>Git/GitHub基本操作</li>
                     <li>Markdown記法</li>
                     <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                    <li>Netlify</li>
+                    <li>デプロイ:Netlify</li>
+                    <li>Dockerでの環境構築</li>
                   </ul>
                 </v-card-text>
               </Fade>
@@ -165,7 +166,8 @@ export default {
       thirdSkills: [
         { name: "git", delay: 0.25 },
         { name: "github", delay: 0.5 },
-        { name: "netlify", delay: 0.75 }
+        { name: "netlify", delay: 0.75 },
+        { name: "docker", delay: 1 }
       ]
     };
   }

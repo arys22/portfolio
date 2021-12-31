@@ -4,7 +4,7 @@
       cols="12"
       md="6"
       class="product mb-10"
-      v-for="item in items"
+      v-for="item in reverseItems"
       :key="item.id"
     >
       <v-card tag="section" class="py-7">
@@ -216,6 +216,12 @@ export default {
     open(component) {
       this.dialog = true;
       this.componentTitle = component;
+    }
+  },
+  // 配列の順番を入れ替え表示順逆
+  computed: {
+    reverseItems() {
+      return this.items.slice().reverse();
     }
   }
 };
