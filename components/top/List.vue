@@ -57,8 +57,7 @@
                     </li>
                     <li>svg操作</li>
                     <li>
-                      First
-                      viewを工夫しました。clickやマウスを動かしてみてください。
+                      FirstViewを工夫しました。clickやマウスを動かしてみてください。
                     </li>
                     <li>fadeアクション5種類</li>
                     <li>listページのモーダルの見やすさを工夫しました。</li>
