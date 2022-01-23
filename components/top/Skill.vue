@@ -47,11 +47,13 @@
                       できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
                     </li>
                     <li>レスポンシブ対応(モバイルファースト)</li>
-                    <li>SEOを意識したコーディング</li>
-                    <li>scssでBEM記法で記述しています。</li>
+                    <li>
+                      内部SEOを意識し、且つW3Cに準拠したコーディングを行っております。
+                    </li>
+                    <li>SCSSでBEM記法又はFLOCSSで記述しています。</li>
                     <li>Dart Sass</li>
                     <li>bootstrap使用時は、グリッドシステムを利用</li>
-                    <li>XDからのコーディング可能です。</li>
+                    <li>XD、Figmaからのコーディング可能です。</li>
                   </ul>
                 </v-card-text>
               </Fade>

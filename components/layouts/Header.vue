@@ -21,32 +21,9 @@
         </transition>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!-- pc -->
-      <!-- plugins/constrants.jsのmenuItems -->
-      <v-toolbar-items
-        class="hidden-xs-only"
-        @mouseenter="delayActive"
-        @mouseleave="isActive = false"
-      >
-        <v-btn
-          color="white"
-          plain
-          :class="{
-            header__btn_scroll: scrollY > fvHeight,
-            header__btn_active: isActive
-          }"
-          active-class="link-active"
-          class="header__btn text-md-subtitle-1"
-          v-for="(item, index) in $ITEMS.menuItems"
-          :key="index"
-          :to="item.path"
-          nuxt
-          exact
-        >
-          <!-- @click="delayActive(item.path)" -->
-          {{ item.name }}
-        </v-btn>
-      </v-toolbar-items>
+
+      <!-- pcボタン -->
+      <HeaderNaviPc :scrollY="scrollY" :fvHeight="fvHeight" />
 
       <!-- sp -->
       <!-- アイコン -->
@@ -73,27 +50,7 @@
       class="d-block d-sm-none"
       height="auto"
     >
-      <v-list nav>
-        <v-subheader class="ml-3">メニュー</v-subheader>
-        <!-- plugins/constrants.jsのmenuItems -->
-        <v-list-item
-          nuxt
-          exact
-          dense
-          :to="item.path"
-          exact-active-class="sp__list-active"
-          v-for="(item, index) in $ITEMS.menuItems"
-          :key="index"
-          class="sp__list text-uppercase mx-1"
-        >
-          <v-list-item-icon class="ml-3 mr-2">
-            <v-icon left color="#999">{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.name }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <HeaderNaviSp />
       <template v-slot:append>
         <div class="px-4 pb-4">
           <v-btn block @click.stop="drawer = !drawer">
@@ -190,48 +147,11 @@ export default {
     font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: 0.0125em;
-  }
-  &__btn {
-    position: relative;
     pointer-events: none;
-    &::after {
-      position: absolute;
-      bottom: 10px;
-      left: 15%;
-      content: "";
-      width: 70%;
-      height: 1.5px;
-      background: #fff;
-      transform: scale(0, 1);
-      transform-origin: right top;
-      transition: transform 0.3s ease-out;
-    }
-    &:hover::after {
-      transform-origin: left top;
-      transform: scale(1, 1);
-    }
-    &_active {
-      pointer-events: auto;
-    }
-    &_scroll {
-      //変化後
-      color: #333 !important;
-      &::after {
-        height: 1.5px;
-        background: #333;
-      }
-    }
-  }
-  &_scroll .link-active {
-    // スクロール変化後の現在のページ
-    font-weight: bold;
-    &::after {
-      transform: none;
-    }
   }
 }
 
-// sp バーガー 優先度上げ
+// // sp バーガーアイコン 優先度上げ
 .theme--light.v-btn.v-btn--icon.header__icon {
   color: #fff;
   &__scroll {
@@ -242,28 +162,8 @@ export default {
     opacity: 0.8;
   }
 }
-// spメニュー
-// 現在のページ
-.link-active {
-  font-weight: bold;
-  &::after {
-    transform: none;
-  }
-}
 .v-icon {
   transition: transform 0.5s ease-out;
-}
-
-.sp {
-  &__list {
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.24);
-  }
-  &__list-active .v-list-item__icon .v-icon {
-    font-weight: bold;
-    color: #fff !important;
-    transform: none;
-    opacity: 1;
-  }
 }
 
 .title-enter {
