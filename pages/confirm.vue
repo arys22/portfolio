@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  middleware: "authConfirm",
+  middleware: "reContact",
   // metaタグ設定
   head() {
     return {

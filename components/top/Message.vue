@@ -18,21 +18,9 @@
       </FadeSlide>
     </v-col>
     <v-col cols="9" md="4" class="message__img">
-      <Fade>
-        <v-sheet class="message__bg"></v-sheet>
-      </Fade>
-      <!-- <Fade> -->
-      <v-sheet
-        class="message__bg message__bg--code"
-        v-parallax="0.03"
-        elevation="8"
-      ></v-sheet>
-      <!-- </Fade> -->
-      <v-sheet
-        class="message__bg message__bg--pc"
-        v-parallax="0.1"
-        elevation="16"
-      ></v-sheet>
+      <v-sheet class="message__bg" v-parallax="-0.03"></v-sheet>
+      <v-sheet class="message__bg message__bg--code" elevation="8"></v-sheet>
+      <v-sheet class="message__bg message__bg--pc" elevation="16"></v-sheet>
     </v-col>
     <div class="message__back text-uppercase" v-parallax="-0.17">message</div>
     <svg viewBox="0 0 1396 1445" class="message__line">
@@ -74,7 +62,7 @@
     z-index: 1;
     &--code {
       z-index: 2;
-      top: -30%;
+      top: -25%;
       left: 15%;
       background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
       background-size: cover;
@@ -82,7 +70,7 @@
     }
     &--pc {
       z-index: 2;
-      top: -10%;
+      top: 2%;
       left: -25%;
       background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash.jpg");
       background-size: cover;
@@ -131,12 +119,12 @@
     }
     &__bg {
       &--code {
-        top: -35%;
+        top: -20%;
         left: 20%;
         width: 100%;
       }
       &--pc {
-        top: 0;
+        top: 2%;
         left: -30%;
         width: 100%;
       }

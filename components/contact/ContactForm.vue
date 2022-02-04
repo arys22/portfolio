@@ -105,12 +105,24 @@ export default {
   },
   mounted() {
     // バリデーションをリセット
-    this.$refs.form.resetValidation();
+    // this.$refs.form.resetValidation();
+    // テストのためのリファクタリング
+    // 注意vue3で廃止
+    this.initialValidation();
   },
   methods: {
+    // テストのためのリファクタリング
+    // 注意vue3で廃止
+    initialValidation() {
+      return this.$refs.form.resetValidation();
+    },
+    validate() {
+      return this.$refs.form.validate();
+    },
+
     // 送信を試みるメソッド（「送信する」がクリックされたときに呼ばれる）
     check() {
-      if (this.$refs.form.validate()) {
+      if (this.validate()) {
         // すべてのバリデーションが通過したときのみ
         // 確認画面に遷移して送る
         this.$router.push({
