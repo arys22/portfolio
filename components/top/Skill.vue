@@ -143,7 +143,7 @@
         </v-col>
       </v-row>
     </v-col>
-    <div class="skill__back text-uppercase" v-parallax="-0.17">skill</div>
+    <div class="skill__back text-uppercase" v-parallax="-0.15">skill</div>
   </v-row>
 </template>
 
@@ -214,7 +214,7 @@ export default {
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    top: 20%;
+    top: 28%;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;

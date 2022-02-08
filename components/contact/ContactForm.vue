@@ -112,7 +112,6 @@ export default {
   },
   methods: {
     // テストのためのリファクタリング
-    // 注意vue3で廃止
     initialValidation() {
       return this.$refs.form.resetValidation();
     },

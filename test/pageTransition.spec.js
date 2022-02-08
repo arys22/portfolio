@@ -1,10 +1,11 @@
-import { mount, shallowMount, createLocalVue, config } from "@vue/test-utils";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
 import HeaderPc from "@/components/layouts/HeaderNaviPc.vue";
 import HeaderSp from "@/components/layouts/HeaderNaviSp.vue";
 import BottomNavi from "@/components/layouts/BottomNavigation.vue";
 import List from "@/components/top/List.vue";
 import Form from "@/components/contact/ContactForm.vue";
 import Confirm from "@/components/contact/Confirm.vue";
+
 import Vuetify from "vuetify";
 
 const $ITEMS = {
@@ -144,37 +145,43 @@ describe("pcとspのページ遷移テスト", () => {
   });
 });
 
-describe("お問い合わせの3ページ遷移テスト", () => {
-  // 注意vue3で廃止の注意無し
-  config.showDeprecationWarnings = false;
+describe("お問い合わせフォームのテスト", () => {
+  // 注意vue3で廃止の注意無し →jest.spyOn()
+  // config.showDeprecationWarnings = false;
   // vuetifyを読み込むテスト
   const localVue = createLocalVue();
   let vuetify;
   beforeEach(() => {
     vuetify = new Vuetify(); // 2. テストごとに初期化
   });
+  const initialValidation = jest
+    .spyOn(Form.methods, "initialValidation")
+    .mockReturnValue();
+  // 注意vue3で廃止→jest.spyOn()
+  // const initialValidation = jest.fn();
 
-  test("ページ遷移テスト", () => {
-    const initialValidation = jest.fn();
-    const validate = jest.spyOn(Form.methods, "validate");
-    const mockRouterPush = jest.fn();
-    const wrapper = shallowMount(Form, {
-      localVue,
-      vuetify,
-      stubs: {
-        Btn: true
-      },
-      // 注意vue3で廃止
-      methods: {
-        // mounted()のinitialValidation()をモック
-        initialValidation
-      },
-      mocks: {
-        $router: {
-          push: mockRouterPush
-        }
+  const validate = jest.spyOn(Form.methods, "validate");
+  const mockRouterPush = jest.fn();
+  const wrapper = shallowMount(Form, {
+    localVue,
+    vuetify,
+    stubs: {
+      Btn: true
+    },
+    // // 注意vue3で廃止→jest.spyOn()
+    // methods: {
+    //   // mounted()のinitialValidation()をモック
+    //   initialValidation
+    // },
+    mocks: {
+      $router: {
+        push: mockRouterPush
       }
-    });
+    }
+  });
+  test("ページ遷移テスト", () => {
+    // 呼ばれたかを確認
+    expect(initialValidation).toHaveBeenCalled();
     // console.log(wrapper.html());
     // 値をセット
     const test_name = "山田太郎";
@@ -202,23 +209,10 @@ describe("お問い合わせの3ページ遷移テスト", () => {
   });
 
   test("バリテーション機能テスト", () => {
-    const initialValidation = jest.fn();
-    const wrapper = shallowMount(Form, {
-      localVue,
-      vuetify,
-      stubs: {
-        Btn: true
-      },
-      // 注意vue3で廃止
-      methods: {
-        // mounted()のinitialValidation()をモック
-        initialValidation
-      }
-    });
-    let actual;
     // console.log(wrapper.html());
     // required
     // 一文字の場合有効
+    let actual;
     actual = wrapper.vm.required("a");
     expect(actual).toBe(true);
     // 空文字の場合、エラー表示が返る
@@ -248,49 +242,30 @@ describe("お問い合わせの3ページ遷移テスト", () => {
   });
 
   test("入力してボタンを押したとき、バリデーションエラーだとエラーを表示する", async () => {
-    const initialValidation = jest.fn();
-    const validate = jest.spyOn(Form.methods, "validate");
-    const reset = jest.fn();
-    const wrapper = shallowMount(Form, {
-      localVue,
-      vuetify,
-      stubs: {
-        Btn: true
-      },
-      // 注意vue3で廃止
-      methods: {
-        // mounted()のinitialValidation()をモック
-        initialValidation
-      }
-    });
-
     validate.mockReturnValue(false);
     const error_text = wrapper.find(".contact__error");
     // エラー非表示 v-show="error"
     expect(error_text.isVisible()).toBe(false);
     wrapper.find("btn-stub").trigger("click");
     await wrapper.vm.$nextTick();
-    await expect(wrapper.vm.error).toBe(true);
+    expect(wrapper.vm.error).toBe(true);
     // エラーを表示 v-show="error"
-    await expect(error_text.isVisible()).toBe(true);
+    expect(error_text.isVisible()).toBe(true);
   });
+});
 
+describe("確認フォームのテスト", () => {
   test("確認ページのページ遷移とバリテーションのテスト", () => {
-    const initialValidation = jest.fn();
     const validate = jest.spyOn(Confirm.methods, "validate");
     const mockRouterPush = jest.fn();
     const mockRouterGo = jest.fn();
     const wrapper = shallowMount(Confirm, {
-      localVue,
-      vuetify,
+      // localVue,
+      // vuetify,
       stubs: {
         FadeSlide: true
       },
-      // 注意vue3で廃止
-      methods: {
-        // mounted()のinitialValidation()をモック
-        initialValidation
-      },
+
       mocks: {
         $router: {
           push: mockRouterPush,
