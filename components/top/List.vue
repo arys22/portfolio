@@ -70,6 +70,7 @@
                     <li>Google Search Console ｻｰﾁｺﾝｿｰﾙ導入</li>
                     <li>SSG（Static Site Generator）</li>
                     <li>Netlifyでの公開</li>
+                    <li>Jest ＋ vue-test-utils でのテストコード記述</li>
                   </ul>
                 </Fade>
                 <FadeSlide>

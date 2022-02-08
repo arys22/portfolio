@@ -79,7 +79,8 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js
+                  JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js・Vue
+                  Test Utils・Jest
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -94,8 +95,9 @@
                       Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
                     </li> -->
                     <li>
-                      Jestを利用してのテスト等、より一層の習熟の必要があります。
+                      Jest ＋ vue-test-utils でのテストコード
                     </li>
+                    <li>TypeScriptを使用してのオリジナルアプリ製作中</li>
                     <li>今はVue.jsが一番好きです。</li>
                   </ul>
                 </v-card-text>
@@ -163,7 +165,8 @@ export default {
         { name: "vue", delay: 0.5 },
         { name: "vuetify", delay: 0.75 },
         { name: "node", delay: 1 },
-        { name: "nuxt", delay: 1.25 }
+        { name: "nuxt", delay: 1.25 },
+        { name: "jest", delay: 1.5 }
       ],
       thirdSkills: [
         { name: "git", delay: 0.25 },
