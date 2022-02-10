@@ -87,7 +87,7 @@
               <Fade>
                 <v-card-text>
                   <ul>
-                    <li>Gulp</li>
+                    <li>Vite</li>
                     <li>
                       主にJavaScript、フレームワークはVue.jsを中心に開発しています。
                     </li>
