@@ -87,10 +87,10 @@
               <Fade>
                 <v-card-text>
                   <ul>
-                    <li>Vite</li>
                     <li>
-                      主にJavaScript、フレームワークはVue.jsを中心に開発しています。
+                      主にJavaScript、フレームワークはVue.js
                     </li>
+                    <li>Vite、Vue2(Options API)、Vue3(Composition API)</li>
                     <!-- <li>
                       Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
                     </li> -->
