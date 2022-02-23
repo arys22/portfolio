@@ -46,11 +46,16 @@
                     <li>
                       できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
                     </li>
-                    <li>レスポンシブ対応(モバイルファースト)</li>
+                    <li>
+                      レスポンシブ対応(モバイルファーストorデスクトップファースト)
+                    </li>
                     <li>
                       内部SEOを意識し、且つW3Cに準拠したコーディングを行っております。
                     </li>
-                    <li>SCSSでBEM記法又はFLOCSSで記述しています。</li>
+                    <li>
+                      SCSSで BEM記法、又は
+                      FLOCSSで記述しています。(自作のテンプレート使用)
+                    </li>
                     <li>Dart Sass</li>
                     <li>bootstrap使用時は、グリッドシステムを利用</li>
                     <li>XD、Figmaからのコーディング可能です。</li>
@@ -90,6 +95,7 @@
                     <li>
                       主にJavaScript、フレームワークはVue.js
                     </li>
+                    <li>gulp</li>
                     <li>Vite、Vue2(Options API)、Vue3(Composition API)</li>
                     <!-- <li>
                       Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
