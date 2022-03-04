@@ -36,7 +36,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  HTML・CSS・Sass(SCSS)・Bootstrap
+                  HTML・CSS・Sass(SCSS)・Bootstrap・Tailwind CSS
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -56,8 +56,9 @@
                       SCSSで BEM記法、又は
                       FLOCSSで記述しています。(自作のテンプレート使用)
                     </li>
-                    <li>Dart Sass</li>
-                    <li>bootstrap使用時は、グリッドシステムを利用</li>
+                    <li>svgアニメーション</li>
+                    <li>Dart Sass、Bootstrap、Tailwind CSS</li>
+                    <li>Bootstrap使用時は、グリッドシステムを利用</li>
                     <li>XD、Figmaからのコーディング可能です。</li>
                   </ul>
                 </v-card-text>
@@ -164,7 +165,8 @@ export default {
         { name: "html", delay: 0.25 },
         { name: "css", delay: 0.5 },
         { name: "sass", delay: 0.75 },
-        { name: "bootstrap", delay: 1 }
+        { name: "bootstrap", delay: 1 },
+        { name: "tailwind", delay: 1.25 }
       ],
       secondSkills: [
         { name: "js", delay: 0.25 },
