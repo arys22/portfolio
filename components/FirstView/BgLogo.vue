@@ -291,7 +291,7 @@ export default {
   height: 100%;
   pointer-events: none;
   &__shadow {
-    filter: drop-shadow(0px 0px 0.6px var(--line-color));
+    filter: drop-shadow(0px 0px 0.25px var(--line-color));
     &--b {
       filter: drop-shadow(0px 0px 10px var(--line-color));
     }
