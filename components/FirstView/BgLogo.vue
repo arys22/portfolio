@@ -7,7 +7,7 @@
           xlink:href="#logo"
           x="0"
           y="0"
-          class="logo__mark--p logo__shadow--b"
+          class="logo__mark--p"
           :style="lineColor"
         ></use>
       </svg>
@@ -53,7 +53,7 @@
     <svg viewBox="0 0 500 500" class="logo__circle" :class="{ stop: logo }">
       <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
         <path
-          class="logo__circle--m logo__shadow--b"
+          class="logo__circle--m"
           :class="{ stop: logo }"
           :style="lineColor"
           v-show="!logo"
@@ -88,7 +88,7 @@
     <!-- 円 外 -->
     <svg
       viewBox="0 0 500 500"
-      class="logo__outer-circle logo__shadow"
+      class="logo__outer-circle"
       :class="{ stop: logo }"
       :style="lineColor"
     >
@@ -132,7 +132,7 @@
     <!-- 円 外線 -->
     <svg
       viewBox="0 0 500 500"
-      class="logo__polyline logo__shadow"
+      class="logo__polyline"
       v-show="!logo"
       :style="lineColor"
     >
@@ -167,7 +167,7 @@
     </svg>
     <!-- 線 -->
     <div
-      class="logo__line logo__shadow"
+      class="logo__line"
       v-for="i in 3"
       :key="i"
       :style="lineColor"
@@ -290,12 +290,6 @@ export default {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  &__shadow {
-    filter: drop-shadow(0px 0px 0.25px var(--line-color));
-    &--b {
-      filter: drop-shadow(0px 0px 10px var(--line-color));
-    }
-  }
   &__mark {
     position: absolute;
     max-width: 96px;
@@ -309,6 +303,7 @@ export default {
       animation: dash 1.3s ease forwards 0.2s;
       fill: #fff;
       transition: all 0.2s ease-out;
+      filter: drop-shadow(0px 0px 10px var(--line-color));
     }
   }
   //内
