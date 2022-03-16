@@ -36,7 +36,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  HTML・CSS・Sass(SCSS)・Bootstrap・Tailwind CSS
+                  HTML・CSS・Sass(SCSS)・Bootstrap・TailwindCSS
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -85,8 +85,8 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  JavaSript・Vue.js・Vuetify・Vuex・VueRouter・Node.js・Nuxt.js・Vue
-                  Test Utils・Jest
+                  JavaSript・Node.js・Vue.js・VueRouter・Vuex・Pinia・Vuetify・Vue
+                  Test Utils・Jest・Nuxt.js
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -94,17 +94,19 @@
                 <v-card-text>
                   <ul>
                     <li>
-                      主にJavaScript、フレームワークはVue.js
+                      JavaScript、フレームワークはVue.js
                     </li>
-                    <li>gulp</li>
-                    <li>Vite、Vue2(Options API)、Vue3(Composition API)</li>
+                    <li>gulp使用</li>
+                    <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
+                    <li>Vue2 (Options API)</li>
+                    <li>Vue3 (Composition API)</li>
                     <!-- <li>
                       Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
                     </li> -->
                     <li>
-                      Jest ＋ vue-test-utils でのテストコード
+                      vue-test-utils ＋ Jest でのテストコード
                     </li>
-                    <li>TypeScriptを使用してのオリジナルアプリ製作中</li>
+                    <li>TypeScript を使用してのオリジナルアプリ製作中</li>
                     <li>今はVue.jsが一番好きです。</li>
                   </ul>
                 </v-card-text>
@@ -138,11 +140,11 @@
               <Fade>
                 <v-card-text>
                   <ul>
-                    <li>エディタは Visual Studio Code</li>
+                    <li>エディタ：Visual Studio Code</li>
                     <li>Git/GitHub基本操作</li>
                     <li>Markdown記法</li>
                     <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                    <li>デプロイ:Netlify</li>
+                    <li>デプロイ：Netlify</li>
                     <li>Dockerでの環境構築</li>
                   </ul>
                 </v-card-text>
@@ -170,9 +172,9 @@ export default {
       ],
       secondSkills: [
         { name: "js", delay: 0.25 },
-        { name: "vue", delay: 0.5 },
-        { name: "vuetify", delay: 0.75 },
-        { name: "node", delay: 1 },
+        { name: "node", delay: 0.5 },
+        { name: "vue", delay: 0.75 },
+        { name: "vuetify", delay: 1 },
         { name: "nuxt", delay: 1.25 },
         { name: "jest", delay: 1.5 }
       ],
