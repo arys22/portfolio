@@ -127,6 +127,11 @@ export default {
   },
   // Google アナリティクス
   googleAnalytics: {
-    id: "UA-215610127-2"
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID
+    }
   }
 };

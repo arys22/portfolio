@@ -175,8 +175,8 @@ export default {
         { name: "node", delay: 0.5 },
         { name: "vue", delay: 0.75 },
         { name: "vuetify", delay: 1 },
-        { name: "nuxt", delay: 1.25 },
-        { name: "jest", delay: 1.5 }
+        { name: "jest", delay: 1.25 },
+        { name: "nuxt", delay: 1.5 }
       ],
       thirdSkills: [
         { name: "git", delay: 0.25 },
