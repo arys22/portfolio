@@ -139,12 +139,12 @@ export default {
   // }
   // 新
   "google-gtag": {
-    id: "process.env.GOOGLE_ANALYTICS_ID",
+    id: process.env.GOOGLE_ANALYTICS_ID,
     debug: true // Enable to track in dev mode.
   },
   publicRuntimeConfig: {
     "google-gtag": {
-      id: "process.env.GOOGLE_ANALYTICS_ID"
+      id: process.env.GOOGLE_ANALYTICS_ID
     }
   }
 };
