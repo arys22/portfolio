@@ -85,7 +85,9 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // Google アナリティクス
-    "@nuxtjs/google-analytics"
+    "@nuxtjs/google-gtag"
+    // 旧
+    // "@nuxtjs/google-analytics"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -126,11 +128,22 @@ export default {
     hardSource: true //<-追加
   },
   // Google アナリティクス
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID
+  // 旧
+  // googleAnalytics: {
+  //   id: process.env.GOOGLE_ANALYTICS_ID
+  // },
+  // publicRuntimeConfig: {
+  //   googleAnalytics: {
+  //     id: process.env.GOOGLE_ANALYTICS_ID
+  //   }
+  // }
+  // 新
+  "google-gtag": {
+    id: "process.env.GOOGLE_ANALYTICS_ID",
+    debug: true // Enable to track in dev mode.
   },
   publicRuntimeConfig: {
-    googleAnalytics: {
+    "google-gtag": {
       id: process.env.GOOGLE_ANALYTICS_ID
     }
   }
