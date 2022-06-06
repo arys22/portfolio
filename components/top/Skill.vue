@@ -97,6 +97,7 @@
                       JavaScript、フレームワークはVue.js
                     </li>
                     <li>gulp使用</li>
+                    <li>Atomic Design</li>
                     <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
                     <li>Vue2 (Options API)</li>
                     <li>Vue3 (Composition API)</li>
