@@ -1,13 +1,13 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="skill">
-    <h2 class="text-center text-capitalize my-4 skill__title">
-      <Fade>
+    <Fade>
+      <h2 class="text-center text-capitalize my-4 skill__title">
         <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
           class="skill__subtitle f-f"
           >skill</span
         >
-      </Fade>
-    </h2>
+      </h2>
+    </Fade>
     <v-col cols="11" sm="10" lg="8" class="skill__wrap">
       <v-row justify="center">
         <v-col cols="12">

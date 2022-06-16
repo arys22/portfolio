@@ -192,7 +192,7 @@
             y1="17.4868311%"
             x2="27.8226935%"
             y2="89.7551419%"
-            id="linearGradient-1"
+            id="linearGradient-0"
           >
             <stop stop-color="#41873F" offset="0%"></stop>
             <stop stop-color="#418B3D" offset="32.88%"></stop>
@@ -305,7 +305,7 @@
             <mask id="mask-3" fill="white">
               <use xlink:href="#path-2"></use>
             </mask>
-            <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-0)" xlink:href="#path-2"></use>
             <g mask="url(#mask-3)">
               <path
                 d="M51.8934537,1.84920993 L3.12054176,29.9340858 C1.27133183,30.9742664 0,32.9390519 0,35.0194131 L0,91.3047404 C0,92.6916479 0.577878104,93.9629797 1.50248307,95.0031603 L56.2853273,1.15575621 C54.8984199,0.924604966 53.2803612,1.04018059 51.8934537,1.84920993 L51.8934537,1.84920993 Z"

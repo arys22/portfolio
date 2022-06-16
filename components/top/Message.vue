@@ -1,11 +1,11 @@
 <template>
   <v-row align="center" tag="section" class="message">
-    <h2 class="text-capitalize text-center my-4 message__title">
-      <Fade>
+    <Fade>
+      <h2 class="text-capitalize text-center my-4 message__title">
         <v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon
         >ご挨拶<br /><span class="message__subtitle f-f">message</span>
-      </Fade>
-    </h2>
+      </h2>
+    </Fade>
     <v-col cols="12" md="5" class="message__wrap ">
       <FadeSlide>
         <p>

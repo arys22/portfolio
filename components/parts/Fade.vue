@@ -1,5 +1,9 @@
 <template>
-  <div ref="fade" :class="{ fadeScale: visible, hidden: !visible }" class="fade">
+  <div
+    ref="fade"
+    :class="{ fadeScale: visible, hidden: !visible }"
+    class="fade"
+  >
     <slot v-show="visible"></slot>
   </div>
 </template>
@@ -31,6 +35,7 @@ export default {
 
 <style scoped>
 .fade {
+  width: 100%;
   transition: transform 1800ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   /* height: inherit; */
 }

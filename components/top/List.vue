@@ -1,12 +1,12 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="list">
     <!-- 制作一覧 -->
-    <h2 class="text-center text-capitalize my-4 list__title">
       <Fade>
+    <h2 class="text-center text-capitalize my-4 list__title">
         <v-icon class="mr-1" color="black">mdi-view-list</v-icon
         >制作物<br /><span class="list__subtitle f-f">list</span>
-      </Fade>
     </h2>
+      </Fade>
     <v-col cols="12" sm="10" lg="8" class="list__wrap">
       <Fade>
         <Carousel />
