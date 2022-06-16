@@ -9,6 +9,7 @@
     v-model="value"
     :background-color="backgroundColor"
     :class="{ 'btn-nav__scroll': hide }"
+    tag="nav"
   >
     <v-btn
       v-for="(item, index) in $ITEMS.menuItems"
