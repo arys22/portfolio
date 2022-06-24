@@ -151,7 +151,7 @@ export default {
   },
   // サイトマップ
   sitemap: {
-    hostname: "https://gallant-knuth-c4ee1c.netlify.app/", //ホスト名
+    hostname: "https://gallant-knuth-c4ee1c.netlify.app", //ホスト名
     exclude: [], //除外するページパス
     routes: ["/list", "/contact", "/confirm", "/complete"] //追加したいページの指定
   }
