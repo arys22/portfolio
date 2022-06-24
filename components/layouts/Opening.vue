@@ -6,7 +6,7 @@
         src="@/assets/img/logo.gif"
         width="66"
         height="66"
-        alt="logo"
+        alt="portfolioのロゴ"
       />
     </div>
     <div class="top-op__bg up" v-show="!show" :style="headerSize">
