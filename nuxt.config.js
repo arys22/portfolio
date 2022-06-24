@@ -85,9 +85,11 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // Google アナリティクス
-    "@nuxtjs/google-gtag"
+    "@nuxtjs/google-gtag",
     // 旧
     // "@nuxtjs/google-analytics"
+    // サイトマップ
+    "@nuxtjs/sitemap"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -146,5 +148,11 @@ export default {
     "google-gtag": {
       id: process.env.GOOGLE_ANALYTICS_ID
     }
+  },
+  // サイトマップ
+  sitemap: {
+    hostname: "https://gallant-knuth-c4ee1c.netlify.app/", //ホスト名
+    exclude: [], //除外するページパス
+    routes: ["/list", "/contact", "/confirm", "/complete"] //追加したいページの指定
   }
 };
