@@ -130,6 +130,7 @@
                 <li>ナビゲーションガード</li>
               </ul>
             </li>
+            <li>sitemap</li>
             <li>Google Analytics ｱﾅﾘﾃｨｸｽ導入</li>
             <li>Google Search Console ｻｰﾁｺﾝｿｰﾙ導入</li>
             <li>SSG（Static Site Generator）</li>
