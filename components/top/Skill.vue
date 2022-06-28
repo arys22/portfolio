@@ -108,7 +108,7 @@
                       vue-test-utils ＋ Jest でのテストコード
                     </li>
                     <li>TypeScript を使用してのオリジナルアプリ製作中</li>
-                    <li>今はVue.jsが一番好きです。</li>
+                    <li>今はVue.js・nuxt.jsが一番好きです。</li>
                   </ul>
                 </v-card-text>
               </Fade>
@@ -142,11 +142,11 @@
                 <v-card-text>
                   <ul>
                     <li>エディタ：Visual Studio Code</li>
-                    <li>Git/GitHub基本操作</li>
-                    <li>Markdown記法</li>
-                    <li>RubyのRuby on Railsチュートリアルを1周程度</li>
                     <li>デプロイ：Netlify</li>
+                    <li>RubyのRuby on Railsチュートリアルを1周程度</li>
+                    <li>Git/GitHub基本操作・プルリクエスト</li>
                     <li>Dockerでの環境構築</li>
+                    <li>Markdown記法</li>
                   </ul>
                 </v-card-text>
               </Fade>
