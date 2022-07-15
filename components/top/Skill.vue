@@ -96,7 +96,7 @@
                     <li>
                       JavaScript、フレームワークはVue.js
                     </li>
-                    <li>gulp使用</li>
+                    <li>gulp</li>
                     <li>Atomic Design</li>
                     <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
                     <li>Vue2 (Options API)</li>
@@ -142,10 +142,11 @@
                 <v-card-text>
                   <ul>
                     <li>エディタ：Visual Studio Code</li>
-                    <li>デプロイ：Netlify</li>
-                    <li>RubyのRuby on Railsチュートリアルを1周程度</li>
-                    <li>Git/GitHub基本操作・プルリクエスト</li>
-                    <li>Dockerでの環境構築</li>
+                    <li>デプロイ：Netlify、GitHub Pages</li>
+                    <li>デザイン：Figma、XD</li>
+                    <li>Git/GitHub 基本操作・プルリクエスト</li>
+                    <li>Ruby の Ruby on Rails チュートリアルを1周程度</li>
+                    <li>Docker での環境構築</li>
                     <li>Markdown記法</li>
                   </ul>
                 </v-card-text>
@@ -183,7 +184,8 @@ export default {
         { name: "git", delay: 0.25 },
         { name: "github", delay: 0.5 },
         { name: "netlify", delay: 0.75 },
-        { name: "docker", delay: 1 }
+        { name: "docker", delay: 1 },
+        { name: "figma", delay: 1.25 }
       ]
     };
   }
