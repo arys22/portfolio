@@ -1,13 +1,18 @@
 <template>
   <div class="top-op">
     <div class="top-op__bg" v-show="show">
-      <img
+      <!-- ver. 点滅 -->
+      <!-- <img
         class="top-op__gif"
         src="@/assets/img/logo.gif"
         width="66"
         height="66"
         alt="portfolioのロゴ"
-      />
+      /> -->
+      <!--- ver. 静止 -->
+      <svg viewBox="0 0 500 500" width="66" height="66" class="top-op__gif">
+        <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
+      </svg>
     </div>
     <div class="top-op__bg up" v-show="!show" :style="headerSize">
       <svg viewBox="0 0 500 500" width="22" height="22" class="top-op__mark">

@@ -77,7 +77,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
+    "@nuxtjs/pwa"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -154,5 +155,14 @@ export default {
     hostname: "https://gallant-knuth-c4ee1c.netlify.app", //ホスト名
     exclude: [], //除外するページパス
     routes: ["/list", "/contact", "/confirm", "/complete"] //追加したいページの指定
+  },
+  // PWA設定
+  manifest: {
+    name: "portfolio",
+    lang: "ja",
+    short_name: "portfolio",
+    description:
+      "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。",
+    background_color: "#000"
   }
 };
