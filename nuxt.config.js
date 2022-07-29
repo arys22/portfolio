@@ -157,12 +157,14 @@ export default {
     routes: ["/list", "/contact", "/confirm", "/complete"] //追加したいページの指定
   },
   // PWA設定
-  manifest: {
-    name: "portfolio",
-    lang: "ja",
-    short_name: "portfolio",
-    description:
-      "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。",
-    background_color: "#222"
+  pwa: {
+    manifest: {
+      name: "portfolio",
+      lang: "ja",
+      short_name: "portfolio",
+      description:
+        "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。",
+      background_color: "#222"
+    }
   }
 };
