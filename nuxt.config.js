@@ -164,8 +164,5 @@ export default {
     description:
       "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。",
     background_color: "#222"
-  },
-  pwa: {
-    icon: false
   }
 };
