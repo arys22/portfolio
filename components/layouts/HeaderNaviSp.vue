@@ -10,7 +10,7 @@
       exact-active-class="sp__list-active"
       v-for="(item, index) in $ITEMS.menuItems"
       :key="index"
-      class="sp__list text-uppercase mx-1"
+      class="sp__list text-uppercase mx-1 f-f"
     >
       <v-list-item-icon class="ml-3 mr-2">
         <v-icon left color="#999">{{ item.icon }}</v-icon>

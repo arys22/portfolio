@@ -146,7 +146,7 @@ export default {
 
 <style lang="scss" scoped>
 .fv {
-  cursor: default;
+  cursor: pointer;
   width: 100%;
   height: calc(100vh - 56px);
   padding: 0;

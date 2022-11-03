@@ -1,6 +1,6 @@
 <template>
   <v-toolbar-items
-    class="hidden-xs-only"
+    class="hidden-xs-only wrap f-f"
     @mouseenter="delayActive"
     @mouseleave="isActive = false"
   >
@@ -53,6 +53,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrap {
+  cursor: pointer;
+}
 .header {
   &__btn {
     position: relative;
