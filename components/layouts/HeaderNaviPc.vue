@@ -1,6 +1,6 @@
 <template>
   <v-toolbar-items
-    class="hidden-xs-only wrap f-f"
+    class="hidden-xs-only wrap"
     @mouseenter="delayActive"
     @mouseleave="isActive = false"
   >
@@ -12,7 +12,7 @@
         header__btn_active: isActive
       }"
       active-class="link-active"
-      class="header__btn text-md-subtitle-1"
+      class="header__btn "
       v-for="(item, index) in $ITEMS.menuItems"
       :key="index"
       :to="item.path"
@@ -101,6 +101,13 @@ export default {
   font-weight: bold;
   &::after {
     transform: none;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header__btn {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.009375em;
   }
 }
 </style>
