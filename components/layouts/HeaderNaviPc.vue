@@ -105,7 +105,7 @@ export default {
 }
 @media screen and (min-width: 960px) {
   .header__btn {
-    font-size: 1rem;
+    font-size: 1rem !important;
     line-height: 1.75rem;
     letter-spacing: 0.009375em;
   }
