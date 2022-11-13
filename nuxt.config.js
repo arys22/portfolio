@@ -31,7 +31,7 @@ export default {
       {
         hid: "og:url",
         property: "og:url",
-        content: "https://gallant-knuth-c4ee1c.netlify.app/"
+        content: "https://gallant-knuth-c4ee1c.netlify.app"
       }, //絶対パスで指定
       { hid: "og:type", property: "og:type", content: "website" },
       {
