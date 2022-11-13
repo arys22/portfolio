@@ -24,7 +24,29 @@ export default {
       { name: "format-detection", content: "telephone=no" },
       // 自動翻訳させないための記述
       { "http-equiv": "Content-Language", content: "ja" },
-      { name: "google", content: "notranslate" }
+      { name: "google", content: "notranslate" },
+
+      // ogp設定
+      { hid: "og:site_name", property: "og:site_name", content: "portfolio" },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://gallant-knuth-c4ee1c.netlify.app/"
+      }, //絶対パスで指定
+      { hid: "og:type", property: "og:type", content: "website" },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: "https://gallant-knuth-c4ee1c.netlify.app/OGP.png"
+      }, //絶対パスで指定 https://
+      { hid: "og:title", property: "og:title", content: "portfolio" },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。"
+      },
+      { name: "twitter:card", content: "summary" }
     ],
     link: [
       { hid: "icon", rel: "icon", type: "image/svg+xml", href: "/logo.svg" },
