@@ -34,6 +34,7 @@
         large
         elevation="2"
         role="button"
+        aria-label="menu"
         @mouseenter="delayActive"
         @mouseleave="isActive = false"
       >

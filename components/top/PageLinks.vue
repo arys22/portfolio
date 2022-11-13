@@ -19,6 +19,7 @@
           <transition name="in">
             <v-btn
               role="button"
+              aria-label="page menu"
               v-on="{ ...tooltip, ...menu }"
               class="links"
               icon
