@@ -33,6 +33,7 @@
         :class="{ header__icon__scroll: scrollY > fvHeight }"
         large
         elevation="2"
+        role="button"
         @mouseenter="delayActive"
         @mouseleave="isActive = false"
       >

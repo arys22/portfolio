@@ -14,6 +14,7 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#222222" },
       {
         hid: "description",
         name: "description",
@@ -138,7 +139,7 @@ export default {
     },
     // アイコン設定
     defaultAssets: {
-      font: true,
+      font: false,
       icons: "mdi"
     },
     icons: {
@@ -186,7 +187,8 @@ export default {
       short_name: "portfolio",
       description:
         "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。",
-      background_color: "#222"
+      background_color: "#222222",
+      theme_color: "#222222"
     }
   }
 };

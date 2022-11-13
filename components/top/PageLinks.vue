@@ -18,6 +18,7 @@
         <template v-slot:activator="{ on: tooltip }">
           <transition name="in">
             <v-btn
+              role="button"
               v-on="{ ...tooltip, ...menu }"
               class="links"
               icon
