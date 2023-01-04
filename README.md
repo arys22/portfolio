@@ -41,7 +41,6 @@ Layouts are a great help when you want to change the look and feel of your Nuxt 
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
-
 ### `pages`
 
 This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
@@ -69,10 +68,12 @@ This directory contains your Vuex store files. Creating a file in this directory
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
 ## version
-* node v14.17.5
-* npm  v6.14.14
+
+- node v14.17.5
+- npm v6.14.14
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0b8eb70-f752-4e72-bb87-d0156168f9f3/deploy-status)](https://app.netlify.com/sites/gallant-knuth-c4ee1c/deploys)
 
 ## public link
-[Portfolio](https://gallant-knuth-c4ee1c.netlify.app/)
+
+[Portfolio](https://arys-portfolio.netlify.app/)
