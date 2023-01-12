@@ -51,6 +51,17 @@ export default {
         this.title = data;
       });
     }
+  },
+  // linkタグのcanonical設定
+  head() {
+    return {
+      link: [
+        {
+          rel: "canonical",
+          href: `https://arys-portfolio.netlify.app${this.$route.path}`
+        }
+      ]
+    };
   }
 };
 </script>
