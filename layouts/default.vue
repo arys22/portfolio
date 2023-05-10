@@ -58,7 +58,7 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://arys-portfolio.netlify.app${this.$route.path}`
+          href: `https://arieight-portfolio.netlify.app${this.$route.path}`
         }
       ]
     };

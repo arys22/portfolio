@@ -76,4 +76,4 @@ More information about the usage of this directory in [the documentation](https:
 
 ## public link
 
-[Portfolio](https://arys-portfolio.netlify.app/)
+[Portfolio](https://arieight-portfolio.netlify.app/)
