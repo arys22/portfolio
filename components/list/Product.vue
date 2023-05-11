@@ -63,7 +63,7 @@
                 </a>
                 <br />
                 <template
-                  v-if="item.id !== 1 || item.id !== 2 || item.id !== 5"
+                  v-if="item.id !== 1 && item.id !== 2 && item.id !== 5"
                 >
                   webサイト:
                   <a
