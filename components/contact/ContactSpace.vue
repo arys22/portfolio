@@ -1,6 +1,6 @@
 <template>
   <div class="contact__space">
-    <div class="contact__back text-uppercase" v-parallax="-0.15">
+    <div class="contact__back text-uppercase" v-parallax="-0.12">
       contact
     </div>
   </div>
@@ -21,7 +21,7 @@
     color: #d9d9d9;
     opacity: 0.7;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 3%;
     white-space: nowrap;
     transition: transform 0.7s ease-in-out;

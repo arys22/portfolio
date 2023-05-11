@@ -161,6 +161,7 @@ export default {
     pointer-events: none;
   }
   &__wrap {
+    will-change: text-shadow;
     padding: 2% 4%;
     transition: all 0s ease;
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.8),

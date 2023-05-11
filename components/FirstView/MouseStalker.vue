@@ -58,6 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .mouse {
+  will-change: transform, animation;
   z-index: 100;
   pointer-events: none;
   opacity: 0;

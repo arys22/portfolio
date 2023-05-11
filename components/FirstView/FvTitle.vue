@@ -24,7 +24,7 @@ export default {
     return {
       show: false,
       index: 0,
-      text: ["PORTFOLIO", "Portfolio","Welcome" ],
+      text: ["PORTFOLIO", "Arieight", "Portfolio", "Welcome"],
       textArray: [], //convTextで文字列を分解＆キーを生成 配列
       textModel: [] //1文取り出し表示
     };
@@ -37,8 +37,8 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-    this.show = true;
-    },3500);
+      this.show = true;
+    }, 3500);
   },
 
   methods: {
@@ -129,13 +129,8 @@ export default {
 <style lang="scss" scoped>
 .text {
   &__box {
-    font-family: fantasy,"Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    'ヒラギノ角ゴ ProN W3',
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+    font-family: fantasy, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+      "ヒラギノ角ゴ ProN W3", "Hiragino Sans", Meiryo, sans-serif;
     display: flex;
     justify-content: center;
     font-size: 2.5rem;

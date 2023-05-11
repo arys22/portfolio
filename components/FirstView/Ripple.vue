@@ -6,7 +6,7 @@
     @after-enter="afterRippleEnter"
   >
     <div v-show="rip" ref="ripples" class="ripple">
-      <span class="ripple__item" v-for="i in 3" :key="i" :style="borderColor"/>
+      <span class="ripple__item" v-for="i in 3" :key="i" :style="borderColor" />
     </div>
   </transition>
 </template>
@@ -16,24 +16,23 @@ export default {
   props: {
     mouseX: {
       type: Number,
-      default:0,
+      default: 0
     },
     mouseY: {
       type: Number,
-      default:0,
+      default: 0
     },
     rip: {
       type: Boolean,
-      default:false,
+      default: false
     },
     color: {
-      type:String,
-      default:"#eee",
+      type: String,
+      default: "#eee"
     }
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     rippleEnter() {
@@ -42,15 +41,15 @@ export default {
     },
     afterRippleEnter() {
       this.$parent.rip = false;
-    },
-  },
-    computed: {
-    borderColor(){
-      return{
-        '--border-color': this.color,
-      }
     }
   },
+  computed: {
+    borderColor() {
+      return {
+        "--border-color": this.color
+      };
+    }
+  }
 };
 </script>
 
@@ -67,21 +66,22 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    border: 4px solid ;
+    border: 4px solid;
     border-radius: 50%;
     border-color: var(--border-color);
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
+    will-change: animation;
     &:nth-of-type(2) {
-      transform: translate(-50%, -50%) scale(.7);
+      transform: translate(-50%, -50%) scale(0.7);
       animation: wave 1.6s ease-out 1;
     }
     &:nth-of-type(3) {
-      transform: translate(-50%, -50%) scale(.4);
+      transform: translate(-50%, -50%) scale(0.4);
       animation: wave 3.2s ease-out 1;
     }
-    animation: wave .6s ease-out 1;
+    animation: wave 0.6s ease-out 1;
   }
 }
 @keyframes wave {
