@@ -144,7 +144,7 @@
               sampleページ
             </a>
             <br />
-            (google Driveでの公開ページ)
+            (google Driveでの公開ページの為、JSは無効になっています)
             <br />
             <span class="text-caption">※新たなタブで開きます</span>
           </p>

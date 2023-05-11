@@ -62,7 +62,9 @@
                   {{ item.code_type }}
                 </a>
                 <br />
-                <template v-if="item.id !== 5">
+                <template
+                  v-if="item.id !== 1 || item.id !== 2 || item.id !== 5"
+                >
                   webサイト:
                   <a
                     :href="item.web_href"
