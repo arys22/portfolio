@@ -63,10 +63,10 @@ export default {
   pointer-events: none;
   opacity: 0;
   position: absolute;
-  top: -122px;
-  left: -22px;
-  width: 44px;
-  height: 44px;
+  top: -120px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: var(--bg-color);
   transform: translate(0, 0);

@@ -16,6 +16,8 @@
           elevation="2"
           class="btn"
           fab
+          height="44"
+          width="44"
         >
           <v-icon>mdi-chevron-up</v-icon>
         </v-btn>
@@ -60,8 +62,6 @@ export default {
   }
 }
 .btn {
-  width: 44px;
-  height: 44px;
   right: 4px;
   bottom: 62px;
 }

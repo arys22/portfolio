@@ -4,11 +4,12 @@
       <vue-typer
         :text="[
           'Welcome to my portfolio',
-          'ようこそポートフォリオへ！',
           'Please click!!',
+          '画面内にPロゴが隠れています。',
           'このページはTOPページになります。',
           'ポートフォリオ一覧はLISTページです。',
-          'CONTACTからお気軽にお問い合わせください。'
+          'CONTACTからお気軽にお問い合わせください。',
+          'ようこそポートフォリオへ！'
         ]"
         :repeat="Infinity"
         :shuffle="false"
