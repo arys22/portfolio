@@ -1,26 +1,28 @@
 <template>
-    <v-tooltip left color="grey" transition="slide-x-reverse-transition" open-delay="300">
-        <template v-slot:activator="{ on }">
-  <transition name="fade">
-    <v-btn
-      v-on="on"
-      @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
-      v-show="scrollY > 500"
-      fixed
-      bottom
-      right
-      icon
-      elevation="2"
-      class="mb-4 mr-n2"
-      small
-      fab
-    >
-      <v-icon>mdi-chevron-up</v-icon>
-    </v-btn>
-  </transition>
+  <v-tooltip
+    left
+    color="grey"
+    transition="slide-x-reverse-transition"
+    open-delay="300"
+  >
+    <template v-slot:activator="{ on }">
+      <transition name="fade">
+        <v-btn
+          v-on="on"
+          @click="$vuetify.goTo(0, { duration: 1000, easing: 'easeOutCubic' })"
+          v-show="scrollY > 500"
+          fixed
+          icon
+          elevation="2"
+          class="btn"
+          fab
+        >
+          <v-icon>mdi-chevron-up</v-icon>
+        </v-btn>
+      </transition>
     </template>
-      <span class="text-capitalize">top</span>
-      </v-tooltip>
+    <span class="text-capitalize">top</span>
+  </v-tooltip>
 </template>
 
 <script>
@@ -56,6 +58,12 @@ export default {
     color: #fff;
     animation: updown 1.5s ease infinite;
   }
+}
+.btn {
+  width: 44px;
+  height: 44px;
+  right: 4px;
+  bottom: 62px;
 }
 @keyframes updown {
   0% {

@@ -154,6 +154,7 @@ export default {
   &__text {
     border: 2px solid #aaa;
     border-radius: 4px;
+    margin: 0 16px;
   }
   &__caution {
     display: flex;
@@ -162,6 +163,7 @@ export default {
   &__actions {
     align-items: flex-end;
     flex-direction: column;
+    padding: 8px 16px;
   }
   &__btn {
     &--back {

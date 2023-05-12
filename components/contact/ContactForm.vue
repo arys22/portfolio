@@ -175,6 +175,7 @@ export default {
   &__actions {
     align-items: flex-end;
     flex-direction: column;
+    padding: 8px 16px;
   }
   &__btn {
     &--reset {

@@ -95,7 +95,7 @@
         </v-card>
       </FadeIn>
     </v-col>
-    <div class="list__back text-uppercase" v-parallax="-0.12">list</div>
+    <div class="list__back text-uppercase" v-parallax="0.1">list</div>
   </v-row>
 </template>
 

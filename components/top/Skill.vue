@@ -156,7 +156,7 @@
         </v-col>
       </v-row>
     </v-col>
-    <div class="skill__back text-uppercase" v-parallax="-0.15">skill</div>
+    <div class="skill__back text-uppercase" v-parallax="0.2">skill</div>
   </v-row>
 </template>
 

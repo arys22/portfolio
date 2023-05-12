@@ -22,7 +22,7 @@
       <v-sheet class="message__bg message__bg--code" elevation="8"></v-sheet>
       <v-sheet class="message__bg message__bg--pc" elevation="16"></v-sheet>
     </v-col>
-    <div class="message__back text-uppercase" v-parallax="-0.11">message</div>
+    <div class="message__back text-uppercase" v-parallax="0.08">message</div>
     <svg viewBox="0 0 1396 1445" class="message__line">
       <use xlink:href="#line" x="0" y="0"></use>
     </svg>

@@ -143,6 +143,11 @@ export default {
   &__scroll {
     background-color: transparent !important;
   }
+  &__icon {
+    &__scroll {
+      background-color: white;
+    }
+  }
   &__title {
     display: inline-block;
     padding-left: 5px;
