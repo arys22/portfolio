@@ -12,8 +12,8 @@
     <v-footer absolute class="text-center" padless color="#f5f5f5">
       <v-col class="font-weight-medium text-center py-0 f-f" cols="12">
         <small
-          >Copyright &copy;{{ new Date().getFullYear() }} saito All rights
-          reserved.</small
+          >Google Play および Google Play ロゴは Google LLC の商標です。<br />Copyright
+          &copy;{{ new Date().getFullYear() }} saito All rights reserved.</small
         ></v-col
       >
     </v-footer>
