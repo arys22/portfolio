@@ -16,6 +16,77 @@
           >一覧</Btn
         >
       </FadeIn>
+
+      <!-- lisble -->
+      <FadeIn>
+        <v-card class="list__card py-8 mb-8" tag="section">
+          <v-row class="mx-0">
+            <v-col cols="12" md="5">
+              <Fade>
+                <v-img
+                  :src="require('@/assets/img/lisble/lisble-sp.png')"
+                  alt="lisble"
+                  max-width="250"
+                  max-height="350"
+                  class="mx-auto list__img"
+                  position="center -2px"
+                ></v-img>
+              </Fade>
+            </v-col>
+
+            <v-col
+              cols="12"
+              md="7"
+              class="d-md-flex flex-md-column justify-md-space-between"
+            >
+              <div>
+                <v-card-title>
+                  <FadeSlide>
+                    <h3 class="f-f">買い物リスト - Lisble</h3>
+                  </FadeSlide>
+                </v-card-title>
+                <FadeSlide>
+                  <v-card-subtitle class="f-f">
+                    Figma/TailwindCSS/TypeScript/Nuxt3
+                  </v-card-subtitle>
+                </FadeSlide>
+                <v-divider class="list__border" />
+              </div>
+              <v-card-text>
+                <Fade>
+                  <span class="font-weight-bold">PC, iOS</span>:
+                  <a
+                    href="https://lisble.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-decoration-none list__link ml-3"
+                    ><v-icon color="#1976d2" class="list__icon"
+                      >mdi-file-outline</v-icon
+                    >
+                    Lisble
+                  </a>
+                  <br />
+                  <span class="ml-16 text-caption">↳ menuからインストール</span>
+                  <br />
+                  <span class="d-flex mt-3">
+                    <span class="font-weight-bold">Android:</span>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=net.lisble.twa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                      ><img
+                        class="ml-3"
+                        width="155"
+                        alt="Google Play で手に入れよう"
+                        src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
+                    /></a>
+                  </span>
+                </Fade>
+              </v-card-text>
+            </v-col>
+          </v-row>
+        </v-card>
+      </FadeIn>
+
+      <!-- ポートフォリオ -->
       <FadeIn>
         <v-card class="list__card py-8" tag="section">
           <v-row class="mx-0">
@@ -47,23 +118,26 @@
               <v-card-text>
                 <Fade>
                   <ul>
-                    <li>レスポンシブ(モバイルファースト)</li>
+                    <li>レスポンシブ(MF)</li>
+                    <li>CSS設計はBEM記法</li>
                     <li>ライブラリ(vue-typer, vue-parallax-js)</li>
-                    <li>デザインは引き算を心がけました。</li>
-                    <li>ロゴ作成</li>
-                    <li>オープニングアニメーション</li>
+                    <li>デザインは引き算</li>
+                    <li>OPアニメーション</li>
                     <li>
-                      ヘッダーメニュー(fv過ぎたら色変化)・sp時バーガーメニュー・ボトムナビ(上スクロール時のみ表示)・ページ内リンク
+                      ヘッダー(色変化)・バーガーメニュー・ボトムナビ・ページ内リンク
                     </li>
-                    <li>svg操作</li>
                     <li>
-                      FirstViewを工夫しました。clickやマウスを動かしてみてください。
+                      ★FirstView★clickやマウスを動かしてみてください。
+                      <ul>
+                        <li>★タイトルはランダム(方向、回転)に弾けます。</li>
+                        <li>svg操作・波紋・影・マウスストーカーetc...</li>
+                      </ul>
                     </li>
-                    <li>fadeアクション5種類</li>
-                    <li>listページのモーダルの見やすさを工夫しました。</li>
+                    <li>スクロールfadeアクション 5種類</li>
+                    <li>listページのモーダルの見やすさを工夫</li>
                     <li>パンくずリスト</li>
                     <li>
-                      フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック・確認ページ・完了ページ
+                      ★フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック・確認ページ・完了ページ★
                     </li>
                     <li>ナビゲーションガード</li>
                     <li>sitemap</li>
@@ -82,7 +156,7 @@
                       href="https://github.com/arys22/portfolio.git"
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-decoration-none list__link"
+                      class="text-decoration-none list__link ml-3"
                       ><v-icon color="#1976d2" class="list__icon"
                         >mdi-github</v-icon
                       >GitHub</a
@@ -129,7 +203,7 @@ export default {
     background-color: #fff;
   }
   &__card {
-    width: fit-content;
+    width: 100%;
   }
   &__img {
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
@@ -146,7 +220,6 @@ export default {
   }
   &__link {
     transition: opacity 0.2s ease-in-out;
-    margin-left: 12px;
     position: relative;
     display: inline-block;
     width: 100px;

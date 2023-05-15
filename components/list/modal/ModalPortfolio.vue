@@ -100,43 +100,48 @@
           Portfolio
         </v-card-title>
         <v-card-subtitle class="f-f"
-          >HTML/CSS(SCSS)/Vue/Vuetify/Nuxt</v-card-subtitle
+          >HTML/CSS(SCSS)/Vuetify/Nuxt2/Jest</v-card-subtitle
         >
         <v-card-text class="pb-0">
           <ul>
-            <li>デザインは引き算を心がけました。</li>
-            <li>ロゴ作成</li>
-            <li>レスポンシブ(モバイルファースト)</li>
-            <li>ライブラリ(vue-typer, vue-parallax-js)使用</li>
+            <li>デザインは引き算</li>
+            <li>CSS設計はBEM記法</li>
+            <li>レスポンシブ<span class="modal__sm">(MF)</span></li>
+            <li>ライブラリ: vue-typer, vue-parallax-js</li>
             <li>
-              主なアクション
+              <span class="font-weight-bold">主なアクション</span>
               <ul>
                 <li>
-                  ヘッダーメニュー(fv過ぎたら色変化)・sp時バーガーメニュー・ボトムナビ(上スクロール時のみ表示)ページ内リンク・topへボタン
+                  ヘッダーメニュー<span class="modal__sm"
+                    >(fv過ぎたら色変化)</span
+                  >・sp時バーガーメニュー・ボトムナビ・ページ内リンク・topへボタン
                 </li>
-                <li>オープニングアニメーション</li>
-                <li>svg操作・アニメーション</li>
+                <li>アニメーション → OP・ページ遷移・svg操作</li>
+                <li class="font-weight-bold">
+                  FirstViewで遊び要素<span class="modal__sm"
+                    >(マウスストーカー、テキストの影変化、クリック時波紋、★クリック時に文字がランダムに弾ける、etc...)</span
+                  >
+                </li>
                 <li>
-                  FirstViewで少し遊べるようにしました。(マウスストーカー、テキストの影変化、クリック時波紋、クリック時に文字がランダムに弾ける、etc...)
+                  fadeアクション5種
                 </li>
-                <li>
-                  fadeアクション5種類(その場、下から、何度も、textスライド、ページ遷移時)
-                </li>
-                <li>listページのモーダルの見やすさを工夫しました。</li>
+                <li>listページのモーダル</li>
                 <li>パンくずリスト</li>
-                <li>
-                  フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック(バリテーション)→確認ページ→完了ページ
+                <li class="font-weight-bold">
+                  フォームはgoogleフォームと連携・スプレッドシートで管理・受付時に自動返信メール・入力チェック
+                  → 確認ページ → 完了ページ
                 </li>
-                <li>ナビゲーションガード</li>
               </ul>
             </li>
             <li>sitemap</li>
             <li>Google Analytics ｱﾅﾘﾃｨｸｽ導入</li>
             <li>Google Search Console ｻｰﾁｺﾝｿｰﾙ導入</li>
-            <li>SSG（Static Site Generator）</li>
+            <li>SSG<span class="modal__sm">（Static Site Generator）</span></li>
             <li>Netlifyでの公開</li>
-            <li>PWA化（Progressive Web Apps）</li>
-            <li>Jest ＋ vue-test-utils でのテストコード記述</li>
+            <li>PWA化</li>
+            <li class="font-weight-bold">
+              Jest + vue-test-utils でのテストコード記述
+            </li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">
@@ -152,7 +157,7 @@
               GitHub
             </a>
             <br />
-            <span class="text-caption">※新たなタブで開きます</span>
+            <span class="modal__sm">※新たなタブで開きます</span>
           </p>
         </v-card-text>
       </v-col>
@@ -244,6 +249,9 @@ export default {
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
       0px 7px 10px 1px rgb(0 0 0 / 14%), 0px 2px 16px 1px rgb(0 0 0 / 12%);
     margin: 0 auto;
+  }
+  &__sm {
+    font-size: 10px;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

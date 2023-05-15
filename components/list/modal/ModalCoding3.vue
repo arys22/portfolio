@@ -101,36 +101,44 @@
             <use xlink:href="#xd" x="0" y="0"></use>
           </svg>
         </v-card-title>
-        <v-card-subtitle class="f-f"
-          >HTML/CSS(SCSS)/Vue.js 使用</v-card-subtitle
-        >
+        <v-card-subtitle class="f-f">HTML/CSS(SCSS)/Vue.js</v-card-subtitle>
         <v-card-text class="pb-0">
           <ul>
             <li>全8ページ</li>
-            <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
+            <li>レスポンシブ<span class="modal__sm">(MF)</span></li>
             <li>Retina高解像度対応</li>
             <li>ピクセルパーフェクト</li>
             <li>
-              コード
+              <span class="font-weight-bold">コード</span>
               <ul>
                 <li>CSS設計はBEM記法</li>
-                <li>Dart Sass（@use）</li>
+                <li>Dart Sass<span class="modal__sm">（@use）</span></li>
                 <li>
-                  可読性を高めるためにSCSSのディレクトリ構成をBlock単位等、細かく設定、工夫しました。
+                  可読性を高めるためにSCSSのディレクトリ構成をBlock単位等、細かく設定
                 </li>
                 <li>gulp使用</li>
-                <li>パンくずリスト(構造化データ)</li>
+                <li>
+                  パンくずリスト<span class="modal__sm">(構造化データ)</span>
+                </li>
               </ul>
             </li>
             <li>
-              主なアクション
+              <span class="font-weight-bold">主なアクション</span>
               <ul>
-                <li>スマホ時、バーガーメニュー</li>
+                <li>SP時、バーガーメニュー</li>
                 <li>ヘッダーは、スクロールすると色変化</li>
-                <li>上へスクロールして戻るボタン</li>
+                <li>TOP戻るボタン</li>
                 <li>hover時とscrolldownのアニメーション</li>
-                <li>topページのWORKSのスライダー(vue-awesome-swiper使用)</li>
-                <li>newsページのページネーション(vuejs-paginate使用)</li>
+                <li>
+                  topページのWORKSのスライダー<span class="modal__sm"
+                    >(vue-awesome-swiper使用)</span
+                  >
+                </li>
+                <li>
+                  newsページのページネーション<span class="modal__sm"
+                    >(vuejs-paginate使用)</span
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -160,9 +168,9 @@
               sampleページ
             </a>
             <br />
-            (GitHub Pagesでの公開ページ)
+            GitHub Pagesでの公開ページ
             <br />
-            <span class="text-caption">※新たなタブで開きます</span>
+            <span class="modal__sm">※新たなタブで開きます</span>
           </p>
         </v-card-text>
       </v-col>
@@ -395,6 +403,9 @@ export default {
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
       0px 7px 10px 1px rgb(0 0 0 / 14%), 0px 2px 16px 1px rgb(0 0 0 / 12%);
     margin: 0 auto;
+  }
+  &__sm {
+    font-size: 10px;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

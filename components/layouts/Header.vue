@@ -136,6 +136,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   transition: all 0.7s ease-in-out;
+  z-index: 98 !important;
   &__mark {
     position: relative;
     top: 4px;

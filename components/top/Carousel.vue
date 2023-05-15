@@ -7,7 +7,7 @@
             :src="item.src"
             :alt="item.alt"
             class="carousel__img"
-            position="center top"
+            position="center -1px"
           >
             <!-- :lazy-src="item.src" -->
             <template v-slot:placeholder>
@@ -49,16 +49,22 @@ export default {
     return {
       items: [
         {
-          src: require("@/assets/img/LP1/LP_pc-1-min.png"),
-          alt: "LPのpc画面",
-          src_sp: require("@/assets/img/LP1/LP_sp-1-min.png"),
-          alt_sp: "LPのスマホ画面"
-        },
-        {
           src: require("@/assets/img/portfolio/Portfolio.png"),
           alt: "Portfolioサイトpc画面",
           src_sp: require("@/assets/img/portfolio/Portfolio-sp.png"),
           alt_sp: "Portfolioサイトスマホ画面"
+        },
+        {
+          src: require("@/assets/img/lisble/lisble-sp.png"),
+          alt: "lisbleのlistページ",
+          src_sp: require("@/assets/img/lisble/lisble_history-sp.png"),
+          alt_sp: "lisbleのhistoryページ"
+        },
+        {
+          src: require("@/assets/img/LP1/LP_pc-1-min.png"),
+          alt: "LPのpc画面",
+          src_sp: require("@/assets/img/LP1/LP_sp-1-min.png"),
+          alt_sp: "LPのスマホ画面"
         },
         {
           src: require("@/assets/img/coding3/index1-pc-min.png"),
@@ -83,7 +89,6 @@ export default {
 
 <style lang="scss" scoped>
 .carousel {
-  max-width: 600px;
   &__img {
     width: 100%;
     height: auto;

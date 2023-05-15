@@ -99,22 +99,18 @@
             <use xlink:href="#xd" x="0" y="0"></use>
           </svg>
         </v-card-title>
-        <v-card-subtitle class="f-f"
-          >HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle
-        >
+        <v-card-subtitle class="f-f">HTML/CSS(SCSS)/JavaScript</v-card-subtitle>
         <v-card-text class="pb-0">
           <ul>
-            <li>
-              レスポンシブ(モバイルファースト)スマホ、タブレット、pc、3種類対応
-            </li>
+            <li>レスポンシブ<span class="modal__sm">(MF)3</span></li>
             <li>Retina高解像度対応</li>
             <li>ピクセルパーフェクト</li>
             <li>CSS設計はBEM記法</li>
             <li>
-              主なアクション
+              <span class="font-weight-bold">主なアクション</span>
               <ul>
                 <li>バーガーメニュー</li>
-                <li>ヘッダーは、ファーストビュー過ぎると個別に色変化</li>
+                <li>ヘッダーは、fv過ぎると個別に色変化</li>
               </ul>
             </li>
           </ul>
@@ -144,9 +140,9 @@
               sampleページ
             </a>
             <br />
-            (google Driveでの公開ページの為、JSは無効になっています)
+            google Driveでの公開ページの為、JSは無効になっています
             <br />
-            <span class="text-caption">※新たなタブで開きます</span>
+            <span class="modal__sm">※新たなタブで開きます</span>
           </p>
         </v-card-text>
       </v-col>
@@ -314,6 +310,9 @@ export default {
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
       0px 7px 10px 1px rgb(0 0 0 / 14%), 0px 2px 16px 1px rgb(0 0 0 / 12%);
     margin: 0 auto;
+  }
+  &__sm {
+    font-size: 10px;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

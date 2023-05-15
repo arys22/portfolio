@@ -14,7 +14,7 @@
               <v-img
                 :class="{ 'on-hover': hover }"
                 :src="item.img_src"
-                :alt="`コーディング画像${item.id}`"
+                :alt="`サンプル画像${item.id}`"
                 max-width="267"
                 max-height="200"
                 position="center top"
@@ -49,22 +49,22 @@
                 <li>{{ item.range }}</li>
               </ul>
               <p class="mb-0 pt-1">
-                コード詳細:
-                <a
-                  :href="item.code_href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-decoration-none product__link"
-                >
-                  <v-icon color="#1976d2" class="text-body-1 product__code">{{
-                    item.icon
-                  }}</v-icon>
-                  {{ item.code_type }}
-                </a>
-                <br />
-                <template
-                  v-if="item.id !== 1 && item.id !== 2 && item.id !== 5"
-                >
+                <template v-if="item.id !== 6">
+                  コード詳細:
+                  <a
+                    :href="item.code_href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-decoration-none product__link"
+                  >
+                    <v-icon color="#1976d2" class="text-body-1 product__code">{{
+                      item.icon
+                    }}</v-icon>
+                    {{ item.code_type }}
+                  </a>
+                  <br />
+                </template>
+                <template v-if="item.id === 3 || item.id === 4">
                   webサイト:
                   <a
                     :href="item.web_href"
@@ -76,6 +76,20 @@
                       >mdi-file-outline</v-icon
                     >
                     sampleページ
+                  </a>
+                </template>
+                <template v-if="item.id === 6">
+                  webサイト:
+                  <a
+                    :href="item.web_href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-decoration-none product__link"
+                  >
+                    <v-icon color="#1976d2" class="text-body-1 product__sample"
+                      >mdi-file-outline</v-icon
+                    >
+                    Lisbleページ
                   </a>
                 </template>
               </p>
@@ -118,13 +132,15 @@ import ModalCoding2 from "@/components/list/modal/ModalCoding2.vue";
 import ModalCoding3 from "@/components/list/modal/ModalCoding3.vue";
 import ModalLP1 from "@/components/list/modal/ModalLP1.vue";
 import ModalPortfolio from "@/components/list/modal/ModalPortfolio.vue";
+import ModalLisble from "@/components/list/modal/ModalLisble.vue";
 export default {
   components: {
     ModalCoding1,
     ModalCoding2,
     ModalCoding3,
     ModalLP1,
-    ModalPortfolio
+    ModalPortfolio,
+    ModalLisble
   },
   data() {
     return {
@@ -135,7 +151,7 @@ export default {
           id: 1,
           title: "コーポレートサイト",
           desc: "XDデザインカンプからコーディング",
-          range: "レスポンシブ(スマホ、pc)",
+          range: "レスポンシブ",
           lang: "HTML/CSS(SCSS)/JavaScript",
           page: "2",
           page_type: "top, contact",
@@ -169,7 +185,7 @@ export default {
           id: 3,
           title: "コーポレートサイト",
           desc: "XDデザインカンプからコーディング",
-          range: "レスポンシブ(スマホ、pc)",
+          range: "レスポンシブ",
           lang: "HTML/CSS(SCSS)/Vue.js",
           page: "8",
           page_type:
@@ -185,7 +201,7 @@ export default {
           id: 4,
           title: "架空のLP(オリジナル)",
           desc: "設定からデザイン、コーディング、全て",
-          range: "レスポンシブ(スマホ、pc)",
+          range: "レスポンシブ",
           lang: "HTML/CSS(SCSS)/JavaScript",
           page: "1",
           page_type: "架空のグランピング施設",
@@ -200,8 +216,8 @@ export default {
           id: 5,
           title: "Portfolio",
           desc: "デザイン、コーディング",
-          range: "レスポンシブ(スマホ、pc)",
-          lang: "HTML/CSS(SCSS)/Vue.js/Nuxt.js",
+          range: "レスポンシブ",
+          lang: "CSS(SCSS)/Vuetify/Nuxt2",
           page: "5",
           page_type: "home, list, contact, 確認ページ, 完了ページ",
           img_src: require("@/assets/img/portfolio/Portfolio.png"),
@@ -210,6 +226,18 @@ export default {
           code_type: "GitHub",
           web_href: "",
           component: "ModalPortfolio"
+        },
+        {
+          id: 6,
+          title: "買い物リスト Lisble",
+          desc: "アプリ(Google Play)",
+          range: "レスポンシブ、i18n",
+          lang: "Figma/TailwindCSS/TypeScript/Nuxt3",
+          page: "4",
+          page_type: "list, history, about, 404エラーページ",
+          img_src: require("@/assets/img/lisble/lisble-pc.png"),
+          web_href: "https://lisble.net/",
+          component: "ModalLisble"
         }
       ]
     };

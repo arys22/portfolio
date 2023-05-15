@@ -94,26 +94,31 @@
         <v-card-title class="pt-sm-3">
           架空のグランピング施設のLP(オリジナル)
         </v-card-title>
-        <v-card-subtitle class="f-f"
-          >HTML/CSS(SCSS)/JavaScript 使用</v-card-subtitle
-        >
+        <v-card-subtitle class="f-f">HTML/CSS(SCSS)/JavaScript</v-card-subtitle>
         <v-card-text class="pb-0">
           <p class="mb-1 font-weight-bold">設定・デザイン</p>
           <ol>
             <li>
               5w1h
               <ul>
-                <li>何を(目的)・認知、平日の利用増に繋げる</li>
+                <li>
+                  何を<span class="modal__sm">(目的)</span
+                  >・認知、平日の利用増に繋げる
+                </li>
                 <li>いつ・隙間時間に観覧</li>
                 <li>どこで・スマホメイン</li>
-                <li>だれが・子を持つ女性(ペルソナ設定)</li>
+                <li>
+                  だれが・子を持つ女性<span class="modal__sm"
+                    >(ペルソナ設定)</span
+                  >
+                </li>
                 <li>なぜ・サービス内容確認と他との比較</li>
                 <li>どのように・ママ友の口コミ→検索</li>
               </ul>
             </li>
             <li>
-              ペルソナ設定(ターゲット)<br />
-              『35歳、女性、住所(立川市)、今は主婦、車免許なし、子2歳、家事、育児に追われ疲弊、etc...』
+              ペルソナ設定<br />
+              『35歳、女性、住所:立川市、今は主婦、車免許なし、子2歳、家事、育児に追われ疲弊、etc...』
             </li>
             <li>デザイン</li>
             <ul>
@@ -121,25 +126,27 @@
               <li>
                 見やすさとできるだけ直感的にわかるように文字を簡潔に写真を多様
               </li>
-              <li>ロゴ作成</li>
               <li>平日のお得感</li>
             </ul>
           </ol>
           <p class="my-1 font-weight-bold">コード</p>
           <ul>
-            <li>レスポンシブ(モバイルファースト)スマホ、pc対応</li>
+            <li>レスポンシブ<span class="modal__sm">(MF)</span></li>
             <li>CSS設計はBEM記法</li>
             <li>
-              主なアクション(js)
+              <span class="font-weight-bold">主なアクション</span>
               <ul>
                 <li>バーガーメニュー</li>
-                <li>メニューは、ファーストビュー過ぎると色変化</li>
-                <li>ファーストビューのスライダー表示(3画像)</li>
-                <li>svg操作(アニメーション)</li>
-                <li>topへ戻るボタン(スクロールをjs管理)</li>
-                <li>aタグの内部リンクスクロール(スクロールをjs管理)</li>
+                <li>fv過ぎると色変化</li>
+                <li>fvのスライダー表示</li>
+                <li>svg操作<span class="modal__sm">(アニメーション)</span></li>
+                <li>topへ戻るボタン</li>
                 <li>hover時アニメーション</li>
-                <li>スライダー自動＋ボタン(可変対応)</li>
+                <li>
+                  ★スライダー自動＋ボタン<span class="modal__sm"
+                    >(可変対応)</span
+                  >★
+                </li>
                 <li>アコーディオンメニュー</li>
                 <li>予約日初期表示をアクセスした日</li>
               </ul>
@@ -179,9 +186,9 @@
               sampleページ
             </a>
             <br />
-            (GitHub Pagesでの公開ページ)
+            GitHub Pagesでの公開ページ
             <br />
-            <span class="text-caption">※新たなタブで開きます</span>
+            <span class="modal__sm">※新たなタブで開きます</span>
           </p>
         </v-card-text>
       </v-col>
@@ -282,6 +289,9 @@ export default {
     box-shadow: 0px 4px 5px -2px rgb(0 0 0 / 20%),
       0px 7px 10px 1px rgb(0 0 0 / 14%), 0px 2px 16px 1px rgb(0 0 0 / 12%);
     margin: 0 auto;
+  }
+  &__sm {
+    font-size: 10px;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

@@ -17,7 +17,8 @@
             </p>
           </FadeSlide>
         </v-col>
-        <v-col cols="12" md="4" class="skill__box">
+        <!-- html・css -->
+        <v-col cols="12" md="6" xl="3" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title class="text-uppercase">
@@ -44,34 +45,35 @@
                 <v-card-text>
                   <ul>
                     <li>
-                      できるだけ「見やすく、編集しやすく、簡潔に」を常に心がけています。
+                      「見やすく、編集しやすく、簡潔に」。
                     </li>
                     <li>
-                      レスポンシブ対応(モバイルファーストorデスクトップファースト)
+                      レスポンシブ(モバイルファーストorデスクトップファースト)
                     </li>
                     <li>
-                      内部SEOを意識し、且つW3Cに準拠したコーディングを行っております。
+                      内部SEOを意識、且つW3Cに準拠したコーディング。
                     </li>
                     <li>
                       SCSSで BEM記法、又は
                       FLOCSSで記述しています。(自作のテンプレート使用)
                     </li>
                     <li>svgアニメーション</li>
-                    <li>Dart Sass、Bootstrap、Tailwind CSS</li>
-                    <li>Bootstrap使用時は、グリッドシステムを利用</li>
-                    <li>XD、Figmaからのコーディング可能です。</li>
+                    <li>Dart Sass・Bootstrap・★TailwindCSS</li>
+                    <li>TailwindCSSが好きです。</li>
+                    <li>XD、Figmaからのコーディング</li>
                   </ul>
                 </v-card-text>
               </Fade>
             </v-card>
           </FadeIn>
         </v-col>
-        <v-col cols="12" sm="6" md="4" class="skill__box">
+        <!-- JavaScript・TypeScript -->
+        <v-col cols="12" md="6" xl="3" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title>
                 <FadeSlide>
-                  <h3>JavaScript・Node.js</h3>
+                  <h3>JavaScript・TypeScript</h3>
                 </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
@@ -85,42 +87,31 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  JavaSript・Node.js・Vue.js・VueRouter・Vuex・Pinia・Vuetify・Vue
-                  Test Utils・Jest・Nuxt.js
+                  JavaSript・TypeScript・Node.js
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
               <Fade>
                 <v-card-text>
                   <ul>
-                    <li>
-                      JavaScript、フレームワークはVue.js
-                    </li>
+                    <li>Vanilla JavaScript</li>
+                    <li>TypeScript</li>
                     <li>gulp</li>
-                    <li>Atomic Design</li>
-                    <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
-                    <li>Vue2 (Options API)</li>
-                    <li>Vue3 (Composition API)</li>
-                    <!-- <li>
-                      Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等、実装可能です。
-                    </li> -->
-                    <li>
-                      vue-test-utils ＋ Jest でのテストコード
-                    </li>
-                    <li>TypeScript を使用してのオリジナルアプリ製作中</li>
-                    <li>今はVue.js・nuxt.jsが一番好きです。</li>
+                    <li>Web Storage(localStorage)</li>
+                    <li>PageSpeed Insightsのスコア改善(Web Worker等)</li>
                   </ul>
                 </v-card-text>
               </Fade>
             </v-card>
           </FadeIn>
         </v-col>
-        <v-col cols="12" sm="6" md="4" class="skill__box">
+        <!-- Vue・Nuxt -->
+        <v-col cols="12" md="6" xl="3" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
-              <v-card-title class="text-uppercase">
+              <v-card-title>
                 <FadeSlide>
-                  <h3>その他</h3>
+                  <h3>Vue・Nuxt</h3>
                 </FadeSlide>
               </v-card-title>
               <div class="skill__icon">
@@ -134,7 +125,52 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  Git・GitHub・Netlify・Docker 等
+                  Vue.js(2,3)・Nuxt.js(2,3)・VueRouter・Vuex・Pinia・Vuetify・Vue
+                  Test Utils・Jest
+                </FadeSlide>
+              </v-card-subtitle>
+              <v-divider class="skill__border" />
+              <Fade>
+                <v-card-text>
+                  <ul>
+                    <li>Vue2 Nuxt2(Options API)</li>
+                    <li>Vue3 Nuxt3(Composition API、composables)</li>
+                    <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
+                    <li>
+                      vue-test-utils + Jest テストコード
+                    </li>
+                    <li>Atomic Design</li>
+                    <li>
+                      Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等
+                    </li>
+                    <li>今はVue.js・nuxt.jsが一番好きです。</li>
+                  </ul>
+                </v-card-text>
+              </Fade>
+            </v-card>
+          </FadeIn>
+        </v-col>
+        <!-- その他 -->
+        <v-col cols="12" md="6" xl="3" class="skill__box">
+          <FadeIn>
+            <v-card class="py-4" tag="section">
+              <v-card-title class="text-uppercase">
+                <FadeSlide>
+                  <h3>その他</h3>
+                </FadeSlide>
+              </v-card-title>
+              <div class="skill__icon">
+                <template v-for="(skill, index) in fourthSkills">
+                  <FadeInDelay :delay="skill.delay" :key="index">
+                    <svg viewBox="0 0 256 300" class="svg">
+                      <use :xlink:href="'#' + skill.name" x="0" y="0"></use>
+                    </svg>
+                  </FadeInDelay>
+                </template>
+              </div>
+              <v-card-subtitle class="skill__subtitle f-f">
+                <FadeSlide>
+                  Git・GitHub・Docker・Figma・Netlify・Cloudflare・GooglePlay
                 </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
@@ -142,9 +178,11 @@
                 <v-card-text>
                   <ul>
                     <li>エディタ：Visual Studio Code</li>
-                    <li>デプロイ：Netlify、GitHub Pages</li>
+                    <li>デプロイ：Netlify、GitHub Pages、Cloudflare</li>
                     <li>デザイン：Figma、XD</li>
-                    <li>Git/GitHub 基本操作・プルリクエスト</li>
+                    <li>Figmaでプロトタイプ、ロゴ制作</li>
+                    <li>GooglePlayでアプリ配信</li>
+                    <li>Git/GitHub プルリクエスト</li>
                     <li>Ruby の Ruby on Rails チュートリアルを1周程度</li>
                     <li>Docker での環境構築</li>
                     <li>Markdown記法</li>
@@ -156,7 +194,7 @@
         </v-col>
       </v-row>
     </v-col>
-    <div class="skill__back text-uppercase" v-parallax="0.2">skill</div>
+    <div class="skill__back text-uppercase" v-parallax="0.16">skill</div>
   </v-row>
 </template>
 
@@ -174,18 +212,29 @@ export default {
       ],
       secondSkills: [
         { name: "js", delay: 0.25 },
-        { name: "node", delay: 0.5 },
-        { name: "vue", delay: 0.75 },
-        { name: "vuetify", delay: 1 },
-        { name: "jest", delay: 1.25 },
-        { name: "nuxt", delay: 1.5 }
+        { name: "typescript", delay: 0.5 },
+        { name: "node", delay: 0.75 }
       ],
       thirdSkills: [
-        { name: "git", delay: 0.25 },
-        { name: "github", delay: 0.5 },
-        { name: "netlify", delay: 0.75 },
+        { name: "vue", delay: 0.25 },
+        { name: "nuxt", delay: 0.5 },
+        { name: "nuxt3", delay: 0.75 },
+        { name: "vuetify", delay: 1 },
+        { name: "vite", delay: 1.25 },
+        { name: "pinia", delay: 1.5 },
+        { name: "jest", delay: 1.75 }
+      ],
+      fourthSkills: [
+        { name: "git", delay: 0.2 },
+        { name: "github", delay: 0.4 },
+        { name: "netlify", delay: 0.6 },
+        { name: "cloudflare", delay: 0.8 },
         { name: "docker", delay: 1 },
-        { name: "figma", delay: 1.25 }
+        { name: "figma", delay: 1.2 },
+        { name: "xd", delay: 1.4 },
+        { name: "markdown", delay: 1.6 },
+        { name: "vsc", delay: 1.8 },
+        { name: "googleplay", delay: 2 }
       ]
     };
   }

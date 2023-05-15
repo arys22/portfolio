@@ -72,7 +72,7 @@ export default {
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
-    will-change: animation;
+    will-change: animation, border-color;
     &:nth-of-type(2) {
       transform: translate(-50%, -50%) scale(0.7);
       animation: wave 1.6s ease-out 1;
