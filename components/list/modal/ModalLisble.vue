@@ -172,6 +172,8 @@
                 href="https://play.google.com/store/apps/details?id=net.lisble.twa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
                 ><img
                   width="155"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   alt="Google Play で手に入れよう"
                   src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
               /></a>
