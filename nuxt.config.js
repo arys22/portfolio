@@ -175,9 +175,9 @@ export default {
   },
   // サイトマップ
   sitemap: {
-    hostname: "https://arieight-portfolio.netlify.app", //ホスト名
+    hostname: "https://arieight-portfolio.netlify.app/", //ホスト名
     exclude: [], //除外するページパス
-    routes: ["/list", "/contact", "/confirm", "/complete"] //追加したいページの指定
+    routes: ["list/", "contact/", "confirm/", "complete/"] //追加したいページの指定
   },
   // PWA設定
   pwa: {
