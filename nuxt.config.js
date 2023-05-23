@@ -45,7 +45,7 @@ export default {
         hid: "og:description",
         property: "og:description",
         content:
-          "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。"
+          "portfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。"
       },
       { name: "twitter:card", content: "summary" }
     ],
