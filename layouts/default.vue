@@ -7,13 +7,15 @@
       <Svgs />
       <Nuxt />
     </v-main>
+    <Twitter :scrollY="scrollY" />
     <BackTop :scrollY="scrollY" />
     <BottomNavigation :scrollY="scrollY" />
     <v-footer absolute class="text-center" padless color="#f5f5f5">
       <v-col class="font-weight-medium text-center py-0 f-f" cols="12">
         <small
           >Google Play および Google Play ロゴは Google LLC の商標です。<br />Copyright
-          &copy;{{ new Date().getFullYear() }} saito All rights reserved.</small
+          &copy;{{ new Date().getFullYear() }} arieght All rights
+          reserved.</small
         ></v-col
       >
     </v-footer>
