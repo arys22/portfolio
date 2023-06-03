@@ -21,7 +21,7 @@ export default {
         content:
           "エンジニアのportfolio(ポートフォリオ)サイトです。webスキル、制作物をまとめて紹介しています。"
       },
-      { name: "author", content: "齋藤" },
+      { name: "author", content: "Arieght" },
       { name: "format-detection", content: "telephone=no" },
       // 自動翻訳させないための記述
       { "http-equiv": "Content-Language", content: "ja" },
@@ -71,6 +71,13 @@ export default {
         rel: "apple-touch-icon",
         sizes: "180x180",
         href: "@/assets/img/logo-180.png"
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css",
+        media: "print", // プリント用のスタイルシートは遅延読み込み
+        onload: "this.media='all'" // リソースが読み込まれた後にすべてのメディアタイプに適用する
       }
     ]
   },

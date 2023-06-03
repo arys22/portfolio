@@ -14,7 +14,7 @@
       <v-col class="font-weight-medium text-center py-0 f-f" cols="12">
         <small
           >Google Play および Google Play ロゴは Google LLC の商標です。<br />Copyright
-          &copy;{{ new Date().getFullYear() }} arieght All rights
+          &copy;{{ new Date().getFullYear() }} Arieght All rights
           reserved.</small
         ></v-col
       >
