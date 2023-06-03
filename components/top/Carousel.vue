@@ -12,11 +12,9 @@
             <!-- :lazy-src="item.src" -->
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular
-                  aria-label="progress-circular"
-                  indeterminate
-                  color="black"
-                />
+                <v-progress-circular indeterminate color="black"
+                  ><span class="d-sr-only">読み込み中</span>
+                </v-progress-circular>
               </v-row>
             </template>
           </v-img>
@@ -31,11 +29,9 @@
             <!-- :lazy-src="item.src_sp" -->
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
-                <v-progress-circular
-                  indeterminate
-                  aria-label="progress-circular"
-                  color="black"
-                />
+                <v-progress-circular indeterminate color="black"
+                  ><span class="d-sr-only">読み込み中</span>
+                </v-progress-circular>
               </v-row>
             </template>
           </v-img>

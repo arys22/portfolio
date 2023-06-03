@@ -77,6 +77,7 @@
                       ><img
                         class="ml-3"
                         width="155"
+                        height="60"
                         alt="Google Play で手に入れよう"
                         src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
                     /></a>
