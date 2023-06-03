@@ -15,8 +15,8 @@
                 <v-progress-circular
                   indeterminate
                   color="black"
-                  aria-labelledby="progress-circular-label"
-                  ><span id="progress-circular-label" class="d-sr-only"
+                  aria-labelledby="progress-circular-label-01"
+                  ><span id="progress-circular-label-01" class="d-sr-only"
                     >読み込み中</span
                   >
                 </v-progress-circular>
@@ -37,8 +37,8 @@
                 <v-progress-circular
                   indeterminate
                   color="black"
-                  aria-labelledby="progress-circular-label"
-                  ><span id="progress-circular-label" class="d-sr-only"
+                  aria-labelledby="progress-circular-label-02"
+                  ><span id="progress-circular-label-02" class="d-sr-only"
                     >読み込み中</span
                   >
                 </v-progress-circular>

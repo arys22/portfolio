@@ -75,6 +75,11 @@ export default {
       {
         rel: "stylesheet",
         href:
+          "https://fonts.googleapis.com/css?family=Material+Icons&display=swap"
+      },
+      {
+        rel: "stylesheet",
+        href:
           "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css",
         media: "print", // プリント用のスタイルシートは遅延読み込み
         onload: "this.media='all'" // リソースが読み込まれた後にすべてのメディアタイプに適用する
