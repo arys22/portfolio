@@ -6,11 +6,10 @@
     color="black"
     active-class="font-weight-bold black-text body-2"
     class="text--second btn-nav"
-    v-model="value"
-    :background-color="backgroundColor"
     :class="{ 'btn-nav__scroll': hide }"
     tag="nav"
   >
+    <!-- :background-color="backgroundColor"  v-model="value" -->
     <v-btn
       v-for="(item, index) in $ITEMS.menuItems"
       :key="index"
@@ -36,24 +35,25 @@ export default {
   },
   data() {
     return {
-      value: 0,
+      // value: 0,
       hide: true
     };
   },
-  computed: {
-    backgroundColor() {
-      switch (this.value) {
-        case 0:
-          return "#fff";
-        case 1:
-          return "#eee";
-        case 2:
-          return "#ccc";
-        default:
-          return "#fff";
-      }
-    }
-  },
+  // ページでボトムナビの色変化
+  // computed: {
+  //   backgroundColor() {
+  //     switch (this.value) {
+  //       case 0:
+  //         return "#fff";
+  //       case 1:
+  //         return "#fefefe";
+  //       case 2:
+  //         return "#fcfcc";
+  //       default:
+  //         return "#fff";
+  //     }
+  //   }
+  // },
   watch: {
     // 上にスクロールした時に表示
     scrollY: {

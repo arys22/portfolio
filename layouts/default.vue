@@ -72,7 +72,4 @@ export default {
 .app {
   overflow: hidden;
 }
-.v-footer {
-  z-index: 4;
-}
 </style>

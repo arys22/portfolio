@@ -14,6 +14,7 @@
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular
                   indeterminate
+                  aria-label="progress-circular"
                   color="black"
                 ></v-progress-circular>
               </v-row>
@@ -32,6 +33,7 @@
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular
                   indeterminate
+                  aria-label="progress-circular"
                   color="black"
                 ></v-progress-circular>
               </v-row>

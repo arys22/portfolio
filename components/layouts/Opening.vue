@@ -100,7 +100,7 @@ export default {
   100% {
     height: var(--header-height);
     opacity: 0;
-    z-index: -1;
+    // z-index: -1;
     display: none;
   }
 }
