@@ -75,6 +75,7 @@
                       target="_blank"
                       rel="noopener noreferrer"
                       ><img
+                        loading="lazy"
                         class="ml-3"
                         width="155"
                         height="60"
@@ -123,7 +124,7 @@
                   <ul>
                     <li>レスポンシブ(MF)</li>
                     <li>CSS設計はBEM記法</li>
-                    <li>ライブラリ(vue-typer, vue-parallax-js)</li>
+                    <li>ライブラリ(vue-typer, vue-parallax-js, @mdi/js)</li>
                     <li>デザインは引き算</li>
                     <li>OPアニメーション</li>
                     <li>
@@ -150,6 +151,8 @@
                     <li>Netlifyでの公開</li>
                     <li>PWA化（Progressive Web Apps）</li>
                     <li>Jest ＋ vue-test-utils でのテストコード記述</li>
+                    <li>一部画像webp</li>
+                    <li></li>
                   </ul>
                 </Fade>
                 <FadeSlide>

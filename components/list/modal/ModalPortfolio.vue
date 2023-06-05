@@ -105,7 +105,7 @@
             <li>デザインは引き算</li>
             <li>CSS設計はBEM記法</li>
             <li>レスポンシブ<span class="modal__sm">(MF)</span></li>
-            <li>ライブラリ: vue-typer, vue-parallax-js</li>
+            <li>ライブラリ: vue-typer, vue-parallax-js, @mdi/js</li>
             <li>
               <span class="font-weight-bold">主なアクション</span>
               <ul>
@@ -138,6 +138,7 @@
             <li class="font-weight-bold">
               Jest + vue-test-utils でのテストコード記述
             </li>
+            <li>一部画像webp</li>
           </ul>
           <v-divider class="my-3" />
           <p class="mb-0">

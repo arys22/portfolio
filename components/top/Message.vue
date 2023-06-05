@@ -77,7 +77,8 @@ export default {
       z-index: 2;
       top: -15%;
       left: 15%;
-      background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
+      background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.webp"),
+        url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.jpg");
       background-size: cover;
       background-position: center center;
     }
@@ -85,7 +86,8 @@ export default {
       z-index: 2;
       top: 15%;
       left: -25%;
-      background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash.jpg");
+      background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash.webp"),
+        url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash.jpg");
       background-size: cover;
       background-position: center center;
     }
@@ -154,10 +156,12 @@ export default {
   (min-resolution: 2dppx) {
   .message__bg {
     &--code {
-      background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash (2).jpg");
+      background-image: url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash (2).webp"),
+        url("~@/assets/img/ilya-pavlov-OqtafYT5kTw-unsplash (2).jpg");
     }
     &--pc {
-      background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash (2).jpg");
+      background-image: url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash (2).webp"),
+        url("~@/assets/img/christopher-gower-m_HRfLhgABo-unsplash (2).jpg");
     }
   }
 }

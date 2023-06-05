@@ -235,7 +235,8 @@ export default {
 
 <style lang="scss" scoped>
 .skill {
-  background-image: url("~@/assets/img/stone-back.jpg");
+  background-image: url("~@/assets/img/stone-back.webp"),
+    url("~@/assets/img/stone-back.jpg");
   background-repeat: repeat;
   padding: 80px 0 150px;
   position: relative;
