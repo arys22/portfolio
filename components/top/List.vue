@@ -151,8 +151,6 @@
                     <li>Netlifyでの公開</li>
                     <li>PWA化（Progressive Web Apps）</li>
                     <li>Jest ＋ vue-test-utils でのテストコード記述</li>
-                    <li>一部画像webp</li>
-                    <li></li>
                   </ul>
                 </Fade>
                 <FadeSlide>
