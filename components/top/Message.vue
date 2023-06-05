@@ -2,11 +2,13 @@
   <v-row align="center" tag="section" class="message">
     <Fade>
       <h2 class="text-capitalize text-center my-4 message__title">
-        <v-icon class="mr-1" color="black">mdi-file-document-outline</v-icon
+        <v-icon class="mr-1" large color="black">{{
+          mdiFileDocumentOutline
+        }}</v-icon
         >ご挨拶<br /><span class="message__subtitle f-f">message</span>
       </h2>
     </Fade>
-    <v-col cols="12" md="5" class="message__wrap ">
+    <v-col cols="12" md="5" class="message__wrap">
       <FadeSlide>
         <p>
           はじめまして。齋藤と申します。<br />
@@ -28,6 +30,17 @@
     </svg>
   </v-row>
 </template>
+
+<script>
+import { mdiFileDocumentOutline } from "@mdi/js";
+export default {
+  data() {
+    return {
+      mdiFileDocumentOutline,
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .message {

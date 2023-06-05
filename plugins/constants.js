@@ -1,22 +1,23 @@
+import { mdiHome, mdiViewList, mdiEmailOutline } from "@mdi/js";
 const ITEMS = {
   // メニュー
   menuItems: [
     {
       name: "home",
       path: "/",
-      icon: "mdi-home"
+      icon: mdiHome,
     },
     {
       name: "list",
       path: "/list",
-      icon: "mdi-view-list"
+      icon: mdiViewList,
     },
     {
       name: "contact",
       path: "/contact",
-      icon: "mdi-email-outline"
-    }
-  ]
+      icon: mdiEmailOutline,
+    },
+  ],
 };
 export default (context, inject) => {
   inject("ITEMS", ITEMS);

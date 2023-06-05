@@ -3,7 +3,7 @@
     <!-- 制作一覧 -->
     <Fade>
       <h2 class="text-center text-capitalize my-4 list__title">
-        <v-icon class="mr-1" color="black">mdi-view-list</v-icon
+        <v-icon class="mr-1" color="black" large>{{ mdiViewList }}</v-icon
         >制作物<br /><span class="list__subtitle f-f">list</span>
       </h2>
     </Fade>
@@ -60,9 +60,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-decoration-none list__link ml-3"
-                    ><v-icon color="#1976d2" class="list__icon"
-                      >mdi-file-outline</v-icon
-                    >
+                    ><v-icon small color="#1976d2" class="list__icon">{{
+                      mdiFileOutline
+                    }}</v-icon>
                     Lisble
                   </a>
                   <br />
@@ -160,8 +160,9 @@
                       target="_blank"
                       rel="noopener noreferrer"
                       class="text-decoration-none list__link ml-3"
-                      ><v-icon color="#1976d2" class="list__icon"
-                        >mdi-github</v-icon
+                    >
+                      <svg viewBox="0 0 256 300" class="list__svg">
+                        <use xlink:href="#githubAtag" x="0" y="0"></use></svg
                       >GitHub</a
                     >
                   </p>
@@ -177,12 +178,19 @@
 </template>
 
 <script>
+import { mdiViewList, mdiFileOutline } from "@mdi/js";
 export default {
+  data() {
+    return {
+      mdiViewList,
+      mdiFileOutline,
+    };
+  },
   methods: {
     transitionPage() {
       this.$router.push({ path: "/list" });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -218,8 +226,12 @@ export default {
     margin: 0 auto;
   }
   &__icon {
-    font-size: 1.25rem !important;
-    vertical-align: top !important;
+    vertical-align: text-bottom;
+  }
+  &__svg {
+    width: 16px;
+    vertical-align: top;
+    margin-right: 5px;
   }
   &__link {
     transition: opacity 0.2s ease-in-out;

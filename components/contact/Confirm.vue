@@ -1,7 +1,9 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="confirm">
-    <h2 class="text-center  my-4 confirm__title">
-      <v-icon class="mr-1" color="black">mdi-email-check-outline</v-icon
+    <h2 class="text-center my-4 confirm__title">
+      <v-icon class="mr-1 v-t" large color="black">{{
+        mdiEmailCheckOutline
+      }}</v-icon
       >お問い合わせ内容確認
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
@@ -15,7 +17,7 @@
           </p>
           <p class="mb-0">
             <span class="font-weight-bold confirm__caution">
-              <v-icon color="#ff1493">mdi-alert-circle</v-icon
+              <v-icon color="#ff1493">{{ mdiAlertCircle }}</v-icon
               ><FadeSlide
                 >下記のメールアドレスに返信しますので、今一度ご確認ください。</FadeSlide
               >
@@ -38,7 +40,7 @@
               v-model="form.name"
               label="お名前"
               required
-              prepend-inner-icon="mdi-account"
+              :prepend-inner-icon="mdiAccount"
               class="my-5 f-f"
               readonly
               name="entry.1210533588"
@@ -49,7 +51,7 @@
               v-model="form.email"
               label="メールアドレス"
               required
-              prepend-inner-icon="mdi-email"
+              :prepend-inner-icon="mdiEmail"
               name="entry.369018561"
               class="my-5 f-f"
               readonly
@@ -68,13 +70,13 @@
               rows="7"
               required
               auto-grow
-              prepend-inner-icon="mdi-comment"
+              :prepend-inner-icon="mdiComment"
               readonly
               name="entry.1655379305"
             ></v-textarea>
           </v-card-text>
           <v-card-actions class="confirm__actions">
-            <v-btn @click="$router.go(-1)" plain class="confirm__btn--back "
+            <v-btn @click="$router.go(-1)" plain class="confirm__btn--back"
               >戻る</v-btn
             >
             <v-btn
@@ -92,29 +94,41 @@
         </v-form>
       </v-card>
       <!-- iframeタグを追加 target="dummy"-->
-      <iframe name="dummy" style="display:none;"></iframe>
+      <iframe name="dummy" style="display: none"></iframe>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import {
+  mdiEmailCheckOutline,
+  mdiAlertCircle,
+  mdiAccount,
+  mdiEmail,
+  mdiComment,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiEmailCheckOutline,
+      mdiAlertCircle,
+      mdiAccount,
+      mdiEmail,
+      mdiComment,
       // 各テキストボックスの値
       form: {
         name: "",
         email: "",
-        content: ""
+        content: "",
       },
       // path直接書きで確認画面にこれるので空メール阻止のためのバリテーション
-      required: v => !!v || "必ず入力してください",
-      limit_length: v =>
+      required: (v) => !!v || "必ず入力してください",
+      limit_length: (v) =>
         (v && v.length <= 15) || "15文字以内で入力してください",
-      emailRules: v =>
+      emailRules: (v) =>
         /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
           v
-        ) || "有効なアドレスを入力してください"
+        ) || "有効なアドレスを入力してください",
     };
   },
   created() {
@@ -139,8 +153,8 @@ export default {
       } else {
         this.$router.go(-1);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -218,5 +232,8 @@ export default {
 }
 .v-card__actions > .v-btn.confirm__btn--submit {
   padding-right: 23.1111111111px;
+}
+.v-t {
+  vertical-align: top;
 }
 </style>

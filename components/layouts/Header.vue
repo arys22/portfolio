@@ -38,7 +38,7 @@
         @mouseenter="delayActive"
         @mouseleave="isActive = false"
       >
-        <v-icon>{{ drawer ? "mdi-window-close" : "mdi-menu" }}</v-icon>
+        <v-icon large>{{ drawer ? mdiWindowClose : mdiMenu }}</v-icon>
       </v-app-bar-nav-icon>
     </v-app-bar>
     <!-- メニュー -->
@@ -55,9 +55,7 @@
       <HeaderNaviSp />
       <template v-slot:append>
         <div class="px-4 pb-4">
-          <v-btn block @click.stop="drawer = !drawer">
-            閉じる
-          </v-btn>
+          <v-btn block @click.stop="drawer = !drawer"> 閉じる </v-btn>
         </div>
       </template>
     </v-navigation-drawer>
@@ -65,24 +63,27 @@
 </template>
 
 <script>
+import { mdiWindowClose, mdiMenu, K } from "@mdi/js";
 export default {
   props: {
     scrollY: {
       type: Number,
-      default: 0
+      default: 0,
     },
     title: {
       //ヘッダータイトル
       type: String,
-      default: "portfolio"
-    }
+      default: "portfolio",
+    },
   },
   data() {
     return {
+      mdiWindowClose,
+      mdiMenu,
       fvHeight: null,
       drawer: false,
       isActive: false, //ボタンの遅延設定
-      show: false //h1タグ
+      show: false, //h1タグ
     };
   },
   created() {
@@ -128,8 +129,8 @@ export default {
       setTimeout(() => {
         this.isActive = true;
       }, 1200);
-    }
-  }
+    },
+  },
 };
 </script>
 

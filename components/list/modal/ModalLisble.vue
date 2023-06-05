@@ -10,8 +10,8 @@
         active-class="modal__active"
         height="82"
         show-arrows
-        next-icon="mdi-arrow-right-drop-circle-outline"
-        prev-icon="mdi-arrow-left-drop-circle-outline"
+        :next-icon="mdiArrowRightDropCircleOutline"
+        :prev-icon="mdiArrowLeftDropCircleOutline"
         center-active
       >
         <v-tab :href="'#' + `tab-${tab.id}`" v-for="tab in tabs" :key="tab.id">
@@ -60,9 +60,7 @@
 
       <v-col cols="12" sm="6" md="4" class="pt-sm-6">
         <v-divider class="hidden-sm-and-up" />
-        <v-card-title class="pt-sm-3">
-          Lisble
-        </v-card-title>
+        <v-card-title class="pt-sm-3"> Lisble </v-card-title>
         <v-card-subtitle class="f-f"
           >Figma/TailwindCSS/TypeScript/Nuxt3</v-card-subtitle
         >
@@ -79,9 +77,7 @@
             <li>
               <span class="font-weight-bold">主な機能・設定</span>
               <ul>
-                <li>
-                  主にtodoアプリがベース
-                </li>
+                <li>主にtodoアプリがベース</li>
                 <li class="font-weight-bold">
                   ★drag＆dropによる並び替え(細かい設定ができなかったので0から作成”ライブラリ不使用”)<span
                     class="modal__sm"
@@ -98,18 +94,14 @@
                     >(重複買いと在庫を思い出すきっかけの為)</span
                   >
                 </li>
-                <li>
-                  時刻と共に記録
-                </li>
+                <li>時刻と共に記録</li>
                 <li>
                   Amazon商品検索<br />
                   ★Amazonアソシエイト<span class="modal__sm"
                     >(OneLinkで複数の国に対応)</span
                   >
                 </li>
-                <li>
-                  テーマカラー変更 5種
-                </li>
+                <li>テーマカラー変更 5種</li>
                 <li>
                   ★多言語化対応<span class="modal__sm"
                     >(i18n) 28 か国に配信</span
@@ -152,15 +144,15 @@
           </ul>
           <v-divider class="my-3" />
           <p class="">
-            <span class="font-weight-bold ">PC, iOS</span>:
+            <span class="font-weight-bold">PC, iOS</span>:
             <a
               href="https://lisble.net/"
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1 modal__sample"
-                >mdi-file-outline</v-icon
-              >
+              ><v-icon small color="#1976d2" class="modal__icon">{{
+                mdiFileOutline
+              }}</v-icon>
               Lisbleページ
             </a>
             <br />
@@ -194,7 +186,7 @@
           absolute
           x-small
         >
-          <v-icon>mdi-close</v-icon>
+          <v-icon>{{ mdiClose }}</v-icon>
         </v-btn>
       </v-card-actions>
     </v-row>
@@ -202,9 +194,19 @@
 </template>
 
 <script>
+import {
+  mdiArrowRightDropCircleOutline,
+  mdiArrowLeftDropCircleOutline,
+  mdiFileOutline,
+  mdiClose,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiArrowRightDropCircleOutline,
+      mdiArrowLeftDropCircleOutline,
+      mdiFileOutline,
+      mdiClose,
       link: "tab-1",
       tabs: [
         {
@@ -213,7 +215,7 @@ export default {
           alt: "lisbleのリストページ",
           width: "50",
           type: "sp",
-          name: "list"
+          name: "list",
         },
         {
           id: 2,
@@ -221,7 +223,7 @@ export default {
           alt: "lisbleのhistoryページ",
           width: "90",
           type: "pc",
-          name: "history"
+          name: "history",
         },
         {
           id: 3,
@@ -229,7 +231,7 @@ export default {
           alt: "lisbleのaboutページ",
           width: "90",
           type: "pc",
-          name: "about"
+          name: "about",
         },
         {
           id: 4,
@@ -237,7 +239,7 @@ export default {
           alt: "lisbleテーマ",
           width: "50",
           type: "機能",
-          name: "テーマ"
+          name: "テーマ",
         },
         {
           id: 5,
@@ -245,7 +247,7 @@ export default {
           alt: "lisble英語",
           width: "50",
           type: "機能",
-          name: "英語"
+          name: "英語",
         },
         {
           id: 6,
@@ -253,7 +255,7 @@ export default {
           alt: "lisble並び替え",
           width: "50",
           type: "機能",
-          name: "並び替え"
+          name: "並び替え",
         },
         {
           id: 7,
@@ -261,7 +263,7 @@ export default {
           alt: "lisbleスワイプ",
           width: "50",
           type: "機能",
-          name: "スワイプ"
+          name: "スワイプ",
         },
         {
           id: 8,
@@ -269,7 +271,7 @@ export default {
           alt: "Amazon検索",
           width: "50",
           type: "機能",
-          name: "Amazon検索"
+          name: "Amazon検索",
         },
         {
           id: 9,
@@ -277,7 +279,7 @@ export default {
           alt: "表示反転",
           width: "50",
           type: "機能",
-          name: "表示反転"
+          name: "表示反転",
         },
         {
           id: 10,
@@ -285,7 +287,7 @@ export default {
           alt: "メニュー",
           width: "50",
           type: "機能",
-          name: "menu"
+          name: "menu",
         },
         {
           id: 11,
@@ -293,11 +295,11 @@ export default {
           alt: "購入履歴機能",
           width: "90",
           type: "機能",
-          name: "購入履歴"
-        }
-      ]
+          name: "購入履歴",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -371,8 +373,9 @@ export default {
       position: absolute;
     }
   }
-  &__code {
-    vertical-align: baseline;
+  &__icon {
+    width: 18px;
+    vertical-align: text-bottom;
   }
   &__actions {
     width: 100%;

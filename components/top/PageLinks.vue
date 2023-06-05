@@ -27,8 +27,8 @@
               elevation="2"
               v-show="navIn"
               @click="change = !change"
-              ><v-icon class="links__icon">{{
-                change ? "mdi-menu-up" : "mdi-menu-down"
+              ><v-icon large class="links__icon">{{
+                change ? mdiMenuUp : mdiMenuDown
               }}</v-icon></v-btn
             >
           </transition>
@@ -37,7 +37,7 @@
       </v-tooltip>
     </template>
     <!-- メニューになるコンテンツ -->
-    <v-sheet class="links__menu " tag="nav">
+    <v-sheet class="links__menu" tag="nav">
       <v-tooltip
         v-for="(link, index) in links"
         :key="index"
@@ -55,7 +55,7 @@
             @click="
               $vuetify.goTo(`#${link.name}`, {
                 duration: 1500,
-                easing: 'easeOutCubic'
+                easing: 'easeOutCubic',
               })
             "
             class="my-1 v-btn"
@@ -70,24 +70,34 @@
 </template>
 
 <script>
+import {
+  mdiMenuUp,
+  mdiMenuDown,
+  mdiFileDocumentOutline,
+  mdiTools,
+  mdiViewList,
+  mdiEmailOutline,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiMenuUp,
+      mdiMenuDown,
       links: [
-        { name: "message", icon: "mdi-file-document-outline" },
-        { name: "skill", icon: "mdi-tools" },
-        { name: "list", icon: "mdi-view-list" },
-        { name: "contact", icon: "mdi-email-outline" }
+        { name: "message", icon: mdiFileDocumentOutline },
+        { name: "skill", icon: mdiTools },
+        { name: "list", icon: mdiViewList },
+        { name: "contact", icon: mdiEmailOutline },
       ],
       navIn: false, //アイコン時間差
-      change: false //アイコンクリック
+      change: false, //アイコンクリック
     };
   },
   mounted() {
     setTimeout(() => {
       this.navIn = true;
     }, 1500);
-  }
+  },
 };
 </script>
 

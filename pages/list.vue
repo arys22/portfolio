@@ -38,7 +38,6 @@ export default {
         //パンくず
         {
           text: "top",
-          icon: "mdi-home",
           disabled: false,
           path: "/"
         },

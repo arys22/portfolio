@@ -5,7 +5,7 @@ import BottomNavi from "@/components/layouts/BottomNavigation.vue";
 import List from "@/components/top/List.vue";
 import Form from "@/components/contact/ContactForm.vue";
 import Confirm from "@/components/contact/Confirm.vue";
-
+import { mdiHome, mdiViewList, mdiEmailOutline } from "@mdi/js";
 import Vuetify from "vuetify";
 
 const $ITEMS = {
@@ -13,32 +13,32 @@ const $ITEMS = {
     {
       name: "home",
       path: "/",
-      icon: "mdi-home"
+      icon: mdiHome,
     },
     {
       name: "list",
       path: "/list",
-      icon: "mdi-view-list"
+      icon: mdiViewList,
     },
     {
       name: "contact",
       path: "/contact",
-      icon: "mdi-email-outline"
-    }
-  ]
+      icon: mdiEmailOutline,
+    },
+  ],
 };
 describe("pcとspのページ遷移テスト", () => {
   // vuetifyタグをスタブ化する場合のテスト
   test("pcのページ遷移ボタンのテスト", () => {
     const wrapper = shallowMount(HeaderPc, {
       mocks: {
-        $ITEMS
+        $ITEMS,
       },
       stubs: {
         // NuxtLink: RouterLinkStub
         "v-toolbar-items": true,
-        "v-btn": true
-      }
+        "v-btn": true,
+      },
     });
     const btn = wrapper.findAllComponents("v-btn-stub");
     // ボタン表示確認
@@ -62,8 +62,8 @@ describe("pcとspのページ遷移テスト", () => {
       localVue,
       vuetify,
       mocks: {
-        $ITEMS
-      }
+        $ITEMS,
+      },
     });
     // console.log(wrapper.html());
     // タイトル
@@ -75,14 +75,14 @@ describe("pcとspのページ遷移テスト", () => {
     // 表示確認
     expect(title.at(0).text()).toBe("home");
     // アイコン
-    expect(icon.at(0).text()).toBe("mdi-home");
+    expect(icon.at(0).text()).toBe(mdiHome);
     // to属性pathのテスト
     expect(item.at(0).attributes().to).toBe("/");
     expect(title.at(1).text()).toBe("list");
-    expect(icon.at(1).text()).toBe("mdi-view-list");
+    expect(icon.at(1).text()).toBe(mdiViewList);
     expect(item.at(1).attributes().to).toBe("/list");
     expect(title.at(2).text()).toBe("contact");
-    expect(icon.at(2).text()).toBe("mdi-email-outline");
+    expect(icon.at(2).text()).toBe(mdiEmailOutline);
     expect(item.at(2).attributes().to).toBe("/contact");
   });
 
@@ -91,8 +91,8 @@ describe("pcとspのページ遷移テスト", () => {
       localVue,
       vuetify,
       mocks: {
-        $ITEMS
-      }
+        $ITEMS,
+      },
     });
     // console.log(wrapper.html());
     // item nameとpathテスト
@@ -102,14 +102,14 @@ describe("pcとspのページ遷移テスト", () => {
     // 表示確認
     expect(item.at(0).text()).toContain("home");
     // アイコン
-    expect(icon.at(0).text()).toBe("mdi-home");
+    expect(icon.at(0).text()).toBe(mdiHome);
     // to属性pathのテスト
     expect(item.at(0).attributes().to).toBe("/");
     expect(item.at(1).text()).toContain("list");
-    expect(icon.at(1).text()).toBe("mdi-view-list");
+    expect(icon.at(1).text()).toBe(mdiViewList);
     expect(item.at(1).attributes().to).toBe("/list");
     expect(item.at(2).text()).toContain("contact");
-    expect(icon.at(2).text()).toBe("mdi-email-outline");
+    expect(icon.at(2).text()).toBe(mdiEmailOutline);
     expect(item.at(2).attributes().to).toBe("/contact");
   });
 
@@ -125,13 +125,13 @@ describe("pcとspのページ遷移テスト", () => {
         Carousel: true,
         FadeIn: true,
         Btn: true,
-        FadeSlide: true
+        FadeSlide: true,
       },
       mocks: {
         $router: {
-          push: mockRouterPush
-        }
-      }
+          push: mockRouterPush,
+        },
+      },
     });
     // console.log(wrapper.html());
     expect(mockRouterPush.mock.calls.length).toBe(0);
@@ -140,7 +140,7 @@ describe("pcとspのページ遷移テスト", () => {
     expect(mockRouterPush.mock.calls.length).toBe(1);
     // $route.pushの引数が正しいかどうか
     expect(mockRouterPush).toHaveBeenCalledWith({
-      path: "/list"
+      path: "/list",
     });
   });
 });
@@ -166,7 +166,7 @@ describe("お問い合わせフォームのテスト", () => {
     localVue,
     vuetify,
     stubs: {
-      Btn: true
+      Btn: true,
     },
     // // 注意vue3で廃止→jest.spyOn()
     // methods: {
@@ -175,9 +175,9 @@ describe("お問い合わせフォームのテスト", () => {
     // },
     mocks: {
       $router: {
-        push: mockRouterPush
-      }
-    }
+        push: mockRouterPush,
+      },
+    },
   });
   test("ページ遷移テスト", () => {
     // 呼ばれたかを確認
@@ -203,8 +203,8 @@ describe("お問い合わせフォームのテスト", () => {
       query: {
         name: "山田太郎",
         email: "sample@sample.com",
-        content: "テスト"
-      }
+        content: "テスト",
+      },
     });
   });
 
@@ -263,22 +263,22 @@ describe("確認フォームのテスト", () => {
       // localVue,
       // vuetify,
       stubs: {
-        FadeSlide: true
+        FadeSlide: true,
       },
 
       mocks: {
         $router: {
           push: mockRouterPush,
-          go: mockRouterGo
+          go: mockRouterGo,
         },
         $route: {
           query: {
             name: "範馬刃牙",
             email: "sample@sample.com",
-            content: "テスト"
-          }
-        }
-      }
+            content: "テスト",
+          },
+        },
+      },
     });
     // console.log(wrapper.html());
 
@@ -336,7 +336,7 @@ describe("確認フォームのテスト", () => {
     expect(mockRouterPush.mock.calls.length).toBe(1);
     // $route.pushの引数が正しいかどうか
     expect(mockRouterPush).toHaveBeenCalledWith({
-      path: "/complete"
+      path: "/complete",
     });
     // 失敗時
     validate.mockReturnValue(false);

@@ -10,8 +10,8 @@
         active-class="modal__active"
         height="82"
         show-arrows
-        next-icon="mdi-arrow-right-drop-circle-outline"
-        prev-icon="mdi-arrow-left-drop-circle-outline"
+        :next-icon="mdiArrowRightDropCircleOutline"
+        :prev-icon="mdiArrowLeftDropCircleOutline"
         center-active
       >
         <v-tab :href="'#' + `tab-${tab.id}`" v-for="tab in tabs" :key="tab.id">
@@ -96,9 +96,7 @@
 
       <v-col cols="12" sm="6" md="4" class="pt-sm-6">
         <v-divider class="hidden-sm-and-up" />
-        <v-card-title class="pt-sm-3">
-          Portfolio
-        </v-card-title>
+        <v-card-title class="pt-sm-3"> Portfolio </v-card-title>
         <v-card-subtitle class="f-f"
           >HTML/CSS(SCSS)/Vuetify/Nuxt2/Jest</v-card-subtitle
         >
@@ -122,9 +120,7 @@
                     >(マウスストーカー、テキストの影変化、クリック時波紋、★クリック時に文字がランダムに弾ける、etc...)</span
                   >
                 </li>
-                <li>
-                  fadeアクション5種
-                </li>
+                <li>fadeアクション5種</li>
                 <li>listページのモーダル</li>
                 <li>パンくずリスト</li>
                 <li class="font-weight-bold">
@@ -151,9 +147,10 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1 modal__code"
-                >mdi-github</v-icon
-              >
+            >
+              <svg viewBox="0 0 256 300" class="modal__icon">
+                <use xlink:href="#githubAtag" x="0" y="0"></use>
+              </svg>
               GitHub
             </a>
             <br />
@@ -173,7 +170,7 @@
           absolute
           x-small
         >
-          <v-icon>mdi-close</v-icon>
+          <v-icon>{{ mdiClose }}</v-icon>
         </v-btn>
       </v-card-actions>
     </v-row>
@@ -181,9 +178,17 @@
 </template>
 
 <script>
+import {
+  mdiArrowRightDropCircleOutline,
+  mdiArrowLeftDropCircleOutline,
+  mdiClose,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiArrowRightDropCircleOutline,
+      mdiArrowLeftDropCircleOutline,
+      mdiClose,
       link: "tab-1",
       tabs: [
         {
@@ -193,7 +198,7 @@ export default {
           src: require("@/assets/img/portfolio/Portfolio.png"),
           width: "90",
           type: "pc",
-          name: "home"
+          name: "home",
         },
         {
           id: 2,
@@ -203,11 +208,11 @@ export default {
           alt_2: "portfolioのスマホ画面下部",
           width: "50",
           type: "sp",
-          name: "home"
-        }
-      ]
+          name: "home",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -281,8 +286,9 @@ export default {
       position: absolute;
     }
   }
-  &__code {
-    vertical-align: baseline;
+  &__icon {
+    width: 16px;
+    vertical-align: top;
   }
   &__actions {
     width: 100%;

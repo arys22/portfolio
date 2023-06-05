@@ -30,13 +30,13 @@ export default {
   props: {
     scrollY: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
       // value: 0,
-      hide: true
+      hide: true,
     };
   },
   // ページでボトムナビの色変化
@@ -70,9 +70,9 @@ export default {
       },
       // props時
       deep: true,
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 };
 </script>
 
@@ -87,12 +87,12 @@ export default {
 
 // アイコン
 .v-btn .v-icon {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 .v-bottom-navigation .v-btn__active .v-icon {
-  transform: none;
-  font-size: 1.8rem;
-  margin-bottom: 3px;
+  // transform: none;
+  transform: scale(1.2);
+  margin-bottom: 1px;
 }
 </style>

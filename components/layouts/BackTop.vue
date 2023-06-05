@@ -19,7 +19,7 @@
           height="44"
           width="44"
         >
-          <v-icon>mdi-chevron-up</v-icon>
+          <v-icon large>{{ mdiChevronUp }}</v-icon>
         </v-btn>
       </transition>
     </template>
@@ -28,13 +28,19 @@
 </template>
 
 <script>
+import { mdiChevronUp } from "@mdi/js";
 export default {
+  data() {
+    return {
+      mdiChevronUp,
+    };
+  },
   props: {
     scrollY: {
       type: Number,
-      default: 0
-    }
-  }
+      default: 0,
+    },
+  },
 };
 </script>
 

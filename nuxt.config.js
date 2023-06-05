@@ -71,18 +71,6 @@ export default {
         rel: "apple-touch-icon",
         sizes: "180x180",
         href: "@/assets/img/logo-180.png"
-      },
-      {
-        rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Material+Icons&display=swap"
-      },
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css",
-        media: "print", // プリント用のスタイルシートは遅延読み込み
-        onload: "this.media='all'" // リソースが読み込まれた後にすべてのメディアタイプに適用する
       }
     ]
   },
@@ -115,7 +103,6 @@ export default {
     "@nuxtjs/vuetify",
     "@nuxtjs/pwa"
   ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -152,11 +139,13 @@ export default {
     // アイコン設定
     defaultAssets: {
       font: false,
-      icons: "mdi"
-    },
-    icons: {
-      iconfont: "mdi"
+      // icons: "mdi"
+      icons: "mdiSvg"
     }
+    // icons: {
+    //   iconfont: "mdi"
+    // }
+    // defaultAssets: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

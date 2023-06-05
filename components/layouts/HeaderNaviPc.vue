@@ -9,10 +9,10 @@
       plain
       :class="{
         header__btn_scroll: scrollY > fvHeight,
-        header__btn_active: isActive
+        header__btn_active: isActive,
       }"
       active-class="link-active"
-      class="header__btn "
+      class="header__btn"
       v-for="(item, index) in $ITEMS.menuItems"
       :key="index"
       :to="item.path"
@@ -30,15 +30,15 @@ export default {
   props: {
     scrollY: {
       type: Number,
-      default: 0
+      default: 0,
     },
     fvHeight: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   data() {
     return {
-      isActive: false //ボタンの遅延設定
+      isActive: false, //ボタンの遅延設定
     };
   },
   methods: {
@@ -47,8 +47,8 @@ export default {
       setTimeout(() => {
         this.isActive = true;
       }, 1200);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -60,6 +60,7 @@ export default {
   &__btn {
     position: relative;
     pointer-events: none;
+    transition: transform 0.2s ease-out;
     &::after {
       position: absolute;
       bottom: 10px;
@@ -99,6 +100,7 @@ export default {
 // 現在のページ
 .link-active {
   font-weight: bold;
+  transform: scale(1.05);
   &::after {
     transform: none;
   }

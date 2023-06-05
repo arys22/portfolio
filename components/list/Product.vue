@@ -57,9 +57,15 @@
                     rel="noopener noreferrer"
                     class="text-decoration-none product__link"
                   >
-                    <v-icon color="#1976d2" class="text-body-1 product__code">{{
-                      item.icon
-                    }}</v-icon>
+                    <v-icon
+                      v-if="item.icon == 'mdiGoogle'"
+                      color="#1976d2"
+                      class="product__icon"
+                      >{{ mdiGoogle }}</v-icon
+                    >
+                    <svg v-else viewBox="0 0 256 300" class="product__icon">
+                      <use xlink:href="#githubAtag" x="0" y="0"></use>
+                    </svg>
                     {{ item.code_type }}
                   </a>
                   <br />
@@ -72,8 +78,10 @@
                     rel="noopener noreferrer"
                     class="text-decoration-none product__link"
                   >
-                    <v-icon color="#1976d2" class="text-body-1 product__sample"
-                      >mdi-file-outline</v-icon
+                    <v-icon
+                      color="#1976d2"
+                      class="product__icon product__sample"
+                      >{{ mdiFileOutline }}</v-icon
                     >
                     sampleページ
                   </a>
@@ -86,8 +94,10 @@
                     rel="noopener noreferrer"
                     class="text-decoration-none product__link"
                   >
-                    <v-icon color="#1976d2" class="text-body-1 product__sample"
-                      >mdi-file-outline</v-icon
+                    <v-icon
+                      color="#1976d2"
+                      class="product__icon product__sample"
+                      >{{ mdiFileOutline }}</v-icon
                     >
                     Lisbleページ
                   </a>
@@ -133,6 +143,7 @@ import ModalCoding3 from "@/components/list/modal/ModalCoding3.vue";
 import ModalLP1 from "@/components/list/modal/ModalLP1.vue";
 import ModalPortfolio from "@/components/list/modal/ModalPortfolio.vue";
 import ModalLisble from "@/components/list/modal/ModalLisble.vue";
+import { mdiFileOutline, mdiGoogle } from "@mdi/js";
 export default {
   components: {
     ModalCoding1,
@@ -144,6 +155,8 @@ export default {
   },
   data() {
     return {
+      mdiFileOutline,
+      mdiGoogle,
       dialog: false,
       componentTitle: null,
       items: [
@@ -158,7 +171,7 @@ export default {
           img_src: require("@/assets/img/coding1/TOP2-1.png"),
           code_href:
             "https://drive.google.com/drive/folders/1xoUMEwNm_OI2jcuYdVkhREhmvZAYeAlV?usp=sharing",
-          icon: "mdi-google-drive",
+          icon: "mdiGoogle",
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.design.com/html/",
@@ -175,7 +188,7 @@ export default {
           img_src: require("@/assets/img/coding2/home_pc1-min.png"),
           code_href:
             "https://drive.google.com/drive/folders/1g_FEX5jw7VwIIueJfB8Whxe_Kwvvh4z8?usp=sharing",
-          icon: "mdi-google-drive",
+          icon: "mdiGoogle",
           code_type: "google Drive",
           web_href:
             "https://32ba4riyvpz35dzawvoszw-on.drv.tw/code/www.DIGSMILE.com/html/",
@@ -192,7 +205,7 @@ export default {
             "top, news, article, service, works, company, recruit, contact",
           img_src: require("@/assets/img/coding3/index1-pc-min.png"),
           code_href: "https://github.com/arys22/pon-design.git",
-          icon: "mdi-github",
+          icon: "github",
           code_type: "GitHub",
           web_href: "https://arys22.github.io/pon-design/", // GitHub Pages
           component: "ModalCoding3"
@@ -207,7 +220,7 @@ export default {
           page_type: "架空のグランピング施設",
           img_src: require("@/assets/img/LP1/LP_pc-1-min.png"),
           code_href: "https://github.com/arys22/LP.git",
-          icon: "mdi-github",
+          icon: "github",
           code_type: "GitHub",
           web_href: "https://arys22.github.io/LP/", // GitHub Pages
           component: "ModalLP1"
@@ -222,7 +235,7 @@ export default {
           page_type: "home, list, contact, 確認ページ, 完了ページ",
           img_src: require("@/assets/img/portfolio/Portfolio.png"),
           code_href: "https://github.com/arys22/portfolio.git",
-          icon: "mdi-github",
+          icon: "github",
           code_type: "GitHub",
           web_href: "",
           component: "ModalPortfolio"
@@ -353,11 +366,13 @@ export default {
       position: absolute;
     }
   }
-  &__code {
-    vertical-align: text-top;
+  &__icon {
+    width: 18px;
+    vertical-align: top;
   }
   &__sample {
     margin-left: 2.1px;
+    vertical-align: bottom;
   }
   &__btn {
     width: 100%;

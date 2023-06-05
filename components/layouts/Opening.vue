@@ -1,6 +1,6 @@
 <template>
-  <div class="top-op">
-    <div class="top-op__bg" v-show="show">
+  <div class="top-op" v-show="show">
+    <div class="top-op__bg" v-show="logo">
       <!-- ver. 点滅 -->
       <!-- <img
         class="top-op__gif"
@@ -14,7 +14,7 @@
         <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
       </svg>
     </div>
-    <div class="top-op__bg up" v-show="!show" :style="headerSize">
+    <div class="top-op__bg up" v-show="!logo" :style="headerSize">
       <svg viewBox="0 0 500 500" width="22" height="22" class="top-op__mark">
         <use xlink:href="#logo" x="0" y="0" fill="#fff"></use>
       </svg>
@@ -26,12 +26,16 @@
 export default {
   data() {
     return {
-      show: true
+      show: true,
+      logo: true
     };
   },
   mounted() {
     setTimeout(() => {
       this.show = false;
+    }, 4500);
+    setTimeout(() => {
+      this.logo = false;
     }, 1500);
   },
   computed: {
@@ -46,6 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .top-op {
+  z-index: 999;
   &__bg {
     position: fixed;
     top: 0;
@@ -53,7 +58,6 @@ export default {
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    z-index: 99;
     background: #222;
     &.up {
       animation-duration: 1.8s;
@@ -101,7 +105,7 @@ export default {
     height: var(--header-height);
     opacity: 0;
     // z-index: -1;
-    display: none;
+    // display: none;
   }
 }
 @media screen and (min-width: 960px) {

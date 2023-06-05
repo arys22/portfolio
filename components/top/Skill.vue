@@ -2,10 +2,8 @@
   <v-row justify="center" tag="section" align="center" class="skill">
     <Fade>
       <h2 class="text-center text-capitalize my-4 skill__title">
-        <v-icon class="mr-1" color="black">mdi-tools</v-icon>Web技術<br /><span
-          class="skill__subtitle f-f"
-          >skill</span
-        >
+        <v-icon class="mr-1" large color="black">{{ mdiTools }}</v-icon
+        >Web技術<br /><span class="skill__subtitle f-f">skill</span>
       </h2>
     </Fade>
     <v-col cols="11" sm="10" lg="8" class="skill__wrap">
@@ -44,15 +42,11 @@
               <Fade>
                 <v-card-text>
                   <ul>
-                    <li>
-                      「見やすく、編集しやすく、簡潔に」。
-                    </li>
+                    <li>「見やすく、編集しやすく、簡潔に」。</li>
                     <li>
                       レスポンシブ(モバイルファーストorデスクトップファースト)
                     </li>
-                    <li>
-                      内部SEOを意識、且つW3Cに準拠したコーディング。
-                    </li>
+                    <li>内部SEOを意識、且つW3Cに準拠したコーディング。</li>
                     <li>
                       SCSSで BEM記法、又は
                       FLOCSSで記述しています。(自作のテンプレート使用)
@@ -86,9 +80,7 @@
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
-                <FadeSlide>
-                  JavaSript・TypeScript・Node.js
-                </FadeSlide>
+                <FadeSlide> JavaSript・TypeScript・Node.js </FadeSlide>
               </v-card-subtitle>
               <v-divider class="skill__border" />
               <Fade>
@@ -136,9 +128,7 @@
                     <li>Vue2 Nuxt2(Options API)</li>
                     <li>Vue3 Nuxt3(Composition API、composables)</li>
                     <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
-                    <li>
-                      vue-test-utils + Jest テストコード
-                    </li>
+                    <li>vue-test-utils + Jest テストコード</li>
                     <li>Atomic Design</li>
                     <li>
                       Todoアプリ・カレンダー・iTunesのAPIを使用したiTunesSearch・無限スクロール・ページネーション・ドラッグ＆ドロップ機能・スワイプ機能・ログイン機能・等
@@ -199,21 +189,23 @@
 </template>
 
 <script>
+import { mdiTools } from "@mdi/js";
 export default {
   data() {
     return {
+      mdiTools,
       // アイコン
       firstSkills: [
         { name: "html", delay: 0.25 },
         { name: "css", delay: 0.5 },
         { name: "sass", delay: 0.75 },
         { name: "bootstrap", delay: 1 },
-        { name: "tailwind", delay: 1.25 }
+        { name: "tailwind", delay: 1.25 },
       ],
       secondSkills: [
         { name: "js", delay: 0.25 },
         { name: "typescript", delay: 0.5 },
-        { name: "node", delay: 0.75 }
+        { name: "node", delay: 0.75 },
       ],
       thirdSkills: [
         { name: "vue", delay: 0.25 },
@@ -222,7 +214,7 @@ export default {
         { name: "vuetify", delay: 1 },
         { name: "vite", delay: 1.25 },
         { name: "pinia", delay: 1.5 },
-        { name: "jest", delay: 1.75 }
+        { name: "jest", delay: 1.75 },
       ],
       fourthSkills: [
         { name: "git", delay: 0.2 },
@@ -234,10 +226,10 @@ export default {
         { name: "xd", delay: 1.4 },
         { name: "markdown", delay: 1.6 },
         { name: "vsc", delay: 1.8 },
-        { name: "googleplay", delay: 2 }
-      ]
+        { name: "googleplay", delay: 2 },
+      ],
     };
-  }
+  },
 };
 </script>
 

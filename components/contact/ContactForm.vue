@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" tag="section" align="center" class="contact">
     <h2 class="text-center text-capitalize my-4 contact__title">
-      <v-icon class="mr-1" color="black">mdi-email-outline</v-icon
+      <v-icon class="mr-1" large color="black">{{ mdiEmailOutline }}</v-icon
       >お問い合わせ<br /><span class="contact__subtitle f-f">contact</span>
     </h2>
     <v-col cols="12" sm="10" md="8" lg="6">
@@ -24,8 +24,8 @@
               :rules="[required, limit_length]"
               required
               clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-account"
+              :clear-icon="mdiCloseCircle"
+              :prepend-inner-icon="mdiAccount"
               name="name"
               class="my-5 f-f"
             ></v-text-field>
@@ -41,8 +41,8 @@
               :rules="[required, emailRules]"
               required
               clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-email"
+              :clear-icon="mdiCloseCircle"
+              :prepend-inner-icon="mdiEmail"
               name="email"
               class="my-5 f-f"
             ></v-text-field>
@@ -60,17 +60,19 @@
               required
               auto-grow
               clearable
-              clear-icon="mdi-close-circle"
-              prepend-inner-icon="mdi-comment"
+              :clear-icon="mdiCloseCircle"
+              :prepend-inner-icon="mdiComment"
             ></v-textarea>
             <p class="contact__error" v-show="error">
-              <v-icon>mdi-checkbox-marked-circle</v-icon>
+              <v-icon>{{ mdiCheckboxMarkedCircle }}</v-icon>
               入力内容をご確認ください。
             </p>
           </v-card-text>
           <v-card-actions class="contact__actions">
             <v-btn @click="reset" plain class="contact__btn--reset"
-              >削除<v-icon class="contact__btn--icon">mdi-close</v-icon></v-btn
+              >削除<v-icon class="contact__btn--icon">{{
+                mdiClose
+              }}</v-icon></v-btn
             >
             <Btn @click.native="check" class="my-13 pr-6">入力内容確認画面</Btn>
           </v-card-actions>
@@ -81,25 +83,41 @@
 </template>
 
 <script>
+import {
+  mdiEmailOutline,
+  mdiCloseCircle,
+  mdiAccount,
+  mdiEmail,
+  mdiComment,
+  mdiCheckboxMarkedCircle,
+  mdiClose,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiEmailOutline,
+      mdiCloseCircle,
+      mdiAccount,
+      mdiEmail,
+      mdiComment,
+      mdiCheckboxMarkedCircle,
+      mdiClose,
       // 各テキストボックスの値
       form: {
         name: "",
         email: "",
-        content: ""
+        content: "",
       },
       // エラー時
       error: false,
       // !!は二重否定 undefinedをfalseにするため
-      required: v => !!v || "必ず入力してください", // 入力必須の制約
-      limit_length: v =>
+      required: (v) => !!v || "必ず入力してください", // 入力必須の制約
+      limit_length: (v) =>
         (v && v.length <= 15) || "15文字以内で入力してください", // 文字数の制約
-      emailRules: v =>
+      emailRules: (v) =>
         /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/.test(
           v
-        ) || "有効なアドレスを入力してください"
+        ) || "有効なアドレスを入力してください",
       // /.+@.+\..+/
     };
   },
@@ -129,8 +147,8 @@ export default {
           query: {
             name: this.form.name,
             email: this.form.email,
-            content: this.form.content
-          }
+            content: this.form.content,
+          },
         });
       } else {
         this.error = true;
@@ -140,8 +158,8 @@ export default {
       // 入力値を初期化する
       this.$refs.form.reset();
       this.error = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

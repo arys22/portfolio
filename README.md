@@ -69,8 +69,8 @@ More information about the usage of this directory in [the documentation](https:
 
 ## version
 
-- node v14.17.5
-- npm v6.14.14
+- node v14.17.5 → 16.16.0
+- npm v6.14.14 → 8.15.0
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0b8eb70-f752-4e72-bb87-d0156168f9f3/deploy-status)](https://app.netlify.com/sites/gallant-knuth-c4ee1c/deploys)
 

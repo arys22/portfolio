@@ -10,8 +10,8 @@
         active-class="modal__active"
         height="82"
         show-arrows
-        next-icon="mdi-arrow-right-drop-circle-outline"
-        prev-icon="mdi-arrow-left-drop-circle-outline"
+        :next-icon="mdiArrowRightDropCircleOutline"
+        :prev-icon="mdiArrowLeftDropCircleOutline"
         center-active
       >
         <v-tab :href="'#' + `tab-${tab.id}`" v-for="tab in tabs" :key="tab.id">
@@ -150,9 +150,10 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1 modal__code"
-                >mdi-github</v-icon
-              >
+            >
+              <svg viewBox="0 0 256 300" class="modal__icon">
+                <use xlink:href="#githubAtag" x="0" y="0"></use>
+              </svg>
               GitHub
             </a>
             <br />
@@ -162,8 +163,11 @@
               target="_blank"
               rel="noopener noreferrer"
               class="text-decoration-none modal__link"
-              ><v-icon color="#1976d2" class="text-body-1 modal__sample"
-                >mdi-file-outline</v-icon
+              ><v-icon
+                small
+                color="#1976d2"
+                class="modal__icon modal__sample"
+                >{{ mdiFileOutline }}</v-icon
               >
               sampleページ
             </a>
@@ -186,7 +190,7 @@
           absolute
           x-small
         >
-          <v-icon>mdi-close</v-icon>
+          <v-icon>{{ mdiClose }}</v-icon>
         </v-btn>
       </v-card-actions>
     </v-row>
@@ -194,9 +198,19 @@
 </template>
 
 <script>
+import {
+  mdiArrowRightDropCircleOutline,
+  mdiArrowLeftDropCircleOutline,
+  mdiFileOutline,
+  mdiClose,
+} from "@mdi/js";
 export default {
   data() {
     return {
+      mdiArrowRightDropCircleOutline,
+      mdiArrowLeftDropCircleOutline,
+      mdiFileOutline,
+      mdiClose,
       link: "tab-1",
       tabs: [
         {
@@ -206,7 +220,7 @@ export default {
           alt: "topページ",
           width: "90",
           type: "pc",
-          name: "top"
+          name: "top",
         },
         {
           id: 2,
@@ -216,7 +230,7 @@ export default {
           alt_2: "スマホのtopページ下",
           width: "50",
           type: "sp",
-          name: "top"
+          name: "top",
         },
         {
           id: 3,
@@ -225,7 +239,7 @@ export default {
           alt: "newsページ",
           width: "90",
           type: "pc",
-          name: "news"
+          name: "news",
         },
         {
           id: 4,
@@ -235,7 +249,7 @@ export default {
           alt_2: "スマホのnewsページ下",
           width: "50",
           type: "sp",
-          name: "news"
+          name: "news",
         },
         {
           id: 5,
@@ -244,7 +258,7 @@ export default {
           alt: "articleページ",
           width: "90",
           type: "pc",
-          name: "article"
+          name: "article",
         },
         {
           id: 6,
@@ -254,7 +268,7 @@ export default {
           alt_2: "スマホのarticleページ下",
           width: "50",
           type: "sp",
-          name: "article"
+          name: "article",
         },
         {
           id: 7,
@@ -263,7 +277,7 @@ export default {
           alt: "serviceページ",
           width: "90",
           type: "pc",
-          name: "service"
+          name: "service",
         },
         {
           id: 8,
@@ -273,7 +287,7 @@ export default {
           alt_2: "スマホのserviceページ下",
           width: "50",
           type: "sp",
-          name: "service"
+          name: "service",
         },
         {
           id: 9,
@@ -282,7 +296,7 @@ export default {
           alt: "worksページ",
           width: "90",
           type: "pc",
-          name: "works"
+          name: "works",
         },
         {
           id: 10,
@@ -292,7 +306,7 @@ export default {
           alt_2: "スマホのworksページ下",
           width: "50",
           type: "sp",
-          name: "works"
+          name: "works",
         },
         {
           id: 11,
@@ -301,7 +315,7 @@ export default {
           alt: "companyページ",
           width: "90",
           type: "pc",
-          name: "company"
+          name: "company",
         },
         {
           id: 12,
@@ -311,7 +325,7 @@ export default {
           alt_2: "スマホのcompanyページ下",
           width: "50",
           type: "sp",
-          name: "company"
+          name: "company",
         },
         {
           id: 13,
@@ -320,7 +334,7 @@ export default {
           alt: "recruitページ",
           width: "90",
           type: "pc",
-          name: "recruit"
+          name: "recruit",
         },
         {
           id: 14,
@@ -330,7 +344,7 @@ export default {
           alt_2: "スマホのrecruitページ下",
           width: "50",
           type: "sp",
-          name: "recruit"
+          name: "recruit",
         },
         {
           id: 15,
@@ -339,7 +353,7 @@ export default {
           alt: "contactページ",
           width: "90",
           type: "pc",
-          name: "contact"
+          name: "contact",
         },
         {
           id: 16,
@@ -349,7 +363,7 @@ export default {
           alt_2: "スマホのcontactページ下",
           width: "50",
           type: "sp",
-          name: "contact"
+          name: "contact",
         },
         {
           id: 17,
@@ -357,11 +371,11 @@ export default {
           alt: "スマホのmenuページ",
           width: "50",
           type: "menu",
-          name: ""
-        }
-      ]
+          name: "",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
@@ -435,11 +449,12 @@ export default {
       position: absolute;
     }
   }
-  &__code {
-    vertical-align: baseline;
+  &__icon {
+    width: 16px;
+    vertical-align: middle;
   }
   &__sample {
-    margin-left: 2.1px;
+    margin-left: 2px;
   }
   &__actions {
     width: 100%;

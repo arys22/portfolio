@@ -27,11 +27,16 @@
   &__list {
     border-bottom: 1px dotted rgba(255, 255, 255, 0.24);
   }
-  &__list-active .v-list-item__icon .v-icon {
-    font-weight: bold;
-    color: #fff !important;
-    transform: none;
-    opacity: 1;
+  &__list-active {
+    & .v-list-item__content .v-list-item__title {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    & .v-list-item__icon .v-icon {
+      color: #fff !important;
+      transform: scale(1.2);
+      opacity: 1;
+    }
   }
 }
 </style>

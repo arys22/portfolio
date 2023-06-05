@@ -3,8 +3,10 @@
     <Breadcrumbs :items-data="breadData" />
     <StepBar />
     <v-row justify="center" tag="section" align="center" class="conmp">
-      <h2 class="text-center  my-4 conmp__title">
-        <v-icon class="mr-1" color="black">mdi-email-send-outline</v-icon
+      <h2 class="text-center my-4 conmp__title">
+        <v-icon class="mr-1 v-t" large color="black">{{
+          mdiEmailFastOutline
+        }}</v-icon
         >お問い合わせ送信完了
       </h2>
       <v-col cols="12" sm="10" md="8" lg="6">
@@ -19,7 +21,7 @@
           </svg>
           <v-card-text class="conmp__text">
             <p class="font-weight-bold">
-              <v-icon color="#ff1493">mdi-alert-circle</v-icon>
+              <v-icon color="#ff1493">{{ mdiAlertCircle }}</v-icon>
               ご入力いただいたメールアドレス宛てに受付完了のメールを自動で送信いたしましたのでご確認ください。
             </p>
             <p>
@@ -33,6 +35,7 @@
 </template>
 
 <script>
+import { mdiEmailFastOutline, mdiAlertCircle } from "@mdi/js";
 export default {
   // metaタグ設定
   head() {
@@ -43,40 +46,41 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "エンジニアのportfolio(ポートフォリオ)サイトのお問い合わせの完了をお知らせするページです。"
-        }
-      ]
+            "エンジニアのportfolio(ポートフォリオ)サイトのお問い合わせの完了をお知らせするページです。",
+        },
+      ],
     };
   },
   data() {
     return {
+      mdiEmailFastOutline,
+      mdiAlertCircle,
       header: {
-        title: "completion" //ヘッダータイトル
+        title: "completion", //ヘッダータイトル
       },
       breadData: [
         //パンくず
         {
           text: "top",
-          icon: "mdi-home",
           disabled: false,
-          path: "/"
+          path: "/",
         },
         {
           text: "お問い合わせ",
           disabled: false,
-          path: "/contact"
+          path: "/contact",
         },
         {
           text: "確認",
           disabled: true,
-          path: "/confirm"
+          path: "/confirm",
         },
         {
           text: "送信完了",
           disabled: true,
-          path: "/complete"
-        }
-      ]
+          path: "/complete",
+        },
+      ],
     };
   },
   mounted() {
@@ -86,8 +90,8 @@ export default {
     updateHeader() {
       //ヘッダータイトルとして使いたい情報を渡す
       this.$nuxt.$emit("updateHeader", this.header.title);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -103,5 +107,8 @@ export default {
     margin: 0 auto;
     width: 25%;
   }
+}
+.v-t {
+  vertical-align: top;
 }
 </style>
