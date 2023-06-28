@@ -132,9 +132,7 @@
             </li>
             <li><span class="font-weight-bold">UI・UX</span>:引き算</li>
             <li>
-              <span class="font-weight-bold"
-                >PageSpeed Insightsのスコア改善</span
-              >
+              <span class="font-weight-bold">Lighthouseのスコア改善</span>
               <ul class="text-caption">
                 <li>googleFonts,GTM(Analytics)使用でスコア 90 前後</li>
                 <li>Web Worker,requestAnimationFrame等の対策</li>
