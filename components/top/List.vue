@@ -92,7 +92,7 @@
 
       <!-- ポートフォリオ -->
       <FadeIn>
-        <v-card class="list__card py-8" tag="section">
+        <v-card class="list__card py-8 mb-16" tag="section">
           <v-row class="mx-0">
             <v-col cols="12" md="5">
               <Fade>
@@ -171,6 +171,34 @@
               </v-card-text>
             </v-col>
           </v-row>
+        </v-card>
+      </FadeIn>
+
+      <!-- 記事 -->
+      <FadeIn>
+        <v-card class="list__card py-8" tag="section">
+          <v-card-title>
+            <FadeSlide>
+              <h3 class="f-f">記事</h3>
+            </FadeSlide>
+          </v-card-title>
+          <v-divider class="list__border" />
+          <v-card-text>
+            <Fade><p class="font-weight-bold">Qiita</p></Fade>
+            <Fade>
+              <ul>
+                <li>
+                  <a
+                    href="https://qiita.com/arieight/items/7935afdaf78d31f8b444"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class=""
+                    >【Nuxt3】はじめての個人開発「買い物リストアプリ」開発記録
+                  </a>
+                </li>
+              </ul>
+            </Fade>
+          </v-card-text>
         </v-card>
       </FadeIn>
     </v-col>
