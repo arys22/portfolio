@@ -41,19 +41,175 @@
             >
               <div>
                 <v-card-title>
-                  <FadeSlide>
+                  <Fade>
                     <h3 class="f-f">買い物リスト - Lisble</h3>
-                  </FadeSlide>
+                  </Fade>
                 </v-card-title>
-                <FadeSlide>
+                <Fade>
                   <v-card-subtitle class="f-f">
                     Figma/TailwindCSS/TypeScript/Nuxt3
                   </v-card-subtitle>
-                </FadeSlide>
+                </Fade>
                 <v-divider class="list__border" />
               </div>
               <v-card-text>
                 <Fade>
+                  <p class="mb-1">掲載サイト様一覧</p>
+                  <ul class="list__list--none pb-6">
+                    <li>
+                      <ul class="list__list">
+                        <li class="ml-6">
+                          <a
+                            href="https://app-liv.jp/5347459/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >Appliv
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://devhaunt.com/product/111"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >DevHaunt!
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://applion.jp/android/app/net.lisble.twa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >APPLION
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="http://houkago-no.appspot.com/app_detail/6278466848686080"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >放課後ｱﾌﾟﾘ部
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://applishow.com/detail/DsL3Q4b5hxxm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >Applishow
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://www.approom.me/app/01H2J1N7SXF5JSH8ZMMDMGBF2V?platform_id=2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >AppRoom
+                          </a>
+                          <a
+                            href="https://www.approom.me/articles/01H2JGWJ3K3J72WVN7EJT5CKYD"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="ml-2 text-decoration-none"
+                            >記事
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://seekups.seekgeeks.net/views/detail.html?id=712"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >SeekUps
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://rrws.info/archives/3197"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >ロケットリリース
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://appstimes.jp/posts/2991"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >Appstimes
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://anymake.app/products/kAjQm0f6tswHGaKTd0G5"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >AnyMake
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://www.makepost.net/projects/386"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >makepost
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://www.mitsukarusite.jp/2023/06/550/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >MITSUKARU!
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://kojin.dev/application/41"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >個人dev
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      海外
+                      <ul class="list__list">
+                        <li class="ml-6">
+                          <a
+                            href="https://www.producthunt.com/my/products"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >Product Hunt
+                          </a>
+                        </li>
+                        <li class="ml-6">
+                          <a
+                            href="https://alternativeto.net/software/shopping-list--lisble/about/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-decoration-none"
+                            >AlternativeTo
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </Fade>
+                <FadeSlide>
                   <span class="font-weight-bold">PC, iOS</span>:
                   <a
                     href="https://lisble.net/"
@@ -83,7 +239,7 @@
                         src="https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png"
                     /></a>
                   </span>
-                </Fade>
+                </FadeSlide>
               </v-card-text>
             </v-col>
           </v-row>
@@ -109,18 +265,18 @@
 
             <v-col cols="12" md="7">
               <v-card-title>
-                <FadeSlide>
+                <Fade>
                   <h3 class="f-f">Portfolio</h3>
-                </FadeSlide>
+                </Fade>
               </v-card-title>
-              <FadeSlide>
+              <Fade>
                 <v-card-subtitle class="f-f">
                   HTML/CSS(SCSS)/Vuetify/Nuxt.js
                 </v-card-subtitle>
-              </FadeSlide>
+              </Fade>
               <v-divider class="list__border" />
               <v-card-text>
-                <Fade>
+                <FadeSlide>
                   <ul>
                     <li>レスポンシブ(MF)</li>
                     <li>CSS設計はBEM記法</li>
@@ -152,7 +308,7 @@
                     <li>PWA化（Progressive Web Apps）</li>
                     <li>Jest ＋ vue-test-utils でのテストコード記述</li>
                   </ul>
-                </Fade>
+                </FadeSlide>
                 <FadeSlide>
                   <p class="mt-7 mb-0">
                     コードの詳細:
@@ -178,26 +334,26 @@
       <FadeIn>
         <v-card class="list__card py-8" tag="section">
           <v-card-title>
-            <FadeSlide>
+            <Fade>
               <h3 class="f-f">記事</h3>
-            </FadeSlide>
+            </Fade>
           </v-card-title>
           <v-divider class="list__border" />
           <v-card-text>
             <Fade><p class="font-weight-bold">Qiita</p></Fade>
-            <Fade>
+            <FadeSlide>
               <ul>
                 <li>
                   <a
                     href="https://qiita.com/arieight/items/7935afdaf78d31f8b444"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class=""
+                    class="text-decoration-none"
                     >【Nuxt3】はじめての個人開発「買い物リストアプリ」開発記録
                   </a>
                 </li>
               </ul>
-            </Fade>
+            </FadeSlide>
           </v-card-text>
         </v-card>
       </FadeIn>
@@ -253,6 +409,14 @@ export default {
     border-style: dotted;
     width: 95%;
     margin: 0 auto;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    &--none {
+      list-style: none;
+    }
   }
   &__icon {
     vertical-align: text-bottom;

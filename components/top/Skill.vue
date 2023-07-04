@@ -117,7 +117,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeSlide>
-                  Vue.js(2,3)・Nuxt.js(2,3)・VueRouter・Vuex・Pinia・Vuetify・Vue
+                  Vue.js(2,3)・Nuxt.js(2,3)・VueRouter・Vuex・Pinia・Vuetify2・Vue
                   Test Utils・Jest
                 </FadeSlide>
               </v-card-subtitle>
@@ -127,7 +127,7 @@
                   <ul>
                     <li>Vue2 Nuxt2(Options API)</li>
                     <li>Vue3 Nuxt3(Composition API、composables)</li>
-                    <li>Vite、VueRouter、Vuex、Pinia、Vuetify</li>
+                    <li>Vite、VueRouter、Vuex、Pinia、Vuetify2</li>
                     <li>vue-test-utils + Jest テストコード</li>
                     <li>Atomic Design</li>
                     <li>
