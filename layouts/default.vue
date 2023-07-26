@@ -7,7 +7,7 @@
       <Svgs />
       <Nuxt />
     </v-main>
-    <Twitter :scrollY="scrollY" />
+    <!-- <Twitter :scrollY="scrollY" /> -->
     <BackTop :scrollY="scrollY" />
     <BottomNavigation :scrollY="scrollY" />
     <v-footer absolute class="text-center" padless color="#f5f5f5">
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       scrollY: 0,
-      title: "" //ヘッダータイトル
+      title: "", //ヘッダータイトル
     };
   },
   created() {
@@ -49,10 +49,10 @@ export default {
     setListener() {
       //ヘッダータイトル
       // emitで発火させたイベント名にする
-      this.$nuxt.$on("updateHeader", data => {
+      this.$nuxt.$on("updateHeader", (data) => {
         this.title = data;
       });
-    }
+    },
   },
   // linkタグのcanonical設定
   head() {
@@ -60,11 +60,11 @@ export default {
       link: [
         {
           rel: "canonical",
-          href: `https://arieight-portfolio.netlify.app${this.$route.path}`
-        }
-      ]
+          href: `https://arieight-portfolio.netlify.app${this.$route.path}`,
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

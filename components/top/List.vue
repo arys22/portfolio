@@ -55,158 +55,18 @@
               <v-card-text>
                 <Fade>
                   <p class="mb-1">掲載サイト様一覧</p>
-                  <ul class="list__list--none pb-6">
-                    <li>
-                      <ul class="list__list">
-                        <li class="ml-6">
-                          <a
-                            href="https://app-liv.jp/5347459/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >Appliv
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://devhaunt.com/product/111"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >DevHaunt!
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://applion.jp/android/app/net.lisble.twa/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >APPLION
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="http://houkago-no.appspot.com/app_detail/6278466848686080"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >放課後ｱﾌﾟﾘ部
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://applishow.com/detail/DsL3Q4b5hxxm/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >Applishow
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://www.approom.me/app/01H2J1N7SXF5JSH8ZMMDMGBF2V?platform_id=2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >AppRoom
-                          </a>
-                          <a
-                            href="https://www.approom.me/articles/01H2JGWJ3K3J72WVN7EJT5CKYD"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="ml-2 text-decoration-none"
-                            >記事
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://seekups.seekgeeks.net/views/detail.html?id=712"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >SeekUps
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://rrws.info/archives/3197"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >ロケットリリース
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://appstimes.jp/posts/2991"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >Appstimes
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://anymake.app/products/kAjQm0f6tswHGaKTd0G5"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >AnyMake
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://www.makepost.net/projects/386"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >makepost
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://www.mitsukarusite.jp/2023/06/550/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >MITSUKARU!
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://kojin.dev/application/41"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >個人dev
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      海外
-                      <ul class="list__list">
-                        <li class="ml-6">
-                          <a
-                            href="https://www.producthunt.com/my/products"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >Product Hunt
-                          </a>
-                        </li>
-                        <li class="ml-6">
-                          <a
-                            href="https://alternativeto.net/software/shopping-list--lisble/about/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-decoration-none"
-                            >AlternativeTo
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
+                  <ul class="list--none pb-6">
+                    <FadeIn>
+                      <li>
+                        <LinkList :items="jpSite" />
+                      </li>
+                    </FadeIn>
+                    <FadeIn>
+                      <li>
+                        海外
+                        <LinkList :items="enSite" />
+                      </li>
+                    </FadeIn>
                   </ul>
                 </Fade>
                 <FadeSlide>
@@ -276,7 +136,7 @@
               </Fade>
               <v-divider class="list__border" />
               <v-card-text>
-                <FadeSlide>
+                <FadeIn>
                   <ul>
                     <li>レスポンシブ(MF)</li>
                     <li>CSS設計はBEM記法</li>
@@ -308,7 +168,7 @@
                     <li>PWA化（Progressive Web Apps）</li>
                     <li>Jest ＋ vue-test-utils でのテストコード記述</li>
                   </ul>
-                </FadeSlide>
+                </FadeIn>
                 <FadeSlide>
                   <p class="mt-7 mb-0">
                     コードの詳細:
@@ -335,25 +195,33 @@
         <v-card class="list__card py-8" tag="section">
           <v-card-title>
             <Fade>
-              <h3 class="f-f">記事</h3>
+              <h3 class="f-f">各種リンク</h3>
             </Fade>
           </v-card-title>
           <v-divider class="list__border" />
           <v-card-text>
-            <Fade><p class="font-weight-bold">Qiita</p></Fade>
-            <FadeSlide>
-              <ul>
-                <li>
-                  <a
-                    href="https://qiita.com/arieight/items/7935afdaf78d31f8b444"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-decoration-none"
-                    >【Nuxt3】はじめての個人開発「買い物リストアプリ」開発記録
-                  </a>
-                </li>
+            <Fade>
+              <ul class="list--none pb-6">
+                <FadeIn>
+                  <li class="mb-4">
+                    【Twitter】
+                    <LinkList :items="twitter" />
+                  </li>
+                </FadeIn>
+                <FadeIn>
+                  <li class="mb-4">
+                    【記事】
+                    <LinkList :items="article" />
+                  </li>
+                </FadeIn>
+                <FadeIn>
+                  <li>
+                    【CrowdSourcing】
+                    <LinkList :items="crowd" />
+                  </li>
+                </FadeIn>
               </ul>
-            </FadeSlide>
+            </Fade>
           </v-card-text>
         </v-card>
       </FadeIn>
@@ -369,6 +237,93 @@ export default {
     return {
       mdiViewList,
       mdiFileOutline,
+      jpSite: [
+        { name: "Appliv", url: "https://app-liv.jp/5347459/" },
+        { name: "DevHaunt", url: "https://devhaunt.com/product/111" },
+        {
+          name: "APPLION",
+          url: "https://applion.jp/android/app/net.lisble.twa/",
+        },
+        {
+          name: "放課後ｱﾌﾟﾘ部",
+          url: "http://houkago-no.appspot.com/app_detail/6278466848686080",
+        },
+        {
+          name: "Applishow",
+          url: "https://applishow.com/detail/DsL3Q4b5hxxm/",
+        },
+        {
+          name: "AppRoom",
+          url: "https://www.approom.me/app/01H2J1N7SXF5JSH8ZMMDMGBF2V?platform_id=2",
+        },
+        {
+          name: "AppRoom記事",
+          url: "https://www.approom.me/articles/01H2JGWJ3K3J72WVN7EJT5CKYD",
+        },
+        {
+          name: "SeekUps",
+          url: "https://seekups.seekgeeks.net/views/detail.html?id=712",
+        },
+        { name: "ロケットリリース", url: "https://rrws.info/archives/3197" },
+        { name: "Appstimes", url: "https://appstimes.jp/posts/2991" },
+        {
+          name: "AnyMake",
+          url: "https://anymake.app/products/kAjQm0f6tswHGaKTd0G5",
+        },
+        { name: "makepost", url: "https://www.makepost.net/projects/386" },
+        { name: "MITSUKARU", url: "https://www.mitsukarusite.jp/2023/06/550/" },
+        { name: "個人dev", url: "https://kojin.dev/application/41" },
+      ],
+      enSite: [
+        {
+          name: "Product Hunt",
+          url: "https://www.producthunt.com/my/products",
+        },
+        {
+          name: "AlternativeTo",
+          url: "https://alternativeto.net/software/shopping-list--lisble/about/",
+        },
+      ],
+      twitter: [
+        { name: "@arieight_8", url: "https://twitter.com/arieight_8" },
+        { name: "@Lisble_en (英語)", url: "https://twitter.com/Lisble_en" },
+      ],
+      article: [
+        {
+          name: "Qiita",
+          url: "https://qiita.com/arieight",
+        },
+        {
+          name: "Zenn",
+          url: "https://zenn.dev/arieight",
+        },
+        {
+          name: "Crieit",
+          url: "https://crieit.net/users/arieight",
+        },
+        {
+          name: "note",
+          url: "https://note.com/arieight",
+        },
+        {
+          name: "Medium(英語)",
+          url: "https://medium.com/@az6665323",
+        },
+      ],
+      crowd: [
+        {
+          name: "CrowdWorks",
+          url: "https://crowdworks.jp/public/employees/4474490",
+        },
+        {
+          name: "Lancers",
+          url: "https://www.lancers.jp/profile/az6665323w?ref=header_menu",
+        },
+        {
+          name: "coconala",
+          url: "https://coconala.com/users/2890462",
+        },
+      ],
     };
   },
   methods: {
@@ -410,13 +365,8 @@ export default {
     width: 95%;
     margin: 0 auto;
   }
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    &--none {
-      list-style: none;
-    }
+  &--none {
+    list-style: none;
   }
   &__icon {
     vertical-align: text-bottom;
