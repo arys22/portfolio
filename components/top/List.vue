@@ -202,24 +202,24 @@
           <v-card-text>
             <Fade>
               <ul class="list--none pb-6">
-                <FadeIn>
-                  <li class="mb-4">
+                <li class="mb-4">
+                  <FadeIn>
                     【Twitter】
                     <LinkList :items="twitter" />
-                  </li>
-                </FadeIn>
-                <FadeIn>
-                  <li class="mb-4">
+                  </FadeIn>
+                </li>
+                <li class="mb-4">
+                  <FadeIn>
                     【記事】
                     <LinkList :items="article" />
-                  </li>
-                </FadeIn>
-                <FadeIn>
-                  <li>
+                  </FadeIn>
+                </li>
+                <li>
+                  <FadeIn>
                     【CrowdSourcing】
                     <LinkList :items="crowd" />
-                  </li>
-                </FadeIn>
+                  </FadeIn>
+                </li>
               </ul>
             </Fade>
           </v-card-text>

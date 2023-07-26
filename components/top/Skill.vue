@@ -9,20 +9,20 @@
     <v-col cols="11" sm="10" lg="8" class="skill__wrap">
       <v-row justify="center">
         <v-col cols="12">
-          <FadeSlide>
+          <FadeIn>
             <p>
               日々進化し続ける技術をキャッチアップするための学びはもちろんのこと、悩みや課題や目標を解決できるよう、クライアントの目線での視点や、使う人のものであることを常に意識して、多角的に捉えられるように研鑽を積んでまいります。
             </p>
-          </FadeSlide>
+          </FadeIn>
         </v-col>
         <!-- html・css -->
         <v-col cols="12" md="6" xl="3" class="skill__box">
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title class="text-uppercase">
-                <FadeSlide>
+                <Fade>
                   <h3>html・css</h3>
-                </FadeSlide>
+                </Fade>
               </v-card-title>
               <div class="skill__icon">
                 <template v-for="(skill, index) in firstSkills">
@@ -34,12 +34,10 @@
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
-                <FadeSlide>
-                  HTML・CSS・Sass(SCSS)・Bootstrap・TailwindCSS
-                </FadeSlide>
+                <FadeIn> HTML・CSS・Sass(SCSS)・Bootstrap・TailwindCSS </FadeIn>
               </v-card-subtitle>
               <v-divider class="skill__border" />
-              <Fade>
+              <FadeIn>
                 <v-card-text>
                   <ul>
                     <li>「見やすく、編集しやすく、簡潔に」。</li>
@@ -57,7 +55,7 @@
                     <li>XD、Figmaからのコーディング</li>
                   </ul>
                 </v-card-text>
-              </Fade>
+              </FadeIn>
             </v-card>
           </FadeIn>
         </v-col>
@@ -66,9 +64,9 @@
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title>
-                <FadeSlide>
+                <Fade>
                   <h3>JavaScript・TypeScript</h3>
-                </FadeSlide>
+                </Fade>
               </v-card-title>
               <div class="skill__icon">
                 <template v-for="(skill, index) in secondSkills">
@@ -80,10 +78,10 @@
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
-                <FadeSlide> JavaSript・TypeScript・Node.js </FadeSlide>
+                <FadeIn> JavaSript・TypeScript・Node.js </FadeIn>
               </v-card-subtitle>
               <v-divider class="skill__border" />
-              <Fade>
+              <FadeIn>
                 <v-card-text>
                   <ul>
                     <li>Vanilla JavaScript</li>
@@ -93,7 +91,7 @@
                     <li>PageSpeed Insightsのスコア改善(Web Worker等)</li>
                   </ul>
                 </v-card-text>
-              </Fade>
+              </FadeIn>
             </v-card>
           </FadeIn>
         </v-col>
@@ -102,9 +100,9 @@
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title>
-                <FadeSlide>
+                <Fade>
                   <h3>Vue・Nuxt</h3>
-                </FadeSlide>
+                </Fade>
               </v-card-title>
               <div class="skill__icon">
                 <template v-for="(skill, index) in thirdSkills">
@@ -116,13 +114,13 @@
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
-                <FadeSlide>
+                <FadeIn>
                   Vue.js(2,3)・Nuxt.js(2,3)・VueRouter・Vuex・Pinia・Vuetify2・Vue
                   Test Utils・Jest
-                </FadeSlide>
+                </FadeIn>
               </v-card-subtitle>
               <v-divider class="skill__border" />
-              <Fade>
+              <FadeIn>
                 <v-card-text>
                   <ul>
                     <li>Vue2 Nuxt2(Options API)</li>
@@ -136,7 +134,7 @@
                     <li>今はVue.js・nuxt.jsが一番好きです。</li>
                   </ul>
                 </v-card-text>
-              </Fade>
+              </FadeIn>
             </v-card>
           </FadeIn>
         </v-col>
@@ -145,9 +143,9 @@
           <FadeIn>
             <v-card class="py-4" tag="section">
               <v-card-title class="text-uppercase">
-                <FadeSlide>
+                <Fade>
                   <h3>その他</h3>
-                </FadeSlide>
+                </Fade>
               </v-card-title>
               <div class="skill__icon">
                 <template v-for="(skill, index) in fourthSkills">
@@ -159,12 +157,12 @@
                 </template>
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
-                <FadeSlide>
+                <FadeIn>
                   Git・GitHub・Docker・Figma・Netlify・Cloudflare・GooglePlay
-                </FadeSlide>
+                </FadeIn>
               </v-card-subtitle>
               <v-divider class="skill__border" />
-              <Fade>
+              <FadeIn>
                 <v-card-text>
                   <ul>
                     <li>エディタ：Visual Studio Code</li>
@@ -178,7 +176,7 @@
                     <li>Markdown記法</li>
                   </ul>
                 </v-card-text>
-              </Fade>
+              </FadeIn>
             </v-card>
           </FadeIn>
         </v-col>

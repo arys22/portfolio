@@ -9,7 +9,7 @@
       </h2>
     </Fade>
     <v-col cols="12" md="5" class="message__wrap">
-      <FadeSlide>
+      <FadeIn>
         <p>
           はじめまして。齋藤と申します。<br />
           この度は、ポートフォリオサイトに訪問いただきありがとうございます。<br />
@@ -17,7 +17,7 @@
           私自身、まだまだ至らない点がありますが、常に最適解を求めて研鑽を積み、クライアントに寄り添ったエンジニアリングをしていきます。<br />
           今後ともよろしくお願いいたします。
         </p>
-      </FadeSlide>
+      </FadeIn>
     </v-col>
     <v-col cols="9" md="4" class="message__img">
       <v-sheet class="message__bg"></v-sheet>
