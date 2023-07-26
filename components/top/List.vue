@@ -56,17 +56,17 @@
                 <Fade>
                   <p class="mb-1">掲載サイト様一覧</p>
                   <ul class="list--none pb-6">
-                    <FadeIn>
-                      <li>
+                    <li>
+                      <FadeIn>
                         <LinkList :items="jpSite" />
-                      </li>
-                    </FadeIn>
-                    <FadeIn>
-                      <li>
+                      </FadeIn>
+                    </li>
+                    <li>
+                      <FadeIn>
                         海外
                         <LinkList :items="enSite" />
-                      </li>
-                    </FadeIn>
+                      </FadeIn>
+                    </li>
                   </ul>
                 </Fade>
                 <FadeSlide>
