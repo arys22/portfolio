@@ -307,7 +307,7 @@ export default {
         },
         {
           name: "Medium(英語)",
-          url: "https://medium.com/@az6665323",
+          url: "https://medium.com/@arieight_8",
         },
       ],
       crowd: [
