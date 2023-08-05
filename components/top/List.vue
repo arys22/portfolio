@@ -204,8 +204,8 @@
               <ul class="list--none pb-6">
                 <li class="mb-4">
                   <FadeIn>
-                    【Twitter】
-                    <LinkList :items="twitter" />
+                    【SNS】
+                    <LinkList :items="sns" />
                   </FadeIn>
                 </li>
                 <li class="mb-4">
@@ -284,9 +284,19 @@ export default {
           url: "https://alternativeto.net/software/shopping-list--lisble/about/",
         },
       ],
-      twitter: [
-        { name: "@arieight_8", url: "https://twitter.com/arieight_8" },
-        { name: "@Lisble_en (英語)", url: "https://twitter.com/Lisble_en" },
+      sns: [
+        {
+          name: "Twitter:@arieight_8",
+          url: "https://twitter.com/arieight_8",
+        },
+        {
+          name: "Twitter:@Lisble_en (英語)",
+          url: "https://twitter.com/Lisble_en",
+        },
+        {
+          name: "Instagram:Lisble_ja",
+          url: "https://www.instagram.com/lisble_jp/",
+        },
       ],
       article: [
         {
