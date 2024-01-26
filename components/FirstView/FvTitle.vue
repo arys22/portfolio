@@ -8,7 +8,7 @@
     v-on:leave="leave"
   >
     <div
-      class="text__item  font-weight-black"
+      class="text__item font-weight-black"
       v-show="show"
       v-for="datas in textModel"
       :key="datas.id"
@@ -26,13 +26,13 @@ export default {
       index: 0,
       text: ["PORTFOLIO", "Arieight", "Portfolio", "Welcome"],
       textArray: [], //convTextで文字列を分解＆キーを生成 配列
-      textModel: [] //1文取り出し表示
+      textModel: [], //1文取り出し表示
     };
   },
   created() {
     // this.textModel = this.convText(this.text);
     // textを分解
-    this.textArray = this.text.map(el => this.convText(el));
+    this.textArray = this.text.map((el) => this.convText(el));
     this.textModel = this.textArray[0];
   },
   mounted() {
@@ -58,7 +58,7 @@ export default {
     convText(text) {
       const alms = {};
       // 文字列を分解
-      const result = text.split("").map(el => {
+      const result = text.split("").map((el) => {
         // キーを生成 {key: "value"}{el:"1"}
         alms[el] = alms[el] ? ++alms[el] : 1;
         // {id: "あ_１", text: "あ"}
@@ -121,8 +121,8 @@ export default {
         0,
         done
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
