@@ -158,7 +158,7 @@
               </div>
               <v-card-subtitle class="skill__subtitle f-f">
                 <FadeIn>
-                  Git・GitHub・Docker・Figma・Netlify・Cloudflare・GooglePlay
+                  Git・GitHub・Docker・Figma・XD・Netlify・Cloudflare・GooglePlay
                 </FadeIn>
               </v-card-subtitle>
               <v-divider class="skill__border" />
